@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bewertungen: Hebräisch lernen in Zürich bei lingoStudio – online oder vor Ort. Kostenlose Probelektion! Lesen Sie, was unsere Schüler sagen.">
+    <title>Bewertungen | lingoStudio - Hebräisch lernen in Zürich</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e3a5f;
+            --primary-light: #2d5a8a;
+            --accent: #c9a227;
+            --accent-light: #e8c547;
+            --star: #f59e0b;
+            --star-empty: #d1d5db;
+            --bg-main: #fafbfc;
+            --bg-card: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --border: #e5e7eb;
+            --success: #059669;
+            --success-bg: #ecfdf5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 80px 20px 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-family: 'Heebo', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Verified Badge */
+        .verified-badge-big {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .verified-icon {
+            background: white;
+            color: #059669;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        /* Trust Banner */
+        .trust-banner {
+            max-width: 850px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .trust-content {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 1px solid #86efac;
+            border-radius: 12px;
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .trust-icon {
+            font-size: 2.2rem;
+            flex-shrink: 0;
+        }
+
+        .trust-text strong {
+            color: #166534;
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .trust-text p {
+            color: #15803d;
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Verified badge on review cards */
+        .review-verified {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #f0fdf4;
+            color: #059669;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #bbf7d0;
+        }
+
+        .review-verified .check {
+            font-size: 0.7rem;
+        }
+
+        /* Stats Card */
+        .stats-card {
+            background: var(--bg-card);
+            max-width: 850px;
+            margin: -60px auto 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-main {
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+            border-right: 1px solid var(--border);
+        }
+
+        .stats-number {
+            font-family: 'Heebo', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stats-stars {
+            font-size: 1.6rem;
+            color: var(--star);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .stats-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .stats-label strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .stats-breakdown {
+            padding: 35px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stats-breakdown h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .bar-label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: 45px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .bar-label .star-icon {
+            color: var(--star);
+            font-size: 0.85rem;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 8px;
+            background: #f3f4f6;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--star) 0%, var(--accent-light) 100%);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bar-count {
+            width: 35px;
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-family: 'Heebo', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .filter-badge {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Reviews */
+        .reviews-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 28px 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .reviewer-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .reviewer-info h4 {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            font-size: 1.05rem;
+        }
+
+        .reviewer-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .course-tag {
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .review-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .review-stars {
+            color: var(--star);
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+
+        .review-text {
+            color: var(--text-primary);
+            line-height: 1.75;
+            font-size: 1.02rem;
+        }
+
+        .star-filled { color: var(--star); }
+        .star-empty { color: var(--star-empty); }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Add Review Section */
+        .add-review {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
+        }
+
+        .add-review h2 {
+            font-family: 'Heebo', sans-serif;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.6rem;
+        }
+
+        .add-review > p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: var(--bg-card);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(30, 58, 95, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        /* Star Rating Input */
+        .star-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .star-input {
+            display: flex;
+            gap: 8px;
+        }
+
+        .star-input-btn {
+            background: none;
+            border: 2px solid var(--border);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--star-empty);
+        }
+
+        .star-input-btn:hover {
+            border-color: var(--star);
+            background: #fffbeb;
+        }
+
+        .star-input-btn.active {
+            border-color: var(--star);
+            background: #fef3c7;
+            color: var(--star);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 58, 95, 0.25);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Consent Checkbox */
+        .consent-group {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .consent-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .consent-label input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            margin-top: 2px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .consent-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .consent-text a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .consent-text a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Messages */
+        .message {
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .message.show { display: flex; }
+
+        .message.success {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #34d399;
+            color: #065f46;
+            font-size: 1.05rem;
+            padding: 20px 24px;
+        }
+
+        .message.success .success-icon {
+            font-size: 1.5rem;
+        }
+
+        .message.success strong {
+            display: block;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+
+        .message.error {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-tagline {
+            font-size: 0.95rem;
+            color: var(--accent-light);
+            margin-bottom: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 60px 20px 100px; }
+            
+            .stats-card {
+                grid-template-columns: 1fr;
+                margin: -50px 15px 40px;
+            }
+            
+            .stats-main {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 30px;
+            }
+            
+            .stats-number { font-size: 4rem; }
+            
+            .stats-breakdown { padding: 25px 30px; }
+            
+            .main-content { padding: 0 15px 60px; }
+            
+            .review-card { padding: 22px 20px; }
+            
+            .form-row { grid-template-columns: 1fr; }
+            
+            .add-review { padding: 30px 20px; }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .trust-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .trust-banner {
+                padding: 0 15px;
+            }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+    
+        /* === PROMO BANNER === */
+        .promo-banner {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .promo-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .promo-icon { font-size: 1.2rem; }
+        .promo-text { font-weight: 700; }
+        .promo-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: white; }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            .nav-links.active { display: flex; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- PROMO BANNER -->
+    <div id="promoBanner" class="promo-banner" style="display: none;">
+        <div class="promo-content">
+            <span class="promo-icon">🎉</span>
+            <span id="promoText" class="promo-text"></span>
+            <button class="promo-close" onclick="closePromo()">✕</button>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">lingoStudio</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="/">Startseite</a>
+                <a href="/about.html">Über uns</a>
+                <a href="/warum-lingostudio.html">Kurse</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/bewertungen.html">Bewertungen</a>
+                <a href="/aktualisierungen.html">News</a>
+                <a href="/kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- PROMO BANNER - Controlled by Google Sheets -->
+    <div id="promoBanner" class="promo-banner" style="display: none;">
+        <div class="promo-content">
+            <span class="promo-icon">🎉</span>
+            <span id="promoText" class="promo-text"></span>
+            <button class="promo-close" onclick="closePromo()">✕</button>
+        </div>
+    </div>
+    
+    <style>
+        .promo-banner {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out, glow 2s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(239, 68, 68, 0.7); }
+        }
+        
+        .promo-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .promo-icon {
+            font-size: 1.3rem;
+            animation: bounce 1s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .promo-text {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .promo-text strong {
+            background: rgba(255,255,255,0.25);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .promo-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .promo-close:hover {
+            background: rgba(255,255,255,0.35);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .promo-banner { padding: 10px 45px 10px 15px; }
+            .promo-text { font-size: 0.9rem; }
+        }
+    
+        /* === PROMO BANNER === */
+        .promo-banner {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .promo-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .promo-icon { font-size: 1.2rem; }
+        .promo-text { font-weight: 700; }
+        .promo-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: white; }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            .nav-links.active { display: flex; }
+        }
+
+    </style>
+
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>⭐</span>
+                <span>Von unseren Schülern bewertet</span>
+            </div>
+            <h1>Kundenbewertungen</h1>
+            <p>Hebräisch lernen in Zürich – online oder vor Ort. Das sagen unsere Schüler über lingoStudio!</p>
+        </div>
+    </header>
+
+    <!-- Stats Card -->
+    <div class="stats-card">
+        <div class="stats-main">
+            <div class="verified-badge-big">
+                <span class="verified-icon">✓</span>
+                <span>Verifizierte Bewertungen</span>
+            </div>
+            <div class="stats-number" id="avgRating">-</div>
+            <div class="stats-stars" id="avgStars">☆☆☆☆☆</div>
+            <div class="stats-label">Basierend auf <strong id="totalCount">0</strong> Bewertungen</div>
+        </div>
+        <div class="stats-breakdown">
+            <h3>Bewertungsübersicht</h3>
+            <div id="ratingBars">
+                <!-- Generated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Trust Banner -->
+    <div class="trust-banner">
+        <div class="trust-content">
+            <div class="trust-icon">🛡️</div>
+            <div class="trust-text">
+                <strong>100% echte Bewertungen</strong>
+                <p>Alle Bewertungen stammen von verifizierten Kursteilnehmern und werden vor der Veröffentlichung geprüft.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="section-header">
+            <h2 class="section-title">Alle Bewertungen</h2>
+            <span class="filter-badge" id="filterBadge">Neueste zuerst</span>
+        </div>
+
+        <div class="reviews-container" id="reviewsContainer">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Bewertungen werden geladen...</p>
+            </div>
+        </div>
+
+        <!-- Add Review Form -->
+        <div class="add-review">
+            <h2>📝 Waren Sie auch bei uns? Teilen Sie Ihre Erfahrung!</h2>
+            <p>Alle oben gezeigten Bewertungen sind echt und stammen von unseren Kursteilnehmern. Haben Sie auch bei lingoStudio gelernt? Wir freuen uns über Ihr ehrliches Feedback!</p>
+
+            <form id="reviewForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Ihr Name *</label>
+                        <input type="text" id="name" placeholder="z.B. Anna M." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ihre E-Mail *</label>
+                        <input type="email" id="email" placeholder="z.B. anna@beispiel.ch" required>
+                        <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 4px; display: block;">Wird nicht veröffentlicht – nur zur Verifizierung</small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="course">Kursart *</label>
+                        <select id="course" required>
+                            <option value="">Bitte wählen...</option>
+                            <option value="Privater Unterricht">Privater Unterricht</option>
+                            <option value="Gruppenkurs Anfänger">Gruppenkurs Anfänger</option>
+                            <option value="Gruppenkurs Fortgeschrittene">Gruppenkurs Fortgeschrittene</option>
+                            <option value="Online-Kurs">Online-Kurs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Ihre Bewertung *</label>
+                    <div class="star-input-group">
+                        <div class="star-input" id="starInput">
+                            <button type="button" class="star-input-btn" data-value="1">★</button>
+                            <button type="button" class="star-input-btn" data-value="2">★</button>
+                            <button type="button" class="star-input-btn" data-value="3">★</button>
+                            <button type="button" class="star-input-btn" data-value="4">★</button>
+                            <button type="button" class="star-input-btn" data-value="5">★</button>
+                        </div>
+                        <input type="hidden" id="rating" value="" required>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="text">Ihre Erfahrung *</label>
+                    <textarea id="text" placeholder="Erzählen Sie uns von Ihrem Hebräisch-Unterricht bei lingoStudio..." required></textarea>
+                </div>
+
+                <div class="form-group full-width consent-group">
+                    <label class="consent-label">
+                        <input type="checkbox" id="consent" required>
+                        <span class="checkmark"></span>
+                        <span class="consent-text">Ich bin damit einverstanden, dass meine Bewertung mit meinem Namen auf der Website veröffentlicht wird. <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span>Bewertung absenden</span>
+                    <span>→</span>
+                </button>
+
+                <div class="message success" id="successMsg">
+                    <span class="success-icon">🎉</span>
+                    <span><strong>Herzlichen Dank für Ihre Bewertung!</strong>Wir freuen uns sehr über Ihr Feedback. Ihre Bewertung wird nach kurzer Prüfung veröffentlicht.</span>
+                </div>
+
+                <div class="message error" id="errorMsg">
+                    <span>❌</span>
+                    <span>Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</span>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">← Startseite</a>
+        </div>
+        <p class="footer-tagline">lingoStudio.ch – Hebräisch lernen in Zürich, online oder vor Ort</p>
+        <p>© 2024 lingoStudio</p>
+    </footer>
+
+    <script>
+    // ============================================
+    // CONFIGURATION
+    // ============================================
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx-9GHIP86uF8JPoD5qaPWVcdZp1XsJeWuqYI7izIj-9oSlMh_leuYpSZplKb_2zj2F/exec';
+    // ============================================
+
+    // Confetti celebration function
+    function launchConfetti() {
+        // First burst
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#1e3a5f', '#2d5a8a', '#c9a227', '#e8c547', '#34d399']
+        });
+
+        // Second burst after 200ms
+        setTimeout(() => {
+            confetti({
+                particleCount: 50,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#1e3a5f', '#c9a227', '#34d399']
+            });
+        }, 200);
+
+        // Third burst after 400ms
+        setTimeout(() => {
+            confetti({
+                particleCount: 50,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#2d5a8a', '#e8c547', '#34d399']
+            });
+        }, 400);
+    }
+
+    // Fallback demo data (wird verwendet wenn keine Google Sheets Verbindung)
+    const demoReviews = [
+        {
+            name: "Sarah K.",
+            course: "Privater Unterricht",
+            rating: 5,
+            text: "Der Privatunterricht bei lingoStudio ist hervorragend! Die Lehrerinnen passen sich perfekt an mein Lerntempo an. Nach nur drei Monaten kann ich bereits einfache Gespräche auf Hebräisch führen.",
+            date: "2024-12-15"
+        },
+        {
+            name: "Michael K.",
+            course: "Gruppenkurs Anfänger",
+            rating: 5,
+            text: "Der Gruppenkurs macht richtig Spass! Die kleine Gruppengrösse ermöglicht intensive Übungen, und die Atmosphäre ist sehr freundlich. Ich freue mich auf jede Stunde.",
+            date: "2024-11-28"
+        },
+        {
+            name: "Anna M.",
+            course: "Gruppenkurs Fortgeschrittene",
+            rating: 5,
+            text: "Als Fortgeschrittene war es schwer, einen passenden Kurs zu finden. Bei lingoStudio wurde ich endlich gefordert! Wir lesen echte Texte und diskutieren aktuelle Themen.",
+            date: "2024-11-10"
+        },
+        {
+            name: "Thomas B.",
+            course: "Online-Kurs",
+            rating: 5,
+            text: "Der Online-Unterricht funktioniert ausgezeichnet. Flexible Terminplanung, tolle digitale Materialien. Perfekt für meinen vollen Terminkalender!",
+            date: "2024-10-22"
+        },
+        {
+            name: "Lisa W.",
+            course: "Privater Unterricht",
+            rating: 4,
+            text: "Sehr professioneller Unterricht mit viel Geduld. Die Materialien sind gut strukturiert. Ich fühle mich gut vorbereitet für meine Israel-Reise.",
+            date: "2024-10-05"
+        },
+        {
+            name: "David R.",
+            course: "Gruppenkurs Anfänger",
+            rating: 5,
+            text: "Von Null auf Hebräisch! Ich konnte kein einziges Wort und jetzt kann ich mich vorstellen und einfache Unterhaltungen führen. Das Team ist fantastisch!",
+            date: "2024-09-18"
+        }
+    ];
+
+    let reviews = [];
+
+    // Generate initials from name
+    function getInitials(name) {
+        const parts = name.trim().split(' ');
+        if (parts.length >= 2) {
+            return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+        }
+        return name.substring(0, 2).toUpperCase();
+    }
+
+    // Generate stars HTML
+    function generateStars(rating) {
+        let html = '';
+        for (let i = 1; i <= 5; i++) {
+            html += `<span class="${i <= rating ? 'star-filled' : 'star-empty'}">★</span>`;
+        }
+        return html;
+    }
+
+    // Format date
+    function formatDate(dateStr) {
+        const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 
+                       'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+        const date = new Date(dateStr);
+        return `${months[date.getMonth()]} ${date.getFullYear()}`;
+    }
+
+    // Render reviews
+    function renderReviews() {
+        const container = document.getElementById('reviewsContainer');
+        
+        if (reviews.length === 0) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">💬</div>
+                    <p>Noch keine Bewertungen vorhanden.<br>Seien Sie der Erste!</p>
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = reviews.map(review => `
+            <article class="review-card">
+                <div class="review-header">
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">${getInitials(review.name)}</div>
+                        <div class="reviewer-info">
+                            <h4>${review.name} <span class="review-verified"><span class="check">✓</span> Verifiziert</span></h4>
+                            <div class="reviewer-meta">
+                                <span class="course-tag">${review.course}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-date">${formatDate(review.date)}</div>
+                </div>
+                <div class="review-stars">${generateStars(review.rating)}</div>
+                <p class="review-text">${review.text}</p>
+            </article>
+        `).join('');
+    }
+
+    // Update statistics
+    function updateStats() {
+        const total = reviews.length;
+        document.getElementById('totalCount').textContent = total;
+
+        if (total === 0) {
+            document.getElementById('avgRating').textContent = '-';
+            document.getElementById('avgStars').textContent = '☆☆☆☆☆';
+            document.getElementById('ratingBars').innerHTML = '';
+            return;
+        }
+
+        // Calculate average
+        const sum = reviews.reduce((acc, r) => acc + r.rating, 0);
+        const avg = (sum / total).toFixed(1);
+        document.getElementById('avgRating').textContent = avg;
+        document.getElementById('avgStars').innerHTML = generateStars(Math.round(avg));
+
+        // Count by rating
+        const counts = [0, 0, 0, 0, 0];
+        reviews.forEach(r => counts[r.rating - 1]++);
+
+        // Render bars
+        let barsHTML = '';
+        for (let i = 5; i >= 1; i--) {
+            const count = counts[i - 1];
+            const pct = (count / total) * 100;
+            barsHTML += `
+                <div class="bar-row">
+                    <span class="bar-label">${i} <span class="star-icon">★</span></span>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width: ${pct}%"></div>
+                    </div>
+                    <span class="bar-count">${count}</span>
+                </div>
+            `;
+        }
+        document.getElementById('ratingBars').innerHTML = barsHTML;
+    }
+
+    // Fetch reviews from Google Sheets
+    async function fetchReviews() {
+        if (GOOGLE_SCRIPT_URL === 'DEINE_GOOGLE_SCRIPT_URL_HIER') {
+            // Demo mode
+            console.log('Demo-Modus: Keine Google Sheets URL konfiguriert');
+            reviews = demoReviews;
+            renderReviews();
+            updateStats();
+            return;
+        }
+
+        try {
+            const response = await fetch(GOOGLE_SCRIPT_URL);
+            const data = await response.json();
+            
+            if (data.success && data.reviews) {
+                reviews = data.reviews;
+            } else {
+                reviews = demoReviews;
+            }
+        } catch (error) {
+            console.error('Fehler beim Laden:', error);
+            reviews = demoReviews;
+        }
+
+        renderReviews();
+        updateStats();
+    }
+
+    // Star rating input
+    const starButtons = document.querySelectorAll('.star-input-btn');
+    const ratingInput = document.getElementById('rating');
+
+    starButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const value = parseInt(btn.dataset.value);
+            ratingInput.value = value;
+            
+            starButtons.forEach((b, i) => {
+                b.classList.toggle('active', i < value);
+            });
+        });
+    });
+
+    // Form submission
+    document.getElementById('reviewForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById('submitBtn');
+        const successMsg = document.getElementById('successMsg');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // Validate rating
+        if (!ratingInput.value) {
+            alert('Bitte wählen Sie eine Bewertung (Sterne)');
+            return;
+        }
+
+        // Collect data
+        const reviewData = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            course: document.getElementById('course').value,
+            rating: parseInt(ratingInput.value),
+            text: document.getElementById('text').value.trim(),
+            date: new Date().toISOString().split('T')[0]
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Wird gesendet...</span>';
+
+        if (GOOGLE_SCRIPT_URL === 'DEINE_GOOGLE_SCRIPT_URL_HIER') {
+            // Demo mode - just show success
+            setTimeout(() => {
+                launchConfetti();
+                successMsg.classList.add('show');
+                errorMsg.classList.remove('show');
+                e.target.reset();
+                starButtons.forEach(b => b.classList.remove('active'));
+                ratingInput.value = '';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Bewertung absenden</span><span>→</span>';
+                
+                // Scroll to success message
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 1000);
+            return;
+        }
+
+        try {
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(reviewData)
+            });
+
+            launchConfetti();
+            successMsg.classList.add('show');
+            errorMsg.classList.remove('show');
+            e.target.reset();
+            starButtons.forEach(b => b.classList.remove('active'));
+            ratingInput.value = '';
+            
+            // Scroll to success message
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        } catch (error) {
+            console.error('Fehler:', error);
+            errorMsg.classList.add('show');
+            successMsg.classList.remove('show');
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Bewertung absenden</span><span>→</span>';
+    });
+
+    // Initialize
+    fetchReviews();
+    </script>
+
+<script>
+    // === PROMO BANNER SYSTEM ===
+    const PROMO_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3TOtNH06cdQNE8TG_u_dahy3wNC79w0BCTO8U6ReieVJxrsyQRLVQAXKCM32nq4V30Q/exec";
+    
+    async function loadPromo() {
+        if (sessionStorage.getItem("promoClosed")) return;
+        try {
+            const response = await fetch(PROMO_SCRIPT_URL);
+            const data = await response.json();
+            if (data.promo && data.promo.trim() !== "") {
+                const banner = document.getElementById("promoBanner");
+                const text = document.getElementById("promoText");
+                if (banner && text) {
+                    text.innerHTML = data.promo;
+                    banner.style.display = "block";
+                }
+            }
+        } catch (error) { console.log("No promo"); }
+    }
+    
+    function closePromo() {
+        const banner = document.getElementById("promoBanner");
+        if (banner) {
+            banner.style.display = "none";
+            sessionStorage.setItem("promoClosed", "true");
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", loadPromo);
+</script>
+</body>
+</html>

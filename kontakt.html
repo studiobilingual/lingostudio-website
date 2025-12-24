@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | lingoStudio Hebräisch Zürich</title>
+    <meta name="description" content="Kontakt zu lingoStudio für Hebräischkurse in Zürich – online oder vor Ort. Kostenlose Probelektion! Per WhatsApp, E-Mail oder Telefon.">
+    <link rel="canonical" href="https://lingostudio.ch/kontakt.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --accent: #fbbf24;
+            --success: #22c55e;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: #fff;
+        }
+        
+        /* Navigation - same as homepage */
+        .navbar {
+            background: var(--gradient);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover { color: var(--accent); }
+        
+        
+        
+        
+        /* Hero */
+        .hero {
+            background: var(--gradient);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Contact Methods */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .contact-card p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Form Section */
+        .form-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .form-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .form-header p {
+            color: var(--text-light);
+        }
+        
+        .contact-form {
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .form-label .required {
+            color: #ef4444;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px 30px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        
+        .form-message {
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .footer-tagline {
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .footer-legal {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        
+        .footer-legal a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .contact-form { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PROMO BANNER - Controlled by Google Sheets -->
+    <div id="promoBanner" class="promo-banner" style="display: none;">
+        <div class="promo-content">
+            <span class="promo-icon">🎉</span>
+            <span id="promoText" class="promo-text"></span>
+            <button class="promo-close" onclick="closePromo()">✕</button>
+        </div>
+    </div>
+    
+    <style>
+        .promo-banner {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out, glow 2s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(239, 68, 68, 0.7); }
+        }
+        
+        .promo-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .promo-icon {
+            font-size: 1.3rem;
+            animation: bounce 1s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .promo-text {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .promo-text strong {
+            background: rgba(255,255,255,0.25);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .promo-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .promo-close:hover {
+            background: rgba(255,255,255,0.35);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .promo-banner { padding: 10px 45px 10px 15px; }
+            .promo-text { font-size: 0.9rem; }
+        }
+    </style>
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">lingoStudio</a>
+            <div class="nav-links">
+                <a href="/">Startseite</a>
+                <a href="/about.html">Über uns</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/bewertungen.html">Bewertungen</a>
+                <a href="/aktualisierungen.html">News</a>
+                <a href="/kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Kontakt aufnehmen</h1>
+        <p>Hebräisch lernen in Zürich – <strong>online oder vor Ort</strong>. Fragen Sie nach Ihrer <strong>kostenlosen Probelektion!</strong></p>
+    </section>
+
+    <!-- Contact Methods -->
+    <div class="contact-methods">
+        <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>WhatsApp</h3>
+            <p>Der schnellste Weg mich zu erreichen</p>
+            <a href="https://wa.me/41772228043?text=Hallo!%20Ich%20interessiere%20mich%20für%20Hebräischkurse." class="contact-link" target="_blank">
+                +41 77 222 80 43 →
+            </a>
+        </div>
+        
+        <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>E-Mail</h3>
+            <p>Schreiben Sie mir jederzeit</p>
+            <a href="mailto:studiobilingual@gmail.com" class="contact-link">
+                studiobilingual@gmail.com →
+            </a>
+        </div>
+        
+        <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>Telefon</h3>
+            <p>Rufen Sie mich direkt an</p>
+            <a href="tel:+41772228043" class="contact-link">
+                +41 77 222 80 43 →
+            </a>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <section class="form-section">
+        <div class="form-header">
+            <h2>Oder schreiben Sie mir</h2>
+            <p>Ich melde mich innerhalb von 48 Stunden bei Ihnen</p>
+        </div>
+        
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label class="form-label">Name <span class="required">*</span></label>
+                <input type="text" name="name" class="form-input" placeholder="Ihr vollständiger Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">E-Mail <span class="required">*</span></label>
+                <input type="email" name="email" class="form-input" placeholder="ihre.email@beispiel.ch" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Telefon <span style="color: #94a3b8; font-weight: 400;">(optional)</span></label>
+                <input type="tel" name="phone" class="form-input" placeholder="+41 77 123 45 67">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Interesse <span class="required">*</span></label>
+                <select name="subject" class="form-select" required>
+                    <option value="">Bitte wählen...</option>
+                    <option value="Gruppenkurs">Gruppenkurs (5-10 Schüler)</option>
+                    <option value="Privatunterricht">Privatunterricht (1-zu-1)</option>
+                    <option value="Semi-Privat">Semi-Privat (2 Schüler)</option>
+                    <option value="Probelektion">Kostenlose Probelektion</option>
+                    <option value="Allgemeine Frage">Allgemeine Frage</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Nachricht <span style="color: #94a3b8; font-weight: 400;">(optional)</span></label>
+                <textarea name="message" class="form-textarea" placeholder="Erzählen Sie mir von Ihren Lernzielen, Fragen oder besonderen Wünschen..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                📧 Nachricht senden
+            </button>
+            
+            <div id="formMessage" class="form-message"></div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">lingoStudio</div>
+        <div class="footer-tagline">Hebräisch lernen in Zürich</div>
+        <div class="footer-legal">
+            © 2024 lingoStudio · 
+            <a href="/datenschutz.html">Datenschutz</a> · 
+            <a href="/agb.html">AGB</a> · 
+            <a href="/impressum.html">Impressum</a>
+        </div>
+    </footer>
+
+    <script>
+    // Form Handler
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNWzMM8f-zPbqpGEPbMSJeSK6twDswz4Fqta3KLmDwx_dKSBa6UgPw_ZfeCGiDp9moxw/exec';
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        var form = e.target;
+        var submitBtn = form.querySelector('.submit-btn');
+        var messageDiv = document.getElementById('formMessage');
+        
+        var formData = {
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            phone: form.phone.value.trim() || 'Nicht angegeben',
+            subject: form.subject.value,
+            message: form.message.value.trim() || 'Keine Nachricht',
+            timestamp: new Date().toLocaleString('de-CH')
+        };
+        
+        if (!formData.name || !formData.email || !formData.subject) {
+            showMessage('error', 'Bitte füllen Sie alle Pflichtfelder aus.');
+            return;
+        }
+        
+        submitBtn.textContent = 'Wird gesendet...';
+        submitBtn.disabled = true;
+        
+        fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        })
+        .then(function() {
+            showMessage('success', '✅ Vielen Dank! Ihre Nachricht wurde gesendet. Ich melde mich innerhalb von 48 Stunden.');
+            form.reset();
+        })
+        .catch(function() {
+            showMessage('error', '❌ Fehler beim Senden. Bitte kontaktieren Sie mich direkt per E-Mail.');
+        })
+        .finally(function() {
+            submitBtn.textContent = '📧 Nachricht senden';
+            submitBtn.disabled = false;
+        });
+    });
+
+    function showMessage(type, text) {
+        var messageDiv = document.getElementById('formMessage');
+        messageDiv.className = 'form-message ' + type;
+        messageDiv.textContent = text;
+        messageDiv.style.display = 'block';
+    }
+    </script>
+
+<script>
+    // === PROMO BANNER SYSTEM ===
+    const PROMO_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3TOtNH06cdQNE8TG_u_dahy3wNC79w0BCTO8U6ReieVJxrsyQRLVQAXKCM32nq4V30Q/exec";
+    
+    async function loadPromo() {
+        if (sessionStorage.getItem("promoClosed")) return;
+        try {
+            const response = await fetch(PROMO_SCRIPT_URL);
+            const data = await response.json();
+            if (data.promo && data.promo.trim() !== "") {
+                const banner = document.getElementById("promoBanner");
+                const text = document.getElementById("promoText");
+                if (banner && text) {
+                    text.innerHTML = data.promo;
+                    banner.style.display = "block";
+                }
+            }
+        } catch (error) { console.log("No promo"); }
+    }
+    
+    function closePromo() {
+        const banner = document.getElementById("promoBanner");
+        if (banner) {
+            banner.style.display = "none";
+            sessionStorage.setItem("promoClosed", "true");
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", loadPromo);
+</script>
+</body>
+</html>

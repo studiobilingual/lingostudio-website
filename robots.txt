@@ -1,0 +1,11 @@
+# robots.txt for lingostudio.ch
+# Hebrew Language School in Zurich
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lingostudio.ch/sitemap.xml
+
+# Crawl-delay (optional, be nice to the server)
+Crawl-delay: 1

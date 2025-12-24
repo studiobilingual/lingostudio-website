@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+
+    
+    <title>FAQ | lingoStudio Hebräischkurse Zürich</title>
+    <meta name="description" content="FAQ: Hebräisch lernen in Zürich bei lingoStudio – online oder vor Ort. Kostenlose Probelektion! Fragen zu Anmeldung, Preisen, Terminen und mehr.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --bg-light: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ═══ HERO SECTION ═══ */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ═══ CATEGORY FILTERS ═══ */
+        .category-section {
+            background: white;
+            padding: 40px 20px;
+            border-bottom: 2px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .category-filters {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .category-btn {
+            padding: 12px 24px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text);
+        }
+        
+        .category-btn:hover {
+            border-color: var(--primary);
+            background: #f8f9ff;
+        }
+        
+        .category-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+        }
+        
+        /* ═══ FAQ SECTION ═══ */
+        .faq-section {
+            padding: 60px 20px 80px;
+            background: #f8fafc;
+        }
+        
+        .faq-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        .faq-intro h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+        
+        .faq-intro p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+        
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-category-group {
+            margin-bottom: 50px;
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .faq-item {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            user-select: none;
+        }
+        
+        .faq-question h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0;
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-content {
+            padding: 0 25px 25px 25px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        .faq-answer-content strong {
+            color: var(--text);
+        }
+        
+        .faq-answer-content ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        .faq-answer-content li {
+            margin-bottom: 8px;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+        
+        /* ═══ HIGHLIGHT BOX ═══ */
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9ff 0%, #faf5ff 100%);
+            border-left: 4px solid var(--primary);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        /* ═══ CTA SECTION ═══ */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .cta-text {
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+            opacity: 0.95;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.25rem;
+            }
+            
+            .category-filters {
+                gap: 10px;
+            }
+            
+            .category-btn {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+            
+            .faq-question {
+                padding: 18px 20px;
+            }
+            
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+            
+            .faq-answer-content {
+                padding: 0 20px 20px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    
+        /* === PROMO BANNER === */
+        .promo-banner {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .promo-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .promo-icon { font-size: 1.2rem; }
+        .promo-text { font-weight: 700; }
+        .promo-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: white; }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            .nav-links.active { display: flex; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- PROMO BANNER -->
+    <div id="promoBanner" class="promo-banner" style="display: none;">
+        <div class="promo-content">
+            <span class="promo-icon">🎉</span>
+            <span id="promoText" class="promo-text"></span>
+            <button class="promo-close" onclick="closePromo()">✕</button>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">lingoStudio</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="/">Startseite</a>
+                <a href="/about.html">Über uns</a>
+                <a href="/warum-lingostudio.html">Kurse</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/bewertungen.html">Bewertungen</a>
+                <a href="/aktualisierungen.html">News</a>
+                <a href="/kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- PROMO BANNER - Controlled by Google Sheets -->
+    <div id="promoBanner" class="promo-banner" style="display: none;">
+        <div class="promo-content">
+            <span class="promo-icon">🎉</span>
+            <span id="promoText" class="promo-text"></span>
+            <button class="promo-close" onclick="closePromo()">✕</button>
+        </div>
+    </div>
+    
+    <style>
+        .promo-banner {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out, glow 2s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(239, 68, 68, 0.7); }
+        }
+        
+        .promo-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .promo-icon {
+            font-size: 1.3rem;
+            animation: bounce 1s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .promo-text {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .promo-text strong {
+            background: rgba(255,255,255,0.25);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .promo-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .promo-close:hover {
+            background: rgba(255,255,255,0.35);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .promo-banner { padding: 10px 45px 10px 15px; }
+            .promo-text { font-size: 0.9rem; }
+        }
+    
+        /* === PROMO BANNER === */
+        .promo-banner {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .promo-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .promo-icon { font-size: 1.2rem; }
+        .promo-text { font-weight: 700; }
+        .promo-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: white; }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            .nav-links.active { display: flex; }
+        }
+
+    </style>
+
+
+    <!-- ═══ HERO SECTION ═══ -->
+    <section class="hero">
+        <div class="container">
+            
+            <div class="hero-label">
+                Haben Sie Fragen? Ich habe Antworten!
+            </div>
+            
+            <h1 class="hero-title">
+                Häufig gestellte Fragen
+            </h1>
+            
+            <p class="hero-subtitle">
+                Hebräisch lernen in Zürich – online oder vor Ort. Kostenlose Probelektion! 
+                Alles, was Sie wissen müssen. Fragen? Kontaktieren Sie mich!
+            </p>
+            
+        </div>
+    </section>
+
+    <!-- ═══ CATEGORY FILTERS ═══ -->
+    <section class="category-section">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active" onclick="filterCategory('all')">📚 Alle Fragen</button>
+                <button class="category-btn" onclick="filterCategory('general')">ℹ️ Allgemein</button>
+                <button class="category-btn" onclick="filterCategory('lessons')">🎓 Unterricht</button>
+                <button class="category-btn" onclick="filterCategory('pricing')">💰 Preise</button>
+                <button class="category-btn" onclick="filterCategory('schedule')">📅 Termine</button>
+                <button class="category-btn" onclick="filterCategory('registration')">✍️ Anmeldung</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FAQ SECTION ═══ -->
+    <section class="faq-section">
+        <div class="container">
+            
+            <div class="faq-list">
+                
+                <!-- ══════════════════════════════════════ -->
+                <!-- ALLGEMEINE FRAGEN -->
+                <!-- ══════════════════════════════════════ -->
+                <div class="faq-category-group" data-category="general">
+                    <h2 class="category-title">📋 Allgemeine Informationen</h2>
+                    
+                    <!-- Q1 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Was unterscheidet lingoStudio von anderen Hebräischschulen in Zürich?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>lingoStudio zeichnet sich durch mehrere einzigartige Vorteile aus:</p>
+                                <ul>
+                                    <li><strong>20+ Jahre Erfahrung:</strong> Echte Unterrichtserfahrung, nicht nur akademischer Hintergrund</li>
+                                    <li><strong>Bewährte Spiralmethode:</strong> Meine einzigartige Methodik sorgt für natürlichen Fortschritt</li>
+                                    <li><strong>Perfekte Gruppengrösse:</strong> 5-10 Schüler (ideal für Interaktion + persönliche Betreuung)</li>
+                                    <li><strong>Transparente Preise:</strong> Im Gegensatz zu Mitbewerbern veröffentliche ich meine Preise klar</li>
+                                    <li><strong>Kostenlose Probelektion:</strong> Nehmen Sie an einer laufenden Klasse teil, um echte Gruppendynamik zu erleben</li>
+                                    <li><strong>Zentrale Lage:</strong> Nähe Bahnhof Stadelhofen, einfacher Zugang mit Tram/S-Bahn</li>
+                                    <li><strong>Flexible Optionen:</strong> Gruppen-, Semi-Privat- und Privatunterricht verfügbar</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q2 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Brauche ich Vorkenntnisse in Hebräisch, um anzufangen?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Nein!</strong> Der Anfängerkurs (A1) ist für komplette Anfänger ohne Hebräischkenntnisse konzipiert.</p>
+                                <p>Ich beginne mit den Grundlagen:</p>
+                                <ul>
+                                    <li>Das hebräische Alphabet (Alef-Bet)</li>
+                                    <li>Lesen mit Vokalzeichen (Nikud)</li>
+                                    <li>Grundlegende Aussprache</li>
+                                    <li>Wichtiger Wortschatz und Phrasen</li>
+                                </ul>
+                                <p>Wenn Sie bereits Kenntnisse haben, biete ich auch Grundstufe (A2) und Mittelstufe (B1) an.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q3 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Was ist die Spiralmethode und wie funktioniert sie?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Die <strong>Spiralmethode</strong> ist mein bewährter Unterrichtsansatz, der dauerhaftes Behalten gewährleistet:</p>
+                                <div class="highlight-box">
+                                    <strong>So funktioniert es:</strong>
+                                    <ul>
+                                        <li>Themen werden schrittweise eingeführt</li>
+                                        <li>Jedes Konzept wird mehrfach auf steigendem Niveau wiederholt</li>
+                                        <li>Neuer Stoff baut natürlich auf bereits Gelerntem auf</li>
+                                        <li>Regelmässige Wiederholung verhindert Vergessen</li>
+                                    </ul>
+                                </div>
+                                <p>Stellen Sie es sich wie eine Wendeltreppe vor – Sie passieren denselben Punkt mehrmals, aber jedes Mal sind Sie auf einem höheren Niveau!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q4 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Wo befindet sich lingoStudio und wie komme ich dorthin?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Standort:</strong> Nähe Bahnhof Stadelhofen, 8008 Zürich</p>
+                                <p><strong>Öffentliche Verkehrsmittel:</strong></p>
+                                <ul>
+                                    <li><strong>Tram:</strong> 2, 4, 11, 15 bis Stadelhofen</li>
+                                    <li><strong>S-Bahn:</strong> S6, S7, S16 bis Stadelhofen</li>
+                                    <li><strong>Zu Fuss:</strong> 5 Minuten vom Bahnhof</li>
+                                </ul>
+                                <p>Die zentrale Lage macht es einfach, vor oder nach der Arbeit am Unterricht teilzunehmen!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q5 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Bieten Sie Online-Kurse oder nur Präsenzunterricht an?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Ich biete <strong>sowohl Präsenz- als auch Online-Optionen:</strong></p>
+                                <ul>
+                                    <li><strong>Gruppenkurse:</strong> Hauptsächlich vor Ort in Zürich</li>
+                                    <li><strong>Privatunterricht:</strong> Vor Ort oder online verfügbar (Ihre Wahl!)</li>
+                                    <li><strong>Semi-Privat:</strong> Flexibel – online oder vor Ort möglich</li>
+                                </ul>
+                                <p>Online-Unterricht wird über Zoom durchgeführt, mit der gleichen Qualität und Interaktion wie Präsenzunterricht.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- ══════════════════════════════════════ -->
+                <!-- KURSE & STUFEN -->
+                <!-- ══════════════════════════════════════ -->
+                <div class="faq-category-group" data-category="lessons">
+                    <h2 class="category-title">🎓 Unterricht & Stufen</h2>
+                    
+                    <!-- Q6 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Welche Stufen bieten Sie an?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Ich biete drei Hauptstufen basierend auf dem Gemeinsamen Europäischen Referenzrahmen (GER):</p>
+                                <div class="highlight-box">
+                                    <strong>📘 Anfänger (A1)</strong><br>
+                                    Für komplette Anfänger. Lernen Sie das Alphabet, grundlegendes Lesen, wichtige Phrasen und einfache Gespräche.
+                                </div>
+                                <div class="highlight-box">
+                                    <strong>📗 Grundstufe (A2)</strong><br>
+                                    Aufbau auf Grundlagen. Erweitern Sie Ihren Wortschatz, verbessern Sie die Grammatik, führen Sie Alltagsgespräche, schreiben Sie einfache Texte.
+                                </div>
+                                <div class="highlight-box">
+                                    <strong>📙 Mittelstufe (B1)</strong><br>
+                                    Gewinnen Sie Sprachgewandtheit. Äussern Sie Meinungen, diskutieren Sie Themen, verstehen Sie Texte, bewältigen Sie die meisten Situationen auf Hebräisch.
+                                </div>
+                                <p>Plus <strong>Privatunterricht</strong> für jede Stufe!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q7 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Wie lange dauert ein Kurs?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Gruppenkurse:</strong> Ein Semester = 20 Lektionen × 60 Minuten</p>
+                                <p>Dies läuft typischerweise über 4-5 Monate (September-Januar oder Februar-Juni), einmal pro Woche.</p>
+                                <p><strong>Privatunterricht:</strong> Völlig flexibel! Sie bestimmen Häufigkeit und Dauer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q8 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Was ist der Unterschied zwischen Gruppen-, Semi-Privat- und Privatunterricht?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>🏆 Gruppenkurse (5-10 Schüler):</strong></p>
+                                <ul>
+                                    <li>Bestes Preis-Leistungs-Verhältnis: CHF 25 pro Lektion</li>
+                                    <li>Soziale Lernumgebung</li>
+                                    <li>Fester Zeitplan und Lehrplan</li>
+                                    <li>Lernen von Fragen anderer</li>
+                                </ul>
+                                <p><strong>👥 Semi-Privat (2 Schüler):</strong></p>
+                                <ul>
+                                    <li>CHF 50 pro Schüler pro Lektion</li>
+                                    <li>Bringen Sie einen Freund oder Partner mit</li>
+                                    <li>Mehr persönliche Betreuung</li>
+                                    <li>Flexibler Zeitplan und Themen</li>
+                                </ul>
+                                <p><strong>⚡ Privatunterricht (1-zu-1):</strong></p>
+                                <ul>
+                                    <li>CHF 90 pro Lektion</li>
+                                    <li>Maximale Flexibilität</li>
+                                    <li>Individueller Inhalt</li>
+                                    <li>Schnellster Fortschritt</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q9 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Kann ich von Gruppen- zu Privatunterricht wechseln oder umgekehrt?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Ja!</strong> Sie können zwischen Kursarten wechseln:</p>
+                                <ul>
+                                    <li>Beginnen Sie mit einem Gruppenkurs und fügen Sie Privatstunden für zusätzliche Übung hinzu</li>
+                                    <li>Starten Sie mit Privatunterricht, um Vertrauen aufzubauen, dann treten Sie einer Gruppe bei</li>
+                                    <li>Wechseln Sie am Ende eines Semesters basierend auf Ihrem Fortschritt und Ihren Bedürfnissen</li>
+                                </ul>
+                                <p>Kontaktieren Sie mich, um die beste Option für Sie zu besprechen!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q10 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Welche Materialien und Ressourcen sind enthalten?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>In allen Lektionen enthalten:</strong></p>
+                                <ul>
+                                    <li>📱 Digitale Lernmaterialien (PDFs, Audiodateien, Vokabellisten)</li>
+                                    <li>✍️ Wöchentliche Hausaufgaben mit Korrekturen</li>
+                                    <li>📊 Fortschrittsverfolgung und Feedback</li>
+                                </ul>
+                                <p><strong>Separat erhältlich:</strong></p>
+                                <ul>
+                                    <li>📚 Kurs-Arbeitsbuch (separat zu kaufen)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q11 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Wie viele Hausaufgaben kann ich erwarten?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Empfohlener Zeitaufwand:</strong></p>
+                                <ul>
+                                    <li>1-2 Stunden pro Woche für Hausaufgaben und Wiederholung</li>
+                                    <li>Übungen umfassen Lesen, Schreiben und Hörverständnis</li>
+                                    <li>Regelmässiges Üben ist der Schlüssel zum Behalten!</li>
+                                </ul>
+                                <p>Ich glaube an Qualität statt Quantität – Hausaufgaben sind so konzipiert, dass sie das im Unterricht Gelernte festigen, nicht Sie überfordern.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- ══════════════════════════════════════ -->
+                <!-- PREISE & ZAHLUNG -->
+                <!-- ══════════════════════════════════════ -->
+                <div class="faq-category-group" data-category="pricing">
+                    <h2 class="category-title">💰 Preise & Zahlung</h2>
+                    
+                    <!-- Q12 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Wie viel kosten Gruppenkurse?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Preise für Gruppenkurse:</strong></p>
+                                <div class="highlight-box">
+                                    <strong>CHF 500 pro Semester</strong><br>
+                                    = 20 Lektionen × 60 Minuten<br>
+                                    = CHF 25 pro Lektion
+                                </div>
+                                <p>Dies ist ein <strong>aussergewöhnliches Preis-Leistungs-Verhältnis</strong> für qualitativ hochwertigen Hebräischunterricht mit einer erfahrenen Lehrerin im Zentrum von Zürich.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q13 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Welche Zahlungsmethoden akzeptieren Sie?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Ich akzeptiere folgende Zahlungsmethoden:</p>
+                                <ul>
+                                    <li>💳 Banküberweisung</li>
+                                    <li>💵 Bargeld</li>
+                                    <li>📱 TWINT</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q15 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Gibt es versteckte Gebühren?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Nein!</strong> Ich glaube an transparente Preisgestaltung.</p>
+                                <p>Der angezeigte Preis beinhaltet:</p>
+                                <ul>
+                                    <li>✅ Alle Lektionen (20 × 60 Minuten)</li>
+                                    <li>✅ Digitale Materialien</li>
+                                    <li>✅ Hausaufgabenkorrekturen</li>
+                                    <li>✅ Zertifikat</li>
+                                </ul>
+                                <p>Die einzigen zusätzlichen Kosten sind das optionale Kurs-Arbeitsbuch (falls Sie es kaufen möchten).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q16 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Bieten Sie Rabatte oder Sondertarife an?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Ich biete gelegentlich Sonderaktionen an:</p>
+                                <ul>
+                                    <li><strong>Frühbucher:</strong> Melden Sie sich früh an und sparen Sie (wenn verfügbar)</li>
+                                    <li><strong>Empfehlungsbonus:</strong> Bringen Sie einen Freund mit und beide erhalten einen Rabatt</li>
+                                </ul>
+                                <p>Kontaktieren Sie mich, um nach aktuellen Aktionen zu fragen!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q17 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Was sind Ihre Stornierungs- und Rückerstattungsbedingungen?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Für Gruppenkurse:</strong></p>
+                                <ul>
+                                    <li>Stornierung bis <strong>1 Woche (7 Tage) vor Kursbeginn</strong> für volle Rückerstattung</li>
+                                    <li>Nach Kursbeginn: Gebühr kann auf nächstes Semester übertragen werden</li>
+                                    <li>Kurse können abgesagt werden, wenn weniger als 5 Schüler angemeldet sind</li>
+                                </ul>
+                                <p><strong>Für Privatunterricht:</strong></p>
+                                <ul>
+                                    <li>Stornierung bis <strong>24 Stunden vorher</strong> für volle Rückerstattung/Umbuchung</li>
+                                    <li>Späte Stornierungen (unter 24h) werden berechnet</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- ══════════════════════════════════════ -->
+                <!-- TERMINE & LOGISTIK -->
+                <!-- ══════════════════════════════════════ -->
+                <div class="faq-category-group" data-category="schedule">
+                    <h2 class="category-title">📅 Termine & Logistik</h2>
+                    
+                    <!-- Q18 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Wann beginnen die Kurse?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Ich folge einem Semestersystem, das an den Zürcher Schulen ausgerichtet ist:</p>
+                                <ul>
+                                    <li><strong>Herbstsemester:</strong> September - Januar</li>
+                                    <li><strong>Frühlingssemester:</strong> Februar - Juni</li>
+                                </ul>
+                                <p><strong>Privatunterricht</strong> kann jederzeit beginnen – Sie entscheiden wann!</p>
+                                <p>Schauen Sie auf der Website nach oder kontaktieren Sie mich für genaue Startdaten der kommenden Kurse.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q19 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>An welchen Tagen und zu welchen Zeiten findet der Unterricht statt?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Gruppenkurse</strong> werden typischerweise angeboten:</p>
+                                <ul>
+                                    <li>Wochentags abends (18:00 - 21:00)</li>
+                                    <li>Einmal pro Woche für 60 Minuten</li>
+                                </ul>
+                                <p>Genaue Tage/Zeiten hängen von der Kursstufe und Verfügbarkeit ab. Ich versuche, die meisten Zeitpläne zu berücksichtigen!</p>
+                                <p><strong>Privatunterricht:</strong> Völlig flexibel – Sie wählen den Zeitplan, der für Sie funktioniert.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q20 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Was passiert, wenn ich eine Lektion verpasse?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Für Gruppenkurse:</strong></p>
+                                <ul>
+                                    <li>Ich teile Materialien und Hausaufgaben der verpassten Lektion</li>
+                                    <li>Sie können mit der nächsten Lektion aufholen</li>
+                                    <li>Erwägen Sie eine Privatstunde, um das Verpasste zu wiederholen</li>
+                                </ul>
+                                <p><strong>Für Privatunterricht:</strong></p>
+                                <ul>
+                                    <li>24+ Stunden im Voraus absagen → kostenlos umbuchen</li>
+                                    <li>Späte Absage → Lektion wird berechnet</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q21 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Kann ich mitten im Semester einsteigen?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Es hängt von Ihrem Niveau und dem Kursfortschritt ab:</p>
+                                <ul>
+                                    <li><strong>Innerhalb der ersten 2-3 Wochen:</strong> Ja, normalerweise möglich mit etwas Nachholarbeit</li>
+                                    <li><strong>Nach 4+ Wochen:</strong> Schwieriger, aber ich kann beurteilen, ob es machbar ist</li>
+                                    <li><strong>Alternative:</strong> Beginnen Sie mit Privatunterricht zum Aufholen, dann treten Sie der Gruppe bei</li>
+                                </ul>
+                                <p>Ich möchte, dass Sie Erfolg haben, also empfehle ich den besten Weg für Sie!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q22 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Gibt es Pausen oder Ferien während des Semesters?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Ja!</strong> Ich folge dem Zürcher Schulkalender:</p>
+                                <ul>
+                                    <li>Kein Unterricht während der offiziellen Schulferien (Weihnachten, Ostern, etc.)</li>
+                                    <li>Sommerpause: Juli - August (keine Gruppenkurse)</li>
+                                    <li>Privatunterricht kann während der Ferien fortgesetzt werden, wenn Sie möchten</li>
+                                </ul>
+                                <p>Die 20 Lektionen pro Semester berücksichtigen diese Pausen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- ══════════════════════════════════════ -->
+                <!-- ANMELDUNG & PROBELEKTION -->
+                <!-- ══════════════════════════════════════ -->
+                <div class="faq-category-group" data-category="registration">
+                    <h2 class="category-title">✍️ Anmeldung & Probelektion</h2>
+                    
+                    <!-- Q23 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Wie melde ich mich für einen Kurs an?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Die Anmeldung ist einfach! Folgen Sie diesen Schritten:</p>
+                                <ol style="padding-left: 20px;">
+                                    <li><strong>Kontaktieren Sie mich:</strong> Füllen Sie das Kontaktformular aus, schreiben Sie eine E-Mail oder rufen Sie an</li>
+                                    <li><strong>Wählen Sie Ihren Kurs:</strong> Ich helfe Ihnen, die richtige Stufe auszuwählen</li>
+                                    <li><strong>Bestätigen Sie Details:</strong> Zeitplan, Zahlungsoptionen, Materialien</li>
+                                    <li><strong>Schliessen Sie die Anmeldung ab:</strong> Anmelden und bezahlen (oder Ratenzahlung vereinbaren)</li>
+                                    <li><strong>Starten Sie mit dem Lernen!</strong> Erhalten Sie Kursdetails und Materialien</li>
+                                </ol>
+                                <p>Ich bin hier, um Sie durch jeden Schritt zu begleiten!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q24 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Kann ich eine Lektion ausprobieren, bevor ich mich verpflichte?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Auf jeden Fall! Ich biete eine KOSTENLOSE Probelektion an!</strong></p>
+                                <div class="highlight-box">
+                                    <strong>🎁 Kostenloses Probenangebot:</strong><br>
+                                    Nehmen Sie KOSTENLOS an einer laufenden Gruppenlektion teil, um zu erleben:
+                                    <ul>
+                                        <li>Echte Gruppendynamik</li>
+                                        <li>Meine Unterrichtsmethode</li>
+                                        <li>Die Unterrichtsatmosphäre</li>
+                                        <li>Ihre potenziellen Mitschüler</li>
+                                    </ul>
+                                </div>
+                                <p>Kein Druck, keine Verpflichtung! Probieren Sie es aus und sehen Sie, ob es das Richtige für Sie ist.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q25 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Woher weiss ich, welche Stufe die richtige für mich ist?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Ich helfe Ihnen, die perfekte Stufe zu finden:</p>
+                                <ul>
+                                    <li><strong>Kompletter Anfänger?</strong> → Beginnen Sie mit Anfänger (A1)</li>
+                                    <li><strong>Einige Kenntnisse?</strong> → Ich beurteile Ihr Niveau durch ein kurzes Gespräch oder einen Einstufungstest</li>
+                                    <li><strong>Nicht sicher?</strong> → Kontaktieren Sie mich und ich berate Sie!</li>
+                                </ul>
+                                <p>Mein Ziel ist es, Sie dort zu platzieren, wo Sie gefordert, aber nicht überfordert werden.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q26 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Gibt es ein Mindestalter?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Mein Unterricht ist für <strong>Erwachsene (18+)</strong> konzipiert.</p>
+                                <p>Für jüngere Lernende kontaktieren Sie mich bitte, um besondere Arrangements zu besprechen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q27 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Muss ich vor dem Start Lehrbücher oder Materialien kaufen?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Sie müssen vorher nichts kaufen!</strong></p>
+                                <p>So läuft es ab:</p>
+                                <ul>
+                                    <li><strong>Erste Lektion:</strong> Ich stelle alle digitalen Materialien kostenlos zur Verfügung</li>
+                                    <li><strong>Arbeitsbuch:</strong> Optionaler Kauf (ich sage Ihnen, ob es empfohlen wird)</li>
+                                    <li><strong>Alles andere:</strong> In Ihrer Kursgebühr enthalten</li>
+                                </ul>
+                                <p>Sie können sofort mit dem Lernen beginnen, ohne zusätzliche Vorbereitung!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q28 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Was ist, wenn der Kurs voll ist?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Wenn ein Gruppenkurs voll ist (max. 10 Schüler), haben Sie Optionen:</p>
+                                <ul>
+                                    <li><strong>Warteliste:</strong> Tragen Sie sich für das nächste Semester auf die Warteliste ein</li>
+                                    <li><strong>Alternative Stufe:</strong> Erwägen Sie eine andere Stufe oder Zeitslot</li>
+                                    <li><strong>Privatunterricht:</strong> Beginnen Sie sofort mit 1-zu-1-Unterricht</li>
+                                    <li><strong>Semi-Privat:</strong> Bringen Sie einen Freund mit und erstellen Sie Ihre eigene Klasse!</li>
+                                </ul>
+                                <p>Ich arbeite mit Ihnen zusammen, um die beste Lösung zu finden!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Q30 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Kann ich eine Rückerstattung bekommen, wenn ich nicht zufrieden bin?</h3>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Ihre Zufriedenheit ist mir wichtig!</p>
+                                <p><strong>Rückerstattungsrichtlinie:</strong></p>
+                                <ul>
+                                    <li><strong>Vor Kursbeginn:</strong> Volle Rückerstattung bei Stornierung 7+ Tage im Voraus</li>
+                                    <li><strong>Nach der ersten Lektion:</strong> Wenn Sie nicht zufrieden sind, arbeite ich mit Ihnen an einer Lösung (Übertragung auf nächstes Semester, Wechsel zu anderer Stufe, etc.)</li>
+                                    <li><strong>Kostenlose Probelektion:</strong> Probieren Sie vor der Anmeldung – kein Risiko!</li>
+                                </ul>
+                                <p>Ich möchte, dass Sie das Hebräischlernen bei mir lieben!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ═══ CTA SECTION ═══ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                
+                <h2 class="cta-title">
+                    Haben Sie noch Fragen?
+                </h2>
+                
+                <p class="cta-text">
+                    Sie finden nicht, wonach Sie suchen? Ich bin hier, um zu helfen! 
+                    Kontaktieren Sie mich und ich beantworte alle Ihre Fragen.
+                </p>
+                
+                <a href="/kontakt.html" class="btn">
+                    📧 Jetzt Kontakt aufnehmen
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                   color: white; 
+                   padding: 40px 20px; 
+                   text-align: center;">
+        
+        <div style="max-width: 1000px; margin: 0 auto;">
+            
+            <h3 style="font-size: 1.6rem; font-weight: 700; margin: 0 0 8px 0;">
+                lingoStudio
+            </h3>
+            
+            <div style="font-size: 1rem; margin-bottom: 25px; opacity: 0.95; font-weight: 500;">
+                Hebräisch lernen in Zürich, online oder vor Ort
+            </div>
+            
+            <div style="opacity: 0.85; font-size: 0.9rem; margin-bottom: 15px;">
+                © 2025 lingoStudio
+            </div>
+            
+            <div style="opacity: 0.9; font-size: 0.9rem;">
+                <a href="/privacy" style="color: white; text-decoration: none; margin: 0 10px;">Datenschutz</a>
+                <span style="opacity: 0.5;">|</span>
+                <a href="/terms" style="color: white; text-decoration: none; margin: 0 10px;">AGB</a>
+                <span style="opacity: 0.5;">|</span>
+                <a href="/legal" style="color: white; text-decoration: none; margin: 0 10px;">Impressum</a>
+            </div>
+            
+        </div>
+        
+    </footer>
+
+    <script>
+        // Toggle FAQ accordion
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current FAQ
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+        
+        // Filter by category
+        function filterCategory(category) {
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide category groups
+            const groups = document.querySelectorAll('.faq-category-group');
+            
+            if (category === 'all') {
+                groups.forEach(group => {
+                    group.style.display = 'block';
+                });
+            } else {
+                groups.forEach(group => {
+                    if (group.dataset.category === category) {
+                        group.style.display = 'block';
+                    } else {
+                        group.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Scroll to FAQ section
+            document.querySelector('.faq-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    </script>
+
+<script>
+    // === PROMO BANNER SYSTEM ===
+    const PROMO_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3TOtNH06cdQNE8TG_u_dahy3wNC79w0BCTO8U6ReieVJxrsyQRLVQAXKCM32nq4V30Q/exec";
+    
+    async function loadPromo() {
+        if (sessionStorage.getItem("promoClosed")) return;
+        try {
+            const response = await fetch(PROMO_SCRIPT_URL);
+            const data = await response.json();
+            if (data.promo && data.promo.trim() !== "") {
+                const banner = document.getElementById("promoBanner");
+                const text = document.getElementById("promoText");
+                if (banner && text) {
+                    text.innerHTML = data.promo;
+                    banner.style.display = "block";
+                }
+            }
+        } catch (error) { console.log("No promo"); }
+    }
+    
+    function closePromo() {
+        const banner = document.getElementById("promoBanner");
+        if (banner) {
+            banner.style.display = "none";
+            sessionStorage.setItem("promoClosed", "true");
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", loadPromo);
+</script>
+</body>
+</html>

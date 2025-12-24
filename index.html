@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebräisch lernen Zürich | Hebräischkurse für Erwachsene | lingoStudio</title>
+    <meta name="description" content="Hebräisch lernen in Zürich mit erfahrenem israelischem Lehrer. Kleine Gruppen (5-10), Privatunterricht, faire Preise ab CHF 500. Kostenlose Probelektion!">
+    <meta name="keywords" content="Hebräisch lernen Zürich, Hebräischkurs Zürich, Ivrit lernen Schweiz, Hebräisch Privatunterricht, Hebräisch für Erwachsene">
+    <meta name="author" content="lingoStudio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lingostudio.ch/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hebräisch lernen in Zürich | lingoStudio">
+    <meta property="og:description" content="Hebräischkurse mit israelischem Muttersprachler. Kleine Gruppen, faire Preise, zentrale Lage.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lingostudio.ch/">
+    <meta property="og:locale" content="de_CH">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #fbbf24;
+            --success: #22c55e;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: var(--bg);
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background: var(--gradient);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover { color: var(--accent); }
+        
+        
+        
+        
+        /* === HERO === */
+        .hero {
+            background: var(--gradient);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            top: -300px;
+            right: -200px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 24px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            color: white;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero-title .highlight {
+            color: var(--accent);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-keywords {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-keyword {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: white;
+        }
+        
+        .btn {
+            padding: 16px 35px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-whatsapp {
+            background: var(--success);
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(34,197,94,0.4);
+        }
+        
+        /* === FEATURES === */
+        .features {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #fafafa 0%, white 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* === PRICING === */
+        .pricing {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .price-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 35px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 2px solid #e0e7ff;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .price-card.featured {
+            border-color: var(--success);
+        }
+        
+        .price-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .price-icon {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .price-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .price-desc {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .price-amount {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .price-period {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+        
+        .price-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .price-features li {
+            padding: 10px 0;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+        }
+        
+        .price-card .btn {
+            width: 100%;
+            justify-content: center;
+            background: var(--gradient);
+            color: white;
+        }
+        
+        /* === TESTIMONIALS === */
+        .testimonials {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #f8f9ff 0%, white 100%);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .stars {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* === CTA === */
+        .cta {
+            background: var(--gradient);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 35px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-light {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* === FOOTER === */
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .footer-tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        .footer-links a:hover { opacity: 1; }
+        
+        .footer-contact {
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .footer-contact a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-legal {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        
+        .footer-legal a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        /* === MOBILE === */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            
+            .nav-links.active { display: flex; }
+            
+            
+            .hero-title { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .cta-title { font-size: 2rem; }
+            
+            .hero-cta, .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn { width: 100%; max-width: 300px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PROMO BANNER - Controlled by Google Sheets -->
+    <div id="promoBanner" class="promo-banner" style="display: none;">
+        <div class="promo-content">
+            <span class="promo-icon">🎉</span>
+            <span id="promoText" class="promo-text"></span>
+            <button class="promo-close" onclick="closePromo()">✕</button>
+        </div>
+    </div>
+    
+    <style>
+        .promo-banner {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out, glow 2s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(239, 68, 68, 0.7); }
+        }
+        
+        .promo-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .promo-icon {
+            font-size: 1.3rem;
+            animation: bounce 1s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .promo-text {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .promo-text strong {
+            background: rgba(255,255,255,0.25);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .promo-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .promo-close:hover {
+            background: rgba(255,255,255,0.35);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .promo-banner { padding: 10px 45px 10px 15px; }
+            .promo-text { font-size: 0.9rem; }
+        }
+    </style>
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">lingoStudio</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="/">Startseite</a>
+                <a href="/about.html">Über uns</a>
+                
+                <a href="/warum-lingostudio.html">Kurse</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/bewertungen.html">Bewertungen</a>
+                <a href="/aktualisierungen.html">News</a>
+                <a href="/kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">⭐ Über 20 Jahre Erfahrung</div>
+            <h1 class="hero-title">
+                <span class="highlight">Hebräisch lernen</span> in Zürich
+            </h1>
+            <p class="hero-subtitle">
+                Modernes Ivrit mit israelischem Muttersprachler – <strong>online oder vor Ort</strong>. 
+                Kleine Gruppen, persönliche Betreuung, faire Preise. <strong>Kostenlose Probelektion!</strong>
+            </p>
+            <div class="hero-cta">
+                <a href="/kontakt.html" class="btn btn-primary">📧 Kontakt aufnehmen</a>
+                <a href="https://wa.me/41772228043?text=Hallo!%20Ich%20interessiere%20mich%20für%20Hebräischkurse." class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <div class="hero-keywords">
+                <span class="hero-keyword">✓ Kostenlose Probelektion</span>
+                <span class="hero-keyword">✓ Online oder vor Ort</span>
+                <span class="hero-keyword">✓ Zürich Zentrum</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="section-header">
+            <div class="section-label">Warum lingoStudio</div>
+            <h2 class="section-title">Hebräisch lernen, das funktioniert</h2>
+            <p class="section-subtitle">Persönlich, professionell und mit Freude am Lernen</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🇮🇱</div>
+                <h3>Israelischer Muttersprachler</h3>
+                <p>Über 20 Jahre Unterrichtserfahrung. Ich kenne die Herausforderungen deutschsprachiger Lernender.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Kleine Gruppen (5-10)</h3>
+                <p>Genug Schüler für lebhafte Diskussionen, wenig genug für persönliche Aufmerksamkeit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Faire Preise</h3>
+                <p>Qualitätsunterricht muss nicht teuer sein. Gruppenkurse ab CHF 25 pro Lektion.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Zentrale Lage</h3>
+                <p>Im Herzen von Zürich. Gut erreichbar mit S-Bahn, Tram oder zu Fuss.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Modernes Ivrit</h3>
+                <p>Sie lernen die Sprache, wie sie heute in Israel gesprochen wird – lebendig und aktuell.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎁</div>
+                <h3>Probelektion gratis</h3>
+                <p>Überzeugen Sie sich selbst – besuchen Sie eine Lektion kostenlos und unverbindlich.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing">
+        <div class="section-header">
+            <div class="section-label">Transparente Preise</div>
+            <h2 class="section-title">Einfach & fair</h2>
+            <p class="section-subtitle">Wählen Sie den Lernweg, der zu Ihnen passt</p>
+        </div>
+        
+        <div class="pricing-grid">
+            <div class="price-card featured">
+                <span class="price-badge">Beliebteste</span>
+                <div class="price-icon">🏫</div>
+                <h3>Gruppenkurs</h3>
+                <p class="price-desc">5-10 Schüler</p>
+                <div class="price-amount">CHF 500</div>
+                <p class="price-period">pro Semester (20 × 60 Min.)</p>
+                <ul class="price-features">
+                    <li>Kleine, freundliche Gruppen</li>
+                    <li>Alle digitalen Materialien</li>
+                    <li>Kostenlose Probelektion</li>
+                </ul>
+                <a href="/kontakt.html" class="btn">📧 Anmelden</a>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-icon">👤</div>
+                <h3>Privatunterricht</h3>
+                <p class="price-desc">1-zu-1 personalisiert</p>
+                <div class="price-amount">CHF 90</div>
+                <p class="price-period">pro Lektion (60 Min.)</p>
+                <ul class="price-features">
+                    <li>Vollständig individuell</li>
+                    <li>Flexible Terminplanung</li>
+                    <li>Kostenlose Beratung</li>
+                </ul>
+                <a href="/kontakt.html" class="btn">📧 Anfragen</a>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-icon">👥</div>
+                <h3>Semi-Privat</h3>
+                <p class="price-desc">2 Schüler zusammen</p>
+                <div class="price-amount">CHF 50</div>
+                <p class="price-period">pro Person / Lektion</p>
+                <ul class="price-features">
+                    <li>Bringen Sie einen Freund</li>
+                    <li>Günstiger als Privat</li>
+                    <li>Zusammen lernen</li>
+                </ul>
+                <a href="/kontakt.html" class="btn">📧 Anfragen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="section-header">
+            <div class="section-label">Was Schüler sagen</div>
+            <h2 class="section-title">Erfahrungen</h2>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Nach 2 Monaten kann ich einfache hebräische Texte lesen. Die Methode funktioniert – aber nur weil ich die Vokabeln jeden Tag geübt habe!"</p>
+                <div class="testimonial-author">— Sarah</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Der Unterricht ist abwechslungsreich – Lieder, Spiele, Gespräche. Er wiederholt konsequent, bis man es wirklich beherrscht."</p>
+                <div class="testimonial-author">— David</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Als vielbeschäftigte Fachfrau schätze ich, wie strukturiert und organisiert der Unterricht ist. Klare Empfehlung!"</p>
+                <div class="testimonial-author">— Rachel</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="/bewertungen.html" class="btn btn-primary" style="background: var(--gradient); color: white;">
+                Alle Bewertungen lesen →
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-content">
+            <div class="cta-badge">🎁 SCHNUPPERSTUNDE GRATIS!</div>
+            <h2 class="cta-title">Bereit für Hebräisch?</h2>
+            <p class="cta-text">
+                Kontaktieren Sie mich für Fragen oder um eine erste Lektion zu vereinbaren. 
+                Kein Druck – einfach ein freundliches Gespräch.
+            </p>
+            <div class="cta-buttons">
+                <a href="/kontakt.html" class="btn btn-light">📧 Kontakt aufnehmen</a>
+                <a href="https://wa.me/41772228043?text=Hallo!%20Ich%20interessiere%20mich%20für%20Hebräischkurse." class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">lingoStudio</div>
+        <div class="footer-tagline">Hebräisch lernen in Zürich, online oder vor Ort</div>
+        
+        <div class="footer-links">
+            <a href="/">Startseite</a>
+            <a href="/about.html">Über uns</a>
+            <a href="/warum-lingostudio.html">Kurse</a>
+            <a href="/faq.html">FAQ</a>
+            <a href="/aktualisierungen.html">News</a>
+                <a href="/kontakt.html">Kontakt</a>
+        </div>
+        
+        <div class="footer-contact">
+            📧 <a href="mailto:studiobilingual@gmail.com">studiobilingual@gmail.com</a> · 
+            📞 <a href="tel:+41772228043">+41 77 222 80 43</a>
+        </div>
+        
+        <div class="footer-legal">
+            © 2024 lingoStudio · 
+            <a href="/datenschutz.html">Datenschutz</a> · 
+            <a href="/agb.html">AGB</a> · 
+            <a href="/impressum.html">Impressum</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+
+<script>
+    // === PROMO BANNER SYSTEM ===
+    const PROMO_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3TOtNH06cdQNE8TG_u_dahy3wNC79w0BCTO8U6ReieVJxrsyQRLVQAXKCM32nq4V30Q/exec";
+    
+    async function loadPromo() {
+        if (sessionStorage.getItem("promoClosed")) return;
+        try {
+            const response = await fetch(PROMO_SCRIPT_URL);
+            const data = await response.json();
+            if (data.promo && data.promo.trim() !== "") {
+                const banner = document.getElementById("promoBanner");
+                const text = document.getElementById("promoText");
+                if (banner && text) {
+                    text.innerHTML = data.promo;
+                    banner.style.display = "block";
+                }
+            }
+        } catch (error) { console.log("No promo"); }
+    }
+    
+    function closePromo() {
+        const banner = document.getElementById("promoBanner");
+        if (banner) {
+            banner.style.display = "none";
+            sessionStorage.setItem("promoClosed", "true");
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", loadPromo);
+</script>
+</body>
+</html>

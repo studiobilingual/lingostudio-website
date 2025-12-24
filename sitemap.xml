@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+        <loc>https://lingostudio.ch/</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/about.html</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/warum-lingostudio.html</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/kontakt.html</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/bewertungen.html</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/aktualisierungen.html</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/faq.html</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/impressum.html</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/datenschutz.html</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/agb.html</loc>
+        <lastmod>2024-12-23</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/probelektion.html</loc>
+        <lastmod>2024-12-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://lingostudio.ch/rabatt.html</loc>
+        <lastmod>2024-12-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+</urlset>
