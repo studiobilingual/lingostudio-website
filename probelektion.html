@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kostenlose Probelektion | Hebräisch lernen in Zürich | lingoStudio</title>
-    <meta name="description" content="Kostenlose Probelektion für Hebräisch in Zürich! Testen Sie unseren Unterricht unverbindlich – online oder vor Ort. Jetzt anmelden bei lingoStudio.">
+    <meta name="description" content="Kostenlose Probelektion für Hebräisch in Zürich! Testen Sie den Unterricht unverbindlich – online oder vor Ort. Jetzt anmelden bei lingoStudio.">
     <meta name="keywords" content="Kostenlose Probelektion, Hebräisch lernen Zürich, Gratis Hebräischkurs, Ivrit testen, lingoStudio">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://lingostudio.ch/probelektion.html">
@@ -37,41 +37,90 @@
             background: #fff;
         }
         
-        /* PROMO BANNER */
+        /* === PROMO BANNER === */
         .promo-banner {
             background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
             color: white;
-            padding: 14px 20px;
+            padding: 12px 20px;
             text-align: center;
             position: relative;
-            display: none;
         }
-        
         .promo-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
-        
-        .promo-icon { font-size: 1.3rem; }
-        .promo-text { font-weight: 700; font-size: 1rem; }
-        
+        .promo-icon { font-size: 1.2rem; }
+        .promo-text { font-weight: 700; }
         .promo-close {
             background: rgba(255,255,255,0.2);
             border: none;
             color: white;
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             cursor: pointer;
             position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
+            right: 10px;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: white; }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            .nav-links.active { display: flex; }
         }
         
         /* HERO */
@@ -303,93 +352,6 @@
             .hero p { font-size: 1.1rem; }
             .cta-box { margin: -30px 20px 40px; padding: 30px; }
         }
-    
-        /* === PROMO BANNER === */
-        .promo-banner {
-            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
-            color: white;
-            padding: 12px 20px;
-            text-align: center;
-            position: relative;
-        }
-        .promo-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .promo-icon { font-size: 1.2rem; }
-        .promo-text { font-weight: 700; }
-        .promo-close {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            cursor: pointer;
-            position: absolute;
-            right: 10px;
-        }
-        
-        /* === NAVIGATION === */
-        .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 15px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: white;
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-        .nav-links a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: white; }
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .mobile-menu-btn { display: block; }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-            }
-            .nav-links.active { display: flex; }
-        }
-
     </style>
 </head>
 <body>
@@ -419,21 +381,11 @@
         </div>
     </nav>
 
-
-    <!-- PROMO BANNER -->
-    <div id="promoBanner" class="promo-banner">
-        <div class="promo-content">
-            <span class="promo-icon">🎉</span>
-            <span id="promoText" class="promo-text"></span>
-            <button class="promo-close" onclick="closePromo()">✕</button>
-        </div>
-    </div>
-
     <!-- HERO -->
     <section class="hero">
         <div class="hero-badge">🎁 100% Kostenlos & Unverbindlich</div>
         <h1><span class="highlight">Kostenlose Probelektion</span><br>Hebräisch bei lingoStudio</h1>
-        <p>Testen Sie unseren Hebräischunterricht in Zürich – <strong>online oder vor Ort</strong>. Kein Risiko, keine Verpflichtung!</p>
+        <p>Testen Sie Hebräischunterricht in Zürich – <strong>online oder vor Ort</strong>. Kein Risiko, keine Verpflichtung!</p>
         
         <div class="hero-keywords">
             <span class="hero-keyword">✓ Gratis testen</span>
@@ -478,7 +430,7 @@
             <div class="benefit-card">
                 <div class="benefit-icon">🎯</div>
                 <h3>Methode erleben</h3>
-                <p>Erleben Sie unsere bewährte Spiralmethode für nachhaltiges Lernen.</p>
+                <p>Erleben Sie die bewährte Spiralmethode für nachhaltiges Lernen.</p>
             </div>
         </div>
     </section>
@@ -504,6 +456,10 @@
     </footer>
 
     <script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+    
     const PROMO_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3TOtNH06cdQNE8TG_u_dahy3wNC79w0BCTO8U6ReieVJxrsyQRLVQAXKCM32nq4V30Q/exec";
     
     async function loadPromo() {
