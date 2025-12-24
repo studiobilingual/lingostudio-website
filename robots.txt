@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://lingostudio.ch/sitemap.xml
+Sitemap: https://www.lingostudio.ch/sitemap.xml
 
-# Crawl-delay (optional, be nice to the server)
+# Crawl-delay (optional)
 Crawl-delay: 1

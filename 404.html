@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seite nicht gefunden | lingoStudio</title>
+    <meta name="description" content="Diese Seite wurde nicht gefunden. Besuchen Sie lingoStudio für Hebräisch Kurse in Zürich.">
+    <meta name="robots" content="noindex, follow">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* NAVIGATION */
+        .navbar {
+            background: var(--gradient);
+            padding: 15px 20px;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .nav-links a:hover { color: white; }
+        
+        /* 404 CONTENT */
+        .error-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+            background: #f8fafc;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+        
+        .error-message {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+        
+        .error-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .error-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .error-btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .error-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+        
+        .error-btn-secondary {
+            background: white;
+            color: #6366f1;
+            border: 2px solid #6366f1;
+        }
+        
+        .error-btn-secondary:hover {
+            background: #6366f1;
+            color: white;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: var(--gradient);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code { font-size: 5rem; }
+            .error-title { font-size: 1.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">lingoStudio</a>
+            <div class="nav-links">
+                <a href="/">Startseite</a>
+                <a href="/about.html">Über uns</a>
+                <a href="/warum-lingostudio.html">Kurse</a>
+                <a href="/kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 404 CONTENT -->
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Seite nicht gefunden</h1>
+        <p class="error-message">
+            Die gesuchte Seite existiert leider nicht. Vielleicht wurde sie verschoben oder gelöscht. 
+            Besuchen Sie die Startseite oder entdecken Sie die Hebräisch Kurse in Zürich!
+        </p>
+        <div class="error-links">
+            <a href="/" class="error-btn error-btn-primary">
+                🏠 Zur Startseite
+            </a>
+            <a href="/probelektion.html" class="error-btn error-btn-secondary">
+                🎁 Kostenlose Probelektion
+            </a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">lingoStudio</div>
+        <p>Hebräisch Kurs Zürich – online oder vor Ort</p>
+    </footer>
+</body>
+</html>
