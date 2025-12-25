@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebräisch lernen Zürich | Kurse für Erwachsene | lingoStudio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #fbbf24;
+            --success: #22c55e;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        /* PROMO BANNER */
+        .promo-banner {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            background: var(--gradient);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .nav-links a:hover { color: white; }
+        .nav-cta {
+            background: var(--accent) !important;
+            color: #000 !important;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--gradient);
+            padding: 80px 20px 120px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--accent);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-green {
+            background: #25D366;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .hero-tags {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* FEATURES */
+        .features {
+            background: #f8fafc;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* PRICING */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .price-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+            border: 2px solid transparent;
+        }
+        
+        .price-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .price-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        
+        .price-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .price-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .price-subtitle {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .price-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .price-period {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+        
+        .price-features {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        
+        .price-features li {
+            list-style: none;
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-features li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .price-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: #f8fafc;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--text-light);
+        }
+        
+        .testimonials-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .testimonials-link a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* CTA */
+        .cta {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #0f172a;
+            color: white;
+            padding: 50px 20px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .footer-tagline {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 25px;
+        }
+        
+        .footer-links {
+            margin-bottom: 25px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .footer-contact {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 25px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+            .price-card.featured { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PROMO BANNER -->
+    <div class="promo-banner">
+        🎉 10% Rabatt für Neukunden bis Ende Monat! Code: LINGOSTUDIO
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">lingoStudio</a>
+            <div class="nav-links">
+                <a href="/">Startseite</a>
+                <a href="/about.html">Über uns</a>
+                <a href="/warum-lingostudio.html">Kurse</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/bewertungen.html">Bewertungen</a>
+                <a href="/aktualisierungen.html">News</a>
+                <a href="/probelektion.html" class="nav-cta">🎁 Probelektion</a>
+                <a href="/kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">⭐ Über 20 Jahre Erfahrung</div>
+        <h1>Hebräisch lernen <span class="highlight">in Zürich</span></h1>
+        <p>Modernes Hebräisch (Ivrit) mit israelischem Muttersprachler –<br><strong>online oder vor Ort.</strong><br>Kleine Gruppen, persönliche Betreuung, faire Preise.<br><strong>Kostenlose Probelektion!</strong></p>
+        
+        <div class="hero-buttons">
+            <a href="/kontakt.html" class="btn btn-white">📧 Kontakt aufnehmen</a>
+            <a href="https://wa.me/41772228043" class="btn btn-green">💬 WhatsApp</a>
+        </div>
+        
+        <div class="hero-tags">
+            <span class="hero-tag">✓ Kostenlose Probelektion</span>
+            <span class="hero-tag">✓ Online oder vor Ort</span>
+            <span class="hero-tag">✓ Zürich Zentrum</span>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="section-title">
+            <h2>Warum lingoStudio</h2>
+            <p>Effizient Ivrit lernen – persönlich, professionell und mit Freude am Lernen</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🇮🇱</div>
+                <h3>Israelischer Muttersprachler</h3>
+                <p>Über 20 Jahre Unterrichtserfahrung. Ich kenne die Herausforderungen für deutschsprachige Lernende.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Kleine Gruppen (5–10)</h3>
+                <p>Genug Schüler*innen für lebhafte Diskussionen, wenige genug für persönliche Aufmerksamkeit.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Faire Preise</h3>
+                <p>Qualitätsunterricht muss nicht teuer sein. Gruppenkurse ab 25 pro Lektion pro Schüler*in.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Zentrale Lage</h3>
+                <p>Im Herzen von Zürich. Gut erreichbar mit S-Bahn, Tram oder zu Fuss.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Modernes Hebräisch</h3>
+                <p>Sie lernen die Sprache, wie sie heute in Israel gesprochen wird – lebendig und aktuell.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎁</div>
+                <h3>Probelektion gratis</h3>
+                <p>Überzeugen Sie sich selbst – besuchen Sie eine Lektion kostenlos und unverbindlich.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing">
+        <div class="section-title">
+            <h2>Transparente Preise</h2>
+            <p>Einfach & fair – Wählen Sie den Lernweg, der zu Ihnen passt</p>
+        </div>
+        
+        <div class="pricing-grid">
+            <div class="price-card featured">
+                <span class="price-badge">Beliebteste</span>
+                <div class="price-icon">👥</div>
+                <h3>Gruppenkurs</h3>
+                <p class="price-subtitle">5–10 Schüler*innen</p>
+                <div class="price-amount">CHF 500</div>
+                <p class="price-period">pro Semester (20 × 60 Min.)</p>
+                <ul class="price-features">
+                    <li>Kleine Gruppen</li>
+                    <li>Alle digitalen Materialien</li>
+                    <li>Kostenlose Probelektion</li>
+                </ul>
+                <a href="/kontakt.html" class="price-btn">📧 Anmelden</a>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-icon">👤</div>
+                <h3>Privatunterricht</h3>
+                <p class="price-subtitle">1zu1 personalisiert</p>
+                <div class="price-amount">CHF 90</div>
+                <p class="price-period">pro Lektion (60 Min.)</p>
+                <ul class="price-features">
+                    <li>Individuell</li>
+                    <li>Flexible Terminplanung</li>
+                    <li>Kostenlose Beratung</li>
+                </ul>
+                <a href="/kontakt.html" class="price-btn">📧 Anfragen</a>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-icon">👫</div>
+                <h3>Semi-Privat</h3>
+                <p class="price-subtitle">2 Schüler*innen zusammen</p>
+                <div class="price-amount">CHF 50</div>
+                <p class="price-period">pro Person / Lektion</p>
+                <ul class="price-features">
+                    <li>Bringen Sie einen Freund mit</li>
+                    <li>Günstiger als Privatunterricht</li>
+                    <li>Zusammen lernen macht mehr Spass</li>
+                </ul>
+                <a href="/kontakt.html" class="price-btn">📧 Anfragen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 15px;">lingoStudio - Hebräisch lernen in Zürich</h3>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 25px;">
+                <span style="color: #fbbf24; font-size: 1.4rem;">★★★★★</span>
+                <span style="font-size: 1.1rem; font-weight: 600;">4.8 (3)</span>
+                <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Top bewertet</span>
+            </div>
+            <h2>Was Schüler sagen</h2>
+            <p>Erfahrungen</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐</div>
+                <p class="testimonial-text">„Nach 2 Monaten kann ich einfache hebräische Texte lesen. Die Methode funktioniert – aber nur, weil ich die Vokabeln jeden Tag geübt habe!"</p>
+                <p class="testimonial-author">— Sarah</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">„Der Unterricht ist abwechslungsreich – Lieder, Spiele, Gespräche. Es wird so lange wiederholt, bis man es wirklich kann."</p>
+                <p class="testimonial-author">— Roger</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐</div>
+                <p class="testimonial-text">„Als vielbeschäftigte Fachfrau schätze ich, wie strukturiert und organisiert der Unterricht ist. Klare Empfehlung!"</p>
+                <p class="testimonial-author">— Susanna</p>
+            </div>
+        </div>
+        
+        <div class="testimonials-link">
+            <a href="/bewertungen.html">Alle Bewertungen lesen →</a>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-badge">🎁 SCHNUPPERSTUNDE GRATIS!</div>
+        <h2>Bereit für Hebräisch?</h2>
+        <p>Kontaktieren Sie mich für Fragen oder um eine erste Lektion zu vereinbaren. Keine Verpflichtung – einfach ein freundliches Gespräch.</p>
+        
+        <div class="cta-buttons">
+            <a href="/kontakt.html" class="btn btn-white">📧 Kontakt aufnehmen</a>
+            <a href="https://wa.me/41772228043" class="btn btn-green">💬 WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">lingoStudio</div>
+            <p class="footer-tagline">Hebräisch lernen in Zürich, online oder vor Ort</p>
+            
+            <div class="footer-links">
+                <a href="/">Startseite</a>
+                <a href="/about.html">Über uns</a>
+                <a href="/warum-lingostudio.html">Kurse</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/aktualisierungen.html">News</a>
+                <a href="/kontakt.html">Kontakt</a>
+            </div>
+            
+            <div class="footer-contact">
+                📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e6d6a6b7a77717c77727770796b7f725e79737f7772307d7173">[email&#160;protected]</a> · 📞 +41 77 222 80 43
+            </div>
+            
+            <div class="footer-bottom">
+                © 2024 lingoStudio · 
+                <a href="/datenschutz.html">Datenschutz</a> · 
+                <a href="/agb.html">AGB</
