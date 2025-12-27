@@ -529,7 +529,42 @@
     // ============================================
     // CONFIGURATION - Change this URL after setup!
     // ============================================
-    const UPDATES_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz3TOtNH06cdQNE8TG_u_dahy3wNC79w0BCTO8U6ReieVJxrsyQRLVQAXKCM32nq4V30Q/exec';
+    const UPDATES_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYmhGOu0Bljs2vCjeezYgy8owCGim1Ufci9WlAgFbyhjQGFpGd1VfPNRmy9ipWZK2N/exec';
+    
+    // ============================================
+    // Color name to CSS color mapping
+    // ============================================
+    function getColor(colorName) {
+        if (!colorName) return '';
+        colorName = colorName.toString().trim().toLowerCase();
+        
+        const colorMap = {
+            'red': '#dc2626',
+            'blue': '#2563eb',
+            'green': '#16a34a',
+            'yellow': '#fef08a',
+            'orange': '#f97316',
+            'purple': '#9333ea',
+            'pink': '#ec4899',
+            'gray': '#6b7280',
+            'grey': '#6b7280',
+            'black': '#000000',
+            'white': '#ffffff',
+            'gold': '#eab308',
+            'cyan': '#06b6d4',
+            'lime': '#84cc16',
+            'teal': '#14b8a6',
+            'indigo': '#6366f1',
+            'violet': '#8b5cf6'
+        };
+        
+        // If it's a hex color or rgb, return as-is
+        if (colorName.startsWith('#') || colorName.startsWith('rgb')) {
+            return colorName;
+        }
+        
+        return colorMap[colorName] || colorName;
+    }
     
     // ============================================
     // Load Updates from Google Sheets
@@ -565,17 +600,29 @@
             }
             
             updatesList.style.display = 'flex';
-            updatesList.innerHTML = data.updates.map(update => `
-                <a href="${escapeHtml(update.url)}" target="_blank" class="update-card">
+            updatesList.innerHTML = data.updates.map(update => {
+                // Build style for colors
+                let titleStyle = '';
+                let cardStyle = '';
+                
+                if (update.textColor) {
+                    titleStyle = `color: ${getColor(update.textColor)};`;
+                }
+                if (update.bgColor) {
+                    cardStyle = `background-color: ${getColor(update.bgColor)};`;
+                }
+                
+                return `
+                <a href="${escapeHtml(update.url)}" target="_blank" class="update-card" style="${cardStyle}">
                     <div class="update-icon">${update.icon || '📰'}</div>
                     <div class="update-content">
                         <div class="update-date">${escapeHtml(update.date)}</div>
-                        <div class="update-title">${escapeHtml(update.title)}</div>
+                        <div class="update-title" style="${titleStyle}">${escapeHtml(update.title)}</div>
                         <div class="update-description">${escapeHtml(update.description)}</div>
                     </div>
                     <div class="update-arrow">→</div>
                 </a>
-            `).join('');
+            `}).join('');
             
         } catch (error) {
             console.error('Error loading updates:', error);
@@ -597,7 +644,7 @@
 
 <script>
     // === PROMO BANNER SYSTEM ===
-    const PROMO_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3TOtNH06cdQNE8TG_u_dahy3wNC79w0BCTO8U6ReieVJxrsyQRLVQAXKCM32nq4V30Q/exec";
+    const PROMO_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwYmhGOu0Bljs2vCjeezYgy8owCGim1Ufci9WlAgFbyhjQGFpGd1VfPNRmy9ipWZK2N/exec";
     
     async function loadPromo() {
         if (sessionStorage.getItem("promoClosed")) return;
