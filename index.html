@@ -15,7 +15,7 @@
             --accent: #fbbf24;
             --success: #22c55e;
             --text: #0f172a;
-            --text-light: #64748b;
+            --text-light: #475569;
             --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
@@ -62,7 +62,7 @@
             align-items: center;
         }
         .nav-links a {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.95);
             text-decoration: none;
             font-weight: 600;
         }
@@ -86,7 +86,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.25);
             padding: 10px 25px;
             border-radius: 50px;
             font-weight: 600;
@@ -131,7 +131,7 @@
         
         .btn-white {
             background: white;
-            color: var(--primary);
+            color: var(--primary-dark);
         }
         
         .btn-green {
@@ -152,7 +152,7 @@
         }
         
         .hero-tag {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.25);
             padding: 10px 20px;
             border-radius: 25px;
             font-weight: 600;
@@ -400,7 +400,7 @@
         }
         
         .testimonial-stars {
-            color: #fbbf24;
+            color: #b45309;
             font-size: 1.2rem;
             margin-bottom: 15px;
         }
@@ -422,7 +422,7 @@
         }
         
         .testimonials-link a {
-            color: var(--primary);
+            color: var(--primary-dark);
             font-weight: 600;
             text-decoration: none;
         }
@@ -435,7 +435,7 @@
         
         .cta-badge {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.25);
             padding: 8px 20px;
             border-radius: 20px;
             font-weight: 600;
@@ -450,7 +450,7 @@
         
         .cta p {
             font-size: 1.1rem;
-            opacity: 0.9;
+            opacity: 0.95;
             max-width: 600px;
             margin: 0 auto 30px;
         }
@@ -481,7 +481,7 @@
         }
         
         .footer-tagline {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.8);
             margin-bottom: 25px;
         }
         
@@ -490,7 +490,7 @@
         }
         
         .footer-links a {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.85);
             text-decoration: none;
             margin: 0 15px;
         }
@@ -498,7 +498,7 @@
         .footer-materials {
             margin-bottom: 25px;
             padding: 20px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.08);
             border-radius: 12px;
         }
         
@@ -517,10 +517,10 @@
         }
         
         .footer-materials-links a {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.95);
             text-decoration: none;
             padding: 8px 16px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.12);
             border-radius: 20px;
             font-weight: 600;
             transition: all 0.3s;
@@ -535,21 +535,48 @@
         }
         
         .footer-contact {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.8);
             margin-bottom: 25px;
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.15);
             padding-top: 20px;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.6);
             font-size: 0.9rem;
         }
         
         .footer-bottom a {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             margin: 0 10px;
+        }
+
+        .rating-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .rating-stars {
+            color: #b45309;
+            font-size: 1.4rem;
+        }
+        
+        .rating-score {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .rating-badge {
+            background: var(--gradient);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
         }
 
         @media (max-width: 768px) {
@@ -562,226 +589,230 @@
 </head>
 <body>
 
-    <div class="promo-banner">
-        🎉 10% Rabatt für Neukunden bis Ende Monat! Code: LINGOSTUDIO
-    </div>
+    <header>
+        <div class="promo-banner" role="banner">
+            🎉 10% Rabatt für Neukunden bis Ende Monat! Code: LINGOSTUDIO
+        </div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">lingoStudio</a>
-            <div class="nav-links">
-                <a href="/">Startseite</a>
-                <a href="/about.html">Über uns</a>
-                <a href="/warum-lingostudio.html">Kurse</a>
-                <a href="#materialien">📚 Materialien</a>
-                <a href="/bewertungen.html">Bewertungen</a>
-                <a href="/aktualisierungen.html">News</a>
-                <a href="/probelektion.html" class="nav-cta">🎁 Probelektion</a>
-                <a href="/kontakt.html">Kontakt</a>
+        <nav class="navbar" aria-label="Hauptnavigation">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">lingoStudio</a>
+                <div class="nav-links">
+                    <a href="/">Startseite</a>
+                    <a href="/about.html">Über uns</a>
+                    <a href="/warum-lingostudio.html">Kurse</a>
+                    <a href="#materialien">📚 Materialien</a>
+                    <a href="/bewertungen.html">Bewertungen</a>
+                    <a href="/aktualisierungen.html">News</a>
+                    <a href="/probelektion.html" class="nav-cta">🎁 Probelektion</a>
+                    <a href="/kontakt.html">Kontakt</a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section class="hero">
-        <div class="hero-badge">⭐ Über 20 Jahre Erfahrung</div>
-        <h1>Hebräisch lernen <span class="highlight">in Zürich</span></h1>
-        <p>Modernes Hebräisch (Ivrit) mit israelischem Muttersprachler –<br><strong>online oder vor Ort.</strong><br>Kleine Gruppen, persönliche Betreuung, faire Preise.<br><strong>Kostenlose Probelektion!</strong></p>
-        
-        <div class="hero-buttons">
-            <a href="/kontakt.html" class="btn btn-white">📧 Kontakt aufnehmen</a>
-            <a href="https://wa.me/41775262629" class="btn btn-green">💬 WhatsApp</a>
-        </div>
-        
-        <div class="hero-tags">
-            <span class="hero-tag">✓ Kostenlose Probelektion</span>
-            <span class="hero-tag">✓ Online oder vor Ort</span>
-            <span class="hero-tag">✓ Zürich Zentrum</span>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-badge">⭐ Über 20 Jahre Erfahrung</div>
+            <h1>Hebräisch lernen <span class="highlight">in Zürich</span></h1>
+            <p>Modernes Hebräisch (Ivrit) mit israelischem Muttersprachler –<br><strong>online oder vor Ort.</strong><br>Kleine Gruppen, persönliche Betreuung, faire Preise.<br><strong>Kostenlose Probelektion!</strong></p>
+            
+            <div class="hero-buttons">
+                <a href="/kontakt.html" class="btn btn-white">📧 Kontakt aufnehmen</a>
+                <a href="https://wa.me/41775262629" class="btn btn-green">💬 WhatsApp</a>
+            </div>
+            
+            <div class="hero-tags">
+                <span class="hero-tag">✓ Kostenlose Probelektion</span>
+                <span class="hero-tag">✓ Online oder vor Ort</span>
+                <span class="hero-tag">✓ Zürich Zentrum</span>
+            </div>
+        </section>
 
-    <section class="features">
-        <div class="section-title">
-            <h2>Warum lingoStudio</h2>
-            <p>Effizient Ivrit lernen – persönlich, professionell und mit Freude am Lernen</p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🇮🇱</div>
-                <h3>Israelischer Muttersprachler</h3>
-                <p>Über 20 Jahre Unterrichtserfahrung. Ich kenne die Herausforderungen für deutschsprachige Lernende.</p>
+        <section class="features" aria-labelledby="features-title">
+            <div class="section-title">
+                <h2 id="features-title">Warum lingoStudio</h2>
+                <p>Effizient Ivrit lernen – persönlich, professionell und mit Freude am Lernen</p>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Kleine Gruppen (5–10)</h3>
-                <p>Genug Schüler*innen für lebhafte Diskussionen, wenige genug für persönliche Aufmerksamkeit.</p>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🇮🇱</div>
+                    <h3>Israelischer Muttersprachler</h3>
+                    <p>Über 20 Jahre Unterrichtserfahrung. Ich kenne die Herausforderungen für deutschsprachige Lernende.</p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">👥</div>
+                    <h3>Kleine Gruppen (5–10)</h3>
+                    <p>Genug Schüler*innen für lebhafte Diskussionen, wenige genug für persönliche Aufmerksamkeit.</p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">💰</div>
+                    <h3>Faire Preise</h3>
+                    <p>Qualitätsunterricht muss nicht teuer sein. Gruppenkurse ab 25 pro Lektion pro Schüler*in.</p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📍</div>
+                    <h3>Zentrale Lage</h3>
+                    <p>Im Herzen von Zürich. Gut erreichbar mit S-Bahn, Tram oder zu Fuss.</p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📚</div>
+                    <h3>Modernes Hebräisch</h3>
+                    <p>Sie lernen die Sprache, wie sie heute in Israel gesprochen wird – lebendig und aktuell.</p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🎁</div>
+                    <h3>Probelektion gratis</h3>
+                    <p>Überzeugen Sie sich selbst – besuchen Sie eine Lektion kostenlos und unverbindlich.</p>
+                </article>
             </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Faire Preise</h3>
-                <p>Qualitätsunterricht muss nicht teuer sein. Gruppenkurse ab 25 pro Lektion pro Schüler*in.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📍</div>
-                <h3>Zentrale Lage</h3>
-                <p>Im Herzen von Zürich. Gut erreichbar mit S-Bahn, Tram oder zu Fuss.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>Modernes Hebräisch</h3>
-                <p>Sie lernen die Sprache, wie sie heute in Israel gesprochen wird – lebendig und aktuell.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🎁</div>
-                <h3>Probelektion gratis</h3>
-                <p>Überzeugen Sie sich selbst – besuchen Sie eine Lektion kostenlos und unverbindlich.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="materials" id="materialien">
-        <div class="section-title">
-            <h2>📚 Lernmaterialien</h2>
-            <p>Kostenlose Ressourcen für Ihr Hebräisch-Studium</p>
-        </div>
-        
-        <div class="materials-grid">
-            <div class="material-card">
-                <span class="material-badge">KOSTENLOS</span>
-                <div class="material-icon">🔤</div>
-                <h3>500 Wörter auf Hebräisch</h3>
-                <p>Die wichtigsten 500 hebräischen Wörter mit Aussprache, Übungen und Beispielsätzen. Perfekt für Anfänger!</p>
-                <a href="https://sites.google.com/view/500milimsite/home" target="_blank" rel="noopener" class="material-btn">Jetzt lernen →</a>
+        <section class="materials" id="materialien" aria-labelledby="materials-title">
+            <div class="section-title">
+                <h2 id="materials-title">📚 Lernmaterialien</h2>
+                <p>Kostenlose Ressourcen für Ihr Hebräisch-Studium</p>
             </div>
             
-            <div class="material-card">
-                <span class="material-badge">KOSTENLOS</span>
-                <div class="material-icon">📰</div>
-                <h3>Die Hebräische Zeitung</h3>
-                <p>Lesen Sie echte hebräische Texte mit Vokabelhilfe und Übersetzungen. Ideal für Fortgeschrittene!</p>
-                <a href="https://sites.google.com/view/studiolingo-newspaper/home" target="_blank" rel="noopener" class="material-btn">Jetzt lesen →</a>
+            <div class="materials-grid">
+                <article class="material-card">
+                    <span class="material-badge">KOSTENLOS</span>
+                    <div class="material-icon" aria-hidden="true">🔤</div>
+                    <h3>500 Wörter auf Hebräisch</h3>
+                    <p>Die wichtigsten 500 hebräischen Wörter mit Aussprache, Übungen und Beispielsätzen. Perfekt für Anfänger!</p>
+                    <a href="https://sites.google.com/view/500milimsite/home" target="_blank" rel="noopener" class="material-btn">Jetzt lernen →</a>
+                </article>
+                
+                <article class="material-card">
+                    <span class="material-badge">KOSTENLOS</span>
+                    <div class="material-icon" aria-hidden="true">📰</div>
+                    <h3>Die Hebräische Zeitung</h3>
+                    <p>Lesen Sie echte hebräische Texte mit Vokabelhilfe und Übersetzungen. Ideal für Fortgeschrittene!</p>
+                    <a href="https://sites.google.com/view/studiolingo-newspaper/home" target="_blank" rel="noopener" class="material-btn">Jetzt lesen →</a>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="pricing">
-        <div class="section-title">
-            <h2>Transparente Preise</h2>
-            <p>Einfach & fair – Wählen Sie den Lernweg, der zu Ihnen passt</p>
-        </div>
-        
-        <div class="pricing-grid">
-            <div class="price-card featured">
-                <span class="price-badge">Beliebteste</span>
-                <div class="price-icon">👥</div>
-                <h3>Gruppenkurs</h3>
-                <p class="price-subtitle">5–10 Schüler*innen</p>
-                <div class="price-amount">CHF 500</div>
-                <p class="price-period">pro Semester (20 × 60 Min.)</p>
-                <ul class="price-features">
-                    <li>Kleine Gruppen</li>
-                    <li>Alle digitalen Materialien</li>
-                    <li>Kostenlose Probelektion</li>
-                </ul>
-                <a href="/kontakt.html" class="price-btn">📧 Anmelden</a>
+        <section class="pricing" aria-labelledby="pricing-title">
+            <div class="section-title">
+                <h2 id="pricing-title">Transparente Preise</h2>
+                <p>Einfach & fair – Wählen Sie den Lernweg, der zu Ihnen passt</p>
             </div>
             
-            <div class="price-card">
-                <div class="price-icon">👤</div>
-                <h3>Privatunterricht</h3>
-                <p class="price-subtitle">1zu1 personalisiert</p>
-                <div class="price-amount">CHF 90</div>
-                <p class="price-period">pro Lektion (60 Min.)</p>
-                <ul class="price-features">
-                    <li>Individuell</li>
-                    <li>Flexible Terminplanung</li>
-                    <li>Kostenlose Beratung</li>
-                </ul>
-                <a href="/kontakt.html" class="price-btn">📧 Anfragen</a>
+            <div class="pricing-grid">
+                <article class="price-card featured">
+                    <span class="price-badge">Beliebteste</span>
+                    <div class="price-icon" aria-hidden="true">👥</div>
+                    <h3>Gruppenkurs</h3>
+                    <p class="price-subtitle">5–10 Schüler*innen</p>
+                    <div class="price-amount">CHF 500</div>
+                    <p class="price-period">pro Semester (20 × 60 Min.)</p>
+                    <ul class="price-features">
+                        <li>Kleine Gruppen</li>
+                        <li>Alle digitalen Materialien</li>
+                        <li>Kostenlose Probelektion</li>
+                    </ul>
+                    <a href="/kontakt.html" class="price-btn">📧 Anmelden</a>
+                </article>
+                
+                <article class="price-card">
+                    <div class="price-icon" aria-hidden="true">👤</div>
+                    <h3>Privatunterricht</h3>
+                    <p class="price-subtitle">1zu1 personalisiert</p>
+                    <div class="price-amount">CHF 90</div>
+                    <p class="price-period">pro Lektion (60 Min.)</p>
+                    <ul class="price-features">
+                        <li>Individuell</li>
+                        <li>Flexible Terminplanung</li>
+                        <li>Kostenlose Beratung</li>
+                    </ul>
+                    <a href="/kontakt.html" class="price-btn">📧 Anfragen</a>
+                </article>
+                
+                <article class="price-card">
+                    <div class="price-icon" aria-hidden="true">👫</div>
+                    <h3>Semi-Privat</h3>
+                    <p class="price-subtitle">2 Schüler*innen zusammen</p>
+                    <div class="price-amount">CHF 45</div>
+                    <p class="price-period">pro Person / Lektion</p>
+                    <ul class="price-features">
+                        <li>Bringen Sie einen Freund mit</li>
+                        <li>Günstiger als Privatunterricht</li>
+                        <li>Zusammen lernen macht mehr Spass</li>
+                    </ul>
+                    <a href="/kontakt.html" class="price-btn">📧 Anfragen</a>
+                </article>
             </div>
-            
-            <div class="price-card">
-                <div class="price-icon">👫</div>
-                <h3>Semi-Privat</h3>
-                <p class="price-subtitle">2 Schüler*innen zusammen</p>
-                <div class="price-amount">CHF 45</div>
-                <p class="price-period">pro Person / Lektion</p>
-                <ul class="price-features">
-                    <li>Bringen Sie einen Freund mit</li>
-                    <li>Günstiger als Privatunterricht</li>
-                    <li>Zusammen lernen macht mehr Spass</li>
-                </ul>
-                <a href="/kontakt.html" class="price-btn">📧 Anfragen</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="testimonials">
-        <div class="section-title">
-            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 15px;">lingoStudio - Hebräisch lernen in Zürich</h3>
-            <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 25px;">
-                <span style="color: #fbbf24; font-size: 1.4rem;">★★★★★</span>
-                <span style="font-size: 1.1rem; font-weight: 600;">4.8 (3)</span>
-                <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Top bewertet</span>
-            </div>
-            <h2>Was Schüler sagen</h2>
-            <p>Erfahrungen</p>
-        </div>
-        
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐</div>
-                <p class="testimonial-text">„Nach 2 Monaten kann ich einfache hebräische Texte lesen. Die Methode funktioniert – aber nur, weil ich die Vokabeln jeden Tag geübt habe!"</p>
-                <p class="testimonial-author">— Sarah</p>
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <div class="section-title">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 15px;">lingoStudio - Hebräisch lernen in Zürich</h3>
+                <div class="rating-info">
+                    <span class="rating-stars" aria-label="Bewertung: 4.8 von 5 Sternen">★★★★★</span>
+                    <span class="rating-score">4.8 (3)</span>
+                    <span class="rating-badge">Top bewertet</span>
+                </div>
+                <h2 id="testimonials-title">Was Schüler sagen</h2>
+                <p>Erfahrungen</p>
             </div>
             
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">„Der Unterricht ist abwechslungsreich – Lieder, Spiele, Gespräche. Es wird so lange wiederholt, bis man es wirklich kann."</p>
-                <p class="testimonial-author">— Roger</p>
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="4 von 5 Sternen">⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">„Nach 2 Monaten kann ich einfache hebräische Texte lesen. Die Methode funktioniert – aber nur, weil ich die Vokabeln jeden Tag geübt habe!"</p>
+                    <p class="testimonial-author">— Sarah</p>
+                </article>
+                
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 von 5 Sternen">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">„Der Unterricht ist abwechslungsreich – Lieder, Spiele, Gespräche. Es wird so lange wiederholt, bis man es wirklich kann."</p>
+                    <p class="testimonial-author">— Roger</p>
+                </article>
+                
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="4 von 5 Sternen">⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">„Als vielbeschäftigte Fachfrau schätze ich, wie strukturiert und organisiert der Unterricht ist. Klare Empfehlung!"</p>
+                    <p class="testimonial-author">— Susanna</p>
+                </article>
             </div>
             
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐</div>
-                <p class="testimonial-text">„Als vielbeschäftigte Fachfrau schätze ich, wie strukturiert und organisiert der Unterricht ist. Klare Empfehlung!"</p>
-                <p class="testimonial-author">— Susanna</p>
+            <div class="testimonials-link">
+                <a href="/bewertungen.html">Alle Bewertungen lesen →</a>
             </div>
-        </div>
-        
-        <div class="testimonials-link">
-            <a href="/bewertungen.html">Alle Bewertungen lesen →</a>
-        </div>
-    </section>
+        </section>
 
-    <section class="cta">
-        <div class="cta-badge">🎁 SCHNUPPERSTUNDE GRATIS!</div>
-        <h2>Bereit für Hebräisch?</h2>
-        <p>Kontaktieren Sie mich für Fragen oder um eine erste Lektion zu vereinbaren. Keine Verpflichtung – einfach ein freundliches Gespräch.</p>
-        
-        <div class="cta-buttons">
-            <a href="/kontakt.html" class="btn btn-white">📧 Kontakt aufnehmen</a>
-            <a href="https://wa.me/41775262629" class="btn btn-green">💬 WhatsApp</a>
-        </div>
-    </section>
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="cta-badge">🎁 SCHNUPPERSTUNDE GRATIS!</div>
+            <h2 id="cta-title">Bereit für Hebräisch?</h2>
+            <p>Kontaktieren Sie mich für Fragen oder um eine erste Lektion zu vereinbaren. Keine Verpflichtung – einfach ein freundliches Gespräch.</p>
+            
+            <div class="cta-buttons">
+                <a href="/kontakt.html" class="btn btn-white">📧 Kontakt aufnehmen</a>
+                <a href="https://wa.me/41775262629" class="btn btn-green">💬 WhatsApp</a>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">lingoStudio</div>
             <p class="footer-tagline">Hebräisch lernen in Zürich, online oder vor Ort</p>
             
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Footer Navigation">
                 <a href="/">Startseite</a>
                 <a href="/about.html">Über uns</a>
                 <a href="/warum-lingostudio.html">Kurse</a>
                 <a href="/faq.html">FAQ</a>
                 <a href="/aktualisierungen.html">News</a>
                 <a href="/kontakt.html">Kontakt</a>
-            </div>
+            </nav>
             
             <div class="footer-materials">
                 <div class="footer-materials-title">📚 Kostenlose Lernmaterialien</div>
