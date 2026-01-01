@@ -196,7 +196,7 @@ function renderFallbackSidebar() {
             <a href="index.html" class="nav-item">🏠 Home</a>
         </div>
         <p style="color:#888;padding:20px;font-size:0.9em;">שגיאה בטעינת התפריט. נסה לרענן.</p>
-        <a href="https://www.lingostudio.ch" class="sidebar-back">← חזרה לאתר הראשי</a>
+        <a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Startseite </a>
     `;
 }
 
