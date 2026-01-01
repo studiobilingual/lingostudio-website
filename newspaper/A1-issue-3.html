@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עִבְרִית לְיוֹם יוֹם - גִּלָּיוֹן 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2D5A7B 0%, #4A9B8C 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 1.1em;
+        }
+        
+        .header-info span {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        .nav {
+            background: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, #2D5A7B 0%, #4A9B8C 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(45, 90, 123, 0.4);
+        }
+        
+        .nav-btn.active {
+            background: linear-gradient(135deg, #4A9B8C 0%, #2D5A7B 100%);
+            box-shadow: 0 4px 15px rgba(74, 155, 140, 0.4);
+        }
+        
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .dialogue-box {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .dialogue-title {
+            font-size: 1.5em;
+            color: #2D5A7B;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #4A9B8C;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dialogue-context {
+            background: #f0f7f4;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #666;
+            border-right: 4px solid #4A9B8C;
+        }
+        
+        .dialogue-line {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 15px;
+            font-size: 1.15em;
+        }
+        
+        .speaker-dan {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            margin-left: 30px;
+            border-right: 4px solid #2196F3;
+        }
+        
+        .speaker-gad {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            margin-right: 30px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .speaker-moreh {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+            margin-left: 30px;
+            border-right: 4px solid #FF9800;
+        }
+        
+        .speaker-anna {
+            background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD9 100%);
+            margin-right: 30px;
+            border-left: 4px solid #E91E63;
+        }
+        
+        .speaker-yuki {
+            background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+            margin-right: 30px;
+            border-left: 4px solid #9C27B0;
+        }
+        
+        .speaker-kulam {
+            background: linear-gradient(135deg, #ECEFF1 0%, #CFD8DC 100%);
+            text-align: center;
+            border: 2px dashed #607D8B;
+        }
+        
+        .speaker-ruth {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+            margin-right: 30px;
+            border-left: 4px solid #F44336;
+        }
+        
+        .speaker-miri {
+            background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%);
+            margin-right: 30px;
+            border-left: 4px solid #00BCD4;
+        }
+        
+        .speaker-oreakh {
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+            margin-right: 30px;
+            border-left: 4px solid #FFC107;
+        }
+        
+        .speaker-dani {
+            background: linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%);
+            margin-right: 30px;
+            border-left: 4px solid #3F51B5;
+        }
+        
+        .speaker-name {
+            font-weight: bold;
+            color: #2D5A7B;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .dict-word {
+            color: #C62828;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            transition: all 0.3s ease;
+        }
+        
+        .dict-word:hover {
+            color: #B71C1C;
+            text-decoration-style: solid;
+        }
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+        }
+        
+        .modal-overlay.show {
+            display: block !important;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 20px;
+            max-width: 420px;
+            width: 90%;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #2D5A7B 0%, #4A9B8C 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        
+        .phonetic {
+            font-size: 1em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .modal-row {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .label-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .label-hebrew {
+            background: #2D5A7B;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .label-english {
+            background: #4A9B8C;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        
+        .modal-value {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .modal-value-english {
+            font-size: 1em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .meaning-item {
+            padding: 5px 0;
+        }
+        
+        .meaning-item.highlight {
+            background: #FFF9C4;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-right: 3px solid #FFC107;
+        }
+        
+        .meaning-item.highlight::before {
+            content: "★ ";
+            color: #FFC107;
+        }
+        
+        .example-item {
+            background: #f5f5f5;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .example-item.in-text {
+            background: #E8F5E9;
+            border-right: 3px solid #4CAF50;
+        }
+        
+        .example-item.in-text::before {
+            content: "★ בַּטֶּקְסְט: ";
+            color: #4CAF50;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .example-hebrew {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .example-english {
+            font-size: 0.95em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .quiz-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .quiz-title {
+            font-size: 1.5em;
+            color: #2D5A7B;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #4A9B8C;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quiz-question {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-question p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            border-color: #4A9B8C;
+            background: #f0f7f4;
+        }
+        
+        .quiz-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #4A9B8C;
+        }
+        
+        .quiz-option.correct {
+            background: #E8F5E9;
+            border-color: #4CAF50;
+        }
+        
+        .quiz-option.wrong {
+            background: #FFEBEE;
+            border-color: #F44336;
+        }
+        
+        .quiz-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .quiz-btn {
+            background: linear-gradient(135deg, #2D5A7B 0%, #4A9B8C 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(45, 90, 123, 0.4);
+        }
+        
+        .quiz-btn.reset {
+            background: linear-gradient(135deg, #78909C 0%, #546E7A 100%);
+        }
+        
+        .quiz-result {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: none;
+        }
+        
+        .quiz-result.show {
+            display: block;
+        }
+        
+        .quiz-result.good {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+        
+        .quiz-result.needs-work {
+            background: #FFF3E0;
+            color: #EF6C00;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2D5A7B 0%, #4A9B8C 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+            
+            .dialogue-line {
+                margin-left: 10px !important;
+                margin-right: 10px !important;
+                font-size: 1em;
+            }
+            
+            .nav-btn {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <h1>📰 עִבְרִית לְיוֹם יוֹם</h1>
+    <div class="header-info">
+        <span>📖 גִּלָּיוֹן 3</span>
+        <span>📅 דֶּצֶמְבֶּר 2025</span>
+        <span>🎯 רָמָה A1</span>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="nav">
+    <button class="nav-btn active" data-page="dialogue7">📚 דִּיאָלוֹג 7</button>
+    <button class="nav-btn" data-page="dialogue8">🏨 דִּיאָלוֹג 8</button>
+    <button class="nav-btn" data-page="dialogue9">🍳 דִּיאָלוֹג 9</button>
+    <button class="nav-btn" data-page="quiz">📝 קְוִיז</button>
+</nav>
+
+<!-- Page 1: Dialogue 7 -->
+<div id="dialogue7" class="page active">
+    <div class="container">
+        <div class="dialogue-box">
+            <h2 class="dialogue-title">📚 דִּיאָלוֹג 7: הַשִּׁעוּר הַשְּׁלִישִׁי — רַבִּים (Plural) </h2>
+            <div class="dialogue-context">מָצָב: שִׁעוּר <span class="dict-word" data-word="שְׁלִישִׁי">שְׁלִישִׁי</span> בָּאוּלְפָּן — לוֹמְדִים <span class="dict-word" data-word="רַבִּים >"רַבִּים </span>!</div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                שָׁלוֹם! הַיּוֹם אֲנַחְנוּ לוֹמְדִים רַבִּים (Plural). מָה <span class="dict-word" data-word="אֵלֶּה">אֵלֶּה</span>?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                אֵלֶּה <span class="dict-word" data-word="סְפָרִים">סְפָרִים</span>!
+            </div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                נָכוֹן! סֵפֶר אֶחָד, סְפָרִים <span class="dict-word" data-word="הַרְבֵּה">הַרְבֵּה</span>. וּמָה אֵלֶּה?
+            </div>
+            
+            <div class="dialogue-line speaker-anna">
+                <span class="speaker-name">אַנָּה:</span>
+                אֵלֶּה <span class="dict-word" data-word="מַחְבָּרוֹת">מַחְבָּרוֹת</span>!
+            </div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                יָפֶה! <span class="dict-word" data-word="מַחְבֶּרֶת">מַחְבֶּרֶת</span> אַחַת, מַחְבָּרוֹת הַרְבֵּה. וּמָה אֵלֶּה?
+            </div>
+            
+            <div class="dialogue-line speaker-gad">
+                <span class="speaker-name">גָּד:</span>
+                אֵלֶּה <span class="dict-word" data-word="שֻׁלְחָנוֹת">שֻׁלְחָנוֹת</span>!
+            </div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                מְצוּיָּן! שֻׁלְחָן אֶחָד, שֻׁלְחָנוֹת הַרְבֵּה. עַכְשָׁיו — פְּעָלִים בְּרַבִּים!
+            </div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                דָּן וְגָּד, מָה אַתֶּם עוֹשִׂים?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                אֲנַחְנוּ <span class="dict-word" data-word="יוֹשְׁבִים">יוֹשְׁבִים</span> וְ<span class="dict-word" data-word="קוֹרְאִים">קוֹרְאִים</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                וְאַנָּה וְיוּקִי, מָה <span class="dict-word" data-word="אַתֶּן">אַתֶּן</span> עוֹשׂוֹת?
+            </div>
+            
+            <div class="dialogue-line speaker-anna">
+                <span class="speaker-name">אַנָּה:</span>
+                אֲנַחְנוּ <span class="dict-word" data-word="יוֹשְׁבוֹת">יוֹשְׁבוֹת</span> וְ<span class="dict-word" data-word="כּוֹתְבוֹת">כּוֹתְבוֹת</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                טוֹב מְאוֹד! מִי <span class="dict-word" data-word="הֵם">הֵם</span>?
+            </div>
+            
+            <div class="dialogue-line speaker-yuki">
+                <span class="speaker-name">יוּקִי:</span>
+                הֵם דָּן וְגָּד. הֵם <span class="dict-word" data-word="חֲבֵרִים">חֲבֵרִים</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                וּמִי <span class="dict-word" data-word="הֵן">הֵן</span>?
+            </div>
+            
+            <div class="dialogue-line speaker-gad">
+                <span class="speaker-name">גָּד:</span>
+                הֵן אַנָּה וְיוּקִי. הֵן <span class="dict-word" data-word="חֲבֵרוֹת">חֲבֵרוֹת</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                מְצוּיָּן! עַכְשָׁיו — מָה זֶה?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                זֹאת <span class="dict-word" data-word="תְּמוּנָה">תְּמוּנָה</span>!
+            </div>
+            
+            <div class="dialogue-line speaker-moreh">
+                <span class="speaker-name">מוֹרֶה:</span>
+                נָכוֹן! תְּמוּנָה שֶׁל יִשְׂרָאֵל. כֻּלָּם רוֹאִים?
+            </div>
+            
+            <div class="dialogue-line speaker-kulam">
+                <span class="speaker-name">כֻּלָּם:</span>
+                כֵּן!
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 2: Dialogue 8 -->
+<div id="dialogue8" class="page">
+    <div class="container">
+        <div class="dialogue-box">
+            <h2 class="dialogue-title">🏨 דִּיאָלוֹג 8: דָּן מַתְחִיל לַעֲבוֹד</h2>
+            <div class="dialogue-context">מָצָב: דָּן מַתְחִיל <span class="dict-word" data-word="עֲבוֹדָה">עֲבוֹדָה</span> חֲדָשָׁה בְּ<span class="dict-word" data-word="בֵּית מָלוֹן">בֵּית מָלוֹן</span> "שָׁלוֹם"</div>
+            
+            <div class="dialogue-line speaker-miri">
+                <span class="speaker-name">מִירִי:</span>
+                שָׁלוֹם! אַתָּה דָּן?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                כֵּן, שָׁלוֹם! אֲנִי דָּן. אֲנִי הָ<span class="dict-word" data-word="עוֹבֵד">עוֹבֵד</span> הֶ<span class="dict-word" data-word="חָדָשׁ">חָדָשׁ</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-miri">
+                <span class="speaker-name">מִירִי:</span>
+                נָעִים מְאוֹד! אֲנִי מִירִי, הַ<span class="dict-word" data-word="מַזְכִּירָה">מַזְכִּירָה</span>. אַתָּה עוֹבֵד בַּ<span class="dict-word" data-word="קַבָּלָה">קַבָּלָה</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                מְצוּיָּן! מָה אֲנִי עוֹשֶׂה?
+            </div>
+            
+            <div class="dialogue-line speaker-miri">
+                <span class="speaker-name">מִירִי:</span>
+                אַתָּה <span class="dict-word" data-word="עוֹנֶה">עוֹנֶה</span> לַ<span class="dict-word" data-word="טֶּלֶפוֹן">טֶּלֶפוֹן</span>, כּוֹתֵב בַּ<span class="dict-word" data-word="מַחְשֵׁב">מַחְשֵׁב</span>, וְ<span class="dict-word" data-word="שׁוֹלֵחַ">שׁוֹלֵחַ</span> <span class="dict-word" data-word="מֵייל">מֵייל</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                בְּסֵדֶר!
+            </div>
+            
+            <div class="dialogue-line speaker-miri">
+                <span class="speaker-name">מִירִי:</span>
+                הִנֵּה הַמַּחְשֵׁב, וְהִנֵּה הַטֶּלֶפוֹן. יֵשׁ גַּם <span class="dict-word" data-word="אִינְטֶרְנֶט">אִינְטֶרְנֶט</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                תּוֹדָה רַבָּה!
+            </div>
+            
+            <div class="dialogue-line speaker-miri">
+                <span class="speaker-name">מִירִי:</span>
+                <span class="dict-word" data-word="הַטֶּלֶפוֹן">הַטֶּלֶפוֹן</span> <span class="dict-word" data-word="מְצַלְצֵל">מְצַלְצֵל</span>!
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                אֲנִי עוֹנֶה! ... שָׁלוֹם, בֵּית מָלוֹן "שָׁלוֹם"!
+            </div>
+            
+            <div class="dialogue-line speaker-oreakh">
+                <span class="speaker-name">אוֹרֵחַ:</span>
+                שָׁלוֹם! יֵשׁ <span class="dict-word" data-word="חֶדֶר">חֶדֶר</span> <span class="dict-word" data-word="פָּנוּי">פָּנוּי</span>?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                רֶגַע, אֲנִי בּוֹדֵק בַּמַּחְשֵׁב... כֵּן, יֵשׁ חֶדֶר פָּנוּי!
+            </div>
+            
+            <div class="dialogue-line speaker-oreakh">
+                <span class="speaker-name">אוֹרֵחַ:</span>
+                יוֹפִי! מָה הַ<span class="dict-word" data-word="מְחִיר">מְחִיר</span>?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                <span class="dict-word" data-word="מֵאָה">מֵאָה</span> <span class="dict-word" data-word="שֶׁקֶל">שֶׁקֶל</span> לְ<span class="dict-word" data-word="לַיְלָה">לַיְלָה</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-oreakh">
+                <span class="speaker-name">אוֹרֵחַ:</span>
+                בְּסֵדֶר! תּוֹדָה!
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                בְּבַקָּשָׁה! לְהִתְרָאוֹת!
+            </div>
+            
+            <div class="dialogue-line speaker-miri">
+                <span class="speaker-name">מִירִי:</span>
+                כָּל הַכָּבוֹד, דָּן! אַתָּה עוֹבֵד מְצוּיָּן!
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                תּוֹדָה, מִירִי! אֲנִי שָׂמֵחַ, כִּי הָעֲבוֹדָה טוֹבָה!
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 3: Dialogue 9 -->
+<div id="dialogue9" class="page">
+    <div class="container">
+        <div class="dialogue-box">
+            <h2 class="dialogue-title">🍳 דִּיאָלוֹג 9: אֲרוּחַת בֹּקֶר</h2>
+            <div class="dialogue-context">מָצָב: בֹּקֶר אֵצֶל רוּת — <span class="dict-word" data-word="אֲרוּחַת">אֲרוּחַת</span> בֹּקֶר יִשְׂרְאֵלִית!</div>
+            
+            <div class="dialogue-line speaker-ruth">
+                <span class="speaker-name">רוּת:</span>
+                בֹּקֶר טוֹב, דָּן! יֵשׁ אֲרוּחַת בֹּקֶר עַל הַשֻּׁלְחָן.
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                בֹּקֶר טוֹב! וַאוּ, הַרְבֵּה <span class="dict-word" data-word="אֹכֶל">אֹכֶל</span>!
+            </div>
+            
+            <div class="dialogue-line speaker-ruth">
+                <span class="speaker-name">רוּת:</span>
+                כֵּן! יֵשׁ <span class="dict-word" data-word="לֶחֶם">לֶחֶם</span>, <span class="dict-word" data-word="בֵּיצִים">בֵּיצִים</span>, <span class="dict-word" data-word="גְּבִינָה">גְּבִינָה</span> לְבָנָה, וְ<span class="dict-word" data-word="סָלָט">סָלָט</span> יִשְׂרָאֵלִי.
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                מָה יֵשׁ בַּסָּלָט?
+            </div>
+            
+            <div class="dialogue-line speaker-ruth">
+                <span class="speaker-name">רוּת:</span>
+                <span class="dict-word" data-word="עֲגָבָנִיּוֹת">עֲגָבָנִיּוֹת</span>, <span class="dict-word" data-word="מְלָפְפוֹנִים">מְלָפְפוֹנִים</span>, וּמְעַט שֶׁמֶן.
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                וּמָה זֶה?
+            </div>
+            
+            <div class="dialogue-line speaker-ruth">
+                <span class="speaker-name">רוּת:</span>
+                זֶה <span class="dict-word" data-word="חוּמוּס">חוּמוּס</span>! אַתָּה אוֹהֵב חוּמוּס?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                אֲנִי לֹא יוֹדֵעַ. זֹאת פַּעַם רִאשׁוֹנָה!
+            </div>
+            
+            <div class="dialogue-line speaker-ruth">
+                <span class="speaker-name">רוּת:</span>
+                מְמְמְ... <span class="dict-word" data-word="טָעִים">טָעִים</span>!
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                מְמְמְ... כֵּן! טָעִים מְאוֹד!
+            </div>
+            
+            <div class="dialogue-line speaker-ruth">
+                <span class="speaker-name">רוּת:</span>
+                אַתָּה <span class="dict-word" data-word="שׁוֹתֶה">שׁוֹתֶה</span> <span class="dict-word" data-word="קָפֶה">קָפֶה</span> אוֹ <span class="dict-word" data-word="תֵּה">תֵּה</span>?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                קָפֶה, בְּבַקָּשָׁה. עִם <span class="dict-word" data-word="חָלָב">חָלָב</span> וּבְלִי <span class="dict-word" data-word="סֻכָּר">סֻכָּר</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-ruth">
+                <span class="speaker-name">רוּת:</span>
+                הִנֵּה! אַתָּה <span class="dict-word" data-word="תָּמִיד">תָּמִיד</span> שׁוֹתֶה קָפֶה בַּבֹּקֶר?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                כֵּן, תָּמִיד! אֲנִי <span class="dict-word" data-word="אַף פַּעַם">אַף פַּעַם</span> לֹא שׁוֹתֶה תֵּה בַּבֹּקֶר.
+            </div>
+            
+            <div class="dialogue-line speaker-dani">
+                <span class="speaker-name">דָּנִי:</span>
+                בֹּקֶר טוֹב!
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                בֹּקֶר טוֹב! מִי זֶה?
+            </div>
+            
+            <div class="dialogue-line speaker-ruth">
+                <span class="speaker-name">רוּת:</span>
+                דָּנִי, הָאָח שֶׁלִּי. הוּא <span class="dict-word" data-word="חַיָּיל">חַיָּיל</span>.
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                נָעִים מְאוֹד!
+            </div>
+            
+            <div class="dialogue-line speaker-dani">
+                <span class="speaker-name">דָּנִי:</span>
+                נָעִים מְאוֹד! אַתָּה גָּר פֹּה?
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                כֵּן, אֲנִי עוֹלֶה חָדָשׁ.
+            </div>
+            
+            <div class="dialogue-line speaker-dani">
+                <span class="speaker-name">דָּנִי:</span>
+                בָּרוּךְ הַבָּא לְיִשְׂרָאֵל!
+            </div>
+            
+            <div class="dialogue-line speaker-dan">
+                <span class="speaker-name">דָּן:</span>
+                תּוֹדָה רַבָּה!
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 4: Quiz -->
+<div id="quiz" class="page">
+    <div class="container">
+        <div class="quiz-section">
+            <h2 class="quiz-title">📝 קְוִיז — בָּדְקוּ אֶת עַצְמְכֶם!</h2>
+            
+            <div class="quiz-question" data-correct="2">
+                <p>1. מָה הֵם "סְפָרִים"?</p>
+                <div class="quiz-options">
+                    <label class="quiz-option">
+                        <input type="radio" name="q1" value="1">
+                        <span>סֵפֶר אֶחָד</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q1" value="2">
+                        <span>הַרְבֵּה סֵפֶר</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q1" value="3">
+                        <span>מַחְבֶּרֶת</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-correct="1">
+                <p>2. אֵיפֹה דָּן עוֹבֵד?</p>
+                <div class="quiz-options">
+                    <label class="quiz-option">
+                        <input type="radio" name="q2" value="1">
+                        <span>בְּבֵית מָלוֹן</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q2" value="2">
+                        <span>בְּבֵית סֵפֶר</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q2" value="3">
+                        <span>בָּאוּלְפָּן</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-correct="3">
+                <p>3. מָה דָּן עוֹשֶׂה בָּעֲבוֹדָה?</p>
+                <div class="quiz-options">
+                    <label class="quiz-option">
+                        <input type="radio" name="q3" value="1">
+                        <span>לוֹמֵד עִבְרִית</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q3" value="2">
+                        <span>אוֹכֵל אֲרוּחַת בֹּקֶר</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q3" value="3">
+                        <span>עוֹנֶה לַטֶּלֶפוֹן וְכוֹתֵב מֵיילִים</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-correct="2">
+                <p>4. מָה יֵשׁ בַּסָּלָט הַיִּשְׂרְאֵלִי?</p>
+                <div class="quiz-options">
+                    <label class="quiz-option">
+                        <input type="radio" name="q4" value="1">
+                        <span>לֶחֶם וְגְבִינָה</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q4" value="2">
+                        <span>עֲגָבָנִיּוֹת וּמְלָפְפוֹנִים</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q4" value="3">
+                        <span>בֵּיצִים וְחָלָב</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-correct="1">
+                <p>5. מִי דָּנִי?</p>
+                <div class="quiz-options">
+                    <label class="quiz-option">
+                        <input type="radio" name="q5" value="1">
+                        <span>הָאָח שֶׁל רוּת, חַיָּיל</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q5" value="2">
+                        <span>הַבַּעַל שֶׁל רוּת</span>
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q5" value="3">
+                        <span>חָבֵר שֶׁל דָּן מֵהָאוּלְפָּן</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-buttons">
+                <button class="quiz-btn" onclick="checkQuiz()">בְּדוֹק ✓</button>
+                <button class="quiz-btn reset" onclick="resetQuiz()">נַסֶּה שׁוּב ↻</button>
+            </div>
+            
+            <div class="quiz-result" id="quizResult"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <div>
+                <h3 id="modal-word"></h3>
+                <span class="phonetic" id="modal-phonetic"></span>
+            </div>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-row">
+                <div class="label-row">
+                    <span class="label-hebrew">סוּג מִילָּה</span>
+                    <span class="label-english">Type</span>
+                </div>
+                <div class="modal-value" id="modal-type-he"></div>
+                <div class="modal-value-english" id="modal-type-en"></div>
+            </div>
+            
+            <div class="modal-row">
+                <div class="label-row">
+                    <span class="label-hebrew">תַּרְגּוּם</span>
+                    <span class="label-english">Meaning</span>
+                </div>
+                <div class="meanings-list" id="modal-meanings"></div>
+            </div>
+            
+            <div class="modal-row">
+                <div class="label-row">
+                    <span class="label-hebrew">דּוּגְמָאוֹת</span>
+                    <span class="label-english">Examples</span>
+                </div>
+                <div class="examples-container" id="modal-examples"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2025 <a href="https://lingostudio.ch" target="_blank">lingoStudio</a> | עִבְרִית לְיוֹם יוֹם</p>
+</footer>
+
+<script>
+const dictionary = {
+    "שְׁלִישִׁי": {
+        phonetic: "shli-SHI",
+        type_he: "מִסְפָּר סוֹדֵר, זָכָר",
+        type_en: "Ordinal number, masculine",
+        meanings: [{ text: "third", highlight: true }],
+        examples: [{ hebrew: "הַשִּׁעוּר הַשְּׁלִישִׁי.", english: "The third lesson.", inText: true }]
+    },
+    "רַבִּים": {
+        phonetic: "ra-BIM",
+        type_he: "שֵׁם תֹּאַר / שֵׁם עֶצֶם",
+        type_en: "Adjective / Noun",
+        meanings: [{ text: "plural / many", highlight: true }],
+        examples: [{ hebrew: "סְפָרִים — זֶה רַבִּים.", english: "Books — that's plural.", inText: true }]
+    },
+    "אֵלֶּה": {
+        phonetic: "E-le",
+        type_he: "כִּנּוּי רֶמֶז, רַבִּים",
+        type_en: "Demonstrative pronoun, plural",
+        meanings: [{ text: "these", highlight: true }],
+        examples: [{ hebrew: "מָה אֵלֶּה? אֵלֶּה סְפָרִים.", english: "What are these? These are books.", inText: true }]
+    },
+    "סְפָרִים": {
+        phonetic: "sfa-RIM",
+        type_he: "שֵׁם עֶצֶם, זָכָר, רַבִּים",
+        type_en: "Noun, masculine, plural",
+        meanings: [{ text: "books", highlight: true }],
+        examples: [{ hebrew: "אֵלֶּה סְפָרִים.", english: "These are books.", inText: true }]
+    },
+    "הַרְבֵּה": {
+        phonetic: "har-BE",
+        type_he: "תֹּאַר הַפֹּעַל",
+        type_en: "Adverb",
+        meanings: [{ text: "a lot / many / much", highlight: true }],
+        examples: [{ hebrew: "יֵשׁ הַרְבֵּה סְפָרִים.", english: "There are many books.", inText: true }]
+    },
+    "מַחְבָּרוֹת": {
+        phonetic: "makh-ba-ROT",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה, רַבִּים",
+        type_en: "Noun, feminine, plural",
+        meanings: [{ text: "notebooks", highlight: true }],
+        examples: [{ hebrew: "אֵלֶּה מַחְבָּרוֹת.", english: "These are notebooks.", inText: true }]
+    },
+    "מַחְבֶּרֶת": {
+        phonetic: "makh-BE-ret",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה",
+        type_en: "Noun, feminine",
+        meanings: [{ text: "notebook", highlight: true }],
+        examples: [{ hebrew: "זֹאת מַחְבֶּרֶת.", english: "This is a notebook.", inText: true }]
+    },
+    "שֻׁלְחָנוֹת": {
+        phonetic: "shul-kha-NOT",
+        type_he: "שֵׁם עֶצֶם, זָכָר, רַבִּים",
+        type_en: "Noun, masculine, plural",
+        meanings: [{ text: "tables", highlight: true }],
+        examples: [{ hebrew: "אֵלֶּה שֻׁלְחָנוֹת.", english: "These are tables.", inText: true }]
+    },
+    "יוֹשְׁבִים": {
+        phonetic: "yosh-VIM",
+        type_he: "פֹּעַל (קַל), הוֹוֶה, רַבִּים זָכָר",
+        type_en: "Verb (Pa'al), present, masculine plural",
+        meanings: [{ text: "sit / are sitting (they-m)", highlight: true }],
+        examples: [{ hebrew: "אֲנַחְנוּ יוֹשְׁבִים.", english: "We are sitting.", inText: true }]
+    },
+    "קוֹרְאִים": {
+        phonetic: "kor-IM",
+        type_he: "פֹּעַל (קַל), הוֹוֶה, רַבִּים זָכָר",
+        type_en: "Verb (Pa'al), present, masculine plural",
+        meanings: [{ text: "read / are reading (they-m)", highlight: true }],
+        examples: [{ hebrew: "אֲנַחְנוּ קוֹרְאִים.", english: "We are reading.", inText: true }]
+    },
+    "אַתֶּן": {
+        phonetic: "a-TEN",
+        type_he: "כִּנּוּי גּוּף, רַבּוֹת נְקֵבָה",
+        type_en: "Personal pronoun, feminine plural",
+        meanings: [{ text: "you (feminine plural)", highlight: true }],
+        examples: [{ hebrew: "מָה אַתֶּן עוֹשׂוֹת?", english: "What are you (women) doing?", inText: true }]
+    },
+    "יוֹשְׁבוֹת": {
+        phonetic: "yosh-VOT",
+        type_he: "פֹּעַל (קַל), הוֹוֶה, רַבּוֹת נְקֵבָה",
+        type_en: "Verb (Pa'al), present, feminine plural",
+        meanings: [{ text: "sit / are sitting (they-f)", highlight: true }],
+        examples: [{ hebrew: "אֲנַחְנוּ יוֹשְׁבוֹת.", english: "We (women) are sitting.", inText: true }]
+    },
+    "כּוֹתְבוֹת": {
+        phonetic: "kot-VOT",
+        type_he: "פֹּעַל (קַל), הוֹוֶה, רַבּוֹת נְקֵבָה",
+        type_en: "Verb (Pa'al), present, feminine plural",
+        meanings: [{ text: "write / are writing (they-f)", highlight: true }],
+        examples: [{ hebrew: "אֲנַחְנוּ כּוֹתְבוֹת.", english: "We (women) are writing.", inText: true }]
+    },
+    "הֵם": {
+        phonetic: "hem",
+        type_he: "כִּנּוּי גּוּף, רַבִּים זָכָר",
+        type_en: "Personal pronoun, masculine plural",
+        meanings: [{ text: "they (masculine)", highlight: true }],
+        examples: [{ hebrew: "הֵם חֲבֵרִים.", english: "They are friends.", inText: true }]
+    },
+    "חֲבֵרִים": {
+        phonetic: "kha-ve-RIM",
+        type_he: "שֵׁם עֶצֶם, זָכָר, רַבִּים",
+        type_en: "Noun, masculine, plural",
+        meanings: [{ text: "friends (male/mixed)", highlight: true }],
+        examples: [{ hebrew: "הֵם חֲבֵרִים.", english: "They are friends.", inText: true }]
+    },
+    "הֵן": {
+        phonetic: "hen",
+        type_he: "כִּנּוּי גּוּף, רַבּוֹת נְקֵבָה",
+        type_en: "Personal pronoun, feminine plural",
+        meanings: [{ text: "they (feminine)", highlight: true }],
+        examples: [{ hebrew: "הֵן חֲבֵרוֹת.", english: "They (women) are friends.", inText: true }]
+    },
+    "חֲבֵרוֹת": {
+        phonetic: "kha-ve-ROT",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה, רַבִּים",
+        type_en: "Noun, feminine, plural",
+        meanings: [{ text: "friends (female)", highlight: true }],
+        examples: [{ hebrew: "הֵן חֲבֵרוֹת.", english: "They (women) are friends.", inText: true }]
+    },
+    "תְּמוּנָה": {
+        phonetic: "tmu-NA",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה",
+        type_en: "Noun, feminine",
+        meanings: [{ text: "picture / image", highlight: true }],
+        examples: [{ hebrew: "זֹאת תְּמוּנָה יָפָה.", english: "This is a beautiful picture.", inText: true }]
+    },
+    "עֲבוֹדָה": {
+        phonetic: "a-vo-DA",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה",
+        type_en: "Noun, feminine",
+        meanings: [{ text: "work / job", highlight: true }],
+        examples: [{ hebrew: "הָעֲבוֹדָה טוֹבָה.", english: "The work is good.", inText: true }]
+    },
+    "בֵּית מָלוֹן": {
+        phonetic: "beyt ma-LON",
+        type_he: "שֵׁם עֶצֶם (סְמִיכוּת)",
+        type_en: "Noun (construct state)",
+        meanings: [{ text: "hotel", highlight: true }],
+        examples: [{ hebrew: "אֲנִי עוֹבֵד בְּבֵית מָלוֹן.", english: "I work in a hotel.", inText: true }]
+    },
+    "עוֹבֵד": {
+        phonetic: "o-VED",
+        type_he: "פֹּעַל (קַל), הוֹוֶה, זָכָר / שֵׁם עֶצֶם",
+        type_en: "Verb / Noun, masculine",
+        meanings: [
+            { text: "works / is working", highlight: true },
+            { text: "worker / employee", highlight: false }
+        ],
+        examples: [{ hebrew: "אֲנִי עוֹבֵד בְּבֵית מָלוֹן.", english: "I work in a hotel.", inText: true }]
+    },
+    "חָדָשׁ": {
+        phonetic: "kha-DASH",
+        type_he: "שֵׁם תֹּאַר, זָכָר",
+        type_en: "Adjective, masculine",
+        meanings: [{ text: "new", highlight: true }],
+        examples: [{ hebrew: "אֲנִי הָעוֹבֵד הֶחָדָשׁ.", english: "I am the new employee.", inText: true }]
+    },
+    "מַזְכִּירָה": {
+        phonetic: "maz-ki-RA",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה",
+        type_en: "Noun, feminine",
+        meanings: [{ text: "secretary (female)", highlight: true }],
+        examples: [{ hebrew: "מִירִי הַמַּזְכִּירָה.", english: "Miri is the secretary.", inText: true }]
+    },
+    "קַבָּלָה": {
+        phonetic: "ka-ba-LA",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה",
+        type_en: "Noun, feminine",
+        meanings: [{ text: "reception (desk)", highlight: true }],
+        examples: [{ hebrew: "אֲנִי עוֹבֵד בַּקַּבָּלָה.", english: "I work at the reception.", inText: true }]
+    },
+    "עוֹנֶה": {
+        phonetic: "o-NE",
+        type_he: "פֹּעַל (קַל), הוֹוֶה, זָכָר",
+        type_en: "Verb (Pa'al), present, masculine",
+        meanings: [{ text: "answers / responds", highlight: true }],
+        examples: [{ hebrew: "אֲנִי עוֹנֶה לַטֶּלֶפוֹן.", english: "I answer the phone.", inText: true }]
+    },
+    "טֶּלֶפוֹן": {
+        phonetic: "TE-le-fon",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "telephone / phone", highlight: true }],
+        examples: [{ hebrew: "הַטֶּלֶפוֹן מְצַלְצֵל.", english: "The phone is ringing.", inText: true }]
+    },
+    "מַחְשֵׁב": {
+        phonetic: "makh-SHEV",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "computer", highlight: true }],
+        examples: [{ hebrew: "אֲנִי כּוֹתֵב בַּמַּחְשֵׁב.", english: "I write on the computer.", inText: true }]
+    },
+    "שׁוֹלֵחַ": {
+        phonetic: "sho-LE-akh",
+        type_he: "פֹּעַל (קַל), הוֹוֶה, זָכָר",
+        type_en: "Verb (Pa'al), present, masculine",
+        meanings: [{ text: "sends", highlight: true }],
+        examples: [{ hebrew: "אֲנִי שׁוֹלֵחַ מֵייל.", english: "I send an email.", inText: true }]
+    },
+    "מֵייל": {
+        phonetic: "meyl",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "email", highlight: true }],
+        examples: [{ hebrew: "אֲנִי שׁוֹלֵחַ מֵייל.", english: "I send an email.", inText: true }]
+    },
+    "אִינְטֶרְנֶט": {
+        phonetic: "IN-ter-net",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "internet", highlight: true }],
+        examples: [{ hebrew: "יֵשׁ אִינְטֶרְנֶט.", english: "There is internet.", inText: true }]
+    },
+    "הַטֶּלֶפוֹן": {
+        phonetic: "ha-TE-le-fon",
+        type_he: "שֵׁם עֶצֶם + ה הַיְדִיעָה",
+        type_en: "Noun + Definite article",
+        meanings: [{ text: "the telephone", highlight: true }],
+        examples: [{ hebrew: "הַטֶּלֶפוֹן מְצַלְצֵל.", english: "The phone is ringing.", inText: true }]
+    },
+    "מְצַלְצֵל": {
+        phonetic: "me-tsal-TSEL",
+        type_he: "פֹּעַל (פִּעֵל), הוֹוֶה, זָכָר",
+        type_en: "Verb (Pi'el), present, masculine",
+        meanings: [{ text: "rings / is ringing", highlight: true }],
+        examples: [{ hebrew: "הַטֶּלֶפוֹן מְצַלְצֵל!", english: "The phone is ringing!", inText: true }]
+    },
+    "חֶדֶר": {
+        phonetic: "KHE-der",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "room", highlight: true }],
+        examples: [{ hebrew: "יֵשׁ חֶדֶר פָּנוּי.", english: "There is a vacant room.", inText: true }]
+    },
+    "פָּנוּי": {
+        phonetic: "pa-NUY",
+        type_he: "שֵׁם תֹּאַר, זָכָר",
+        type_en: "Adjective, masculine",
+        meanings: [{ text: "vacant / available / free", highlight: true }],
+        examples: [{ hebrew: "יֵשׁ חֶדֶר פָּנוּי?", english: "Is there a vacant room?", inText: true }]
+    },
+    "מְחִיר": {
+        phonetic: "me-KHIR",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "price", highlight: true }],
+        examples: [{ hebrew: "מָה הַמְּחִיר?", english: "What is the price?", inText: true }]
+    },
+    "מֵאָה": {
+        phonetic: "me-A",
+        type_he: "מִסְפָּר",
+        type_en: "Number",
+        meanings: [{ text: "hundred / one hundred", highlight: true }],
+        examples: [{ hebrew: "מֵאָה שֶׁקֶל.", english: "One hundred shekels.", inText: true }]
+    },
+    "שֶׁקֶל": {
+        phonetic: "SHE-kel",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "shekel (Israeli currency)", highlight: true }],
+        examples: [{ hebrew: "מֵאָה שֶׁקֶל.", english: "One hundred shekels.", inText: true }]
+    },
+    "לַיְלָה": {
+        phonetic: "LAY-la",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "night", highlight: true }],
+        examples: [{ hebrew: "מֵאָה שֶׁקֶל לְלַיְלָה.", english: "One hundred shekels per night.", inText: true }]
+    },
+    "אֲרוּחַת": {
+        phonetic: "a-ru-KHAT",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה (סְמִיכוּת)",
+        type_en: "Noun, feminine (construct state)",
+        meanings: [{ text: "meal of...", highlight: true }],
+        examples: [{ hebrew: "אֲרוּחַת בֹּקֶר.", english: "Breakfast (meal of morning).", inText: true }]
+    },
+    "אֹכֶל": {
+        phonetic: "O-khel",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "food", highlight: true }],
+        examples: [{ hebrew: "יֵשׁ הַרְבֵּה אֹכֶל.", english: "There is a lot of food.", inText: true }]
+    },
+    "לֶחֶם": {
+        phonetic: "LE-khem",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "bread", highlight: true }],
+        examples: [{ hebrew: "יֵשׁ לֶחֶם.", english: "There is bread.", inText: true }]
+    },
+    "בֵּיצִים": {
+        phonetic: "bey-TSIM",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה, רַבִּים",
+        type_en: "Noun, feminine, plural",
+        meanings: [{ text: "eggs", highlight: true }],
+        examples: [{ hebrew: "יֵשׁ בֵּיצִים.", english: "There are eggs.", inText: true }]
+    },
+    "גְּבִינָה": {
+        phonetic: "gvi-NA",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה",
+        type_en: "Noun, feminine",
+        meanings: [{ text: "cheese", highlight: true }],
+        examples: [{ hebrew: "גְּבִינָה לְבָנָה.", english: "White cheese.", inText: true }]
+    },
+    "סָלָט": {
+        phonetic: "sa-LAT",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "salad", highlight: true }],
+        examples: [{ hebrew: "סָלָט יִשְׂרְאֵלִי.", english: "Israeli salad.", inText: true }]
+    },
+    "עֲגָבָנִיּוֹת": {
+        phonetic: "a-ga-va-ni-YOT",
+        type_he: "שֵׁם עֶצֶם, נְקֵבָה, רַבִּים",
+        type_en: "Noun, feminine, plural",
+        meanings: [{ text: "tomatoes", highlight: true }],
+        examples: [{ hebrew: "עֲגָבָנִיּוֹת בַּסָּלָט.", english: "Tomatoes in the salad.", inText: true }]
+    },
+    "מְלָפְפוֹנִים": {
+        phonetic: "me-la-fe-fo-NIM",
+        type_he: "שֵׁם עֶצֶם, זָכָר, רַבִּים",
+        type_en: "Noun, masculine, plural",
+        meanings: [{ text: "cucumbers", highlight: true }],
+        examples: [{ hebrew: "מְלָפְפוֹנִים בַּסָּלָט.", english: "Cucumbers in the salad.", inText: true }]
+    },
+    "חוּמוּס": {
+        phonetic: "KHU-mus",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "hummus", highlight: true }],
+        examples: [{ hebrew: "אֲנִי אוֹהֵב חוּמוּס.", english: "I like hummus.", inText: true }]
+    },
+    "טָעִים": {
+        phonetic: "ta-IM",
+        type_he: "שֵׁם תֹּאַר, זָכָר",
+        type_en: "Adjective, masculine",
+        meanings: [{ text: "tasty / delicious", highlight: true }],
+        examples: [{ hebrew: "זֶה טָעִים!", english: "This is tasty!", inText: true }]
+    },
+    "שׁוֹתֶה": {
+        phonetic: "sho-TE",
+        type_he: "פֹּעַל (קַל), הוֹוֶה, זָכָר",
+        type_en: "Verb (Pa'al), present, masculine",
+        meanings: [{ text: "drinks / is drinking", highlight: true }],
+        examples: [{ hebrew: "אֲנִי שׁוֹתֶה קָפֶה.", english: "I drink coffee.", inText: true }]
+    },
+    "קָפֶה": {
+        phonetic: "ka-FE",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "coffee", highlight: true }],
+        examples: [{ hebrew: "אֲנִי שׁוֹתֶה קָפֶה.", english: "I drink coffee.", inText: true }]
+    },
+    "תֵּה": {
+        phonetic: "te",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "tea", highlight: true }],
+        examples: [{ hebrew: "אֲנִי שׁוֹתֶה תֵּה.", english: "I drink tea.", inText: true }]
+    },
+    "חָלָב": {
+        phonetic: "kha-LAV",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "milk", highlight: true }],
+        examples: [{ hebrew: "קָפֶה עִם חָלָב.", english: "Coffee with milk.", inText: true }]
+    },
+    "סֻכָּר": {
+        phonetic: "su-KAR",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "sugar", highlight: true }],
+        examples: [{ hebrew: "בְּלִי סֻכָּר.", english: "Without sugar.", inText: true }]
+    },
+    "תָּמִיד": {
+        phonetic: "ta-MID",
+        type_he: "תֹּאַר הַפֹּעַל",
+        type_en: "Adverb",
+        meanings: [{ text: "always", highlight: true }],
+        examples: [{ hebrew: "אֲנִי תָּמִיד שׁוֹתֶה קָפֶה.", english: "I always drink coffee.", inText: true }]
+    },
+    "אַף פַּעַם": {
+        phonetic: "af PA-am",
+        type_he: "בִּיטּוּי תְּדִירוּת",
+        type_en: "Frequency expression",
+        meanings: [{ text: "never", highlight: true }],
+        examples: [{ hebrew: "אֲנִי אַף פַּעַם לֹא שׁוֹתֶה תֵּה.", english: "I never drink tea.", inText: true }]
+    },
+    "חַיָּיל": {
+        phonetic: "kha-YAL",
+        type_he: "שֵׁם עֶצֶם, זָכָר",
+        type_en: "Noun, masculine",
+        meanings: [{ text: "soldier", highlight: true }],
+        examples: [{ hebrew: "הוּא חַיָּיל.", english: "He is a soldier.", inText: true }]
+    }
+};
+
+// Navigation
+document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const pageId = this.getAttribute('data-page');
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+
+// Dictionary Modal
+document.querySelectorAll('.dict-word').forEach(word => {
+    word.addEventListener('click', function() {
+        const wordText = this.getAttribute('data-word');
+        openModal(wordText);
+    });
+});
+
+function openModal(word) {
+    const entry = dictionary[word];
+    if (!entry) return;
+    
+    document.getElementById('modal-word').textContent = word;
+    document.getElementById('modal-phonetic').textContent = `(${entry.phonetic})`;
+    document.getElementById('modal-type-he').textContent = entry.type_he;
+    document.getElementById('modal-type-en').textContent = entry.type_en;
+    
+    const meaningsHtml = entry.meanings.map(m => 
+        `<div class="meaning-item ${m.highlight ? 'highlight' : ''}">${m.text}</div>`
+    ).join('');
+    document.getElementById('modal-meanings').innerHTML = meaningsHtml;
+    
+    const examplesHtml = entry.examples.map(ex => 
+        `<div class="example-item ${ex.inText ? 'in-text' : ''}">
+            <div class="example-hebrew">${ex.hebrew}</div>
+            <div class="example-english">${ex.english}</div>
+        </div>`
+    ).join('');
+    document.getElementById('modal-examples').innerHTML = examplesHtml;
+    
+    document.getElementById('modal-overlay').classList.add('show');
+}
+
+function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('show');
+}
+
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+});
+
+function checkQuiz() {
+    const questions = document.querySelectorAll('.quiz-question');
+    let correct = 0;
+    
+    questions.forEach((q, index) => {
+        const correctAnswer = q.getAttribute('data-correct');
+        const selected = q.querySelector(`input[name="q${index + 1}"]:checked`);
+        
+        q.querySelectorAll('.quiz-option').forEach(opt => {
+            opt.classList.remove('correct', 'wrong');
+        });
+        
+        if (selected) {
+            const selectedValue = selected.value;
+            const selectedOption = selected.closest('.quiz-option');
+            
+            if (selectedValue === correctAnswer) {
+                selectedOption.classList.add('correct');
+                correct++;
+            } else {
+                selectedOption.classList.add('wrong');
+                q.querySelectorAll('.quiz-option').forEach(opt => {
+                    if (opt.querySelector('input').value === correctAnswer) {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+        }
+    });
+    
+    const result = document.getElementById('quizResult');
+    const total = questions.length;
+    const percentage = Math.round((correct / total) * 100);
+    
+    result.classList.add('show');
+    if (percentage >= 80) {
+        result.className = 'quiz-result show good';
+        result.innerHTML = `🎉 מְצוּיָּן! ${correct} מִתּוֹךְ ${total} (${percentage}%)`;
+    } else {
+        result.className = 'quiz-result show needs-work';
+        result.innerHTML = `📚 ${correct} מִתּוֹךְ ${total} (${percentage}%) - נַסֶּה שׁוּב!`;
+    }
+}
+
+function resetQuiz() {
+    document.querySelectorAll('.quiz-question input').forEach(input => {
+        input.checked = false;
+    });
+    document.querySelectorAll('.quiz-option').forEach(opt => {
+        opt.classList.remove('correct', 'wrong');
+    });
+    document.getElementById('quizResult').classList.remove('show');
+}
+</script>
+<script src="sidebar-loader.js"></script>
+</body>
+</html>

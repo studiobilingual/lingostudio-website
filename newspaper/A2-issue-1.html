@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עברית ליום יום 📰</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', 'David', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            line-height: 1.9;
+            padding: 20px;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 50px 40px;
+            text-align: center;
+            border-bottom: 4px solid #1a252f;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header .topics {
+            font-size: 1.1em;
+            color: #ecf0f1;
+            font-weight: 500;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        header .topics .topic-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 3px;
+            transition: all 0.3s;
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        header .topics .topic-link:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        header .date {
+            font-size: 0.95em;
+            color: #bdc3c7;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        nav {
+            background: #ecf0f1;
+            padding: 0;
+            border-bottom: 2px solid #bdc3c7;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 18px 30px;
+            background: #ecf0f1;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1em;
+            border-left: 1px solid #bdc3c7;
+        }
+
+        nav a:first-child {
+            border-right: 1px solid #bdc3c7;
+        }
+
+        nav a:hover {
+            background: #34495e;
+            color: white;
+        }
+
+        main {
+            padding: 50px 40px;
+        }
+
+        article {
+            margin-bottom: 60px;
+            padding-bottom: 50px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        article:last-of-type {
+            border-bottom: none;
+        }
+
+        article .category {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        article h2 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        article .meta {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-style: italic;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        article .source {
+            background: #ecf0f1;
+            padding: 12px 18px;
+            margin: 20px 0;
+            border-right: 4px solid #3498db;
+            font-size: 0.9em;
+            color: #34495e;
+            line-height: 1.7;
+        }
+
+        article .source strong {
+            color: #2c3e50;
+        }
+
+        article .source a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        article .source a:hover {
+            text-decoration: underline;
+        }
+
+        article p {
+            font-size: 1.25em;
+            margin-bottom: 18px;
+            color: #2c3e50;
+            line-height: 2.1;
+            text-align: justify;
+        }
+
+        .difficult-word {
+            font-weight: 700;
+            color: #e74c3c;
+            cursor: pointer;
+            border-bottom: 2px dotted #e74c3c;
+            transition: all 0.2s;
+        }
+
+        .difficult-word:hover {
+            background: #fff5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 62, 80, 0.85);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            margin: 8% auto;
+            padding: 35px;
+            border: none;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 550px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: #95a5a6;
+            float: left;
+            font-size: 32px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .close:hover {
+            color: #e74c3c;
+        }
+
+        .modal-content h3 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .modal-content .word-type {
+            background: #3498db;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 4px;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .modal-content .explanation {
+            font-size: 1.2em;
+            line-height: 1.9;
+            margin: 18px 0;
+            padding: 18px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-right: 4px solid #3498db;
+            color: #2c3e50;
+        }
+
+        .modal-content .translation {
+            color: #7f8c8d;
+            font-style: italic;
+            margin: 15px 0;
+            font-size: 1.05em;
+            font-weight: 500;
+        }
+
+        .modal-content .example {
+            background: #ecf0f1;
+            padding: 18px;
+            border-radius: 6px;
+            margin-top: 18px;
+            font-size: 1.2em;
+            border-right: 4px solid #95a5a6;
+            color: #2c3e50;
+        }
+
+        #quiz-section {
+            background: #f8f9fa;
+            padding: 50px 40px;
+            border-radius: 8px;
+            margin-top: 60px;
+            border: 2px solid #ecf0f1;
+        }
+
+        #quiz-section h2 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 35px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .question {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            border-right: 5px solid #3498db;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .question h3 {
+            color: #2c3e50;
+            margin-bottom: 18px;
+            font-size: 1.25em;
+            font-weight: 600;
+        }
+
+        .options {
+            margin-top: 18px;
+        }
+
+        .option {
+            display: block;
+            padding: 14px 20px;
+            margin: 12px 0;
+            background: #f8f9fa;
+            border: 2px solid #ecf0f1;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.05em;
+            color: #2c3e50;
+        }
+
+        .option:hover {
+            background: #ecf0f1;
+            border-color: #3498db;
+            transform: translateX(-5px);
+        }
+
+        .option input[type="radio"] {
+            margin-left: 12px;
+        }
+
+        .quiz-buttons {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .quiz-buttons button {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 16px 45px;
+            font-size: 1.15em;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        .quiz-buttons button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+        }
+
+        #result {
+            background: white;
+            padding: 30px;
+            border-radius: 6px;
+            margin-top: 30px;
+            font-size: 1.25em;
+            text-align: center;
+            border: 2px solid #3498db;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        #result.show {
+            display: block;
+            animation: slideDown 0.5s;
+        }
+
+        footer {
+            background: #2c3e50;
+            padding: 35px 40px;
+            text-align: center;
+            color: #ecf0f1;
+            line-height: 1.8;
+        }
+
+        footer p {
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        footer .disclaimer {
+            background: #34495e;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            border: 1px solid #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            article h2 {
+                font-size: 1.6em;
+            }
+
+            article p {
+                font-size: 1.1em;
+            }
+
+            main {
+                padding: 30px 20px;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 15% auto;
+                padding: 25px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                border: none;
+                border-bottom: 1px solid #bdc3c7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header role="banner">
+            <h1>עִבְרִית לְיוֹם יוֹם 📰</h1>
+            <div class="topics">
+                הַשָּׁבוּעַ: 
+                <a href="#article1" class="topic-link">קְנִיּוֹת וְאוֹפְנָה</a> • 
+                <a href="#article2" class="topic-link">בְּרִיאוּת וּתְזוּנָה</a> • 
+                <a href="#article3" class="topic-link">חַיֵּי יוֹם־יוֹם</a>
+            </div>
+            <p class="date">עִיתוֹן לְלוֹמְדֵי עִבְרִית • רָמָה A2 • דֵצֶמְבֶּר 2024</p>
+        </header>
+
+        <nav role="navigation" aria-label="ניווט ראשי">
+            <a href="#article1">קְנִיּוֹת וְאוֹפְנָה</a>
+            <a href="#article2">בְּרִיאוּת וּתְזוּנָה</a>
+            <a href="#article3">חַיֵּי יוֹם־יוֹם</a>
+            <a href="#quiz-section">קְוִיז</a>
+        </nav>
+
+        <main role="main">
+            <article id="article1">
+                <div class="category">קְנִיּוֹת וְאוֹפְנָה</div>
+                <h2>תַּיָּרוֹת יִשְׂרְאֵלִיּוֹת קָנוּ הַרְבֵּה מִדַּי בְּזָארָה 🛍️</h2>
+                <div class="meta">כַּתָּבָה 1 מִתּוֹךְ 3</div>
+                
+                <p>
+                    <span class="difficult-word" data-word="תַּיָּרוֹת">תַּיָּרוֹת</span> יִשְׂרְאֵלִיּוֹת אוֹהֲבוֹת לִקְנוֹת בְּחוּץ לָאָרֶץ. הֵן נוֹסְעוֹת לְפּוֹלִין וְהוֹלְכוֹת לַחֲנוּת זָארָה. הַמְּחִירִים שָׁם יוֹתֵר זוֹלִים מֵאֲשֶׁר בְּיִשְׂרָאֵל. חֲנוּת זָארָה בִּקְרָקוֹב הִיא מָקוֹם פּוֹפּוּלָרִי מְאוֹד.
+                </p>
+                
+                <p>
+                    חֲבוּרָה שֶׁל חֲבֵרוֹת יִשְׂרְאֵלִיּוֹת הָלְכָה לַחֲנוּת. הֵן לָקְחוּ הַרְבֵּה בְּגָדִים. אַחַת הַחֲבֵרוֹת לָקְחָה <span class="difficult-word" data-word="סַל">סַל</span> מָלֵא מְאוֹד. הִיא רָצְתָה לִקְנוֹת אֶת כָּל הַבְּגָדִים בַּקֻּפָּה הָעַצְמָאִית.
+                </p>
+                
+                <p>
+                    אֲבָל הָיְתָה בְּעָיָה. הַקֻּפָּה הָעַצְמָאִית לֹא יְכוֹלָה לִסְפֹּר <span class="difficult-word" data-word="כַּמּוּת">כַּמּוּת</span> כָּל כָּךְ גְּדוֹלָה. עוֹבֶדֶת שֶׁל הַחֲנוּת בָּאָה וְאָמְרָה: "יֵשׁ לְךָ יוֹתֵר מִדַּי פְּרִיטִים. אַתְּ צְרִיכָה לָלֶכֶת לְקֻפָּה רְגִילָה."
+                </p>
+                
+                <p>
+                    הַתַּיֶּרֶת הָלְכָה לְקֻפָּה רְגִילָה. הַקֻּפָּאִית <span class="difficult-word" data-word="טִפְּלָה">טִפְּלָה</span> בְּכָל הַפְּרִיטִים. בַּסּוֹף, הַתַּיֶּרֶת שִׁלְּמָה וְיָצְאָה עִם הַרְבֵּה <span class="difficult-word" data-word="שַׂקִּיּוֹת">שַׂקִּיּוֹת</span>. הִיא הָיְתָה מְאוֹד שְׂמֵחָה.
+                </p>
+                
+                <p>
+                    לָמָּה הַקֻּפָּה הָעַצְמָאִית לֹא עָבְדָה? כִּי הַמַּחְשֵׁב לֹא יָכוֹל לִסְפֹּר הַרְבֵּה מְאוֹד פְּרִיטִים. גַּם הַחֲנוּת רוֹצָה לִבְדֹּק שֶׁהַכֹּל בְּסֵדֶר. <span class="difficult-word" data-word="הַתּוֹפָעָה">הַתּוֹפָעָה</span> הַזֹּאת קוֹרֵת הַרְבֵּה בְּפּוֹלִין. יִשְׂרְאֵלִים אוֹהֲבִים לִקְנוֹת שָׁם!
+                </p>
+
+                <div class="source">
+                    <strong>מָקוֹר:</strong> וואלה אופנה, "התיירות הישראליות רכשו יותר מדי פריטים בזארה - ונקראו למשרד המנהל", 7.12.2024<br>
+                    <strong>קִישׁוּר:</strong> <a href="https://fashion.walla.co.il/item/3799465" target="_blank">fashion.walla.co.il/item/3799465</a>
+                </div>
+            </article>
+
+            <article id="article2">
+                <div class="category">בְּרִיאוּת וּתְזוּנָה</div>
+                <h2>קְלִפַּת מַנְדָּרִינָה טוֹבָה לִבְרִיאוּת 🍊</h2>
+                <div class="meta">כַּתָּבָה 2 מִתּוֹךְ 3</div>
+                
+                <p>
+                    רוֹב הָאֲנָשִׁים אוֹכְלִים מַנְדָּרִינָה וְזוֹרְקִים אֶת הַקְּלִפָּה לַפַּח. אֲבָל הַקְּלִפָּה הִיא מְאוֹד <span class="difficult-word" data-word="בְּרִיאָה">בְּרִיאָה</span>! בָּרְפוּאָה הַסִּינִית, אֲנָשִׁים שׁוֹמְרִים קְלִפּוֹת מְיֻבָּשׁוֹת <span class="difficult-word" data-word="לְמַטָּרוֹת">לְמַטָּרוֹת</span> רִפּוּי.
+                </p>
+                
+                <p>
+                    בְּסִין, מִשְׁפָּחוֹת שׁוֹמְרוֹת קְלִפּוֹת שָׁנִים רַבּוֹת. הַקְּלִפּוֹת הַיְּשָׁנוֹת יוֹתֵר טוֹבוֹת לְרִפּוּי. הֵן עוֹזְרוֹת לַגּוּף כְּמוֹ תְּרוּפָה. גַּם <span class="difficult-word" data-word="הָרְפוּאָה">הָרְפוּאָה</span> הַמַּעֲרָבִית אוֹמֶרֶת שֶׁהַקְּלִפָּה טוֹבָה.
+                </p>
+                
+                <p>
+                    מָה יֵשׁ בַּקְּלִפָּה? יֵשׁ בָּהּ חומָרִים מְיֻחָדִים. הֵם עוֹזְרִים נֶגֶד דַּלֶּקֶת. הֵם גַּם עוֹזְרִים לַכָּבֵד וְלַקֵּיבָה. אֲנָשִׁים שֶׁאוֹכְלִים קְלִפַּת מַנְדָּרִינָה מַרְגִּישִׁים יוֹתֵר טוֹב אַחֲרֵי <span class="difficult-word" data-word="אֲרוּחָה">אֲרוּחָה</span> גְּדוֹלָה.
+                </p>
+                
+                <p>
+                    הַקְּלִפָּה גַּם עוֹזֶרֶת לִנְשִׁימָה. אִם יֵשׁ לְךָ שִׁעוּל, הַקְּלִפָּה יְכוֹלָה לַעֲזֹור. הִיא גַּם טוֹבָה לַאֲנָשִׁים עִם <span class="difficult-word" data-word="סֻכֶּרֶת">סֻכֶּרֶת</span>. הִיא עוֹזֶרֶת לְרָמַת הַסֻּכָּר בַּדָּם.
+                </p>
+                
+                <p>
+                    אֵיךְ אוֹכְלִים אֶת הַקְּלִפָּה? אֶפְשָׁר לַעֲשׂוֹת <span class="difficult-word" data-word="חֲלִיטָה">חֲלִיטָה</span>. שָׂמִים קְלִפּוֹת מְיֻבָּשׁוֹת בְּמַיִם רוֹתְחִים. שׁוֹתִים אֶת הַמַּיִם. אֶפְשָׁר גַּם לְהוֹסִיף אֶת הַקְּלִפָּה לְתֵה. זֶה טָעִים וּבָרִיא! אֲבָל זִכְרוּ: לֹא לְכָל אֶחָד זֶה טוֹב. צְרִיכִים לִשְׁאֹול רוֹפֵא לִפְנֵי שֶׁמַּתְחִילִים.
+                </p>
+
+                <div class="source">
+                    <strong>מָקוֹר:</strong> Ynet לאישה, "לפני שאתם משליכים לפח: בקליפה של המנדרינה יש יתרונות בריאותיים"<br>
+                    <strong>קִישׁוּר:</strong> <a href="https://www.ynet.co.il/laisha/article/h1qtomog11g" target="_blank">ynet.co.il/laisha/article/h1qtomog11g</a>
+                </div>
+            </article>
+
+            <article id="article3">
+                <div class="category">חַיֵּי יוֹם־יוֹם</div>
+                <h2>יוֹם רָגִיל בְּקַמְפּוּס הָאוּנִיבֶרְסִיטָה 🎓</h2>
+                <div class="meta">כַּתָּבָה 3 מִתּוֹךְ 3 • תוֹכֶן דִּמְיוֹנִי</div>
+                
+                <p>
+                    הַיּוֹם הָיָה יוֹם <span class="difficult-word" data-word="עָמוּס">עָמוּס</span> בַּקַּמְפּוּס. סְטוּדֶנְטִים רַבִּים הָלְכוּ לַשִּׁעוּרִים. נֹעָה, סְטוּדֶנְטִית לִפְסִיכוֹלוֹגְיָה בַּשָּׁנָה הָרִאשׁוֹנָה, הִגִּיעָה בְּשָׁעָה שְׁמוֹנֶה בַּבֹּקֶר. הִיא קָנְתָה קָפֶה בַּקָּפֵטֶרְיָה וְיָשְׁבָה עַל הַדֶּשֶׁא.
+                </p>
+                
+                <p>
+                    בַּשִּׁעוּר הָרִאשׁוֹן, הַמּוֹרֶה דִּבֵּר עַל <span class="difficult-word" data-word="הִתְנַהֲגוּת">הִתְנַהֲגוּת</span> אֱנוֹשִׁית. נֹעָה כָּתְבָה הֶעָרוֹת בַּמַּחְבֶּרֶת שֶׁלָּהּ. הַשִּׁעוּר הָיָה מְעַנְיֵן מְאוֹד. אַחֲרֵי הַשִּׁעוּר, נֹעָה פָּגְשָׁה אֶת חֲבֵרָה שֶׁלָּהּ, מָיָה.
+                </p>
+                
+                <p>
+                    "אֵיךְ הָיָה הַשִּׁעוּר?" שָׁאֲלָה מָיָה. "טוֹב מְאוֹד," עָנְתָה נֹעָה. "הַמּוֹרֶה הִסְבִּיר עַל <span class="difficult-word" data-word="מֶחְקָר">מֶחְקָר</span> חָדָשׁ." הַשְּׁתַּיִם הָלְכוּ יַחַד לַסִּפְרִיָּה. הֵן צְרִיכוֹת לִכְתֹּוב עֲבוֹדָה.
+                </p>
+                
+                <p>
+                    בַּסִּפְרִיָּה הָיָה <span class="difficult-word" data-word="שֶׁקֶט">שֶׁקֶט</span>. סְטוּדֶנְטִים קָרְאוּ סְפָרִים וְכָתְבוּ בַּמַּחְשֵׁב. נֹעָה וּמָיָה מָצְאוּ מָקוֹם לָשֶׁבֶת. הֵן עָבְדוּ שָׁלוֹשׁ שָׁעוֹת. בַּצָּהֳרַיִם, הֵן אָכְלוּ אֲרוּחַת צָהֳרַיִם בַּמִּזְנוֹן.
+                </p>
+                
+                <p>
+                    אַחֲרֵי הַצָּהֳרַיִם, נֹעָה הָלְכָה לְשִׁעוּר נוֹסָף. הַשִּׁעוּר הָיָה עַל <span class="difficult-word" data-word="פִּתּוּחַ">פִּתּוּחַ</span>  הַחֲשִׁיבָה אֵצֶל יְלָדִים. הַמּוֹרֶה הֶרְאָה סִרְטוֹנִים מְעַנְיְנִים. בְּסוֹף הַיּוֹם, נֹעָה חָזְרָה הַבַּיְתָה. הִיא הָיְתָה עֲיֵפָה אֲבָל מְרֻצָּה. הִיא אוֹהֶבֶת לִלְמֹוד!
+                </p>
+
+                <div class="source" style="background: #fff3cd; border-right-color: #ffc107;">
+                    <strong>⚠️ הֶעָרָה:</strong> הַכַּתָּבָה הַזֹּאת הִיא לְמַטְרַת לִימּוּד בִּלְבַד וְאֵינָהּ מְבֻסֶּסֶת עַל אִירוּעִים אֲמִתִּיִּים.
+                </div>
+            </article>
+
+            <section id="quiz-section" role="region" aria-label="קוויז">
+                <h2>🎯 קְוִיז - בִּדְקוּ אֶת עַצְמְכֶם!</h2>
+                
+                <form id="quiz-form">
+                    <div class="question">
+                        <h3>שְׁאֵלָה 1: מָה זֶה "תַּיָּרוֹת"?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="a">
+                                נָשִׁים שֶׁעוֹבְדוֹת בַּחֲנוּת
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="b">
+                                נָשִׁים שֶׁנּוֹסְעוֹת לְמָקוֹם אַחֵר
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="c">
+                                נָשִׁים שֶׁגָּרוֹת בְּפוֹלִין
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="d">
+                                נָשִׁים שֶׁעוֹבְדוֹת בְּבַנְק
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>שְׁאֵלָה 2: מָה זֶה "סַל"?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="a">
+                                מְכוֹנִית קְטַנָּה
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="b">
+                                כְּלִי לָשִׂים דְּבָרִים
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="c">
+                                אוֹכֶל מָתוֹק
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="d">
+                                מִשְׂחַק כַּדּוּרֶגֶל
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>שְׁאֵלָה 3: מָה זֶה "כַּמּוּת"?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="a">
+                                מִסְפָּר, כַּמָּה דְּבָרִים יֵשׁ
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="b">
+                                אֵיכוּת, כַּמָּה טוֹב זֶה
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="c">
+                                צֶבַע יָפֶה
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="d">
+                                מָקוֹם גָּדוֹל
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>שְׁאֵלָה 4: מָה זֶה "בְּרִיאָה"?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="a">
+                                טוֹבָה לַגּוּף
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="b">
+                                יְקָרָה מְאוֹד
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="c">
+                                טַעִימָה מְאוֹד
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="d">
+                                קְטַנָּה מְאוֹד
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>שְׁאֵלָה 5: מָה זֶה "חֲלִיטָה"?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="a">
+                                אוֹכֶל חָם
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="b">
+                                מַשְׁקֶה חָם מִצְּמָחִים
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="c">
+                                מָקוֹם לָשֶׁבֶת
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="d">
+                                בֶּגֶד חַם
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>שְׁאֵלָה 6: מָה זֶה "עָמוּס"?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q6" value="a">
+                                יֵשׁ הַרְבֵּה דְּבָרִים לַעֲשׂוֹת
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="b">
+                                רֵיק לְגַמְרֵי
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="c">
+                                קַר מְאוֹד
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="d">
+                                יָקָר מְאוֹד
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>שְׁאֵלָה 7: מָה זֶה "מֶחְקָר"?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q7" value="a">
+                                לִימּוּד מְדַעִי, בְּדִיקָה
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="b">
+                                מִשְׂחָק מְעַנְיֵן
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="c">
+                                מָקוֹם בָּעִיר
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="d">
+                                אוֹכֶל מָתוֹק
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>שְׁאֵלָה 8: מָה זֶה "שֶׁקֶט"?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q8" value="a">
+                                רוֹעֵשׁ מְאוֹד
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="b">
+                                בְּלִי רַעַשׁ, שַׁקְט
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="c">
+                                יָקָר מְאוֹד
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="d">
+                                גָּדוֹל מְאוֹד
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-buttons">
+                        <button type="submit" aria-label="בדוק תשובות">בִּדְקוּ תְּשׁוּבוֹת ✓</button>
+                        <button type="button" id="reset-btn" aria-label="נסה שוב">נַסּוּ שׁוּב 🔄</button>
+                    </div>
+                </form>
+
+                <div id="result" role="alert" aria-live="polite"></div>
+            </section>
+        </main>
+
+        <footer role="contentinfo">
+            <p><strong>עִיתוֹן "עִבְרִית לְיוֹם יוֹם"</strong> • רָמָה A2 • 7 בְּדֵצֶמְבֶּר 2024</p>
+            <p>נוֹצַר בִּמְיֻחָד לְלוֹמְדֵי עִבְרִית • כְּתִיב מָלֵא מַקְסִימָלִי • נִקּוּד 100%</p>
+            <div class="disclaimer">
+                <strong>📋 הֶעָרָה חֲשׁוּבָה:</strong><br>
+                כַּתָּבוֹת 1-2 מְבֻסָּסוֹת עַל מְקוֹרוֹת אֲמִתִּיִּים (וואלה אופנה, Ynet) וְנִכְתְּבוּ מֵחָדָשׁ בְּעִבְרִית פְּשׁוּטָה לְמַטְּרַת לִימּוּד.<br>
+                כַּתָּבָה 3 הִיא לְמַטְרַת לִימּוּד בִּלְבַד וְאֵינָהּ מְבֻסֶּסֶת עַל אִירוּעִים אֲמִתִּיִּים.
+            </div>
+            <p style="margin-top: 20px;">© 2024 lingoStudio • כָּל הַזְּכֻיּוֹת שְׁמוּרוֹת</p>
+        </footer>
+    </div>
+
+    <div id="wordModal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div class="modal-content">
+            <span class="close" aria-label="סגור">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        const dictionary = {
+            "תַּיָּרוֹת": {
+                type: "שֵׁם עֶצֶם (נ', רַבִּים)",
+                explanation: "נָשִׁים שֶׁנּוֹסְעוֹת לְמָקוֹם אַחֵר לִרְאוֹת וְלֵהָנוֹת",
+                translation: "tourists (female)",
+                example: "הַתַּיָּרוֹת בִּיקְּרוּ בַּמּוּזֵיאוֹן."
+            },
+            "סַל": {
+                type: "שֵׁם עֶצֶם (ז')",
+                explanation: "כְּלִי לָשִׂים בּוֹ דְּבָרִים, כְּמוֹ בַּסּוּפֶּר",
+                translation: "basket, cart",
+                example: "שַׂמְתִּי אֶת הַפֵּרוֹת בַּסַּל."
+            },
+            "כַּמּוּת": {
+                type: "שֵׁם עֶצֶם (נ')",
+                explanation: "מִסְפָּר, כַּמָּה דְּבָרִים יֵשׁ",
+                translation: "quantity, amount",
+                example: "קָנִיתִי כַּמּוּת גְּדוֹלָה שֶׁל תַּפּוּחִים."
+            },
+            "טִפְּלָה": {
+                type: "פּוֹעַל (פִּיעֵל, עָבָר, נ')",
+                explanation: "עָבְדָה עִם מַשֶּׁהוּ, עָזְרָה",
+                translation: "handled, took care of",
+                example: "הָאַחוֹת טִפְּלָה בַּחוֹלֶה."
+            },
+            "שַׂקִּיּוֹת": {
+                type: "שֵׁם עֶצֶם (נ', רַבִּים)",
+                explanation: "שַׂקִּים, תִּיקִים לָשִׂים בָּהֶם דְּבָרִים",
+                translation: "bags",
+                example: "נָשָׂאתִי שָׁלוֹשׁ שַׂקִּיּוֹת מִן הַחֲנוּת."
+            },
+            "הַתּוֹפָעָה": {
+                type: "שֵׁם עֶצֶם (נ')",
+                explanation: "דָּבָר שֶׁקּוֹרֶה, אִירוּעַ",
+                translation: "phenomenon, occurrence",
+                example: "הַתּוֹפָעָה הַזֹּאת קוֹרֵאת בַּקַּיִץ."
+            },
+            "בְּרִיאָה": {
+                type: "תּוֹאַר (נ')",
+                explanation: "טוֹבָה לַגּוּף, לֹא מַזִּיקָה",
+                translation: "healthy",
+                example: "אֲרוּחָה בְּרִיאָה עוֹזֶרֶת לַגּוּף."
+            },
+            "לְמַטָּרוֹת": {
+                type: "שֵׁם עֶצֶם (נ', רַבִּים)",
+                explanation: "מַטָּרוֹת, סִיבּוֹת, לָמָּה עוֹשִׂים מַשֶּׁהוּ",
+                translation: "for purposes",
+                example: "הַסֵּפֶר הַזֶּה הוּא לְמַטָּרוֹת לִימּוּד."
+            },
+            "הָרְפוּאָה": {
+                type: "שֵׁם עֶצֶם (נ')",
+                explanation: "הַמֶּדַע שֶׁל בְּרִיאוּת, דֹּכְטוֹרִים",
+                translation: "medicine",
+                example: "הָרְפוּאָה הַמּוֹדֶרְנִית עוֹזֶרֶת לַחוֹלִים."
+            },
+            "אֲרוּחָה": {
+                type: "שֵׁם עֶצֶם (נ')",
+                explanation: "אֲכִילָה, מֵיל (בֹּקֶר/צָהֳרַיִם/עֶרֶב)",
+                translation: "meal",
+                example: "אָכַלְנוּ אֲרוּחַת צָהֳרַיִם יַחַד."
+            },
+            "סֻכֶּרֶת": {
+                type: "שֵׁם עֶצֶם (נ')",
+                explanation: "מַחֲלָה, הַסֻּכָּר בַּדָּם גָּבוֹהַּ מִדַּי",
+                translation: "diabetes",
+                example: "אֲנָשִׁים עִם סֻכֶּרֶת צְרִיכִים לִשְׁמֹר עַל תַּזּוּנָה."
+            },
+            "חֲלִיטָה": {
+                type: "שֵׁם עֶצֶם (נ')",
+                explanation: "מַשְׁקֶה חָם מִצְּמָחִים, כְּמוֹ תֵּה",
+                translation: "herbal tea, infusion",
+                example: "שָׁתִיתִי חֲלִיטַת נַעֲנַע."
+            },
+            "עָמוּס": {
+                type: "תּוֹאַר (ז')",
+                explanation: "יֵשׁ הַרְבֵּה דְּבָרִים לַעֲשׂוֹת, עָסוּק",
+                translation: "busy, packed",
+                example: "הַיּוֹם שֶׁלִּי הָיָה עָמוּס מְאוֹד."
+            },
+            "הִתְנַהֲגוּת": {
+                type: "שֵׁם עֶצֶם (נ')",
+                explanation: "אֵיךְ אָדָם פּוֹעֵל, מַה הוּא עוֹשֶׂה",
+                translation: "behavior",
+                example: "הַמּוֹרֶה דִּבֵּר עַל הִתְנַהֲגוּת יְלָדִים."
+            },
+            "מֶחְקָר": {
+                type: "שֵׁם עֶצֶם (ז')",
+                explanation: "לִימּוּד מְדַעִי, בְּדִיקָה שֶׁל נוֹשָׂא",
+                translation: "research, study",
+                example: "הַפְּרוֹפֶסוֹר עָשָׂה מֶחְקָר חָדָשׁ."
+            },
+            "שֶׁקֶט": {
+                type: "שֵׁם עֶצֶם (ז')",
+                explanation: "מַצָּב בְּלִי רַעַשׁ, שַׁקְט",
+                translation: "quiet, silence",
+                example: "בַּסִּפְרִיָּה הָיָה שֶׁקֶט."
+            },
+            "פִּתּוּחַ": {
+                type: "שֵׁם עֶצֶם (ז')",
+                explanation: "גְּדִילָה, שִׁינּוּי לְטוֹבָה",
+                translation: "development",
+                example: "פִּתּוּחַ יְלָדִים לוֹקֵחַ זְמַן."
+            }
+        };
+
+        const modal = document.getElementById('wordModal');
+        const closeBtn = document.querySelector('.close');
+        const difficultWords = document.querySelectorAll('.difficult-word');
+
+        difficultWords.forEach(word => {
+            word.addEventListener('click', function() {
+                const wordText = this.getAttribute('data-word');
+                const wordData = dictionary[wordText];
+                
+                if (wordData) {
+                    document.getElementById('modal-title').textContent = wordText;
+                    document.getElementById('modal-body').innerHTML = `
+                        <div class="word-type">${wordData.type}</div>
+                        <div class="explanation"><strong>הֶסְבֵּר:</strong> ${wordData.explanation}</div>
+                        <div class="translation"><strong>English:</strong> ${wordData.translation}</div>
+                        <div class="example"><strong>דֻּגְמָה:</strong> ${wordData.example}</div>
+                    `;
+                    modal.style.display = 'block';
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Smooth scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const quizForm = document.getElementById('quiz-form');
+        const resetBtn = document.getElementById('reset-btn');
+        const resultDiv = document.getElementById('result');
+
+        const correctAnswers = {
+            q1: 'b',
+            q2: 'b',
+            q3: 'a',
+            q4: 'a',
+            q5: 'b',
+            q6: 'a',
+            q7: 'a',
+            q8: 'b'
+        };
+
+        quizForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let score = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let question in correctAnswers) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            const percentage = Math.round((score / totalQuestions) * 100);
+            let message = '';
+            let emoji = '';
+
+            if (percentage >= 90) {
+                message = 'מְעֻלֶּה! אַתֶּם מַמָּשׁ טוֹבִים!';
+                emoji = '🎉';
+            } else if (percentage >= 70) {
+                message = 'יָפֶה מְאוֹד! הִמְשִׁיכוּ כָּךְ!';
+                emoji = '👏';
+            } else if (percentage >= 50) {
+                message = 'לֹא רַע! אֶפְשָׁר לְהִשְׁתַּפֵּר!';
+                emoji = '💪';
+            } else {
+                message = 'נַסּוּ שׁוּב! אַל תִּתְיָאֲשׁוּ!';
+                emoji = '📚';
+            }
+
+            resultDiv.innerHTML = `
+                <h3>${emoji} ${message}</h3>
+                <p style="font-size: 1.4em; color: #2c3e50; margin-top: 15px;">
+                    עָנִיתֶם נָכוֹן עַל <strong>${score}</strong> מִתּוֹךְ <strong>${totalQuestions}</strong> שְׁאֵלוֹת
+                </p>
+                <p style="font-size: 1.2em; color: #7f8c8d;">
+                    (${percentage}%)
+                </p>
+            `;
+            resultDiv.classList.add('show');
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        resetBtn.addEventListener('click', function() {
+            quizForm.reset();
+            resultDiv.classList.remove('show');
+            resultDiv.innerHTML = '';
+            window.scrollTo({ top: document.getElementById('quiz-section').offsetTop - 20, behavior: 'smooth' });
+        });
+    </script>
+<script src="sidebar-loader.js"></script>
+</body>
+</html>
