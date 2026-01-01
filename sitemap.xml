@@ -1,69 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lingostudio.ch/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://www.lingostudio.ch/</loc>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/about.html</loc>
+    <loc>https://www.lingostudio.ch/about.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/warum-lingostudio.html</loc>
+    <loc>https://www.lingostudio.ch/warum-lingostudio.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/bewertungen.html</loc>
+    <loc>https://www.lingostudio.ch/bewertungen.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/probelektion.html</loc>
+    <loc>https://www.lingostudio.ch/probelektion.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/kontakt.html</loc>
+    <loc>https://www.lingostudio.ch/kontakt.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/aktualisierungen.html</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://www.lingostudio.ch/aktualisierungen.html</loc>
+    <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/faq.html</loc>
+    <loc>https://www.lingostudio.ch/faq.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/datenschutz.html</loc>
+    <loc>https://www.lingostudio.ch/datenschutz.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/agb.html</loc>
+    <loc>https://www.lingostudio.ch/agb.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://lingostudio.ch/impressum.html</loc>
+    <loc>https://www.lingostudio.ch/impressum.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  
+  <!-- NEWSPAPER SECTION - NEW! -->
+  <url>
+    <loc>https://www.lingostudio.ch/newspaper/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lingostudio.ch/newspaper/A1-issue-1.html</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lingostudio.ch/newspaper/A1-issue-2.html</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lingostudio.ch/newspaper/A1-issue-3.html</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lingostudio.ch/newspaper/A1-issue-4.html</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lingostudio.ch/newspaper/A2-issue-1.html</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lingostudio.ch/newspaper/A2-issue-2.html</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
