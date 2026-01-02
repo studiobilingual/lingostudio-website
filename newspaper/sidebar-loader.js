@@ -11,8 +11,7 @@
 (function() {
     // Google Sheets URLs
     const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSSNzQO_iTRWc9Z1JZji_mTowczOTTH5geTdb__JEq_9BTeCHLvWq4MSQUq2alMjElUzw3F4wIDtdhj/pub?gid=0&single=true&output=csv";
-    const ARCHIVE_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSSNzQO_iTRWc9Z1JZji_mTowczOTTH5geTdb__JEq_9BTeCHLvWq4MSQUq2alMjElUzw3F4wIDtdhj/pub?gid=ARCHIVE_GID&single=true&output=csv";
-    // ^^^^ שנה את ARCHIVE_GID למספר ה-GID של גליון הארכיון ^^^^
+    const ARCHIVE_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSSNzQO_iTRWc9Z1JZji_mTowczOTTH5geTdb__JEq_9BTeCHLvWq4MSQUq2alMjElUzw3F4wIDtdhj/pub?gid=969307776&single=true&output=csv";
 
     // הוסף CSS
     const css = `
@@ -154,17 +153,19 @@
         return result;
     }
 
-    // פרסור גליון ארכיון - מקובץ לפי שנים
+    // פרסור גליון ארכיון - אותו מבנה כמו ראשי + עמודת שנה
+    // level | parent | title | href | שנה
+    //   A   |   B    |   C   |  D   |  E
     function parseArchiveCSV(csv) {
         const lines = csv.trim().split("\n");
         const archive = {}; // { "2025": [{title, href}, ...], "2024": [...] }
         
         for (let i = 1; i < lines.length; i++) {
             const values = parseCSVLine(lines[i]);
-            if (values.length >= 3) {
-                const year = values[0] ? values[0].trim() : "";
-                const title = values[1] ? values[1].trim() : "";
-                const href = values[2] ? values[2].trim() : "";
+            if (values.length >= 5) {
+                const title = values[2] ? values[2].trim() : "";
+                const href = values[3] ? values[3].trim() : "";
+                const year = values[4] ? values[4].trim() : "";
                 
                 if (year && title && href) {
                     if (!archive[year]) {
