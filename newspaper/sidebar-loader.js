@@ -93,11 +93,16 @@
     // טען תפריט מ-Google Sheets (ראשי + ארכיון)
     async function loadSidebar() {
         try {
+            console.log("🔄 טוען תפריט...");
+            
             // טען את שני הגליונות במקביל
             const [mainResponse, archiveResponse] = await Promise.all([
                 fetch(SHEET_URL),
-                fetch(ARCHIVE_URL).catch(() => null) // אם אין ארכיון - לא נכשל
+                fetch(ARCHIVE_URL).catch(function(e) { console.log("❌ שגיאת ארכיון:", e); return null; })
             ]);
+
+            console.log("📄 תגובת ראשי:", mainResponse.status);
+            console.log("📁 תגובת ארכיון:", archiveResponse ? archiveResponse.status : "null");
 
             const mainCSV = await mainResponse.text();
             const menuData = parseCSV(mainCSV);
@@ -107,7 +112,11 @@
             let archiveStructure = null;
             if (archiveResponse && archiveResponse.ok) {
                 const archiveCSV = await archiveResponse.text();
+                console.log("📁 CSV ארכיון:", archiveCSV.substring(0, 100));
                 archiveStructure = parseArchiveCSV(archiveCSV);
+                console.log("📁 מבנה ארכיון:", archiveStructure);
+            } else {
+                console.log("⚠️ ארכיון לא נטען - response:", archiveResponse);
             }
 
             renderSidebar(menuStructure, archiveStructure);
