@@ -169,7 +169,7 @@
                 return;
             }
             
-            html += '<div class="nav-section' + (hasActiveChild ? "" : "") + '">';
+            html += '<div class="nav-section' + (hasActiveChild ? "" : " collapsed") + '">';
             html += '<div class="nav-section-title">' + section.title + '</div>';
             html += '<div class="nav-items">';
             
@@ -192,7 +192,7 @@
             html += '</div></div>';
         });
         
-        html += '<a href="https://www.lingostudio.ch" class="sidebar-back">← חזרה לאתר הראשי</a>';
+        html += '<a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>';
         
         document.getElementById("sidebar").innerHTML = html;
         
