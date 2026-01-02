@@ -1,4 +1,4 @@
-/**
+/** 
  * LingoStudio Newspaper - Dynamic Sidebar
  * =======================================
  * התפריט נטען אוטומטית מ-Google Sheets!
