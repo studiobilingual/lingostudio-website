@@ -95,10 +95,11 @@
         try {
             console.log("🔄 טוען תפריט...");
             
-            // טען את שני הגליונות במקביל
+            // טען את שני הגליונות במקביל (עם cache-busting)
+            const cacheBuster = "&t=" + Date.now();
             const [mainResponse, archiveResponse] = await Promise.all([
-                fetch(SHEET_URL),
-                fetch(ARCHIVE_URL).catch(function(e) { console.log("❌ שגיאת ארכיון:", e); return null; })
+                fetch(SHEET_URL + cacheBuster),
+                fetch(ARCHIVE_URL + cacheBuster).catch(function(e) { console.log("❌ שגיאת ארכיון:", e); return null; })
             ]);
 
             console.log("📄 תגובת ראשי:", mainResponse.status);
