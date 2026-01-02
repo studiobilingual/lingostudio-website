@@ -146,9 +146,9 @@ function renderSidebar(menu) {
             return;
         }
         
-        // Section with children
+        // Section with children - COLLAPSED by default, open only if has active child
         html += `
-            <div class="nav-section ${hasActiveChild ? '' : ''}">
+            <div class="nav-section ${hasActiveChild ? '' : 'collapsed'}">
                 <div class="nav-section-title">${section.title}</div>
                 <div class="nav-items">
         `;
@@ -175,7 +175,7 @@ function renderSidebar(menu) {
         html += `</div></div>`;
     });
     
-    html += `<a href="https://www.lingostudio.ch" class="sidebar-back">← חזרה לאתר הראשי</a>`;
+    html += `<a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>`;
     
     document.getElementById('sidebar').innerHTML = html;
     
@@ -195,8 +195,8 @@ function renderFallbackSidebar() {
         <div class="nav-section">
             <a href="index.html" class="nav-item">🏠 Home</a>
         </div>
-        <p style="color:#888;padding:20px;font-size:0.9em;">שגיאה בטעינת התפריט. נסה לרענן.</p>
-        <a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Startseite </a>
+        <p style="color:#888;padding:20px;font-size:0.9em;">Fehler beim Laden des Menüs. Bitte aktualisieren.</p>
+        <a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>
     `;
 }
 
