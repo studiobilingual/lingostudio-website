@@ -11,7 +11,7 @@
 (function() {
     // Google Sheets URLs
     const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSSNzQO_iTRWc9Z1JZji_mTowczOTTH5geTdb__JEq_9BTeCHLvWq4MSQUq2alMjElUzw3F4wIDtdhj/pub?gid=0&single=true&output=csv";
-    const ARCHIVE_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSSNzQO_iTRWc9Z1JZji_mTowczOTTH5geTdb__JEq_9BTeCHLvWq4MSQUq2alMjElUzw3F4wIDtdhj/pub?gid=969307776&single=true&output=csv";
+    const ARCHIVE_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSSNzQO_iTRWc9Z1JZji_mTowczOTTH5geTdb__JEq_9BTeCHLvWq4MSQUq2alMjElUzw3F4wIDtdhj/pub?gid=969307776&output=csv";
 
     // הוסף CSS
     const css = `
