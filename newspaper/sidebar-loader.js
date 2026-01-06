@@ -293,8 +293,8 @@
             
             html += '</div></div>';
         }
-        html += '<a href="https://sites.google.com/view/500milimsite/home" class="sidebar-back">← Zurück zu 500 milim</a>';
-        html += '<a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>';
+        
+               html += '<a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>';
         
         document.getElementById("sidebar").innerHTML = html;
         
