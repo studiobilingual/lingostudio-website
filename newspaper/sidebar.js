@@ -196,6 +196,7 @@ function renderFallbackSidebar() {
             <a href="index.html" class="nav-item">🏠 Home</a>
         </div>
         <p style="color:#888;padding:20px;font-size:0.9em;">Fehler beim Laden des Menüs. Bitte aktualisieren.</p>
+         <a href="https://sites.google.com/view/500milimsite/home" class="sidebar-back">← Zurück zu 500 milim</a>
         <a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>
     `;
 }
