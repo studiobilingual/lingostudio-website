@@ -691,6 +691,56 @@ footer{
 <div class="combo-badge" id="comboBadge"></div>
 
 <!-- PAGE: HOME -->
+<!-- ══ NAME ENTRY SCREEN ══ -->
+<style>
+#page-name{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0d1117 0%,#1a1060 100%);
+  font-family:'Outfit',sans-serif;
+}
+.name-box{
+  background:#fff;border-radius:24px;
+  padding:48px 40px;max-width:420px;width:90%;
+  text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+.name-logo{font-size:28px;font-weight:900;color:#4A5FC4;margin-bottom:6px;letter-spacing:-.02em;}
+.name-logo span{color:#C2447A;}
+.name-title{font-size:22px;font-weight:800;color:#1a1a2e;margin:20px 0 8px;}
+.name-sub{font-size:14px;color:#6B7280;margin-bottom:28px;line-height:1.5;}
+.name-input{
+  width:100%;padding:14px 18px;
+  border:2px solid #e2e8f0;border-radius:12px;
+  font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;
+  color:#1a1a2e;outline:none;transition:border .2s;
+  text-align:center;
+}
+.name-input:focus{border-color:#4A5FC4;}
+.name-btn{
+  margin-top:16px;width:100%;
+  padding:15px;border:none;border-radius:12px;
+  background:linear-gradient(120deg,#4A5FC4,#C2447A);
+  color:#fff;font-family:'Outfit',sans-serif;
+  font-size:16px;font-weight:800;cursor:pointer;
+  transition:opacity .2s;
+}
+.name-btn:hover{opacity:.9;}
+.name-btn:disabled{opacity:.4;cursor:not-allowed;}
+.name-err{color:#e53e3e;font-size:13px;margin-top:10px;display:none;}
+.name-err.show{display:block;}
+</style>
+
+<div id="page-name" class="page">
+  <div class="name-box">
+    <div class="name-logo">lingo<span>Studio</span></div>
+    <div class="name-title">👋 ברוך הבא · Welcome!</div>
+    <div class="name-sub">הכנס את שמך כדי להתחיל.<br>Enter your name to begin.<br><small style="color:#9ca3af">השם ישמש לשמירת ההתקדמות שלך · Your name saves your progress</small></div>
+    <input id="name-input" class="name-input" type="text" placeholder="השם שלך · Your name" maxlength="40" />
+    <div class="name-err" id="name-err">נא להכניס שם · Please enter your name</div>
+    <button class="name-btn" id="name-btn" onclick="submitName()">▶ התחל · Start</button>
+  </div>
+</div>
+
 <div id="page-home" class="page">
 
 
@@ -11048,6 +11098,29 @@ function isUnlocked(n){ return true; }
 const SYNC_URL = 'https://script.google.com/macros/s/AKfycbxCgViYiQl0oaF9hQKTRms9pc6llub8Ynl1D6FcD6ryc0BrQlTunHDe3YsHWvT0vYem7g/exec'; // e.g. 'https://script.google.com/macros/s/ABC.../exec'
 let currentPage = null;
 
+function submitName(){
+  const nm = document.getElementById('name-input').value.trim();
+  if(!nm){
+    document.getElementById('name-err').classList.add('show');
+    document.getElementById('name-input').focus();
+    return;
+  }
+  const s = getState();
+  const ns = {...s, name: nm};
+  saveState(ns);
+  if(SYNC_URL){
+    cloudLoad(nm).then(loaded=>{
+      if(loaded && loaded.done && loaded.done.length>0){
+        // restore cloud progress silently
+        saveState({...getState(), ...loaded, name:nm});
+      }
+      goto('index');
+    });
+  } else {
+    goto('index');
+  }
+}
+
 function gotoTeacher(){ goto("teacher"); }
 function resetProgress(){
   if(confirm('Reset all progress? This cannot be undone.\nלאפס את כל ההתקדמות? לא ניתן לבטל.')){
@@ -11073,23 +11146,14 @@ function route(){
   if(!rawHash){
     try{
       const s=getState();
-      // Ask name on very first visit
+      // Ask name on very first visit — show visual name screen
       if(!s.name){
-        const nm = prompt('👋 שלום! מה השם שלך?\nWhat is your name?\n(Used to save your progress to the cloud)');
-        if(nm && nm.trim()){
-          const ns = {...s, name: nm.trim()};
-          saveState(ns);
-          // Try to load existing cloud progress
-          if(SYNC_URL){
-            cloudLoad(nm.trim()).then(loaded=>{
-              if(loaded && loaded.done && loaded.done.length>0){
-                alert('✅ Progress restored! · ההתקדמות שלך שוחזרה!\n'+loaded.done.length+' exercises completed');
-              }
-              goto('index');
-            });
-            return; // wait for async
-          }
-        }
+        hash='name';
+        location.hash='#name';
+        document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+        document.getElementById('page-name').classList.add('active');
+        document.getElementById('name-input').addEventListener('keydown',e=>{ if(e.key==='Enter') submitName(); });
+        return;
       }
       if(s.done && s.done.length>0){
         hash='index';
