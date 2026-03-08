@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -11037,11 +11036,9 @@ function markDone(id,xp){
   if(!done.includes(id)){ done.push(id); s.done=done; s.xp=(s.xp||0)+xp; saveState(s); }
 }
 function isDone(id){ return (getState().done||[]).includes(id); }
-function getUnlocked(){
-  try{return JSON.parse(localStorage.getItem('teacher_unlocked')||'[1,2]')}catch{return[1,2,3,4,5]}
-}
-function saveUnlocked(arr){ localStorage.setItem('teacher_unlocked',JSON.stringify(arr)); }
-function isUnlocked(n){ if(n<=2) return true; return getUnlocked().includes(n); }
+function getUnlocked(){ return LESSONS.map(l=>l.n); }
+function saveUnlocked(arr){ }
+function isUnlocked(n){ return true; }
 
 // ═══════════════════════════════════════════════════════
 //  ROUTER
@@ -11230,13 +11227,14 @@ function renderIndex(){
   list.onclick=function(e){
     const card=e.target.closest('[data-href],[data-locked]');
     if(!card) return;
-    if(card.dataset.locked){ alert('שיעור נעול על-ידי המורה · This lesson is locked by your teacher 🔒'); return; }
+    if(card.dataset.locked){ alert('יש להשלים את השיעור הקודם תחילה · Complete the previous lesson first 🔒'); return; }
     if(card.dataset.href){ goto(card.dataset.href); }
   };
   LESSONS.forEach(l=>{
-    const s=ls(l.n); const ul=unlocked.includes(l.n);
+    const s=ls(l.n);
+    const prevComplete = l.n===1 ? true : ls(l.n-1).complete;
     const isNext=nextId&&nextId.startsWith('shiur'+l.n+'_');
-    const isLocked=!ul;
+    const isLocked=!prevComplete && !s.e1;
     let href=isLocked?null:(!s.e1?'shiur'+l.n+'_ex1':!s.e2?'shiur'+l.n+'_ex2':!s.e3?'shiur'+l.n+'_ex3':'shiur'+l.n+'_ex1');
     let cls='lcard'+(s.complete?' completed':isNext||s.e1?' active':'')+(l.capstone?' capstone':'')+(isLocked?' locked':'');
     let numCls='lnum '+(s.complete?'done':(isNext||s.e1)?'now':'lock');
