@@ -10497,9 +10497,8 @@ function renderIndex(){
     }
 
     const s=ls(l.n);
-    const prevComplete = l.n===1 ? true : ls(l.n-1).complete;
     const isNext=nextId&&nextId.startsWith('shiur'+l.n+'_');
-    const isLocked=!prevComplete && !s.e1;
+    const isLocked=!isUnlocked(l.n);
     let href=isLocked?null:(!s.e1?'shiur'+l.n+'_ex1':!s.e2?'shiur'+l.n+'_ex2':!s.e3?'shiur'+l.n+'_ex3':'shiur'+l.n+'_ex1');
     let cls='lcard'+(s.complete?' completed':isNext||s.e1?' active':'')+(l.capstone?' capstone':'')+(isLocked?' locked':'');
     let numCls='lnum '+(s.complete?'done':(isNext||s.e1)?'now':'lock');
