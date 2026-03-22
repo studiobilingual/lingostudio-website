@@ -407,6 +407,9 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
 .splash-btn{width:100%;padding:15px;background:var(--grad);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;transition:filter .2s;box-shadow:0 6px 24px rgba(74,95,213,.3)}
 .splash-btn:hover{filter:brightness(1.08)}
 .splash-note{font-size:11px;color:var(--muted);margin-top:14px}
+.page{transition:opacity .2s ease}
+.page.active{animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 </style>
 </head>
@@ -11101,18 +11104,40 @@ function showSplash(){
   document.getElementById('page-splash').classList.add('active');
   setTimeout(()=>document.getElementById('splash-name').focus(), 100);
 }
-async function splashSubmit(){
+
+function splashSubmit(){
   const nm = document.getElementById('splash-name').value.trim();
   if(!nm){ document.getElementById('splash-name').focus(); return; }
+
+  // Visual feedback — button changes
+  const btn = document.getElementById('splash-go');
+  btn.textContent = '✓ נכנסים...';
+  btn.style.opacity = '0.7';
+
+  // Save name immediately
   const s = getState(); s.name = nm; saveState(s);
+
+  // Navigate directly — don't use goto() to avoid hashchange miss
+  setTimeout(()=>{
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById('page-index').classList.add('active');
+    window.scrollTo(0,0);
+    renderIndex();
+    currentPage='index';
+    location.hash='#index';
+  }, 250);
+
+  // Cloud sync in background — no blocking
   if(typeof SYNC_URL !== 'undefined' && SYNC_URL){
-    const loaded = await cloudLoad(nm);
-    if(loaded && loaded.done && loaded.done.length > 0){
-      alert('✅ Progress restored! · ההתקדמות שלך שוחזרה!\n' + loaded.done.length + ' exercises completed');
-    }
+    cloudLoad(nm).then(loaded=>{
+      if(loaded && loaded.done && loaded.done.length > 0){
+        alert('\u2705 Progress restored! \u00b7 \u05d4\u05d4\u05ea\u05e7\u05d3\u05de\u05d5\u05ea \u05e9\u05dc\u05da \u05e9\u05d5\u05d7\u05d6\u05e8\u05d4!\n' + loaded.done.length + ' exercises completed');
+        renderIndex();
+      }
+    }).catch(()=>{});
   }
-  goto('index');
 }
+
 document.getElementById('splash-go').addEventListener('click', splashSubmit);
 document.getElementById('splash-name').addEventListener('keydown', e=>{ if(e.key==='Enter') splashSubmit(); });
 
