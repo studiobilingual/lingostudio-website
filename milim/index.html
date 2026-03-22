@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -5,12 +6,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>lingoStudio — עברית בּ-500 מילים</title>
 <style>
+/* System font fallbacks — no external CDN needed */
+@import url("data:text/css,");
+</style>
+<style>
+/* ═══ RESET + SHARED VARIABLES ════════════════════════════════ */
 :root{
+  /* Home / Index palette */
   --g1:#4A5FD5;--g2:#7B4FA8;--g3:#C56B9E;
   --acc:#E8A020;--acc2:#F5C842;
+  --ban1:#F5A623;--ban2:#E8415A;
   --bg:#F0F4F8;--card:#fff;
   --ink:#1A1A2E;--muted:#6B7280;
   --grad:linear-gradient(135deg,var(--g1),var(--g2),var(--g3));
+  /* Game palette */
   --white:#ffffff;--deep:#1a1060;
   --border:#e2e8f0;--shadow:0 4px 24px rgba(74,95,213,.13);
   --shadow-sm:0 2px 8px rgba(0,0,0,.08);
@@ -18,10 +27,311 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
-.page{display:none;position:relative}
-.page.active{display:block;animation:pgIn .35s cubic-bezier(.22,1,.36,1)}
-@keyframes pgIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.page.active{animation:pgIn .35s cubic-bezier(.22,1,.36,1)}
+.page{display:none}
+.page.active{display:block}
+
+/* ═══ HOME CSS (from home.html) ════════════════════════════════ */
+
+:root {
+  --g1:#4A5FD5; --g2:#7B4FA8; --g3:#C56B9E;
+  --acc:#E8A020; --acc2:#F5C842;
+  --ban1:#F5A623; --ban2:#E8415A;
+  --bg:#F0F4F8; --card:#FFFFFF;
+  --ink:#1A1A2E; --muted:#6B7280;
+  --grad: linear-gradient(135deg, var(--g1), var(--g2), var(--g3));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
+
+/* ── BANNER ── */
+.banner{
+  background:linear-gradient(90deg,var(--ban1),var(--ban2));
+  padding:10px 24px;text-align:center;
+  font-size:13px;font-weight:600;color:#fff;letter-spacing:.3px;
+}
+.banner a{color:#fff;font-weight:800;text-decoration:underline}
+
+/* ── NAV ── */
+nav{
+  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+  padding:14px 60px;display:flex;align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(74,95,213,.12);
+  position:sticky;top:0;z-index:100;
+}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo-text{font-size:20px;font-weight:800;color:var(--ink)}
+.nav-logo-text span{background:var(--grad);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--g2)}
+.nav-cta{
+  background:var(--grad);color:#fff;
+  padding:10px 24px;border-radius:50px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  box-shadow:0 4px 16px rgba(123,79,168,.35);
+  transition:all .2s;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(123,79,168,.45)}
+
+/* ── HERO ── */
+.hero{
+  background:var(--grad);
+  padding:90px 60px 110px;
+  text-align:center;position:relative;overflow:hidden;
+  color:#fff;
+}
+/* big Hebrew letter bg */
+.hero::before{
+  content:'א';font-family:'David',Georgia,'Times New Roman',serif;
+  font-size:600px;font-weight:900;
+  color:rgba(255,255,255,.04);
+  position:absolute;right:-80px;top:50%;transform:translateY(-52%);
+  line-height:1;pointer-events:none;user-select:none;
+}
+.hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  padding:7px 18px;border-radius:30px;
+  font-size:12px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:#fff;
+  margin-bottom:28px;backdrop-filter:blur(8px);
+  animation:fadeUp .5s ease both;
+}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--acc2);
+  animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero h1{
+  font-size:clamp(42px,6vw,76px);font-weight:900;
+  line-height:1.05;letter-spacing:-2px;
+  margin-bottom:22px;
+  animation:fadeUp .5s .1s ease both;
+}
+.hero h1 em{font-style:normal;color:var(--acc2)}
+
+.hero-sub{
+  font-size:clamp(16px,2vw,20px);font-weight:300;
+  color:rgba(255,255,255,.82);line-height:1.7;
+  max-width:560px;margin:0 auto 40px;
+  animation:fadeUp .5s .2s ease both;
+}
+.hero-sub b{color:#fff;font-weight:600}
+
+.hero-btns{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp .5s .3s ease both;
+}
+.btn-hero-main{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--acc);color:var(--ink);
+  padding:16px 36px;border-radius:50px;
+  font-size:17px;font-weight:800;text-decoration:none;
+  box-shadow:0 6px 28px rgba(232,160,32,.45);
+  transition:all .2s;
+}
+.btn-hero-main:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(232,160,32,.55)}
+.btn-hero-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  border:2px solid rgba(255,255,255,.4);color:#fff;
+  padding:16px 30px;border-radius:50px;
+  font-size:16px;font-weight:600;text-decoration:none;
+  backdrop-filter:blur(6px);transition:all .2s;
+}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.7)}
+
+/* stats bar */
+.hero-stats{
+  display:flex;gap:0;justify-content:center;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  border-radius:20px;padding:0;margin:52px auto 0;
+  max-width:520px;backdrop-filter:blur(8px);
+  overflow:hidden;
+  animation:fadeUp .5s .4s ease both;
+}
+.hstat{flex:1;padding:20px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.15)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-size:30px;font-weight:900;color:#fff}
+.hstat-n sup{font-size:15px;color:var(--acc2)}
+.hstat-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px;font-weight:400}
+
+/* wave divider */
+.wave{display:block;width:100%;margin-bottom:-2px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTIONS ── */
+.section{padding:80px 60px}
+.section-alt{background:#fff}
+.sec-tag{
+  display:inline-block;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--g2);margin-bottom:14px;
+}
+.sec-h2{
+  font-size:clamp(28px,4vw,46px);font-weight:800;
+  line-height:1.1;letter-spacing:-1px;
+  margin-bottom:16px;max-width:600px;
+}
+.sec-sub{
+  font-size:16px;color:var(--muted);line-height:1.7;
+  max-width:540px;margin-bottom:50px;font-weight:400;
+}
+
+/* ── HOW IT WORKS ── */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.how-card{
+  background:var(--bg);border-radius:22px;padding:32px 26px;
+  border:1.5px solid rgba(74,95,213,.1);
+  transition:all .2s;position:relative;overflow:hidden;
+}
+.how-card:hover{transform:translateY(-4px);border-color:var(--g2);
+  box-shadow:0 16px 48px rgba(123,79,168,.12)}
+.how-num{
+  font-size:72px;font-weight:900;color:rgba(74,95,213,.06);
+  position:absolute;top:8px;right:16px;line-height:1;
+}
+.how-icon{font-size:38px;margin-bottom:18px;display:block}
+.how-title{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--ink)}
+.how-desc{font-size:14px;color:var(--muted);line-height:1.65}
+.how-label{
+  display:inline-block;margin-top:18px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;
+  background:linear-gradient(135deg,rgba(74,95,213,.1),rgba(123,79,168,.1));
+  color:var(--g2);
+}
+
+/* ── CURRICULUM ── */
+.curr-wrap{max-width:900px}
+.group-block{margin-bottom:28px}
+.group-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:12px;padding-bottom:10px;
+  border-bottom:2px solid rgba(74,95,213,.1);
+}
+.group-title{font-size:15px;font-weight:700;color:var(--g2)}
+.group-badge{
+  font-size:11px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;padding:3px 10px;border-radius:20px;
+  background:rgba(74,95,213,.1);color:var(--g1);
+}
+.curr-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.curr-item{
+  background:#fff;border:1.5px solid rgba(74,95,213,.1);
+  border-radius:14px;padding:14px 12px;
+  display:flex;align-items:center;gap:10px;
+  transition:all .2s;
+;transition:all .15s}
+.curr-item:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(74,95,213,.15);border-color:var(--g1)!important}
+.curr-item:hover{border-color:var(--g2);transform:translateY(-2px)}
+.curr-n{font-size:18px;font-weight:900;color:var(--g2);min-width:24px}
+.curr-t{font-size:12px;font-weight:700;color:var(--ink)}
+.curr-s{font-size:11px;color:var(--muted);margin-top:1px}
+.test-item{
+  background:linear-gradient(135deg,#FFF8E7,#FEF3C7);
+  border-color:#E8A020;
+}
+.test-item .curr-n{color:var(--acc)}
+.final-item{
+  background:linear-gradient(135deg,rgba(74,95,213,.08),rgba(197,107,158,.08));
+  border-color:var(--g2);
+}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-list{display:flex;flex-direction:column;gap:24px}
+.why-item{display:flex;gap:16px}
+.why-icon{
+  width:46px;height:46px;border-radius:14px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(74,95,213,.1),rgba(123,79,168,.1));
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.why-t{font-size:15px;font-weight:700;margin-bottom:4px}
+.why-d{font-size:13px;color:var(--muted);line-height:1.6}
+.why-visual{
+  background:var(--grad);border-radius:28px;
+  padding:40px 36px;color:#fff;position:relative;overflow:hidden;
+}
+.why-visual::before{
+  content:'שָׁלוֹם';font-family:'David',Georgia,'Times New Roman',serif;
+  font-size:90px;font-weight:900;color:rgba(255,255,255,.08);
+  position:absolute;bottom:-10px;right:-10px;line-height:1;
+}
+.wv-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-bottom:20px}
+.wv-words{display:flex;flex-direction:column;gap:11px}
+.wv-word{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;
+}
+.wv-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:20px;font-weight:900;
+  direction:rtl;min-width:80px}
+.wv-bar{flex:1;height:5px;background:rgba(255,255,255,.15);border-radius:5px;overflow:hidden}
+.wv-fill{height:100%;background:var(--acc2);border-radius:5px}
+.wv-en{font-size:12px;color:rgba(255,255,255,.6);min-width:60px;text-align:right}
+
+/* ── CTA ── */
+.cta-section{
+  background:var(--grad);
+  padding:110px 48px;text-align:center;
+  color:#fff;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'500';font-size:400px;font-weight:900;
+  color:rgba(255,255,255,.04);
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;line-height:1;
+}
+.cta-h2{
+  font-size:clamp(34px,5vw,62px);font-weight:900;
+  line-height:1.1;letter-spacing:-1.5px;
+  margin-bottom:18px;position:relative;z-index:1;
+}
+.cta-h2 em{font-style:normal;color:var(--acc2)}
+.cta-sub{font-size:17px;color:rgba(255,255,255,.75);
+  max-width:420px;margin:0 auto 44px;line-height:1.65;
+  position:relative;z-index:1}
+.btn-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--acc);color:var(--ink);
+  padding:19px 48px;border-radius:50px;
+  font-size:18px;font-weight:800;text-decoration:none;
+  box-shadow:0 8px 36px rgba(232,160,32,.5);
+  transition:all .2s;position:relative;z-index:1;
+}
+.btn-cta:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(232,160,32,.6)}
+.cta-note{font-size:12px;color:rgba(255,255,255,.4);margin-top:18px;
+  position:relative;z-index:1}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:rgba(255,255,255,.6);
+  padding:40px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.foot-logo{font-size:18px;font-weight:800;color:#fff}
+.foot-links{display:flex;gap:22px}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--acc2)}
+.foot-copy{font-size:12px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:12px 20px}
+  .nav-links{display:none}
+  .hero{padding:70px 24px 90px}
+  .section{padding:60px 24px}
+  .how-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:16px;text-align:center;padding:28px 24px}
+  .foot-links{flex-wrap:wrap;justify-content:center}
+}
+
 
 /* ═══ GAME SHARED CSS ══════════════════════════════════════════ */
 .game-page{background:var(--bg);min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}
@@ -397,48 +707,53 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
   padding:5px 8px;background:rgba(74,95,213,.04);
   border-radius:10px;border:1px solid rgba(74,95,213,.08);
 }
-#page-splash,#page-welcome{min-height:100vh;background:var(--grad);display:flex;align-items:center;justify-content:center;padding:24px}
-.sp-card{background:#fff;border-radius:28px;padding:44px 36px;width:min(420px,100%);text-align:center;box-shadow:0 24px 80px rgba(74,95,213,.25)}
-.sp-input{width:100%;padding:14px 18px;border:2px solid var(--border);border-radius:14px;font-size:18px;font-weight:600;color:var(--ink);text-align:center;outline:none;transition:border-color .2s;margin-bottom:14px;direction:rtl}
-.sp-input:focus{border-color:var(--g1)}
-.sp-btn{width:100%;padding:15px;background:var(--grad);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;box-shadow:0 6px 24px rgba(74,95,213,.3);margin-bottom:10px}
-.sp-btn:disabled{opacity:.6;cursor:default}
-.wl-name{font-size:34px;font-weight:900;color:var(--g2);margin:10px 0 16px}
-.wl-btn{width:100%;padding:16px;background:var(--grad);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;box-shadow:0 6px 24px rgba(74,95,213,.3)}
 </style>
 </head>
 <body>
+
+<!-- GLOBAL OVERLAYS -->
 <div class="confetti-wrap" id="confettiWrap"></div>
 <div class="xp-popup" id="xpPopup"></div>
 <div class="combo-badge" id="comboBadge"></div>
 
-<div id="page-splash" class="page">
-  <div class="sp-card">
-    <!-- שלב 1: הכנסת שם -->
-    <div id="sp-step1">
-      <div style="font-size:60px;margin-bottom:14px">🦉</div>
-      <div style="font-size:24px;font-weight:900;color:var(--deep);margin-bottom:6px">lingoStudio</div>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.6">עברית בּ-500 מילים · Hebrew in 500 words</p>
-      <input class="sp-input" id="splash-name" type="text" placeholder="שם · Your name" autocomplete="given-name"/>
-      <button class="sp-btn" id="splash-go">▶ &nbsp;כניסה · Enter</button>
-      <p style="font-size:11px;color:var(--muted)">השם שומר את ההתקדמות שלך</p>
-    </div>
-    <!-- שלב 2: אישור + כפתור התחלה -->
-    <div id="sp-step2" style="display:none">
-      <div style="font-size:64px;margin-bottom:12px">🎉</div>
-      <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:8px">ברוך הבא · Welcome</div>
-      <div class="wl-name" id="welcome-name"></div>
-      <p id="welcome-sub" style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:28px">
-        ✓ השם שלך נשמר<br>ההתקדמות תישמר אוטומטית
-      </p>
-      <button class="wl-btn" id="welcome-go">▶ &nbsp;בואו נתחיל! · Let's start!</button>
+<!-- PAGE: HOME -->
+<div id="page-home" class="page active">
+  <div style="min-height:100vh;background:linear-gradient(135deg,#4A5FD5,#7B4FA8,#C56B9E);display:flex;align-items:center;justify-content:center;padding:24px">
+    <div style="background:#fff;border-radius:28px;padding:44px 36px;width:min(420px,100%);text-align:center;box-shadow:0 24px 80px rgba(74,95,213,.25)">
+      <div id="step1">
+        <div style="font-size:60px;margin-bottom:14px">🦉</div>
+        <div style="font-size:24px;font-weight:900;color:#1a1060;margin-bottom:8px">lingoStudio</div>
+        <p style="font-size:13px;color:#6B7280;margin-bottom:28px">עברית בּ-500 מילים · Hebrew in 500 words</p>
+        <input id="name-input" type="text" placeholder="שם · Your name"
+          style="width:100%;padding:14px 18px;border:2px solid #e2e8f0;border-radius:14px;font-size:18px;font-weight:600;color:#1A1A2E;text-align:center;outline:none;margin-bottom:14px;direction:rtl;box-sizing:border-box"/>
+        <button id="name-btn"
+          style="width:100%;padding:15px;background:linear-gradient(135deg,#4A5FD5,#7B4FA8,#C56B9E);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;margin-bottom:10px">
+          ▶ &nbsp;כניסה · Enter
+        </button>
+        <p style="font-size:11px;color:#6B7280">השם שומר את ההתקדמות שלך</p>
+        <p style="margin-top:14px;font-size:12px;color:#6B7280">
+          חזרת? הכנס את אותו שם — ההתקדמות תשוחזר אוטומטית ☁️<br>
+          <em style="font-size:11px">Returning? Use the same name to restore your progress</em>
+        </p>
+      </div>
+      <div id="step2" style="display:none">
+        <div style="font-size:60px;margin-bottom:12px">🎉</div>
+        <div style="font-size:12px;color:#6B7280;text-transform:uppercase;letter-spacing:2px;font-weight:700">ברוך הבא · Welcome</div>
+        <div id="wl-name" style="font-size:32px;font-weight:900;color:#7B4FA8;margin:10px 0 16px"></div>
+        <p style="font-size:14px;color:#6B7280;line-height:1.7;margin-bottom:28px">✓ השם שלך נשמר<br>ההתקדמות תישמר אוטומטית</p>
+        <button id="start-btn"
+          style="width:100%;padding:15px;background:linear-gradient(135deg,#4A5FD5,#7B4FA8,#C56B9E);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer">
+          ▶ &nbsp;בואו נתחיל! · Let's start!
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- PAGE: INDEX -->
 <div id="page-index" class="page">
   <nav class="ix-nav">
-    <div class="ix-logo" onclick="goto('index')">
+    <div class="ix-logo" onclick="goto('home')">
       <span style="font-size:24px">🦉</span>
       <div class="ix-logo-text">lingo<span>Studio</span></div>
     </div>
@@ -488,7 +803,6 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
 
 <!-- PAGE: EX2 (MCQ — built by JS) -->
 <div id="page-ex2" class="page game-page">
-<div id="page-ex2" class="page game-page">
   <div class="topbar">
     <div class="topbar-left">
       <div class="pill" id="ex2-pill">שיעור —</div>
@@ -518,7 +832,6 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
 </div>
 
 <!-- PAGE: EX3 (grammar — built by JS) -->
-<div id="page-ex3" class="page game-page">
 <div id="page-ex3" class="page game-page">
   <div class="topbar">
     <div class="topbar-left">
@@ -558,7 +871,7 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
       <input type="password" id="teacher-pw" class="login-input" placeholder="••••••••" />
       <button class="login-btn" onclick="teacherLogin()">Unlock · פתח</button>
       <div class="login-error" id="login-err">Wrong password · סיסמה שגויה</div>
-      <div style="margin-top:20px"><button onclick="goto('index')" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer">← Back to course</button></div>
+      <div style="margin-top:20px"><button onclick="goto('home')" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer">← Back to course</button></div>
     </div>
   </div>
   <div id="teacher-panel-screen" style="display:none">
@@ -585,7 +898,6 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
     </div>
   </div>
 </div>
-
 
 <script>
 // ═══════════════════════════════════════════════════════
@@ -10281,7 +10593,8 @@ function cloudSave(s){
     id: s.name.toLowerCase().replace(/\s+/g,'_'),
     name: s.name,
     done: s.done || [],
-    xp: s.xp || 0
+    xp: s.xp || 0,
+    lastPage: s.lastPage || ''
   };
   fetch(SYNC_URL, {
     method:'POST',
@@ -10305,7 +10618,8 @@ async function cloudLoad(studentName){
       // Union of both
       const merged = [...new Set([...localDone, ...cloudDone])];
       const merged_xp = Math.max(local.xp||0, data.xp||0);
-      const newState = {...local, done:merged, xp:merged_xp, name:studentName};
+      const newState = {...local, done:merged, xp:merged_xp, name:studentName,
+        lastPage: data.lastPage || local.lastPage || ''};
       saveState(newState);
       return newState;
     }
@@ -10331,22 +10645,13 @@ function isDone(id){ return (getState().done||[]).includes(id); }
 function getUnlocked(){
   const s=getState();
   const done=s.done||[];
-  // גזור שיעורים פתוחים מתוך done — כל שיעור שex3 שלו הושלם פותח את הבא
-  const derivedUnlocked=new Set([1]);
+  const derived=new Set([1]);
   done.forEach(id=>{
     const m=id.match(/^shiur(\d+)_ex3$/);
-    if(m){ const n=parseInt(m[1]); derivedUnlocked.add(n); if(n+1<=26) derivedUnlocked.add(n+1); }
+    if(m){ const n=parseInt(m[1]); derived.add(n); if(n+1<=26) derived.add(n+1); }
   });
-  // מיזוג עם unlocked ששמור
-  const stored=s.unlocked||[];
-  stored.forEach(n=>derivedUnlocked.add(n));
-  const result=[...derivedUnlocked];
-  // אם יש הבדל — שמור לעתיד
-  if(result.length>stored.length){
-    const ns=getState(); ns.unlocked=result; 
-    try{localStorage.setItem('ulpan_state',JSON.stringify(ns));}catch(e){}
-  }
-  return result;
+  (s.unlocked||[]).forEach(n=>derived.add(n));
+  return [...derived];
 }
 function saveUnlocked(arr){ const s=getState(); s.unlocked=arr; saveState(s); }
 function isUnlocked(n){ return getUnlocked().includes(n); }
@@ -10369,44 +10674,58 @@ function resetProgress(){
 }
 function goto(id){
   try{ const s=getState(); s.lastPage=id; saveState(s); }catch(e){}
-  if(location.hash==='#'+id){
-    // Hash לא השתנה — hashchange לא יופעל — קרא route ישירות
-    route();
-  } else {
-    location.hash = '#'+id;
-  }
+  try{ location.hash='#'+id; }catch(e){}
 }
 
 function route(){
   const hash = location.hash.replace('#','');
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  if(!hash||hash==='splash'){
+
+  if(!hash || hash==='home'){
     const s=getState();
-    if(!s.name){showPage('splash');return;}
-    showPage('index');renderIndex();currentPage='index';return;
+    if(!s.name){
+      document.getElementById('page-home').classList.add('active');
+      currentPage='home'; return;
+    }
+    // יש שם — resume מ-lastPage או index
+    const last=s.lastPage;
+    if(last && last!=='home' && last!=='index' && LESSON_DATA && LESSON_DATA[last]){
+      location.hash='#'+last;
+      return; // hashchange יפעיל route שוב עם ה-hash הנכון
+    }
+    document.getElementById('page-index').classList.add('active');
+    window.scrollTo(0,0); renderIndex(); currentPage='index'; return;
   }
-  if(hash==='index'){showPage('index');renderIndex();currentPage='index';return;}
-  // welcome handled inside splash card
+  if(hash==='index'){
+    document.getElementById('page-index').classList.add('active');
+    window.scrollTo(0,0); renderIndex(); currentPage='index'; return;
+  }
   if(hash==='teacher'){
-    showPage('teacher');
-    if(sessionStorage.getItem('teacher_auth')==='1')showTeacherPanel();
+    document.getElementById('page-teacher').classList.add('active');
+    window.scrollTo(0,0);
+    if(sessionStorage.getItem('teacher_auth')==='1') showTeacherPanel();
     else showTeacherLogin();
-    currentPage='teacher';return;
+    currentPage='teacher'; return;
   }
   const m=hash.match(/^shiur(\d+)_(ex[123])$/);
-  if(m&&LESSON_DATA[hash]){
-    const n=parseInt(m[1]),ex=m[2];
-    if(!isUnlocked(n)){alert('שיעור זה נעול');showPage('index');renderIndex();return;}
-    currentPage=hash;const data=LESSON_DATA[hash];
-    if(ex==='ex1'){showPage('ex1');initEx1(data);}
-    else if(ex==='ex2'){showPage('ex2');initEx2(data);}
-    else{showPage('ex3');initEx3(data);}
+  if(m && LESSON_DATA[hash]){
+    const n=parseInt(m[1]), ex=m[2];
+    if(!isUnlocked(n)){
+      alert('שיעור זה נעול · This lesson is locked by your teacher.');
+      goto('index'); return;
+    }
+    currentPage=hash;
+    const data=LESSON_DATA[hash];
+    if(ex==='ex1'){ document.getElementById('page-ex1').classList.add('active'); window.scrollTo(0,0); initEx1(data); }
+    else if(ex==='ex2'){ document.getElementById('page-ex2').classList.add('active'); window.scrollTo(0,0); initEx2(data); }
+    else{ document.getElementById('page-ex3').classList.add('active'); window.scrollTo(0,0); initEx3(data); }
     return;
   }
-  showPage('index');renderIndex();currentPage='index';
+  goto('index');
 }
 
 window.addEventListener('hashchange', route);
+window.addEventListener('focus', ()=>{ if(currentPage==='index') renderIndex(); });
 window.addEventListener('focus', ()=>{ if(currentPage==='index') renderIndex(); });
 
 // ═══════════════════════════════════════════════════════
@@ -10512,8 +10831,9 @@ function renderIndex(){
     }
 
     const s=ls(l.n);
+    const prevComplete = l.n===1 ? true : ls(l.n-1).complete;
     const isNext=nextId&&nextId.startsWith('shiur'+l.n+'_');
-    const isLocked=!isUnlocked(l.n);
+    const isLocked=!prevComplete && !s.e1;
     let href=isLocked?null:(!s.e1?'shiur'+l.n+'_ex1':!s.e2?'shiur'+l.n+'_ex2':!s.e3?'shiur'+l.n+'_ex3':'shiur'+l.n+'_ex1');
     let cls='lcard'+(s.complete?' completed':isNext||s.e1?' active':'')+(l.capstone?' capstone':'')+(isLocked?' locked':'');
     let numCls='lnum '+(s.complete?'done':(isNext||s.e1)?'now':'lock');
@@ -11107,70 +11427,62 @@ function teacherOpenUnit(u){
 // ═══════════════════════════════════════════════════════
 route();
 </script>
+
 <script>
+// ── SPLASH LOGIC ──
+(function(){
+  var nameBtn = document.getElementById('name-btn');
+  var nameInput = document.getElementById('name-input');
+  var startBtn = document.getElementById('start-btn');
+  if(!nameBtn) return;
 
-function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  const el=document.getElementById('page-'+id);
-  if(el){
-    el.classList.add('active');
-    // Force scroll to top in all contexts including iframes
-    try{ window.scrollTo({top:0,behavior:'instant'}); }catch(e){}
-    try{ document.documentElement.scrollTop=0; }catch(e){}
-    try{ document.body.scrollTop=0; }catch(e){}
-    try{ el.scrollIntoView({block:'start',behavior:'instant'}); }catch(e){}
-    try{ window.parent.scrollTo(0,0); }catch(e){}
-  }
-}
-function splashSubmit(){
-  const nm=document.getElementById('splash-name').value.trim();
-  if(!nm){document.getElementById('splash-name').focus();return;}
-  const s=getState();s.name=nm;saveState(s);
-  document.getElementById('welcome-name').textContent=nm;
-  // הסתר שלב 1, הצג שלב 2 — בתוך אותו כרטיס
-  const s1=document.getElementById('sp-step1');
-  const s2=document.getElementById('sp-step2');
-  s1.style.transition='opacity .25s';
-  s1.style.opacity='0';
-  setTimeout(()=>{
-    s1.style.display='none';
-    s2.style.display='block';
-    s2.style.opacity='0';
-    s2.style.transition='opacity .3s';
-    setTimeout(()=>{ s2.style.opacity='1'; },20);
-  },250);
-  if(typeof SYNC_URL!=='undefined'&&SYNC_URL){
-    cloudLoad(nm).then(loaded=>{
-      if(loaded&&loaded.done&&loaded.done.length>0){
-        document.getElementById('welcome-sub').innerHTML=
-          '✅ התקדמות שלך שוחזרה! '+loaded.done.length+' תרגילים הושלמו';
-      }
-    }).catch(()=>{});
-  }
-}
-function goToIndex(){
-  const splash=document.getElementById('page-splash');
-  splash.style.transition='opacity .3s ease';
-  splash.style.opacity='0';
-  setTimeout(()=>{
-    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-    splash.style.opacity='';
-    splash.style.transition='';
-    const idx=document.getElementById('page-index');
-    idx.classList.add('active');
-    try{window.scrollTo({top:0,behavior:'instant'});}catch(e){}
-    try{document.documentElement.scrollTop=0;}catch(e){}
-    try{document.body.scrollTop=0;}catch(e){}
-    try{idx.scrollIntoView({block:'start',behavior:'instant'});}catch(e){}
-    renderIndex();
-    currentPage='index';
-    location.hash='#index';
-  },320);
-}
-document.getElementById('splash-go').addEventListener('click',splashSubmit);
-document.getElementById('splash-name').addEventListener('keydown',e=>{if(e.key==='Enter')splashSubmit();});
-document.getElementById('welcome-go').addEventListener('click',goToIndex);
+  nameBtn.addEventListener('click', function(){
+    var nm = nameInput.value.trim();
+    if(!nm){ nameInput.focus(); return; }
+    nameBtn.disabled = true;
+    nameBtn.textContent = '✓ שומר...';
+    try{
+      var s = JSON.parse(localStorage.getItem('ulpan_state')||'{}');
+      s.name = nm;
+      localStorage.setItem('ulpan_state', JSON.stringify(s));
+    }catch(e){}
+    document.getElementById('wl-name').textContent = nm;
+    // נסה לשחזר התקדמות מה-cloud
+    if(typeof cloudLoad === 'function'){
+      cloudLoad(nm).then(function(loaded){
+        if(loaded && loaded.done && loaded.done.length > 0){
+          document.getElementById('wl-sub') && 
+            (document.getElementById('wl-sub').innerHTML = 
+              '✅ ההתקדמות שלך שוחזרה!<br>' + loaded.done.length + ' תרגילים הושלמו · Progress restored!');
+        }
+      }).catch(function(){});
+    }
+    document.getElementById('step1').style.opacity = '0';
+    document.getElementById('step1').style.transition = 'opacity .25s';
+    setTimeout(function(){
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+    }, 250);
+  });
 
+  nameInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter') nameBtn.click();
+  });
+
+  if(startBtn){
+    startBtn.addEventListener('click', function(){
+      var home = document.getElementById('page-home');
+      home.style.transition = 'opacity .3s';
+      home.style.opacity = '0';
+      setTimeout(function(){
+        home.style.opacity = '';
+        home.style.transition = '';
+        goto('index');
+      }, 300);
+    });
+  }
+})();
 </script>
+
 </body>
 </html>
