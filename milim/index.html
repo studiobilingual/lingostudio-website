@@ -414,24 +414,25 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
 
 <div id="page-splash" class="page">
   <div class="sp-card">
-    <div style="font-size:60px;margin-bottom:14px">🦉</div>
-    <div style="font-size:24px;font-weight:900;color:var(--deep);margin-bottom:6px">lingoStudio</div>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.6">עברית בּ-500 מילים · Hebrew in 500 words</p>
-    <input class="sp-input" id="splash-name" type="text" placeholder="שם · Your name" autocomplete="given-name"/>
-    <button class="sp-btn" id="splash-go">▶ &nbsp;כניסה · Enter</button>
-    <p style="font-size:11px;color:var(--muted)">השם שומר את ההתקדמות שלך</p>
-  </div>
-</div>
-
-<div id="page-welcome" class="page">
-  <div class="sp-card">
-    <div style="font-size:64px;margin-bottom:12px">🎉</div>
-    <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-weight:700">ברוך הבא · Welcome</div>
-    <div class="wl-name" id="welcome-name"></div>
-    <p id="welcome-sub" style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:28px">
-      ✓ השם שלך נשמר<br>ההתקדמות תישמר אוטומטית
-    </p>
-    <button class="wl-btn" id="welcome-go">▶ &nbsp;בואו נתחיל! · Let's start!</button>
+    <!-- שלב 1: הכנסת שם -->
+    <div id="sp-step1">
+      <div style="font-size:60px;margin-bottom:14px">🦉</div>
+      <div style="font-size:24px;font-weight:900;color:var(--deep);margin-bottom:6px">lingoStudio</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.6">עברית בּ-500 מילים · Hebrew in 500 words</p>
+      <input class="sp-input" id="splash-name" type="text" placeholder="שם · Your name" autocomplete="given-name"/>
+      <button class="sp-btn" id="splash-go">▶ &nbsp;כניסה · Enter</button>
+      <p style="font-size:11px;color:var(--muted)">השם שומר את ההתקדמות שלך</p>
+    </div>
+    <!-- שלב 2: אישור + כפתור התחלה -->
+    <div id="sp-step2" style="display:none">
+      <div style="font-size:64px;margin-bottom:12px">🎉</div>
+      <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:8px">ברוך הבא · Welcome</div>
+      <div class="wl-name" id="welcome-name"></div>
+      <p id="welcome-sub" style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:28px">
+        ✓ השם שלך נשמר<br>ההתקדמות תישמר אוטומטית
+      </p>
+      <button class="wl-btn" id="welcome-go">▶ &nbsp;בואו נתחיל! · Let's start!</button>
+    </div>
   </div>
 </div>
 
@@ -10370,7 +10371,7 @@ function route(){
     showPage('index');renderIndex();currentPage='index';return;
   }
   if(hash==='index'){showPage('index');renderIndex();currentPage='index';return;}
-  if(hash==='welcome'){showPage('welcome');return;}
+  // welcome handled inside splash card
   if(hash==='teacher'){
     showPage('teacher');
     if(sessionStorage.getItem('teacher_auth')==='1')showTeacherPanel();
@@ -11110,11 +11111,20 @@ function showPage(id){
 function splashSubmit(){
   const nm=document.getElementById('splash-name').value.trim();
   if(!nm){document.getElementById('splash-name').focus();return;}
-  const btn=document.getElementById('splash-go');
-  btn.disabled=true;btn.textContent='✓ שומר...';
   const s=getState();s.name=nm;saveState(s);
   document.getElementById('welcome-name').textContent=nm;
-  showPage('welcome');
+  // הסתר שלב 1, הצג שלב 2 — בתוך אותו כרטיס
+  const s1=document.getElementById('sp-step1');
+  const s2=document.getElementById('sp-step2');
+  s1.style.transition='opacity .25s';
+  s1.style.opacity='0';
+  setTimeout(()=>{
+    s1.style.display='none';
+    s2.style.display='block';
+    s2.style.opacity='0';
+    s2.style.transition='opacity .3s';
+    setTimeout(()=>{ s2.style.opacity='1'; },20);
+  },250);
   if(typeof SYNC_URL!=='undefined'&&SYNC_URL){
     cloudLoad(nm).then(loaded=>{
       if(loaded&&loaded.done&&loaded.done.length>0){
