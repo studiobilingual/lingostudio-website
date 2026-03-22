@@ -10368,13 +10368,13 @@ function resetProgress(){
   }
 }
 function goto(id){
-  location.hash = '#'+id;
-  // Save last page so student can resume
-  try{
-    const s=getState();
-    s.lastPage=id;
-    saveState(s);
-  }catch(e){}
+  try{ const s=getState(); s.lastPage=id; saveState(s); }catch(e){}
+  if(location.hash==='#'+id){
+    // Hash לא השתנה — hashchange לא יופעל — קרא route ישירות
+    route();
+  } else {
+    location.hash = '#'+id;
+  }
 }
 
 function route(){
