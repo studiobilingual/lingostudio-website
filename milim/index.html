@@ -18,9 +18,10 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
-.page{display:none}
-.page.active{display:block;animation:pgIn .25s ease}
-@keyframes pgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.page{display:none;position:relative}
+.page.active{display:block;animation:pgIn .35s cubic-bezier(.22,1,.36,1)}
+@keyframes pgIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.page.active{animation:pgIn .35s cubic-bezier(.22,1,.36,1)}
 
 /* ═══ GAME SHARED CSS ══════════════════════════════════════════ */
 .game-page{background:var(--bg);min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}
@@ -11096,7 +11097,15 @@ route();
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const el=document.getElementById('page-'+id);
-  if(el){el.classList.add('active');window.scrollTo(0,0);}
+  if(el){
+    el.classList.add('active');
+    // Force scroll to top in all contexts including iframes
+    try{ window.scrollTo({top:0,behavior:'instant'}); }catch(e){}
+    try{ document.documentElement.scrollTop=0; }catch(e){}
+    try{ document.body.scrollTop=0; }catch(e){}
+    try{ el.scrollIntoView({block:'start',behavior:'instant'}); }catch(e){}
+    try{ window.parent.scrollTo(0,0); }catch(e){}
+  }
 }
 function splashSubmit(){
   const nm=document.getElementById('splash-name').value.trim();
