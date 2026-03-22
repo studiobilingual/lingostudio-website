@@ -10598,7 +10598,7 @@ function cloudSave(s){
   };
   fetch(SYNC_URL, {
     method:'POST',
-    mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
     body: JSON.stringify(payload)
   }).catch(()=>{}); // silent fail — local state is primary
 }
