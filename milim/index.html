@@ -19,7 +19,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
 .page{display:none}
-.page.active{display:block}
+.page.active{display:block;animation:pgIn .25s ease}
+@keyframes pgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* ═══ GAME SHARED CSS ══════════════════════════════════════════ */
 .game-page{background:var(--bg);min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}
@@ -395,22 +396,14 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
   padding:5px 8px;background:rgba(74,95,213,.04);
   border-radius:10px;border:1px solid rgba(74,95,213,.08);
 }
-
-/* ── SPLASH ── */
-#page-splash{min-height:100vh;background:var(--grad);display:flex;align-items:center;justify-content:center;padding:24px}
-.splash-card{background:#fff;border-radius:28px;padding:44px 36px;width:min(420px,100%);text-align:center;box-shadow:0 24px 80px rgba(74,95,213,.25)}
-.splash-owl{font-size:64px;margin-bottom:16px}
-.splash-title{font-size:26px;font-weight:900;color:var(--deep);margin-bottom:8px;letter-spacing:-.5px}
-.splash-sub{font-size:14px;color:var(--muted);margin-bottom:32px;line-height:1.6}
-.splash-input{width:100%;padding:14px 18px;border:2px solid var(--border);border-radius:14px;font-size:17px;font-weight:600;color:var(--ink);text-align:center;outline:none;transition:border-color .2s;margin-bottom:14px;direction:rtl}
-.splash-input:focus{border-color:var(--g1)}
-.splash-btn{width:100%;padding:15px;background:var(--grad);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;transition:filter .2s;box-shadow:0 6px 24px rgba(74,95,213,.3)}
-.splash-btn:hover{filter:brightness(1.08)}
-.splash-note{font-size:11px;color:var(--muted);margin-top:14px}
-.page{transition:opacity .2s ease}
-.page.active{animation:fadeIn .25s ease}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
+#page-splash,#page-welcome{min-height:100vh;background:var(--grad);display:flex;align-items:center;justify-content:center;padding:24px}
+.sp-card{background:#fff;border-radius:28px;padding:44px 36px;width:min(420px,100%);text-align:center;box-shadow:0 24px 80px rgba(74,95,213,.25)}
+.sp-input{width:100%;padding:14px 18px;border:2px solid var(--border);border-radius:14px;font-size:18px;font-weight:600;color:var(--ink);text-align:center;outline:none;transition:border-color .2s;margin-bottom:14px;direction:rtl}
+.sp-input:focus{border-color:var(--g1)}
+.sp-btn{width:100%;padding:15px;background:var(--grad);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;box-shadow:0 6px 24px rgba(74,95,213,.3);margin-bottom:10px}
+.sp-btn:disabled{opacity:.6;cursor:default}
+.wl-name{font-size:34px;font-weight:900;color:var(--g2);margin:10px 0 16px}
+.wl-btn{width:100%;padding:16px;background:var(--grad);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;box-shadow:0 6px 24px rgba(74,95,213,.3)}
 </style>
 </head>
 <body>
@@ -419,13 +412,25 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
 <div class="combo-badge" id="comboBadge"></div>
 
 <div id="page-splash" class="page">
-  <div class="splash-card">
-    <div class="splash-owl">🦉</div>
-    <div class="splash-title">lingoStudio</div>
-    <p class="splash-sub">עברית בּ-500 מילים<br>Hebrew in 500 words</p>
-    <input class="splash-input" id="splash-name" type="text" placeholder="שם · Your name" autocomplete="given-name" />
-    <button class="splash-btn" id="splash-go">▶ &nbsp;כניסה · Enter</button>
-    <p class="splash-note">השם שומר את ההתקדמות שלך · Your name saves your progress</p>
+  <div class="sp-card">
+    <div style="font-size:60px;margin-bottom:14px">🦉</div>
+    <div style="font-size:24px;font-weight:900;color:var(--deep);margin-bottom:6px">lingoStudio</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.6">עברית בּ-500 מילים · Hebrew in 500 words</p>
+    <input class="sp-input" id="splash-name" type="text" placeholder="שם · Your name" autocomplete="given-name"/>
+    <button class="sp-btn" id="splash-go">▶ &nbsp;כניסה · Enter</button>
+    <p style="font-size:11px;color:var(--muted)">השם שומר את ההתקדמות שלך</p>
+  </div>
+</div>
+
+<div id="page-welcome" class="page">
+  <div class="sp-card">
+    <div style="font-size:64px;margin-bottom:12px">🎉</div>
+    <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-weight:700">ברוך הבא · Welcome</div>
+    <div class="wl-name" id="welcome-name"></div>
+    <p id="welcome-sub" style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:28px">
+      ✓ השם שלך נשמר<br>ההתקדמות תישמר אוטומטית
+    </p>
+    <button class="wl-btn" id="welcome-go">▶ &nbsp;בואו נתחיל! · Let's start!</button>
   </div>
 </div>
 
@@ -579,9 +584,9 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
   </div>
 </div>
 
+
 <script>
 // ═══════════════════════════════════════════════════════
-
 //  ALL LESSON DATA
 // ═══════════════════════════════════════════════════════
 const LESSON_DATA = {
@@ -10356,41 +10361,32 @@ function goto(id){
 }
 
 function route(){
-  const rawHash = location.hash.replace('#','');
-  let hash = rawHash;
-
-  if(!rawHash){
-    const s = getState();
-    if(!s.name){ showSplash(); return; }
-    hash = 'index';
-  }
-
+  const hash = location.hash.replace('#','');
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-
-  if(hash==='index'){
-    document.getElementById('page-index').classList.add('active');
-    window.scrollTo(0,0); renderIndex(); currentPage='index'; return;
+  if(!hash||hash==='splash'){
+    const s=getState();
+    if(!s.name){showPage('splash');return;}
+    showPage('index');renderIndex();currentPage='index';return;
   }
+  if(hash==='index'){showPage('index');renderIndex();currentPage='index';return;}
+  if(hash==='welcome'){showPage('welcome');return;}
   if(hash==='teacher'){
-    document.getElementById('page-teacher').classList.add('active');
-    window.scrollTo(0,0);
-    if(sessionStorage.getItem('teacher_auth')==='1') showTeacherPanel();
+    showPage('teacher');
+    if(sessionStorage.getItem('teacher_auth')==='1')showTeacherPanel();
     else showTeacherLogin();
-    currentPage='teacher'; return;
+    currentPage='teacher';return;
   }
-
-  const m = hash.match(/^shiur(\d+)_(ex[123])$/);
-  if(m && LESSON_DATA[hash]){
-    const n=parseInt(m[1]), ex=m[2];
-    if(!isUnlocked(n)){ alert('שיעור זה נעול · This lesson is locked.'); goto('index'); return; }
-    currentPage = hash;
-    const data = LESSON_DATA[hash];
-    if(ex==='ex1'){ document.getElementById('page-ex1').classList.add('active'); window.scrollTo(0,0); initEx1(data); }
-    else if(ex==='ex2'){ document.getElementById('page-ex2').classList.add('active'); window.scrollTo(0,0); initEx2(data); }
-    else{ document.getElementById('page-ex3').classList.add('active'); window.scrollTo(0,0); initEx3(data); }
+  const m=hash.match(/^shiur(\d+)_(ex[123])$/);
+  if(m&&LESSON_DATA[hash]){
+    const n=parseInt(m[1]),ex=m[2];
+    if(!isUnlocked(n)){alert('שיעור זה נעול');showPage('index');renderIndex();return;}
+    currentPage=hash;const data=LESSON_DATA[hash];
+    if(ex==='ex1'){showPage('ex1');initEx1(data);}
+    else if(ex==='ex2'){showPage('ex2');initEx2(data);}
+    else{showPage('ex3');initEx3(data);}
     return;
   }
-  goto('index');
+  showPage('index');renderIndex();currentPage='index';
 }
 
 window.addEventListener('hashchange', route);
@@ -11095,51 +11091,38 @@ function teacherOpenUnit(u){
 // ═══════════════════════════════════════════════════════
 route();
 </script>
-</body>
-</html>
+<script>
 
-// ── SPLASH ──
-function showSplash(){
+function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('page-splash').classList.add('active');
-  setTimeout(()=>document.getElementById('splash-name').focus(), 100);
+  const el=document.getElementById('page-'+id);
+  if(el){el.classList.add('active');window.scrollTo(0,0);}
 }
-
 function splashSubmit(){
-  const nm = document.getElementById('splash-name').value.trim();
-  if(!nm){ document.getElementById('splash-name').focus(); return; }
-
-  // Visual feedback — button changes
-  const btn = document.getElementById('splash-go');
-  btn.textContent = '✓ נכנסים...';
-  btn.style.opacity = '0.7';
-
-  // Save name immediately
-  const s = getState(); s.name = nm; saveState(s);
-
-  // Navigate directly — don't use goto() to avoid hashchange miss
-  setTimeout(()=>{
-    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-    document.getElementById('page-index').classList.add('active');
-    window.scrollTo(0,0);
-    renderIndex();
-    currentPage='index';
-    location.hash='#index';
-  }, 250);
-
-  // Cloud sync in background — no blocking
-  if(typeof SYNC_URL !== 'undefined' && SYNC_URL){
+  const nm=document.getElementById('splash-name').value.trim();
+  if(!nm){document.getElementById('splash-name').focus();return;}
+  const btn=document.getElementById('splash-go');
+  btn.disabled=true;btn.textContent='✓ שומר...';
+  const s=getState();s.name=nm;saveState(s);
+  document.getElementById('welcome-name').textContent=nm;
+  showPage('welcome');
+  if(typeof SYNC_URL!=='undefined'&&SYNC_URL){
     cloudLoad(nm).then(loaded=>{
-      if(loaded && loaded.done && loaded.done.length > 0){
-        alert('\u2705 Progress restored! \u00b7 \u05d4\u05d4\u05ea\u05e7\u05d3\u05de\u05d5\u05ea \u05e9\u05dc\u05da \u05e9\u05d5\u05d7\u05d6\u05e8\u05d4!\n' + loaded.done.length + ' exercises completed');
-        renderIndex();
+      if(loaded&&loaded.done&&loaded.done.length>0){
+        document.getElementById('welcome-sub').innerHTML=
+          '✅ התקדמות שלך שוחזרה! '+loaded.done.length+' תרגילים הושלמו';
       }
     }).catch(()=>{});
   }
 }
+function goToIndex(){
+  showPage('index');renderIndex();
+  currentPage='index';location.hash='#index';
+}
+document.getElementById('splash-go').addEventListener('click',splashSubmit);
+document.getElementById('splash-name').addEventListener('keydown',e=>{if(e.key==='Enter')splashSubmit();});
+document.getElementById('welcome-go').addEventListener('click',goToIndex);
 
-document.getElementById('splash-go').addEventListener('click', splashSubmit);
-document.getElementById('splash-name').addEventListener('keydown', e=>{ if(e.key==='Enter') splashSubmit(); });
-
+</script>
 </body>
 </html>
