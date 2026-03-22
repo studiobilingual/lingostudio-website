@@ -4,333 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>lingoStudio — עברית בּ-500 מילים</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Frank+Ruhl+Libre:wght@700;900&family=Heebo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ═══ RESET + SHARED VARIABLES ════════════════════════════════ */
 :root{
-  /* Home / Index palette */
   --g1:#4A5FD5;--g2:#7B4FA8;--g3:#C56B9E;
   --acc:#E8A020;--acc2:#F5C842;
-  --ban1:#F5A623;--ban2:#E8415A;
   --bg:#F0F4F8;--card:#fff;
   --ink:#1A1A2E;--muted:#6B7280;
   --grad:linear-gradient(135deg,var(--g1),var(--g2),var(--g3));
-  /* Game palette */
   --white:#ffffff;--deep:#1a1060;
   --border:#e2e8f0;--shadow:0 4px 24px rgba(74,95,213,.13);
   --shadow-sm:0 2px 8px rgba(0,0,0,.08);
   --ok:#22c55e;--err:#ef4444;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
 .page{display:none}
 .page.active{display:block}
 
-/* ═══ HOME CSS (from home.html) ════════════════════════════════ */
-
-:root {
-  --g1:#4A5FD5; --g2:#7B4FA8; --g3:#C56B9E;
-  --acc:#E8A020; --acc2:#F5C842;
-  --ban1:#F5A623; --ban2:#E8415A;
-  --bg:#F0F4F8; --card:#FFFFFF;
-  --ink:#1A1A2E; --muted:#6B7280;
-  --grad: linear-gradient(135deg, var(--g1), var(--g2), var(--g3));
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;overflow-x:hidden}
-
-/* ── BANNER ── */
-.banner{
-  background:linear-gradient(90deg,var(--ban1),var(--ban2));
-  padding:10px 24px;text-align:center;
-  font-size:13px;font-weight:600;color:#fff;letter-spacing:.3px;
-}
-.banner a{color:#fff;font-weight:800;text-decoration:underline}
-
-/* ── NAV ── */
-nav{
-  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
-  padding:14px 60px;display:flex;align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid rgba(74,95,213,.12);
-  position:sticky;top:0;z-index:100;
-}
-.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-.nav-logo-text{font-size:20px;font-weight:800;color:var(--ink)}
-.nav-logo-text span{background:var(--grad);-webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;background-clip:text}
-.nav-links{display:flex;gap:28px}
-.nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--g2)}
-.nav-cta{
-  background:var(--grad);color:#fff;
-  padding:10px 24px;border-radius:50px;
-  font-size:14px;font-weight:700;text-decoration:none;
-  box-shadow:0 4px 16px rgba(123,79,168,.35);
-  transition:all .2s;
-}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(123,79,168,.45)}
-
-/* ── HERO ── */
-.hero{
-  background:var(--grad);
-  padding:90px 60px 110px;
-  text-align:center;position:relative;overflow:hidden;
-  color:#fff;
-}
-/* big Hebrew letter bg */
-.hero::before{
-  content:'א';font-family:'Frank Ruhl Libre',serif;
-  font-size:600px;font-weight:900;
-  color:rgba(255,255,255,.04);
-  position:absolute;right:-80px;top:50%;transform:translateY(-52%);
-  line-height:1;pointer-events:none;user-select:none;
-}
-.hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
-
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
-  padding:7px 18px;border-radius:30px;
-  font-size:12px;font-weight:700;letter-spacing:1.5px;
-  text-transform:uppercase;color:#fff;
-  margin-bottom:28px;backdrop-filter:blur(8px);
-  animation:fadeUp .5s ease both;
-}
-.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--acc2);
-  animation:pulse 2s ease infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
-.hero h1{
-  font-size:clamp(42px,6vw,76px);font-weight:900;
-  line-height:1.05;letter-spacing:-2px;
-  margin-bottom:22px;
-  animation:fadeUp .5s .1s ease both;
-}
-.hero h1 em{font-style:normal;color:var(--acc2)}
-
-.hero-sub{
-  font-size:clamp(16px,2vw,20px);font-weight:300;
-  color:rgba(255,255,255,.82);line-height:1.7;
-  max-width:560px;margin:0 auto 40px;
-  animation:fadeUp .5s .2s ease both;
-}
-.hero-sub b{color:#fff;font-weight:600}
-
-.hero-btns{
-  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
-  animation:fadeUp .5s .3s ease both;
-}
-.btn-hero-main{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--acc);color:var(--ink);
-  padding:16px 36px;border-radius:50px;
-  font-size:17px;font-weight:800;text-decoration:none;
-  box-shadow:0 6px 28px rgba(232,160,32,.45);
-  transition:all .2s;
-}
-.btn-hero-main:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(232,160,32,.55)}
-.btn-hero-ghost{
-  display:inline-flex;align-items:center;gap:8px;
-  border:2px solid rgba(255,255,255,.4);color:#fff;
-  padding:16px 30px;border-radius:50px;
-  font-size:16px;font-weight:600;text-decoration:none;
-  backdrop-filter:blur(6px);transition:all .2s;
-}
-.btn-hero-ghost:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.7)}
-
-/* stats bar */
-.hero-stats{
-  display:flex;gap:0;justify-content:center;
-  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
-  border-radius:20px;padding:0;margin:52px auto 0;
-  max-width:520px;backdrop-filter:blur(8px);
-  overflow:hidden;
-  animation:fadeUp .5s .4s ease both;
-}
-.hstat{flex:1;padding:20px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.15)}
-.hstat:last-child{border-right:none}
-.hstat-n{font-size:30px;font-weight:900;color:#fff}
-.hstat-n sup{font-size:15px;color:var(--acc2)}
-.hstat-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px;font-weight:400}
-
-/* wave divider */
-.wave{display:block;width:100%;margin-bottom:-2px}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-
-/* ── SECTIONS ── */
-.section{padding:80px 60px}
-.section-alt{background:#fff}
-.sec-tag{
-  display:inline-block;font-size:11px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;
-  color:var(--g2);margin-bottom:14px;
-}
-.sec-h2{
-  font-size:clamp(28px,4vw,46px);font-weight:800;
-  line-height:1.1;letter-spacing:-1px;
-  margin-bottom:16px;max-width:600px;
-}
-.sec-sub{
-  font-size:16px;color:var(--muted);line-height:1.7;
-  max-width:540px;margin-bottom:50px;font-weight:400;
-}
-
-/* ── HOW IT WORKS ── */
-.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.how-card{
-  background:var(--bg);border-radius:22px;padding:32px 26px;
-  border:1.5px solid rgba(74,95,213,.1);
-  transition:all .2s;position:relative;overflow:hidden;
-}
-.how-card:hover{transform:translateY(-4px);border-color:var(--g2);
-  box-shadow:0 16px 48px rgba(123,79,168,.12)}
-.how-num{
-  font-size:72px;font-weight:900;color:rgba(74,95,213,.06);
-  position:absolute;top:8px;right:16px;line-height:1;
-}
-.how-icon{font-size:38px;margin-bottom:18px;display:block}
-.how-title{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--ink)}
-.how-desc{font-size:14px;color:var(--muted);line-height:1.65}
-.how-label{
-  display:inline-block;margin-top:18px;
-  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  padding:4px 12px;border-radius:20px;
-  background:linear-gradient(135deg,rgba(74,95,213,.1),rgba(123,79,168,.1));
-  color:var(--g2);
-}
-
-/* ── CURRICULUM ── */
-.curr-wrap{max-width:900px}
-.group-block{margin-bottom:28px}
-.group-header{
-  display:flex;align-items:center;gap:12px;
-  margin-bottom:12px;padding-bottom:10px;
-  border-bottom:2px solid rgba(74,95,213,.1);
-}
-.group-title{font-size:15px;font-weight:700;color:var(--g2)}
-.group-badge{
-  font-size:11px;font-weight:700;letter-spacing:1px;
-  text-transform:uppercase;padding:3px 10px;border-radius:20px;
-  background:rgba(74,95,213,.1);color:var(--g1);
-}
-.curr-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
-.curr-item{
-  background:#fff;border:1.5px solid rgba(74,95,213,.1);
-  border-radius:14px;padding:14px 12px;
-  display:flex;align-items:center;gap:10px;
-  transition:all .2s;
-;transition:all .15s}
-.curr-item:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(74,95,213,.15);border-color:var(--g1)!important}
-.curr-item:hover{border-color:var(--g2);transform:translateY(-2px)}
-.curr-n{font-size:18px;font-weight:900;color:var(--g2);min-width:24px}
-.curr-t{font-size:12px;font-weight:700;color:var(--ink)}
-.curr-s{font-size:11px;color:var(--muted);margin-top:1px}
-.test-item{
-  background:linear-gradient(135deg,#FFF8E7,#FEF3C7);
-  border-color:#E8A020;
-}
-.test-item .curr-n{color:var(--acc)}
-.final-item{
-  background:linear-gradient(135deg,rgba(74,95,213,.08),rgba(197,107,158,.08));
-  border-color:var(--g2);
-}
-
-/* ── WHY ── */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.why-list{display:flex;flex-direction:column;gap:24px}
-.why-item{display:flex;gap:16px}
-.why-icon{
-  width:46px;height:46px;border-radius:14px;flex-shrink:0;
-  background:linear-gradient(135deg,rgba(74,95,213,.1),rgba(123,79,168,.1));
-  display:flex;align-items:center;justify-content:center;font-size:20px;
-}
-.why-t{font-size:15px;font-weight:700;margin-bottom:4px}
-.why-d{font-size:13px;color:var(--muted);line-height:1.6}
-.why-visual{
-  background:var(--grad);border-radius:28px;
-  padding:40px 36px;color:#fff;position:relative;overflow:hidden;
-}
-.why-visual::before{
-  content:'שָׁלוֹם';font-family:'Frank Ruhl Libre',serif;
-  font-size:90px;font-weight:900;color:rgba(255,255,255,.08);
-  position:absolute;bottom:-10px;right:-10px;line-height:1;
-}
-.wv-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(255,255,255,.5);margin-bottom:20px}
-.wv-words{display:flex;flex-direction:column;gap:11px}
-.wv-word{
-  display:flex;align-items:center;gap:12px;
-  background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;
-}
-.wv-he{font-family:'Frank Ruhl Libre',serif;font-size:20px;font-weight:900;
-  direction:rtl;min-width:80px}
-.wv-bar{flex:1;height:5px;background:rgba(255,255,255,.15);border-radius:5px;overflow:hidden}
-.wv-fill{height:100%;background:var(--acc2);border-radius:5px}
-.wv-en{font-size:12px;color:rgba(255,255,255,.6);min-width:60px;text-align:right}
-
-/* ── CTA ── */
-.cta-section{
-  background:var(--grad);
-  padding:110px 48px;text-align:center;
-  color:#fff;position:relative;overflow:hidden;
-}
-.cta-section::before{
-  content:'500';font-size:400px;font-weight:900;
-  color:rgba(255,255,255,.04);
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  pointer-events:none;line-height:1;
-}
-.cta-h2{
-  font-size:clamp(34px,5vw,62px);font-weight:900;
-  line-height:1.1;letter-spacing:-1.5px;
-  margin-bottom:18px;position:relative;z-index:1;
-}
-.cta-h2 em{font-style:normal;color:var(--acc2)}
-.cta-sub{font-size:17px;color:rgba(255,255,255,.75);
-  max-width:420px;margin:0 auto 44px;line-height:1.65;
-  position:relative;z-index:1}
-.btn-cta{
-  display:inline-flex;align-items:center;gap:12px;
-  background:var(--acc);color:var(--ink);
-  padding:19px 48px;border-radius:50px;
-  font-size:18px;font-weight:800;text-decoration:none;
-  box-shadow:0 8px 36px rgba(232,160,32,.5);
-  transition:all .2s;position:relative;z-index:1;
-}
-.btn-cta:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(232,160,32,.6)}
-.cta-note{font-size:12px;color:rgba(255,255,255,.4);margin-top:18px;
-  position:relative;z-index:1}
-
-/* ── FOOTER ── */
-footer{
-  background:var(--ink);color:rgba(255,255,255,.6);
-  padding:40px 60px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.foot-logo{font-size:18px;font-weight:800;color:#fff}
-.foot-links{display:flex;gap:22px}
-.foot-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
-.foot-links a:hover{color:var(--acc2)}
-.foot-copy{font-size:12px}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  nav{padding:12px 20px}
-  .nav-links{display:none}
-  .hero{padding:70px 24px 90px}
-  .section{padding:60px 24px}
-  .how-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;gap:16px;text-align:center;padding:28px 24px}
-  .foot-links{flex-wrap:wrap;justify-content:center}
-}
-
-
 /* ═══ GAME SHARED CSS ══════════════════════════════════════════ */
-.game-page{background:var(--bg);min-height:100vh;font-family:'Outfit',sans-serif}
+.game-page{background:var(--bg);min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}
 
 /* Top bar */
 .topbar{
@@ -407,11 +99,11 @@ footer{
 .tag-verb{background:#dbeafe;color:#1d4ed8}
 .tag-particle{background:#fef3c7;color:#92400e}
 .gender-badge{position:absolute;top:14px;left:16px;font-size:18px}
-.card-he{font-family:'Frank Ruhl Libre',serif;font-size:clamp(38px,10vw,62px);font-weight:900;color:var(--deep);text-align:center;line-height:1.1;margin-bottom:8px}
+.card-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:clamp(38px,10vw,62px);font-weight:900;color:var(--deep);text-align:center;line-height:1.1;margin-bottom:8px}
 .card-translit{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:4px}
 .tap-hint{position:absolute;bottom:14px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
 .card-en{font-size:clamp(20px,5vw,30px);font-weight:800;margin-bottom:14px;line-height:1.2}
-.card-example{font-family:'Frank Ruhl Libre',serif;font-size:19px;font-weight:700;opacity:.95;line-height:1.4;text-align:center;padding:0 8px}
+.card-example{font-family:'David',Georgia,'Times New Roman',serif;font-size:19px;font-weight:700;opacity:.95;line-height:1.4;text-align:center;padding:0 8px}
 .card-example-en{font-size:12px;opacity:.8;margin-top:6px;font-style:italic}
 
 /* Pair indicator */
@@ -429,13 +121,13 @@ footer{
   display:none;
 }
 .grammar-tip.show{display:block}
-.tip-he{font-family:'Frank Ruhl Libre',serif;font-size:16px;font-weight:900;color:var(--g2)}
+.tip-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:16px;font-weight:900;color:var(--g2)}
 
 /* Nav buttons */
 .card-nav{display:flex;gap:10px;margin-top:4px}
 .btn-card-nav{
   flex:1;padding:13px;border-radius:14px;border:none;cursor:pointer;
-  font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:15px;font-weight:700;
   transition:all .15s;
 }
 .btn-prev{background:#f1f5f9;color:var(--muted)}
@@ -452,7 +144,7 @@ footer{
 .finish-sub{font-size:14px;color:var(--muted);margin-bottom:30px}
 .btn-continue-big{
   display:inline-block;padding:15px 36px;border-radius:50px;
-  background:var(--grad);color:#fff;font-family:'Outfit',sans-serif;
+  background:var(--grad);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
   font-size:16px;font-weight:800;border:none;cursor:pointer;
   box-shadow:0 6px 24px rgba(74,95,213,.3);transition:all .2s;
 }
@@ -477,7 +169,7 @@ footer{
 .q-card.wrong{border-color:var(--err);background:#fff5f5}
 
 /* EX2 question display */
-.q-hebrew{font-family:'Frank Ruhl Libre',serif;font-size:clamp(32px,8vw,52px);font-weight:900;color:var(--deep);text-align:center;direction:rtl;margin-bottom:6px}
+.q-hebrew{font-family:'David',Georgia,'Times New Roman',serif;font-size:clamp(32px,8vw,52px);font-weight:900;color:var(--deep);text-align:center;direction:rtl;margin-bottom:6px}
 .q-translit{font-size:13px;color:var(--muted);text-align:center;font-style:italic;margin-bottom:16px}
 
 /* EX3 question display */
@@ -490,7 +182,7 @@ footer{
 .q-en-b{font-size:14px;line-height:1.7;margin-bottom:14px;color:var(--deep);font-weight:600}
 .tested-word{color:#E8A020;font-weight:800;font-style:normal;background:none;text-decoration:none}
 .q-blank{
-  font-family:'Frank Ruhl Libre',serif;font-size:21px;font-weight:700;
+  font-family:'David',Georgia,'Times New Roman',serif;font-size:21px;font-weight:700;
   direction:rtl;text-align:center;margin-bottom:16px;color:var(--deep);
   background:#f8fafc;border-radius:10px;padding:10px 16px;
 }
@@ -502,7 +194,7 @@ footer{
 .opt-btn{
   padding:12px 14px;border-radius:13px;
   border:2px solid var(--border);background:#fff;
-  font-family:'Frank Ruhl Libre',serif;font-size:17px;font-weight:700;
+  font-family:'David',Georgia,'Times New Roman',serif;font-size:17px;font-weight:700;
   color:var(--deep);cursor:pointer;transition:all .15s;
   text-align:center;direction:rtl;
 }
@@ -523,15 +215,15 @@ footer{
 .fb-err{background:#fff5f5;border:1.5px solid var(--err)}
 .fb-row1{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-bottom:4px}
 .fb-sub{font-size:13px;color:#374151;line-height:1.5}
-.fb-example{font-family:'Frank Ruhl Libre',serif;font-size:15px;direction:rtl;color:var(--deep);margin-top:6px;font-weight:600}
+.fb-example{font-family:'David',Georgia,'Times New Roman',serif;font-size:15px;direction:rtl;color:var(--deep);margin-top:6px;font-weight:600}
 .fb-rule{font-size:13px;color:#374151;line-height:1.6;margin-top:4px}
-.rule-he{font-family:'Frank Ruhl Libre',serif;font-size:15px;font-weight:900;color:var(--g2)}
+.rule-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:15px;font-weight:900;color:var(--g2)}
 
 /* Continue button */
 .continue-btn{
   width:100%;padding:14px;border:none;border-radius:14px;
   background:var(--grad);color:#fff;
-  font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:700;
   cursor:pointer;display:none;margin-bottom:8px;transition:all .15s;
 }
 .continue-btn.show{display:block}
@@ -550,13 +242,13 @@ footer{
 .result-btns{display:flex;flex-direction:column;gap:10px;max-width:300px;margin:0 auto}
 .btn-go-next{
   padding:14px;background:var(--grad);color:#fff;border:none;border-radius:50px;
-  font-family:'Outfit',sans-serif;font-size:16px;font-weight:800;cursor:pointer;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:800;cursor:pointer;
   box-shadow:0 4px 20px rgba(74,95,213,.3);transition:all .15s;
 }
 .btn-go-next:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn-retry{
   padding:12px;background:#f8fafc;color:var(--muted);border:1.5px solid var(--border);border-radius:50px;
-  font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;
 }
 .btn-retry:hover{background:var(--border)}
 
@@ -681,537 +373,62 @@ footer{
 }
 .q-sentence{font-size:22px;font-weight:700;direction:rtl;text-align:right;margin:12px 0 20px;padding:0 8px}
 .q-pre,.q-post{color:var(--ink)}
+
+/* ── UNIT HEADERS (index page) ───────────────────────── */
+.ix-unit-head{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;
+  margin:20px 0 8px;padding-bottom:6px;
+  border-bottom:1.5px solid rgba(74,95,213,.1);
+}
+.ix-unit-head:first-of-type{margin-top:4px}
+.ix-unit-range{
+  font-size:10px;font-weight:700;color:var(--g1);
+  background:rgba(74,95,213,.08);padding:2px 9px;border-radius:10px;
+  text-transform:none;letter-spacing:0;
+}
+/* ── DOT LEGEND ──────────────────────────────────────── */
+.dot-legend{
+  font-size:11px;color:var(--muted);
+  margin-bottom:14px;text-align:center;
+  padding:5px 8px;background:rgba(74,95,213,.04);
+  border-radius:10px;border:1px solid rgba(74,95,213,.08);
+}
+
+/* ── SPLASH ── */
+#page-splash{min-height:100vh;background:var(--grad);display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-card{background:#fff;border-radius:28px;padding:44px 36px;width:min(420px,100%);text-align:center;box-shadow:0 24px 80px rgba(74,95,213,.25)}
+.splash-owl{font-size:64px;margin-bottom:16px}
+.splash-title{font-size:26px;font-weight:900;color:var(--deep);margin-bottom:8px;letter-spacing:-.5px}
+.splash-sub{font-size:14px;color:var(--muted);margin-bottom:32px;line-height:1.6}
+.splash-input{width:100%;padding:14px 18px;border:2px solid var(--border);border-radius:14px;font-size:17px;font-weight:600;color:var(--ink);text-align:center;outline:none;transition:border-color .2s;margin-bottom:14px;direction:rtl}
+.splash-input:focus{border-color:var(--g1)}
+.splash-btn{width:100%;padding:15px;background:var(--grad);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;transition:filter .2s;box-shadow:0 6px 24px rgba(74,95,213,.3)}
+.splash-btn:hover{filter:brightness(1.08)}
+.splash-note{font-size:11px;color:var(--muted);margin-top:14px}
+
 </style>
 </head>
 <body>
-
-<!-- GLOBAL OVERLAYS -->
 <div class="confetti-wrap" id="confettiWrap"></div>
 <div class="xp-popup" id="xpPopup"></div>
 <div class="combo-badge" id="comboBadge"></div>
 
-<!-- PAGE: HOME -->
-<!-- ══ NAME ENTRY SCREEN ══ -->
-<style>
-#page-name{
-  min-height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#0d1117 0%,#1a1060 100%);
-  font-family:'Outfit',sans-serif;
-}
-.name-box{
-  background:#fff;border-radius:24px;
-  padding:48px 40px;max-width:420px;width:90%;
-  text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4);
-}
-.name-logo{font-size:28px;font-weight:900;color:#4A5FC4;margin-bottom:6px;letter-spacing:-.02em;}
-.name-logo span{color:#C2447A;}
-.name-title{font-size:22px;font-weight:800;color:#1a1a2e;margin:20px 0 8px;}
-.name-sub{font-size:14px;color:#6B7280;margin-bottom:28px;line-height:1.5;}
-.name-input{
-  width:100%;padding:14px 18px;
-  border:2px solid #e2e8f0;border-radius:12px;
-  font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;
-  color:#1a1a2e;outline:none;transition:border .2s;
-  text-align:center;
-}
-.name-input:focus{border-color:#4A5FC4;}
-.name-btn{
-  margin-top:16px;width:100%;
-  padding:15px;border:none;border-radius:12px;
-  background:linear-gradient(120deg,#4A5FC4,#C2447A);
-  color:#fff;font-family:'Outfit',sans-serif;
-  font-size:16px;font-weight:800;cursor:pointer;
-  transition:opacity .2s;
-}
-.name-btn:hover{opacity:.9;}
-.name-btn:disabled{opacity:.4;cursor:not-allowed;}
-.name-err{color:#e53e3e;font-size:13px;margin-top:10px;display:none;}
-.name-err.show{display:block;}
-</style>
-
-<div id="page-name" class="page">
-  <div class="name-box">
-    <div class="name-logo">lingo<span>Studio</span></div>
-    <div class="name-title">👋 ברוך הבא · Welcome!</div>
-    <div class="name-sub">הכנס את שמך כדי להתחיל.<br>Enter your name to begin.<br><small style="color:#9ca3af">השם ישמש לשמירת ההתקדמות שלך · Your name saves your progress</small></div>
-    <input id="name-input" class="name-input" type="text" placeholder="השם שלך · Your name" maxlength="40" />
-    <div class="name-err" id="name-err">נא להכניס שם · Please enter your name</div>
-    <button class="name-btn" id="name-btn" onclick="submitName()">▶ התחל · Start</button>
+<div id="page-splash" class="page">
+  <div class="splash-card">
+    <div class="splash-owl">🦉</div>
+    <div class="splash-title">lingoStudio</div>
+    <p class="splash-sub">עברית בּ-500 מילים<br>Hebrew in 500 words</p>
+    <input class="splash-input" id="splash-name" type="text" placeholder="שם · Your name" autocomplete="given-name" />
+    <button class="splash-btn" id="splash-go">▶ &nbsp;כניסה · Enter</button>
+    <p class="splash-note">השם שומר את ההתקדמות שלך · Your name saves your progress</p>
   </div>
 </div>
 
-<div id="page-home" class="page">
-
-
-<!-- BANNER -->
-<div class="banner">
-  🎓 קורס עברית מקוון · Learn Hebrew Online —
-  <a href="https://lingostudio.ch" target="_blank">lingostudio.ch</a>
-</div>
-
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#home">
-    <span style="font-size:24px">🦉</span>
-    <div class="nav-logo-text">lingo<span>Studio</span></div>
-  </a>
-  <div class="nav-links">
-    <a href="#how">How it works</a>
-    <a href="#curriculum">Curriculum</a>
-    <a href="https://lingostudio.ch" target="_blank">lingostudio.ch</a>
-  </div>
-  <a class="nav-cta" href="#index">Start Learning →</a>
-  <a class="nav-teacher" href="#teacher" style="margin-left:10px;font-size:13px;color:#6B7280;text-decoration:none;padding:8px 14px;border:1.5px solid #e2e8f0;border-radius:20px;font-weight:600;">👨‍🏫 מורה</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      Free Course · 26 Lessons · 500 Words
-    </div>
-    <h1>Learn Hebrew<br>in <em>500 Words</em></h1>
-    <p class="hero-sub">
-      A structured, story-driven course by <b>lingoStudio</b> —
-      master 500 core words and you can read, speak and understand real Hebrew.
-    </p>
-    <div class="hero-btns">
-      <a class="btn-hero-main" href="#index">
-        🦉 &nbsp;Start for free &nbsp;→
-      </a>
-      <a class="btn-hero-ghost" href="#how">
-        See how it works
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="hstat">
-        <div class="hstat-n">500<sup>+</sup></div>
-        <div class="hstat-l">Core words</div>
-      </div>
-      <div class="hstat">
-        <div class="hstat-n">26</div>
-        <div class="hstat-l">Lessons</div>
-      </div>
-      <div class="hstat">
-        <div class="hstat-n">5</div>
-        <div class="hstat-l">Tests</div>
-      </div>
-      <div class="hstat">
-        <div class="hstat-n">3</div>
-        <div class="hstat-l">Exercise types</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SVG WAVE -->
-<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-  <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F0F4F8"/>
-</svg>
-
-<!-- HOW IT WORKS -->
-<section class="section" id="how">
-  <div class="sec-tag">How it works</div>
-  <h2 class="sec-h2">Three exercises per lesson.</h2>
-  <p class="sec-sub">Every lesson follows the same proven rhythm — vocabulary, grammar patterns, then real sentences from the story.</p>
-  <div class="how-grid">
-    <div class="how-card">
-      <span class="how-num">1</span>
-      <span class="how-icon">🃏</span>
-      <div class="how-title">Vocabulary Quiz</div>
-      <p class="how-desc">10 flashcard questions. See a Hebrew word with full vowel marks, choose the right meaning. 3 hearts. Score 80%+ to pass.</p>
-      <span class="how-label">אוצר מילים</span>
-    </div>
-    <div class="how-card">
-      <span class="how-num">2</span>
-      <span class="how-icon">🔁</span>
-      <div class="how-title">Flip Cards</div>
-      <p class="how-desc">Tap to flip, then honestly: did you know it? Cards you miss come back until every word is mastered. No hearts — self-assessment.</p>
-      <span class="how-label">כרטיסיות</span>
-    </div>
-    <div class="how-card">
-      <span class="how-num">3</span>
-      <span class="how-icon">✍️</span>
-      <div class="how-title">Sentence Completion</div>
-      <p class="how-desc">Read a sentence from the lesson story. Find the missing word. 4 choices. Sentences come straight from the real lesson text.</p>
-      <span class="how-label">השלמת משפט</span>
-    </div>
-  </div>
-</section>
-
-<!-- CURRICULUM -->
-<section class="section section-alt" id="curriculum">
-  <div class="sec-tag">Curriculum</div>
-  <h2 class="sec-h2">26 lessons. 5 units. One complete journey.</h2>
-  <p class="sec-sub">Each unit ends with a review test. Complete all 26 lessons and the grand finale to earn your certificate.</p>
-  <div class="curr-wrap">
-
-    <div class="group-block">
-      <div class="group-header">
-        <span class="group-title">📚 Unit 1 — Basics</span>
-        <span class="group-badge">Lessons 1–5</span>
-      </div>
-      <div class="curr-row">
-
-        <div class="curr-item" onclick="goto('shiur1_ex1')" style="cursor:pointer" title="Open lesson 1">
-          <span class="curr-n">1</span>
-          <div>
-            <div class="curr-t">שָׁלוֹם</div>
-            <div class="curr-s">Greetings</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur2_ex1')" style="cursor:pointer" title="Open lesson 2">
-          <span class="curr-n">2</span>
-          <div>
-            <div class="curr-t">שִׂיחָה בָּרְחוֹב</div>
-            <div class="curr-s">Street conversation</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur3_ex1')" style="cursor:pointer" title="Open lesson 3">
-          <span class="curr-n">3</span>
-          <div>
-            <div class="curr-t">יוֹסֵף וְחַנָּה</div>
-            <div class="curr-s">What is this?</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur4_ex1')" style="cursor:pointer" title="Open lesson 4">
-          <span class="curr-n">4</span>
-          <div>
-            <div class="curr-t">הַמּוֹרֶה וְהַתַּלְמִיד</div>
-            <div class="curr-s">Verbs M/F</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur5_ex1')" style="cursor:pointer" title="Open lesson 5">
-          <span class="curr-n">5</span>
-          <div>
-            <div class="curr-t">רַק עִבְרִית</div>
-            <div class="curr-s">Plural M/F</div>
-          </div>
-        </div>
-
-        <div class="curr-item test-item">
-          <span class="curr-n">📝</span>
-          <div>
-            <div class="curr-t">Test 1</div>
-            <div class="curr-s">Unit review</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="group-block">
-      <div class="group-header">
-        <span class="group-title">📚 Unit 2 — Daily Life</span>
-        <span class="group-badge">Lessons 6–10</span>
-      </div>
-      <div class="curr-row">
-
-        <div class="curr-item" onclick="goto('shiur6_ex1')" style="cursor:pointer" title="Open lesson 6">
-          <span class="curr-n">6</span>
-          <div>
-            <div class="curr-t">אִשָּׁה עוֹבֶדֶת</div>
-            <div class="curr-s">Work & professions</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur7_ex1')" style="cursor:pointer" title="Open lesson 7">
-          <span class="curr-n">7</span>
-          <div>
-            <div class="curr-t">בַּמִּשְׂרָד</div>
-            <div class="curr-s">Time & days</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur8_ex1')" style="cursor:pointer" title="Open lesson 8">
-          <span class="curr-n">8</span>
-          <div>
-            <div class="curr-t">הַמִּשְׁפָּחָה</div>
-            <div class="curr-s">Family</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur9_ex1')" style="cursor:pointer" title="Open lesson 9">
-          <span class="curr-n">9</span>
-          <div>
-            <div class="curr-t">אֲרוּחַת בֹּקֶר</div>
-            <div class="curr-s">Food vocabulary</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur10_ex1')" style="cursor:pointer" title="Open lesson 10">
-          <span class="curr-n">10</span>
-          <div>
-            <div class="curr-t">בְּבֵית קָפֶה</div>
-            <div class="curr-s">Café & ordering</div>
-          </div>
-        </div>
-
-        <div class="curr-item test-item">
-          <span class="curr-n">📝</span>
-          <div>
-            <div class="curr-t">Test 2</div>
-            <div class="curr-s">Unit review</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="group-block">
-      <div class="group-header">
-        <span class="group-title">📚 Unit 3 — Going Deeper</span>
-        <span class="group-badge">Lessons 11–15</span>
-      </div>
-      <div class="curr-row">
-
-        <div class="curr-item" onclick="goto('shiur11_ex1')" style="cursor:pointer" title="Open lesson 11">
-          <span class="curr-n">11</span>
-          <div>
-            <div class="curr-t">מָה צָרִיךְ לִקְנוֹת?</div>
-            <div class="curr-s">Shopping</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur12_ex1')" style="cursor:pointer" title="Open lesson 12">
-          <span class="curr-n">12</span>
-          <div>
-            <div class="curr-t">בַּמִּסְעָדָה</div>
-            <div class="curr-s">Restaurant</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur13_ex1')" style="cursor:pointer" title="Open lesson 13">
-          <span class="curr-n">13</span>
-          <div>
-            <div class="curr-t">בַּתַּחֲנָה הַמֶּרְכָּזִית</div>
-            <div class="curr-s">Bus station</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur14_ex1')" style="cursor:pointer" title="Open lesson 14">
-          <span class="curr-n">14</span>
-          <div>
-            <div class="curr-t">מָקוֹם טוֹב לְאִשְׁתִּי</div>
-            <div class="curr-s">Reading text</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur15_ex1')" style="cursor:pointer" title="Open lesson 15">
-          <span class="curr-n">15</span>
-          <div>
-            <div class="curr-t">הַטִּיּוּל לְתֵּל חַי</div>
-            <div class="curr-s">Past tense intro</div>
-          </div>
-        </div>
-
-        <div class="curr-item test-item">
-          <span class="curr-n">📝</span>
-          <div>
-            <div class="curr-t">Test 3</div>
-            <div class="curr-s">Unit review</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="group-block">
-      <div class="group-header">
-        <span class="group-title">📚 Unit 4 — Past & Present</span>
-        <span class="group-badge">Lessons 16–20</span>
-      </div>
-      <div class="curr-row">
-
-        <div class="curr-item" onclick="goto('shiur16_ex1')" style="cursor:pointer" title="Open lesson 16">
-          <span class="curr-n">16</span>
-          <div>
-            <div class="curr-t">הַבִּיקּוּר</div>
-            <div class="curr-s">Past tense drill</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur17_ex1')" style="cursor:pointer" title="Open lesson 17">
-          <span class="curr-n">17</span>
-          <div>
-            <div class="curr-t">הַיָּמִים הָרִאשׁוֹנִים</div>
-            <div class="curr-s">Immigrant stories</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur18_ex1')" style="cursor:pointer" title="Open lesson 18">
-          <span class="curr-n">18</span>
-          <div>
-            <div class="curr-t">צַבְרִים</div>
-            <div class="curr-s">Israeli culture</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur19_ex1')" style="cursor:pointer" title="Open lesson 19">
-          <span class="curr-n">19</span>
-          <div>
-            <div class="curr-t">בַּמּוֹשָׁב</div>
-            <div class="curr-s">Hitpa'el verbs</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur20_ex1')" style="cursor:pointer" title="Open lesson 20">
-          <span class="curr-n">20</span>
-          <div>
-            <div class="curr-t">בַּמַּכֹּלֶת</div>
-            <div class="curr-s">Grocery store</div>
-          </div>
-        </div>
-
-        <div class="curr-item test-item">
-          <span class="curr-n">📝</span>
-          <div>
-            <div class="curr-t">Test 4</div>
-            <div class="curr-s">Unit review</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="group-block">
-      <div class="group-header">
-        <span class="group-title">📚 Unit 5 — Future & Finale</span>
-        <span class="group-badge">Lessons 21–26</span>
-      </div>
-      <div class="curr-row">
-
-        <div class="curr-item" onclick="goto('shiur21_ex1')" style="cursor:pointer" title="Open lesson 21">
-          <span class="curr-n">21</span>
-          <div>
-            <div class="curr-t">הַמִּכְתָּב</div>
-            <div class="curr-s">Future tense</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur22_ex1')" style="cursor:pointer" title="Open lesson 22">
-          <span class="curr-n">22</span>
-          <div>
-            <div class="curr-t">בַּדֹּאַר</div>
-            <div class="curr-s">Post office</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur23_ex1')" style="cursor:pointer" title="Open lesson 23">
-          <span class="curr-n">23</span>
-          <div>
-            <div class="curr-t">הַשִּׂמְלָה</div>
-            <div class="curr-s">Clothes shop</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur24_ex1')" style="cursor:pointer" title="Open lesson 24">
-          <span class="curr-n">24</span>
-          <div>
-            <div class="curr-t">ד"ר פְּנִינָה</div>
-            <div class="curr-s">Birthday party</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur25_ex1')" style="cursor:pointer" title="Open lesson 25">
-          <span class="curr-n">25</span>
-          <div>
-            <div class="curr-t">לְמַד עִבְרִית</div>
-            <div class="curr-s">Signs & imperative</div>
-          </div>
-        </div>
-
-        <div class="curr-item" onclick="goto('shiur26_ex1')" style="cursor:pointer" title="Open lesson 26">
-          <span class="curr-n">26</span>
-          <div>
-            <div class="curr-t">סִיכּוּם 🎉</div>
-            <div class="curr-s">Grand finale</div>
-          </div>
-        </div>
-
-        <div class="curr-item test-item">
-          <span class="curr-n">📝</span>
-          <div>
-            <div class="curr-t">Test 5</div>
-            <div class="curr-s">Unit review</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="section">
-  <div class="why-grid">
-    <div>
-      <div class="sec-tag">Why LingoStudio</div>
-      <h2 class="sec-h2">Designed for real beginners.</h2>
-      <div class="why-list">
-        <div class="why-item">
-          <div class="why-icon">🎯</div>
-          <div><div class="why-t">Full vowel marks — ניקוד</div>
-          <div class="why-d">Every Hebrew word shown with complete vowel notation. No guessing. No prior knowledge required.</div></div>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">📖</div>
-          <div><div class="why-t">Story-driven learning</div>
-          <div class="why-d">Follow the Gidoni family and Abraham the immigrant through real Israeli daily life.</div></div>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">🏆</div>
-          <div><div class="why-t">XP, streaks & milestone badges</div>
-          <div class="why-d">Progress feels rewarding from lesson one. Unlock badges at every unit milestone.</div></div>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">👨‍🏫</div>
-          <div><div class="why-t">Teacher-controlled pacing</div>
-          <div class="why-d">Your teacher opens units as the class progresses. No skipping ahead.</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="why-visual">
-      <div class="wv-label">Sample — Lesson 1 vocabulary</div>
-      <div class="wv-words">
-        <div class="wv-word"><span class="wv-he">שָׁלוֹם</span><div class="wv-bar"><div class="wv-fill" style="width:95%"></div></div><span class="wv-en">Hello</span></div>
-        <div class="wv-word"><span class="wv-he">אֲנִי</span><div class="wv-bar"><div class="wv-fill" style="width:90%"></div></div><span class="wv-en">I</span></div>
-        <div class="wv-word"><span class="wv-he">מֵאֵיפֹה</span><div class="wv-bar"><div class="wv-fill" style="width:78%"></div></div><span class="wv-en">From where?</span></div>
-        <div class="wv-word"><span class="wv-he">גַּם</span><div class="wv-bar"><div class="wv-fill" style="width:88%"></div></div><span class="wv-en">Also</span></div>
-        <div class="wv-word"><span class="wv-he">כֵּן / לֹא</span><div class="wv-bar"><div class="wv-fill" style="width:98%"></div></div><span class="wv-en">Yes / No</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <h2 class="cta-h2">Your first word is<br><em>שָׁלוֹם</em></h2>
-  <p class="cta-sub">499 words to go. No signup, no download — just learning.</p>
-  <a class="btn-cta" href="#index">🦉 &nbsp; Begin Lesson 1 &nbsp; →</a>
-  <p class="cta-note">Free · Works on any device · Progress saved automatically</p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="foot-logo">🦉 LingoStudio</div>
-  <div class="foot-links">
-    <a href="#home">Home</a>
-    <a href="#index">My Progress</a>
-    <a href="https://lingostudio.ch" target="_blank">lingostudio.ch</a>
-  </div>
-  <div class="foot-copy">© 2025 lingoStudio Zürich</div>
-</footer>
-
-
-</div>
-
-<!-- PAGE: INDEX -->
 <div id="page-index" class="page">
   <nav class="ix-nav">
-    <div class="ix-logo" onclick="goto('home')">
+    <div class="ix-logo" onclick="goto('index')">
       <span style="font-size:24px">🦉</span>
       <div class="ix-logo-text">lingo<span>Studio</span></div>
     </div>
@@ -1230,6 +447,7 @@ footer{
       <button class="btn-ix-continue" id="ix-btn" onclick="var g=this.getAttribute('data-goto');if(g)goto(g)">▶ התחל שיעור 1 · Start Lesson 1</button>
     </div>
     <div class="ix-section-head">שיעורים · Lessons</div>
+    <div class="dot-legend">🔁 Flip Cards &nbsp;·&nbsp; 🃏 Vocab Quiz &nbsp;·&nbsp; ✍️ Grammar</div>
     <div id="ix-list"></div>
     <div class="ix-footer">lingoStudio · עברית לעולים · v2.0</div>
   </div>
@@ -1260,6 +478,7 @@ footer{
 
 <!-- PAGE: EX2 (MCQ — built by JS) -->
 <div id="page-ex2" class="page game-page">
+<div id="page-ex2" class="page game-page">
   <div class="topbar">
     <div class="topbar-left">
       <div class="pill" id="ex2-pill">שיעור —</div>
@@ -1289,6 +508,7 @@ footer{
 </div>
 
 <!-- PAGE: EX3 (grammar — built by JS) -->
+<div id="page-ex3" class="page game-page">
 <div id="page-ex3" class="page game-page">
   <div class="topbar">
     <div class="topbar-left">
@@ -1328,7 +548,7 @@ footer{
       <input type="password" id="teacher-pw" class="login-input" placeholder="••••••••" />
       <button class="login-btn" onclick="teacherLogin()">Unlock · פתח</button>
       <div class="login-error" id="login-err">Wrong password · סיסמה שגויה</div>
-      <div style="margin-top:20px"><button onclick="goto('home')" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer">← Back to course</button></div>
+      <div style="margin-top:20px"><button onclick="goto('index')" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer">← Back to course</button></div>
     </div>
   </div>
   <div id="teacher-panel-screen" style="display:none">
@@ -1358,6 +578,7 @@ footer{
 
 <script>
 // ═══════════════════════════════════════════════════════
+
 //  ALL LESSON DATA
 // ═══════════════════════════════════════════════════════
 const LESSON_DATA = {
@@ -11083,12 +10304,27 @@ async function cloudLoad(studentName){
 }
 function markDone(id,xp){
   const s=getState(); const done=s.done||[];
-  if(!done.includes(id)){ done.push(id); s.done=done; s.xp=(s.xp||0)+xp; saveState(s); }
+  if(!done.includes(id)){
+    done.push(id); s.done=done; s.xp=(s.xp||0)+xp;
+    // Auto-unlock next lesson when current lesson's ex3 is complete
+    const m=id.match(/^shiur(\d+)_ex3$/);
+    if(m){
+      const completedN=parseInt(m[1]);
+      const ul=getUnlocked();
+      const nextN=completedN+1;
+      if(nextN<=26 && !ul.includes(nextN)){ ul.push(nextN); s.unlocked=ul; }
+    }
+    saveState(s);
+  }
 }
 function isDone(id){ return (getState().done||[]).includes(id); }
-function getUnlocked(){ return LESSONS.map(l=>l.n); }
-function saveUnlocked(arr){ }
-function isUnlocked(n){ return true; }
+function getUnlocked(){
+  const s=getState();
+  if(s.unlocked && s.unlocked.length>0) return s.unlocked;
+  return [1]; // only lesson 1 open by default
+}
+function saveUnlocked(arr){ const s=getState(); s.unlocked=arr; saveState(s); }
+function isUnlocked(n){ return getUnlocked().includes(n); }
 
 // ═══════════════════════════════════════════════════════
 //  ROUTER
@@ -11097,29 +10333,6 @@ function isUnlocked(n){ return true; }
 // Paste your Apps Script Web App URL here after deploying:
 const SYNC_URL = 'https://script.google.com/macros/s/AKfycbxCgViYiQl0oaF9hQKTRms9pc6llub8Ynl1D6FcD6ryc0BrQlTunHDe3YsHWvT0vYem7g/exec'; // e.g. 'https://script.google.com/macros/s/ABC.../exec'
 let currentPage = null;
-
-function submitName(){
-  const nm = document.getElementById('name-input').value.trim();
-  if(!nm){
-    document.getElementById('name-err').classList.add('show');
-    document.getElementById('name-input').focus();
-    return;
-  }
-  const s = getState();
-  const ns = {...s, name: nm};
-  saveState(ns);
-  if(SYNC_URL){
-    cloudLoad(nm).then(loaded=>{
-      if(loaded && loaded.done && loaded.done.length>0){
-        // restore cloud progress silently
-        saveState({...getState(), ...loaded, name:nm});
-      }
-      goto('index');
-    });
-  } else {
-    goto('index');
-  }
-}
 
 function gotoTeacher(){ goto("teacher"); }
 function resetProgress(){
@@ -11141,33 +10354,16 @@ function goto(id){
 
 function route(){
   const rawHash = location.hash.replace('#','');
-  // Smart resume: if student has progress and no explicit hash → go to index
   let hash = rawHash;
+
   if(!rawHash){
-    try{
-      const s=getState();
-      // Ask name on very first visit — show visual name screen
-      if(!s.name){
-        hash='name';
-        location.hash='#name';
-        document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-        document.getElementById('page-name').classList.add('active');
-        document.getElementById('name-input').addEventListener('keydown',e=>{ if(e.key==='Enter') submitName(); });
-        return;
-      }
-      if(s.done && s.done.length>0){
-        hash='index';
-      } else {
-        hash='home';
-      }
-    }catch(e){ hash='home'; }
+    const s = getState();
+    if(!s.name){ showSplash(); return; }
+    hash = 'index';
   }
+
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 
-  if(hash==='home'){
-    document.getElementById('page-home').classList.add('active');
-    window.scrollTo(0,0); currentPage='home'; return;
-  }
   if(hash==='index'){
     document.getElementById('page-index').classList.add('active');
     window.scrollTo(0,0); renderIndex(); currentPage='index'; return;
@@ -11175,7 +10371,6 @@ function route(){
   if(hash==='teacher'){
     document.getElementById('page-teacher').classList.add('active');
     window.scrollTo(0,0);
-    // check if already authed this session
     if(sessionStorage.getItem('teacher_auth')==='1') showTeacherPanel();
     else showTeacherLogin();
     currentPage='teacher'; return;
@@ -11184,11 +10379,7 @@ function route(){
   const m = hash.match(/^shiur(\d+)_(ex[123])$/);
   if(m && LESSON_DATA[hash]){
     const n=parseInt(m[1]), ex=m[2];
-    // Enforce teacher lock
-    if(!isUnlocked(n)){
-      alert('שיעור זה נעול · This lesson is locked by your teacher.');
-      goto('index'); return;
-    }
+    if(!isUnlocked(n)){ alert('שיעור זה נעול · This lesson is locked.'); goto('index'); return; }
     currentPage = hash;
     const data = LESSON_DATA[hash];
     if(ex==='ex1'){ document.getElementById('page-ex1').classList.add('active'); window.scrollTo(0,0); initEx1(data); }
@@ -11196,7 +10387,7 @@ function route(){
     else{ document.getElementById('page-ex3').classList.add('active'); window.scrollTo(0,0); initEx3(data); }
     return;
   }
-  goto('home');
+  goto('index');
 }
 
 window.addEventListener('hashchange', route);
@@ -11256,11 +10447,6 @@ function renderIndex(){
   const _sname=getState().name||'';
   if(_sname) document.getElementById('ix-xp').title='👤 '+_sname;
   document.getElementById('ix-xp').textContent=xp;
-  // Reset button at bottom
-  const _rd=document.createElement('div');
-  _rd.style='text-align:center;margin-top:32px;padding-bottom:20px';
-  _rd.innerHTML='<button onclick="resetProgress()" style="background:none;border:none;color:#9ca3af;font-size:12px;cursor:pointer;text-decoration:underline">🗑️ Reset progress · אפס התקדמות</button>';
-  document.getElementById('ix-list').appendChild(_rd);
   document.getElementById('ix-bar').style.width=pct+'%';
   document.getElementById('ix-prog-l').textContent=comp+' / 26 שיעורים';
   document.getElementById('ix-prog-r').textContent=pct+'%';
@@ -11278,23 +10464,37 @@ function renderIndex(){
       document.getElementById('ix-hero-sub').textContent='שיעור 1 מתוך 26 · Lesson 1 of 26';
       btn.textContent='▶ התחל שיעור 1 · Start Lesson 1';
     } else {
-      const exN=nextId.slice(-1);
-      document.getElementById('ix-hero-title').textContent='שיעור '+nLesson+': '+lm.he;
-      document.getElementById('ix-hero-sub').textContent=comp+'/26 שיעורים · '+xp+' XP';
-      btn.textContent='▶ המשך · Continue — Lesson '+nLesson+' Ex'+exN;
+      const exNames=['','Flip Cards 🔁','Vocab Quiz 🃏','Grammar ✍️'];
+      const exN=parseInt(nextId.slice(-1));
+      document.getElementById('ix-hero-title').textContent='Lesson '+nLesson+': '+lm.en.split(' · ')[0];
+      document.getElementById('ix-hero-sub').textContent=comp+'/26 lessons done · '+xp+' XP';
+      btn.textContent='▶ Continue — Lesson '+nLesson+' · '+exNames[exN];
     }
     btn.setAttribute('data-goto', nextId);
   }
 
   const list=document.getElementById('ix-list'); list.innerHTML='';
-  // Event delegation — one listener handles all lesson clicks reliably
+  // Event delegation
   list.onclick=function(e){
     const card=e.target.closest('[data-href],[data-locked]');
     if(!card) return;
-    if(card.dataset.locked){ alert('יש להשלים את השיעור הקודם תחילה · Complete the previous lesson first 🔒'); return; }
+    if(card.dataset.locked){ alert('Complete the previous lesson first 🔒\nיש להשלים את השיעור הקודם תחילה'); return; }
     if(card.dataset.href){ goto(card.dataset.href); }
   };
+
+  const unitNames={1:'Unit 1 — Basics',2:'Unit 2 — Daily Life',3:'Unit 3 — Going Deeper',4:'Unit 4 — Past & Present',5:'Unit 5 — Future & Finale'};
+  const unitRanges={1:'Lessons 1–5',2:'Lessons 6–10',3:'Lessons 11–15',4:'Lessons 16–20',5:'Lessons 21–26'};
+
   LESSONS.forEach(l=>{
+    // Unit divider
+    const unitNum=Object.keys(UNIT_RANGES).find(u=>l.n>=UNIT_RANGES[u][0]&&l.n<=UNIT_RANGES[u][1]);
+    if(unitNum && l.n===UNIT_RANGES[unitNum][0]){
+      const uh=document.createElement('div');
+      uh.className='ix-unit-head';
+      uh.innerHTML=`<span>📚 ${unitNames[unitNum]}</span><span class="ix-unit-range">${unitRanges[unitNum]}</span>`;
+      list.appendChild(uh);
+    }
+
     const s=ls(l.n);
     const prevComplete = l.n===1 ? true : ls(l.n-1).complete;
     const isNext=nextId&&nextId.startsWith('shiur'+l.n+'_');
@@ -11304,20 +10504,23 @@ function renderIndex(){
     let numCls='lnum '+(s.complete?'done':(isNext||s.e1)?'now':'lock');
     const div=document.createElement('div');
     div.className=cls;
-    if(isLocked){
-      div.setAttribute('data-locked','1');
-    } else {
-      div.setAttribute('data-href', href);
-    }
+    if(isLocked){ div.setAttribute('data-locked','1'); }
+    else { div.setAttribute('data-href', href); }
     div.innerHTML=`<div class="${numCls}">${s.complete?'✓':isLocked?'🔒':l.n}</div>
-      <div class="linfo"><div class="lname">${l.he}</div><div class="lsub">${l.en}</div></div>
-      <div class="ex-dots">
-        <div class="ex-dot ${s.e1?'done':isNext&&!s.e1?'now':''}"></div>
-        <div class="ex-dot ${s.e2?'done':isNext&&s.e1&&!s.e2?'now':''}"></div>
-        <div class="ex-dot ${s.e3?'done':isNext&&s.e2&&!s.e3?'now':''}"></div>
+      <div class="linfo"><div class="lname">${l.he}</div><div class="lsub">Lesson ${l.n} · ${l.en}</div></div>
+      <div class="ex-dots" title="🔁 Flip Cards  ·  🃏 Vocab Quiz  ·  ✍️ Grammar">
+        <div class="ex-dot ${s.e1?'done':isNext&&!s.e1?'now':''}" title="Ex 1 · Flip Cards"></div>
+        <div class="ex-dot ${s.e2?'done':isNext&&s.e1&&!s.e2?'now':''}" title="Ex 2 · Vocab Quiz"></div>
+        <div class="ex-dot ${s.e3?'done':isNext&&s.e2&&!s.e3?'now':''}" title="Ex 3 · Grammar"></div>
       </div>`;
     list.appendChild(div);
   });
+
+  // Reset button — added AFTER list is fully built
+  const _rd=document.createElement('div');
+  _rd.style='text-align:center;margin-top:32px;padding-bottom:20px';
+  _rd.innerHTML='<button onclick="resetProgress()" style="background:none;border:none;color:#9ca3af;font-size:12px;cursor:pointer;text-decoration:underline">🗑️ Reset progress · אפס התקדמות</button>';
+  list.appendChild(_rd);
 
   // Teacher link at bottom
   if(!document.getElementById('ix-teacher-link')){
@@ -11336,8 +10539,9 @@ let E1={data:null,idx:0,flipped:false};
 
 function initEx1(data){
   E1={data,idx:0,flipped:false};
-  document.getElementById('ex1-pill').textContent=data.pill||'';
-  document.getElementById('ex1-name').textContent=data.name||'';
+  const _ln1=(data.id.match(/shiur(\d+)/)||['','?'])[1];
+  document.getElementById('ex1-pill').textContent='שיעור '+_ln1+' · Lesson '+_ln1;
+  document.getElementById('ex1-name').textContent=(data.name?data.name+' · ':'')+'Exercise 1 of 3: Flip Cards 🔁';
   renderEx1();
 }
 
@@ -11378,7 +10582,7 @@ function renderEx1(){
   area.innerHTML=`
     <div class="ex1-instruction">
       <div class="inst-he">לחץ על הכרטיס כדי לגלות את התרגום</div>
-      <div class="inst-en">Tap the card to reveal the translation. Be honest — did you know it?</div>
+      <div class="inst-en">👆 Tap each card to reveal the translation, then click <strong>Next</strong>. Be honest — learning works best when you are!</div>
     </div>
     <div class="card-counter" dir="ltr">${idx+1} / ${cards.length}</div>
     ${pairHtml}
@@ -11470,8 +10674,9 @@ const XP_C=10, XP_COMBO=5;
 
 function initEx2(data){
   E2={data,qs:shuffle(data.questions).slice(0,data.total_q||10),idx:0,hearts:3,xp:0,combo:0,maxCombo:0,correct:0,answered:false};
-  document.getElementById('ex2-pill').textContent=data.pill||'';
-  document.getElementById('ex2-name').textContent=data.name||'';
+  const _ln2=(data.id.match(/shiur(\d+)/)||['','?'])[1];
+  document.getElementById('ex2-pill').textContent='שיעור '+_ln2+' · Lesson '+_ln2;
+  document.getElementById('ex2-name').textContent='Exercise 2 of 3: Vocabulary Quiz 🃏';
   document.getElementById('ex2-xp').textContent='0';
   updateHearts(2,3); updateProgress(2,0,E2.qs.length);
   renderEx2Q();
@@ -11488,7 +10693,7 @@ function renderEx2Q(){
       <div class="inst-row">
         <div class="inst-he">ראה את המילה בעברית — בחר את התרגום הנכון</div>
       </div>
-      <div class="inst-en">See the Hebrew word — choose the correct English translation. 3 hearts, 80%+ to pass.</div>
+      <div class="inst-en">👀 Look at the Hebrew word — choose the correct English translation. You have 3 lives ❤️. <strong>You need 70%+ to pass and unlock the next exercise.</strong></div>
     </div>
     <div class="q-card" id="ex2-qcard">
       <div class="q-hebrew">${q.he}</div>
@@ -11554,11 +10759,31 @@ function ex2Success(){
   const bonus=E2.correct===E2.qs.length?20:0;
   if(bonus)E2.xp+=bonus;
   const acc=Math.round(E2.correct/E2.qs.length*100);
+  // ── 70% gate ──
+  if(acc<70){
+    document.getElementById('ex2-area').innerHTML=`
+      <div class="result-screen show">
+        <div class="result-icon">📚</div>
+        <div class="result-title">Almost! · עוד קצת!</div>
+        <div class="result-sub">You scored <strong>${acc}%</strong> — you need <strong>70%</strong> to continue.<br>Review the flip cards and try again!</div>
+        <div class="result-stats">
+          <div class="rstat"><div class="rstat-n">${acc}%</div><div class="rstat-l">Your score</div></div>
+          <div class="rstat"><div class="rstat-n">70%</div><div class="rstat-l">Needed ✓</div></div>
+          <div class="rstat"><div class="rstat-n">${E2.correct}/${E2.qs.length}</div><div class="rstat-l">Correct</div></div>
+        </div>
+        <div class="result-btns">
+          <button class="btn-go-next" onclick="initEx2(E2.data)">Try again 🔄 · נסה שוב</button>
+          <button class="btn-retry" onclick="goto('${E2.data.id.replace('_ex2','_ex1')}')">← Review Flip Cards first</button>
+        </div>
+      </div>`;
+    document.getElementById('ex2-bar').style.width=acc+'%';
+    return;
+  }
   document.getElementById('ex2-area').innerHTML=`
     <div class="result-screen show">
       <div class="result-icon">🏆</div>
       <div class="result-title">כל הכבוד! · Well done!</div>
-      <div class="result-sub">סיימת את הבוחן · Quiz complete</div>
+      <div class="result-sub">סיימת את הבוחן · Quiz complete — ${acc}% ✓</div>
       <div class="result-stats">
         <div class="rstat"><div class="rstat-n">${E2.xp}⭐</div><div class="rstat-l">XP earned</div></div>
         <div class="rstat"><div class="rstat-n">${acc}%</div><div class="rstat-l">Accuracy · דיוק</div></div>
@@ -11594,8 +10819,9 @@ let E3={data:null,qs:[],idx:0,hearts:3,xp:0,combo:0,maxCombo:0,correct:0,answere
 
 function initEx3(data){
   E3={data,qs:shuffle(data.questions),idx:0,hearts:3,xp:0,combo:0,maxCombo:0,correct:0,answered:false};
-  document.getElementById('ex3-pill').textContent=data.pill||'';
-  document.getElementById('ex3-name').textContent=data.name||'';
+  const _ln3=(data.id.match(/shiur(\d+)/)||['','?'])[1];
+  document.getElementById('ex3-pill').textContent='שיעור '+_ln3+' · Lesson '+_ln3;
+  document.getElementById('ex3-name').textContent='Exercise 3 of 3: Sentence Completion ✍️';
   document.getElementById('ex3-xp').textContent='0';
   updateHearts(3,3); updateProgress(3,0,E3.qs.length);
   renderEx3Q();
@@ -11612,7 +10838,7 @@ function renderEx3Q(){
   const isTypeA    = !usePrePost && q.type==='A';
 
   let instHe = 'בחר את הצורה הנכונה להשלמת המשפט';
-  let instEn = 'Choose the correct form to complete the sentence';
+  let instEn = '📖 Read the English hint — choose the correct missing Hebrew word. 3 lives ❤️ · <strong>70%+ to pass.</strong>';
 
   // Build sentence display
   let sentenceHtml='';
@@ -11712,11 +10938,31 @@ function ex3Success(){
   const acc=Math.round(E3.correct/E3.qs.length*100);
   const nextLesson=parseInt(E3.data.id.match(/shiur(\d+)/)[1])+1;
   const isLast=nextLesson>26;
+  // ── 70% gate ──
+  if(acc<70){
+    document.getElementById('ex3-area').innerHTML=`
+      <div class="result-screen show">
+        <div class="result-icon">📖</div>
+        <div class="result-title">Almost! · עוד קצת!</div>
+        <div class="result-sub">You scored <strong>${acc}%</strong> — you need <strong>70%</strong> to complete the lesson.<br>Review the vocab quiz and try again!</div>
+        <div class="result-stats">
+          <div class="rstat"><div class="rstat-n">${acc}%</div><div class="rstat-l">Your score</div></div>
+          <div class="rstat"><div class="rstat-n">70%</div><div class="rstat-l">Needed ✓</div></div>
+          <div class="rstat"><div class="rstat-n">${E3.correct}/${E3.qs.length}</div><div class="rstat-l">Correct</div></div>
+        </div>
+        <div class="result-btns">
+          <button class="btn-go-next" onclick="initEx3(E3.data)">Try again 🔄 · נסה שוב</button>
+          <button class="btn-retry" onclick="goto('${E3.data.id.replace('_ex3','_ex2')}')">← Review Vocab Quiz first</button>
+        </div>
+      </div>`;
+    document.getElementById('ex3-bar').style.width=acc+'%';
+    return;
+  }
   document.getElementById('ex3-area').innerHTML=`
     <div class="result-screen show">
       <div class="result-icon">🌟</div>
       <div class="result-title">שיעור הושלם! · Lesson Complete!</div>
-      <div class="result-sub">סיימת את כל 3 התרגילים · All 3 exercises done</div>
+      <div class="result-sub">סיימת את כל 3 התרגילים · All 3 exercises done — ${acc}% ✓</div>
       <div class="result-stats">
         <div class="rstat"><div class="rstat-n">${E3.xp}⭐</div><div class="rstat-l">XP</div></div>
         <div class="rstat"><div class="rstat-n">${acc}%</div><div class="rstat-l">Accuracy</div></div>
@@ -11846,5 +11092,29 @@ function teacherOpenUnit(u){
 // ═══════════════════════════════════════════════════════
 route();
 </script>
+</body>
+</html>
+
+// ── SPLASH ──
+function showSplash(){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-splash').classList.add('active');
+  setTimeout(()=>document.getElementById('splash-name').focus(), 100);
+}
+async function splashSubmit(){
+  const nm = document.getElementById('splash-name').value.trim();
+  if(!nm){ document.getElementById('splash-name').focus(); return; }
+  const s = getState(); s.name = nm; saveState(s);
+  if(typeof SYNC_URL !== 'undefined' && SYNC_URL){
+    const loaded = await cloudLoad(nm);
+    if(loaded && loaded.done && loaded.done.length > 0){
+      alert('✅ Progress restored! · ההתקדמות שלך שוחזרה!\n' + loaded.done.length + ' exercises completed');
+    }
+  }
+  goto('index');
+}
+document.getElementById('splash-go').addEventListener('click', splashSubmit);
+document.getElementById('splash-name').addEventListener('keydown', e=>{ if(e.key==='Enter') splashSubmit(); });
+
 </body>
 </html>
