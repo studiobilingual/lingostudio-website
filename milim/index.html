@@ -10330,8 +10330,23 @@ function markDone(id,xp){
 function isDone(id){ return (getState().done||[]).includes(id); }
 function getUnlocked(){
   const s=getState();
-  if(s.unlocked && s.unlocked.length>0) return s.unlocked;
-  return [1]; // only lesson 1 open by default
+  const done=s.done||[];
+  // גזור שיעורים פתוחים מתוך done — כל שיעור שex3 שלו הושלם פותח את הבא
+  const derivedUnlocked=new Set([1]);
+  done.forEach(id=>{
+    const m=id.match(/^shiur(\d+)_ex3$/);
+    if(m){ const n=parseInt(m[1]); derivedUnlocked.add(n); if(n+1<=26) derivedUnlocked.add(n+1); }
+  });
+  // מיזוג עם unlocked ששמור
+  const stored=s.unlocked||[];
+  stored.forEach(n=>derivedUnlocked.add(n));
+  const result=[...derivedUnlocked];
+  // אם יש הבדל — שמור לעתיד
+  if(result.length>stored.length){
+    const ns=getState(); ns.unlocked=result; 
+    try{localStorage.setItem('ulpan_state',JSON.stringify(ns));}catch(e){}
+  }
+  return result;
 }
 function saveUnlocked(arr){ const s=getState(); s.unlocked=arr; saveState(s); }
 function isUnlocked(n){ return getUnlocked().includes(n); }
