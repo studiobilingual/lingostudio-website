@@ -11135,8 +11135,23 @@ function splashSubmit(){
   }
 }
 function goToIndex(){
-  showPage('index');renderIndex();
-  currentPage='index';location.hash='#index';
+  const splash=document.getElementById('page-splash');
+  splash.style.transition='opacity .3s ease';
+  splash.style.opacity='0';
+  setTimeout(()=>{
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    splash.style.opacity='';
+    splash.style.transition='';
+    const idx=document.getElementById('page-index');
+    idx.classList.add('active');
+    try{window.scrollTo({top:0,behavior:'instant'});}catch(e){}
+    try{document.documentElement.scrollTop=0;}catch(e){}
+    try{document.body.scrollTop=0;}catch(e){}
+    try{idx.scrollIntoView({block:'start',behavior:'instant'});}catch(e){}
+    renderIndex();
+    currentPage='index';
+    location.hash='#index';
+  },320);
 }
 document.getElementById('splash-go').addEventListener('click',splashSubmit);
 document.getElementById('splash-name').addEventListener('keydown',e=>{if(e.key==='Enter')splashSubmit();});
