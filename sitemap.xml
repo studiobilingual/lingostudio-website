@@ -67,7 +67,7 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- SEO LANDING PAGES - NEW! -->
+  <!-- SEO LANDING PAGES -->
   <url>
     <loc>https://www.lingostudio.ch/hebraeisch-kurs-zuerich.html</loc>
     <lastmod>2026-08-12</lastmod>
@@ -81,47 +81,11 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- NEWSPAPER SECTION - NEW! -->
+  <!-- NEWSPAPER -->
   <url>
-    <loc>https://www.lingostudio.ch/newspaper/</loc>
-    <lastmod>2025-01-02</lastmod>
+    <loc>https://learn.lingostudio.ch/עיתון-newspaper</loc>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lingostudio.ch/newspaper/A1-issue-1.html</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lingostudio.ch/newspaper/A1-issue-2.html</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lingostudio.ch/newspaper/A1-issue-3.html</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lingostudio.ch/newspaper/A1-issue-4.html</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lingostudio.ch/newspaper/A2-issue-1.html</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lingostudio.ch/newspaper/A2-issue-2.html</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 </urlset>
