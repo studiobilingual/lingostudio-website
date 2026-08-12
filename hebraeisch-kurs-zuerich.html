@@ -8,8 +8,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.lingostudio.ch/warum-lingostudio.html">
-    <title>Warum lingoStudio? | Hebräisch Kurse Zürich</title>
+    <link rel="canonical" href="https://www.lingostudio.ch/hebraeisch-kurs-zuerich">
+    <title>Hebräisch Kurs Zürich | Gruppenkurs & Privatunterricht | lingoStudio</title>
     <meta name="description" content="Hebräisch lernen bei lingoStudio – online oder vor Ort. Kleine Gruppen, faire Preise, israelischer Muttersprachler. Kostenlose Probelektion!">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -537,7 +537,6 @@
             }
             .nav-links.active { display: flex; }
         }
-
     </style>
 </head>
 <body>
@@ -557,8 +556,8 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <div class="nav-links" id="navLinks">
                 <a href="/">Startseite</a>
-                <a href="/about.html">Über uns</a>
-                <a href="/warum-lingostudio.html">Kurse</a>
+                <a href="/hebraeisch-lehrer-zuerich">Über uns</a>
+                <a href="/hebraeisch-kurs-zuerich">Kurse</a>
                 <a href="/faq.html">FAQ</a>
                 <a href="/bewertungen.html">Bewertungen</a>
                 <a href="/aktualisierungen.html">News</a>
@@ -567,188 +566,6 @@
             </div>
         </div>
     </nav>
-
-
-    <!-- PROMO BANNER - Controlled by Google Sheets -->
-    <div id="promoBanner" class="promo-banner" style="display: none;">
-        <div class="promo-content">
-            <span class="promo-icon">🎉</span>
-            <span id="promoText" class="promo-text"></span>
-            <button class="promo-close" onclick="closePromo()">✕</button>
-        </div>
-    </div>
-    
-    <style>
-        .promo-banner {
-            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
-            color: white;
-            padding: 12px 20px;
-            text-align: center;
-            position: relative;
-            z-index: 1000;
-            animation: slideDown 0.5s ease-out, glow 2s ease-in-out infinite;
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
-        }
-        
-        @keyframes slideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4); }
-            50% { box-shadow: 0 4px 25px rgba(239, 68, 68, 0.7); }
-        }
-        
-        .promo-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        
-        .promo-icon {
-            font-size: 1.3rem;
-            animation: bounce 1s ease infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        .promo-text {
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 0.3px;
-        }
-        
-        .promo-text strong {
-            background: rgba(255,255,255,0.25);
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-        
-        .promo-close {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        .promo-close:hover {
-            background: rgba(255,255,255,0.35);
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        @media (max-width: 768px) {
-            .promo-banner { padding: 10px 45px 10px 15px; }
-            .promo-text { font-size: 0.9rem; }
-        }
-    
-        /* === PROMO BANNER === */
-        .promo-banner {
-            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
-            color: white;
-            padding: 12px 20px;
-            text-align: center;
-            position: relative;
-        }
-        .promo-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .promo-icon { font-size: 1.2rem; }
-        .promo-text { font-weight: 700; }
-        .promo-close {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            cursor: pointer;
-            position: absolute;
-            right: 10px;
-        }
-        
-        /* === NAVIGATION === */
-        .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 15px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: white;
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-        .nav-links a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: white; }
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .mobile-menu-btn { display: block; }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-            }
-            .nav-links.active { display: flex; }
-        }
-
-    </style>
-
 
     <!-- HERO -->
     <section class="hero">
@@ -917,6 +734,10 @@
     </footer>
 
 <script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+
     // === PROMO BANNER SYSTEM ===
     const PROMO_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3TOtNH06cdQNE8TG_u_dahy3wNC79w0BCTO8U6ReieVJxrsyQRLVQAXKCM32nq4V30Q/exec";
     
