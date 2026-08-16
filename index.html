@@ -649,7 +649,8 @@ font-weight: 700;
 
 <section class="materials" id="materialien" aria-labelledby="materials-title">
 <div class="section-title">
-<h2 id="materials-title">📚 Lernmaterialien</h2>
+<!-- FIX 3: הוספת מילת מפתח ל-H2 -->
+<h2 id="materials-title">📚 Hebräisch Lernmaterialien</h2>
 <p>Kostenlose Ressourcen für Ihr Hebräisch-Studium</p>
 </div>
 <div class="materials-grid">
@@ -658,14 +659,15 @@ font-weight: 700;
 <div class="material-icon" aria-hidden="true">🔤</div>
 <h3>500 Wörter auf Hebräisch</h3>
 <p>Die wichtigsten 500 hebräischen Wörter mit Aussprache, Übungen und Beispielsätzen. Perfekt für Anfänger!</p>
-<a href="https://sites.google.com/view/500milimsite/home" target="_blank" rel="noopener" class="material-btn">Jetzt lernen →</a>
+<!-- FIX 1: קישור 500 מילים מתוקן -->
+<a href="https://learn.lingostudio.ch/home" target="_blank" rel="noopener noreferrer" class="material-btn">Jetzt lernen →</a>
 </article>
 <article class="material-card">
 <span class="material-badge">KOSTENLOS</span>
 <div class="material-icon" aria-hidden="true">📰</div>
 <h3>Die Hebräische Zeitung</h3>
 <p>Lesen Sie echte hebräische Texte mit Vokabelhilfe und Übersetzungen. Ideal für Fortgeschrittene!</p>
-<a href="https://lingostudio.ch/newspaper/" target="_blank" rel="noopener" class="material-btn">Jetzt lesen →</a>
+<a href="https://lingostudio.ch/newspaper/" target="_blank" rel="noopener noreferrer" class="material-btn">Jetzt lesen →</a>
 </article>
 </div>
 </section>
@@ -778,8 +780,10 @@ font-weight: 700;
 <div class="footer-materials">
 <div class="footer-materials-title">📚 Kostenlose Lernmaterialien</div>
 <div class="footer-materials-links">
-<a href="https://sites.google.com/view/500milimsite/home" target="_blank" rel="noopener">🔤 500 Wörter</a>
-<a href="https://sites.google.com/view/studiolingo-newspaper/home" target="_blank" rel="noopener">📰 Hebräische Zeitung</a>
+<!-- FIX 2: קישור פוטר 500 מילים מתוקן -->
+<a href="https://learn.lingostudio.ch/home" target="_blank" rel="noopener noreferrer">🔤 500 Wörter</a>
+<!-- FIX 3: קישור פוטר עיתון מתוקן -->
+<a href="https://learn.lingostudio.ch/עיתון-newspaper" target="_blank" rel="noopener noreferrer">📰 Hebräische Zeitung</a>
 </div>
 </div>
 <div class="footer-contact">
@@ -795,3 +799,12 @@ font-weight: 700;
 </footer>
 </body>
 </html>
+<!--
+CHANGELOG:
+v2 2026-08-16 — שלושה תיקוני SEO:
+  1. סקשן Materialien: קישור 500 מילים → learn.lingostudio.ch/home
+  2. פוטר: קישור 500 מילים → learn.lingostudio.ch/home
+  3. פוטר: קישור עיתון → learn.lingostudio.ch/עיתון-newspaper
+  בונוס: H2 Materialien → "Hebräisch Lernmaterialien" (מילת מפתח)
+  בונוס: rel="noopener noreferrer" (היה רק noopener)
+-->
