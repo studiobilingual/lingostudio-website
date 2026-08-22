@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /_/view/prefs
 
 Sitemap: https://lingostudio.ch/sitemap.xml
