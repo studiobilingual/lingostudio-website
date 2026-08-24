@@ -73,7 +73,7 @@
         const sidebar = document.createElement("nav");
         sidebar.className = "sidebar";
         sidebar.id = "sidebar";
-        sidebar.innerHTML = '<a href="https://www.lingostudio.ch" class="sidebar-logo">LingoStudio</a><p style="color:#888;padding:10px;">טוען...</p>';
+        sidebar.innerHTML = '<a href="https://lingostudio.ch" class="sidebar-logo">LingoStudio</a><p style="color:#888;padding:10px;">טוען...</p>';
 
         const main = document.createElement("div");
         main.className = "sidebar-main";
@@ -123,7 +123,7 @@
             renderSidebar(menuStructure, archiveStructure);
         } catch (error) {
             console.error("Error loading sidebar:", error);
-            document.getElementById("sidebar").innerHTML = '<a href="https://www.lingostudio.ch" class="sidebar-logo">LingoStudio</a><p style="color:#888;padding:20px;">שגיאה בטעינת התפריט</p><a href="index.html" class="nav-item">🏠 Home</a>';
+            document.getElementById("sidebar").innerHTML = '<a href="https://lingostudio.ch" class="sidebar-logo">LingoStudio</a><p style="color:#888;padding:20px;">שגיאה בטעינת התפריט</p><a href="index.html" class="nav-item">🏠 Home</a>';
         }
     }
 
@@ -224,7 +224,7 @@
     function renderSidebar(menu, archive) {
         const currentPage = window.location.pathname.split("/").pop() || "index.html";
         
-        let html = '<a href="https://www.lingostudio.ch" class="sidebar-logo">LingoStudio</a>';
+        let html = '<a href="https://lingostudio.ch" class="sidebar-logo">LingoStudio</a>';
         html += '<div class="nav-section"><a href="index.html" class="nav-item ' + (currentPage === "index.html" ? "active" : "") + '">🏠 Home</a></div>';
         
         // תפריט ראשי
@@ -294,7 +294,7 @@
             html += '</div></div>';
         }
         
-               html += '<a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>';
+               html += '<a href="https://lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>';
         
         document.getElementById("sidebar").innerHTML = html;
         

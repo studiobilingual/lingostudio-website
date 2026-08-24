@@ -123,7 +123,7 @@ function renderSidebar(menu) {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
     let html = `
-        <a href="https://www.lingostudio.ch" class="sidebar-logo">LingoStudio</a>
+        <a href="https://lingostudio.ch" class="sidebar-logo">LingoStudio</a>
         <div class="nav-section">
             <a href="index.html" class="nav-item ${currentPage === 'index.html' ? 'active' : ''}">🏠 Home</a>
         </div>
@@ -175,7 +175,7 @@ function renderSidebar(menu) {
         html += `</div></div>`;
     });
     
-    html += `<a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>`;
+    html += `<a href="https://lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>`;
     
     document.getElementById('sidebar').innerHTML = html;
     
@@ -191,12 +191,12 @@ function renderSidebar(menu) {
 
 function renderFallbackSidebar() {
     document.getElementById('sidebar').innerHTML = `
-        <a href="https://www.lingostudio.ch" class="sidebar-logo">LingoStudio</a>
+        <a href="https://lingostudio.ch" class="sidebar-logo">LingoStudio</a>
         <div class="nav-section">
             <a href="index.html" class="nav-item">🏠 Home</a>
         </div>
         <p style="color:#888;padding:20px;font-size:0.9em;">Fehler beim Laden des Menüs. Bitte aktualisieren.</p>
-              <a href="https://www.lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>
+              <a href="https://lingostudio.ch" class="sidebar-back">← Zurück zur Hauptseite</a>
     `;
 }
 
