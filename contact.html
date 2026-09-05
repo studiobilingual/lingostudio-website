@@ -11,30 +11,33 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact lingoStudio for Hebrew courses in Zurich – online or in person. Free trial lesson! Reach us via WhatsApp, email or phone.">
     <title>Contact | lingoStudio Hebrew Lessons Zurich</title>
+    <meta name="description" content="Contact lingoStudio for Hebrew courses in Zurich – online or in person. Free trial lesson! Reach us via WhatsApp, email or phone.">
     <link rel="canonical" href="https://lingostudio.ch/contact.html" />
     <link rel="alternate" hreflang="de" href="https://lingostudio.ch/kontakt.html" />
     <link rel="alternate" hreflang="en" href="https://lingostudio.ch/contact.html" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #8b5cf6;
             --accent: #fbbf24;
             --success: #22c55e;
             --text: #0f172a;
-            --text-light: #475569;
+            --text-light: #64748b;
             --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
             color: var(--text);
             line-height: 1.7;
             background: #fff;
         }
+
         .promo-banner {
             background: linear-gradient(90deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
             color: white;
@@ -42,13 +45,15 @@
             text-align: center;
             font-weight: 700;
         }
+
         .navbar {
             background: var(--gradient);
             padding: 15px 20px;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
+
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -56,149 +61,158 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .nav-logo {
             font-size: 1.5rem;
             font-weight: 800;
-            color: white;
+            color: var(--accent);
             text-decoration: none;
         }
+
         .nav-links {
             display: flex;
             gap: 25px;
             align-items: center;
         }
+
         .nav-links a {
-            color: rgba(255,255,255,0.95);
+            color: rgba(255,255,255,0.9);
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.95rem;
         }
-        .nav-links a:hover { color: white; }
-        .nav-cta {
-            background: var(--accent) !important;
-            color: #000 !important;
-            padding: 8px 15px;
-            border-radius: 20px;
-        }
-        .lang-switch {
-            background: rgba(255,255,255,0.15);
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-        }
+
+        .nav-links a:hover { color: var(--accent); }
+
         .hero {
             background: var(--gradient);
-            padding: 60px 20px 80px;
+            padding: 60px 20px;
             text-align: center;
             color: white;
         }
+
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 15px;
         }
+
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             opacity: 0.95;
             max-width: 600px;
             margin: 0 auto;
         }
+
         .contact-methods {
-            padding: 60px 20px;
-            background: #f8fafc;
-        }
-        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
+
         .contact-card {
             background: white;
-            padding: 35px;
+            padding: 35px 30px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
             transition: all 0.3s;
         }
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
+
+        .contact-card:hover { transform: translateY(-5px); }
+
+        .contact-icon { font-size: 3rem; margin-bottom: 15px; }
+
         .contact-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
-        .contact-card .subtitle {
+
+        .contact-card p {
             color: var(--text-light);
-            font-size: 0.9rem;
             margin-bottom: 15px;
         }
-        .contact-card a {
+
+        .contact-link {
+            display: inline-block;
             color: var(--primary);
             text-decoration: none;
             font-weight: 700;
             font-size: 1.05rem;
         }
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
+
+        .contact-link:hover { text-decoration: underline; }
+
         .form-section {
-            padding: 60px 20px;
-            background: white;
-        }
-        .form-container {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            padding: 60px 20px;
         }
-        .form-title {
+
+        .form-header {
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        .form-header h2 {
             font-size: 2rem;
             font-weight: 800;
+            margin-bottom: 10px;
         }
-        .form-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 35px;
+
+        .form-header p { color: var(--text-light); }
+
+        .contact-form {
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 20px;
         }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
+
+        .form-group { margin-bottom: 25px; }
+
+        .form-label {
             display: block;
             font-weight: 600;
-            margin-bottom: 6px;
-            font-size: 0.95rem;
+            margin-bottom: 8px;
         }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+
+        .form-label .required { color: #ef4444; }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
             width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e2e8f0;
+            padding: 14px 18px;
+            border: 2px solid #e5e7eb;
             border-radius: 12px;
-            font-family: inherit;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: white;
         }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
         }
-        .form-group textarea {
+
+        .form-textarea {
+            min-height: 150px;
             resize: vertical;
-            min-height: 120px;
         }
-        .form-submit {
+
+        .submit-btn {
             width: 100%;
-            padding: 16px;
+            padding: 18px 30px;
             background: var(--gradient);
             color: white;
             border: none;
@@ -207,56 +221,87 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
-        .form-submit:hover {
+
+        .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
         }
+
+        .form-message {
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: none;
+            font-weight: 600;
+        }
+
+        .form-message.success {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
         .footer {
             background: #0f172a;
             color: white;
             padding: 50px 20px 30px;
         }
+
         .footer-content {
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
+
         .footer-logo {
             font-size: 1.8rem;
             font-weight: 800;
             margin-bottom: 10px;
         }
+
         .footer-tagline {
             color: rgba(255,255,255,0.8);
             margin-bottom: 25px;
         }
-        .footer-links {
-            margin-bottom: 25px;
-        }
+
+        .footer-links { margin-bottom: 25px; }
+
         .footer-links a {
             color: rgba(255,255,255,0.85);
             text-decoration: none;
             margin: 0 15px;
         }
+
         .footer-materials {
             margin-bottom: 25px;
             padding: 20px;
             background: rgba(255,255,255,0.08);
             border-radius: 12px;
         }
+
         .footer-materials-title {
             color: #fbbf24;
             font-weight: 700;
             margin-bottom: 12px;
             font-size: 1rem;
         }
+
         .footer-materials-links {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
+
         .footer-materials-links a {
             color: rgba(255,255,255,0.95);
             text-decoration: none;
@@ -269,36 +314,41 @@
             align-items: center;
             gap: 8px;
         }
+
         .footer-materials-links a:hover {
             background: rgba(255,255,255,0.2);
             transform: translateY(-2px);
         }
+
         .footer-contact {
             color: rgba(255,255,255,0.8);
             margin-bottom: 25px;
         }
+
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.15);
             padding-top: 20px;
             color: rgba(255,255,255,0.6);
             font-size: 0.9rem;
         }
+
         .footer-bottom a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
             margin: 0 10px;
         }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
             .nav-links { display: none; }
-            .contact-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .contact-form { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="promo-banner" role="banner">
+    <div class="promo-banner">
         🎉 10% off for new students this month! Code: LINGOSTUDIO
     </div>
     <nav class="navbar" aria-label="Main navigation">
@@ -309,8 +359,8 @@
                 <a href="/about.html">About</a>
                 <a href="/hebrew-course-zurich.html">Courses</a>
                 <a href="/contact.html" style="border-bottom: 2px solid white;">Contact</a>
-                <a href="https://wa.me/41775262629" class="nav-cta">🎁 Free Trial</a>
-                <a href="/" class="lang-switch">DE | Deutsch</a>
+                <a href="https://wa.me/41775262629" style="background: #fbbf24; color: #000; padding: 8px 15px; border-radius: 20px; font-weight: 700;">🎁 Free Trial</a>
+                <a href="/" style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 15px; font-size: 0.85rem;">DE | Deutsch</a>
             </div>
         </div>
     </nav>
@@ -322,67 +372,70 @@
         <p>Learn Hebrew in Zurich – <strong>online or in person</strong>.<br>Ask about your <strong>free trial lesson!</strong></p>
     </section>
 
-    <section class="contact-methods">
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon">💬</div>
-                <h3>WhatsApp</h3>
-                <p class="subtitle">Fastest way to reach me</p>
-                <a href="https://wa.me/41775262629?text=Hello!%20I'm%20interested%20in%20Hebrew%20courses.">+41 77 526 26 29 →</a>
-            </div>
-            <div class="contact-card">
-                <div class="contact-icon">📧</div>
-                <h3>Email</h3>
-                <p class="subtitle">Write me anytime</p>
-                <a href="mailto:studiobilingual@gmail.com?subject=Hebrew%20Course%20Inquiry">studiobilingual@gmail.com →</a>
-            </div>
-            <div class="contact-card">
-                <div class="contact-icon">📞</div>
-                <h3>Phone</h3>
-                <p class="subtitle">Call me directly</p>
-                <a href="tel:+41775262629">+41 77 526 26 29 →</a>
-            </div>
+    <div class="contact-methods">
+        <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>WhatsApp</h3>
+            <p>Fastest way to reach me</p>
+            <a href="https://wa.me/41775262629?text=Hello!%20I'm%20interested%20in%20Hebrew%20courses." class="contact-link" target="_blank">
+                +41 77 526 26 29 →
+            </a>
         </div>
-    </section>
+        <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email</h3>
+            <p>Write me anytime</p>
+            <a href="mailto:studiobilingual@gmail.com?subject=Hebrew%20Course%20Inquiry" class="contact-link">
+                studiobilingual@gmail.com →
+            </a>
+        </div>
+        <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>Phone</h3>
+            <p>Call me directly</p>
+            <a href="tel:+41775262629" class="contact-link">
+                +41 77 526 26 29 →
+            </a>
+        </div>
+    </div>
 
     <section class="form-section">
-        <div class="form-container">
-            <h2 class="form-title">Or fill out the form</h2>
-            <p class="form-subtitle">I'll get back to you within 24 hours</p>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required placeholder="your@email.com">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone (optional)</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+41 ...">
-                </div>
-                <div class="form-group">
-                    <label for="interest">Interest *</label>
-                    <select id="interest" name="interest" required>
-                        <option value="">Please choose...</option>
-                        <option value="Group course (5-10 students)">Group course (5–10 students)</option>
-                        <option value="Private lessons (1-on-1)">Private lessons (1-on-1)</option>
-                        <option value="Semi-private (2 students)">Semi-private (2 students)</option>
-                        <option value="Free trial lesson">Free trial lesson</option>
-                        <option value="General question">General question</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message (optional)</label>
-                    <textarea id="message" name="message" placeholder="Tell me about your goals or questions..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">📧 Send Message</button>
-            </form>
-            <div id="successMessage" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; padding:20px; border-radius:12px; margin-top:20px; font-weight:600;">
-                ✅ Thank you! Your message has been sent. I'll get back to you within 24 hours.
-            </div>
+        <div class="form-header">
+            <h2>Or fill out the form</h2>
+            <p>I'll get back to you within 24 hours</p>
         </div>
+
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label class="form-label">Name <span class="required">*</span></label>
+                <input type="text" name="name" class="form-input" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email <span class="required">*</span></label>
+                <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Phone <span style="color: #94a3b8; font-weight: 400;">(optional)</span></label>
+                <input type="tel" name="phone" class="form-input" placeholder="+41 ...">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Interest <span class="required">*</span></label>
+                <select name="subject" class="form-select" required>
+                    <option value="">Please choose...</option>
+                    <option value="Group course (5-10 students)">Group course (5–10 students)</option>
+                    <option value="Private lessons (1-on-1)">Private lessons (1-on-1)</option>
+                    <option value="Semi-private (2 students)">Semi-private (2 students)</option>
+                    <option value="Free trial lesson">Free trial lesson</option>
+                    <option value="General question">General question</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Message <span style="color: #94a3b8; font-weight: 400;">(optional)</span></label>
+                <textarea name="message" class="form-textarea" placeholder="Tell me about your goals or questions..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">📧 Send Message</button>
+            <div id="formMessage" class="form-message"></div>
+        </form>
     </section>
 </main>
 
@@ -417,35 +470,57 @@
 </footer>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
+var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNWzMM8f-zPbqpGEPbMSJeSK6twDswz4Fqta3KLmDwx_dKSBa6UgPw_ZfeCGiDp9moxw/exec';
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const btn = this.querySelector('.form-submit');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
 
-    const data = new FormData();
-    data.append('name',     this.name.value);
-    data.append('email',    this.email.value);
-    data.append('phone',    this.phone.value);
-    data.append('interest', this.interest.value);
-    data.append('message',  this.message.value);
-    data.append('_subject', 'New inquiry from English contact page');
-    data.append('_captcha', 'false');
+    var form = e.target;
+    var submitBtn = form.querySelector('.submit-btn');
+    var messageDiv = document.getElementById('formMessage');
 
-    try {
-        await fetch('https://formsubmit.co/studiobilingual@gmail.com', {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-        });
-        this.style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
-    } catch {
-        btn.textContent = '📧 Send Message';
-        btn.disabled = false;
-        alert('Something went wrong. Please try again or contact us directly.');
+    var formData = {
+        name:      form.name.value.trim(),
+        email:     form.email.value.trim(),
+        phone:     form.phone.value.trim() || 'Not provided',
+        subject:   form.subject.value,
+        message:   form.message.value.trim() || 'No message',
+        timestamp: new Date().toLocaleString('en-CH')
+    };
+
+    if (!formData.name || !formData.email || !formData.subject) {
+        showMessage('error', 'Please fill in all required fields.');
+        return;
     }
+
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    })
+    .then(function() {
+        showMessage('success', '✅ Thank you! Your message has been sent. I\'ll get back to you within 24 hours.');
+        form.reset();
+    })
+    .catch(function() {
+        showMessage('error', '❌ Something went wrong. Please contact me directly by email.');
+    })
+    .finally(function() {
+        submitBtn.textContent = '📧 Send Message';
+        submitBtn.disabled = false;
+    });
 });
+
+function showMessage(type, text) {
+    var messageDiv = document.getElementById('formMessage');
+    messageDiv.className = 'form-message ' + type;
+    messageDiv.textContent = text;
+    messageDiv.style.display = 'block';
+}
 </script>
 
 </body>
