@@ -20,10 +20,10 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
+  "@type": ["EducationalOrganization", "LocalBusiness"],
   "name": "lingoStudio – Hebräisch lernen Zürich",
   "alternateName": "lingoStudio Hebrew Lessons Zurich",
-  "description": "Modernes Hebräisch (Ivrit) lernen in Zürich mit israelischem Muttersprachler. Über 20 Jahre Unterrichtserfahrung. Gruppenkurse, Privatunterricht und Semi-Privatunterricht, online oder vor Ort.",
+  "description": "Modernes Hebräisch (Ivrit) lernen in Zürich mit israelischem Muttersprachler. Über 20 Jahre Unterrichtserfahrung. Gruppenkurse, Privatunterricht und Semi-Privatunterricht, online oder vor Ort. Kleine Gruppen (5–10), faire Preise ab CHF 25 pro Lektion.",
   "url": "https://lingostudio.ch",
   "telephone": "+41775262629",
   "email": "studiobilingual@gmail.com",
@@ -31,11 +31,8 @@
   "image": "https://lingostudio.ch/og-image.png",
   "priceRange": "CHF 25 – CHF 90",
   "currenciesAccepted": "CHF",
-  "paymentAccepted": "Cash, Bank Transfer",
-  "areaServed": {
-    "@type": "City",
-    "name": "Zürich"
-  },
+  "paymentAccepted": "Cash, Bank Transfer, TWINT",
+  "areaServed": {"@type": "City", "name": "Zürich"},
   "location": {
     "@type": "Place",
     "name": "Hull's School Zürich",
@@ -47,6 +44,8 @@
       "addressCountry": "CH"
     }
   },
+  "geo": {"@type": "GeoCoordinates", "latitude": 47.3667, "longitude": 8.5500},
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "17", "bestRating": "5"},
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Hebräisch-Kurse",
@@ -56,7 +55,10 @@
         "itemOffered": {
           "@type": "Course",
           "name": "Hebräisch Gruppenkurs",
-          "description": "Hebräischkurs für Erwachsene in kleinen Gruppen (5–10 Personen), online oder vor Ort in Zürich."
+          "description": "Hebräischkurs für Erwachsene in kleinen Gruppen (5–10 Personen), online oder vor Ort in Zürich. 20 Lektionen à 60 Minuten pro Semester.",
+          "provider": {"@type": "Organization", "name": "lingoStudio"},
+          "inLanguage": "he",
+          "courseMode": ["onsite", "online"]
         },
         "price": "500",
         "priceCurrency": "CHF"
@@ -66,18 +68,33 @@
         "itemOffered": {
           "@type": "Course",
           "name": "Hebräisch Privatunterricht",
-          "description": "Individueller Hebräischunterricht 1:1 mit israelischem Muttersprachler."
+          "description": "Individueller Hebräischunterricht 1:1 mit israelischem Muttersprachler. Flexible Terminplanung, online oder vor Ort.",
+          "provider": {"@type": "Organization", "name": "lingoStudio"},
+          "inLanguage": "he",
+          "courseMode": ["onsite", "online"]
         },
         "price": "90",
+        "priceCurrency": "CHF"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Course",
+          "name": "Hebräisch Semi-Privatunterricht",
+          "description": "Hebräischunterricht zu zweit – günstiger als Privatunterricht, persönlicher als Gruppenkurs.",
+          "provider": {"@type": "Organization", "name": "lingoStudio"},
+          "inLanguage": "he",
+          "courseMode": ["onsite", "online"]
+        },
+        "price": "45",
         "priceCurrency": "CHF"
       }
     ]
   },
   "knowsLanguage": ["de", "he", "en"],
   "teaches": "Modern Hebrew (Ivrit)",
-  "sameAs": [
-    "https://wa.me/41775262629"
-  ]
+  "foundingDate": "2004",
+  "sameAs": ["https://wa.me/41775262629"]
 }
 </script>
 
