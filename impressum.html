@@ -153,7 +153,86 @@
             .nav-links.active { display: flex; }
         }
 
-    </style>
+    
+/* === UNIFIED FOOTER === */
+.footer {
+background: #0f172a;
+color: white;
+padding: 50px 20px 30px;
+}
+.footer-content {
+max-width: 1000px;
+margin: 0 auto;
+text-align: center;
+}
+.footer-logo {
+font-size: 1.8rem;
+font-weight: 800;
+margin-bottom: 10px;
+}
+.footer-tagline {
+color: rgba(255,255,255,0.8);
+margin-bottom: 25px;
+}
+.footer-links {
+margin-bottom: 25px;
+}
+.footer-links a {
+color: rgba(255,255,255,0.85);
+text-decoration: none;
+margin: 0 15px;
+}
+.footer-materials {
+margin-bottom: 25px;
+padding: 20px;
+background: rgba(255,255,255,0.08);
+border-radius: 12px;
+}
+.footer-materials-title {
+color: #fbbf24;
+font-weight: 700;
+margin-bottom: 12px;
+font-size: 1rem;
+}
+.footer-materials-links {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+.footer-materials-links a {
+color: rgba(255,255,255,0.95);
+text-decoration: none;
+padding: 8px 16px;
+background: rgba(255,255,255,0.12);
+border-radius: 20px;
+font-weight: 600;
+transition: all 0.3s;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+.footer-materials-links a:hover {
+background: rgba(255,255,255,0.2);
+transform: translateY(-2px);
+}
+.footer-contact {
+color: rgba(255,255,255,0.8);
+margin-bottom: 25px;
+}
+.footer-bottom {
+border-top: 1px solid rgba(255,255,255,0.15);
+padding-top: 20px;
+color: rgba(255,255,255,0.6);
+font-size: 0.9rem;
+}
+.footer-bottom a {
+color: rgba(255,255,255,0.6);
+text-decoration: none;
+margin: 0 10px;
+}
+
+</style>
 </head>
 <body>
     <!-- PROMO BANNER -->
@@ -172,8 +251,8 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <div class="nav-links" id="navLinks">
                 <a href="/">Startseite</a>
-                <a href="/about.html">Über uns</a>
-                <a href="/warum-lingostudio.html">Kurse</a>
+                <a href="/hebraeisch-lehrer-zuerich">Über uns</a>
+                <a href="/hebraeisch-kurs-zuerich">Kurse</a>
                 <a href="/faq.html">FAQ</a>
                 <a href="/bewertungen.html">Bewertungen</a>
                 <a href="/aktualisierungen.html">News</a>
@@ -393,7 +472,7 @@
     <p>Die Teilnahme am Unterricht erfolgt auf eigene Verantwortung. Der Anbieter haftet nicht für Unfälle, Verletzungen oder Verluste während des Unterrichts.</p>
     
     <h2>Urheberrecht</h2>
-    <p>Alle Inhalte dieser Website (Texte, Bilder, Kursmaterialien) sind urheberrechtlich geschützt. © 2024 lingoStudio.</p>
+    <p>Alle Inhalte dieser Website (Texte, Bilder, Kursmaterialien) sind urheberrechtlich geschützt. © 2026 lingoStudio.</p>
     
     <h2>Anwendbares Recht</h2>
     <p>Es gilt Schweizer Recht. Gerichtsstand ist Zürich, Schweiz.</p>
@@ -401,14 +480,35 @@
     <a href="/" class="back-link">← Zurück zur Startseite</a>
 </div>
 
-<footer>
-    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">lingoStudio</h3>
-    <p style="opacity: 0.9; margin-bottom: 20px;">Hebräisch lernen in Zürich</p>
-    <div style="font-size: 0.85rem; opacity: 0.7;">
-        <a href="/datenschutz.html">Datenschutz</a> |
-        <a href="/agb.html">AGB</a> |
-        <a href="/impressum.html">Impressum</a>
-    </div>
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-logo">lingoStudio</div>
+<p class="footer-tagline">Hebräisch lernen in Zürich, online oder vor Ort</p>
+<nav class="footer-links" aria-label="Footer Navigation">
+<a href="/">Startseite</a>
+<a href="/hebraeisch-lehrer-zuerich">Über uns</a>
+<a href="/hebraeisch-kurs-zuerich">Kurse</a>
+<a href="/faq.html">FAQ</a>
+<a href="/aktualisierungen.html">News</a>
+<a href="/kontakt.html">Kontakt</a>
+</nav>
+<div class="footer-materials">
+<div class="footer-materials-title">📚 Kostenlose Lernmaterialien</div>
+<div class="footer-materials-links">
+<a href="https://learn.lingostudio.ch/hebraeisch-lernen-zuerich-private-hebraeischkurse" target="_blank" rel="noopener noreferrer">🔤 500 Wörter</a>
+<a href="https://learn.lingostudio.ch/zeitung" target="_blank" rel="noopener noreferrer">📰 Hebräische Zeitung</a>
+</div>
+</div>
+<div class="footer-contact">
+📧 studiobilingual@gmail.com · 📞 +41 77 526 26 29
+</div>
+<div class="footer-bottom">
+© 2026 lingoStudio ·
+<a href="/datenschutz.html">Datenschutz</a> ·
+<a href="/agb.html">AGB</a> ·
+<a href="/impressum.html">Impressum</a>
+</div>
+</div>
 </footer>
 
 <script>
