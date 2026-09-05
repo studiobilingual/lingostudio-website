@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hebräisch Test Einheit 5 | lingoStudio Zürich</title>
+    <meta name="description" content="Test Einheit 5: Überprüfe dein Hebräisch. 20 Fragen mit sofortigem Feedback — lingoStudio Zürich.">
+    <link rel="canonical" href="https://lingostudio.ch/lernen/test-5/">
+    <meta property="og:title" content="Hebräisch Test Einheit 5 | lingoStudio Zürich">
+    <meta property="og:description" content="Test Einheit 5: Überprüfe dein Hebräisch. 20 Fragen mit sofortigem Feedback — lingoStudio Zürich.">
+    <meta property="og:url" content="https://lingostudio.ch/lernen/test-5/">
+    <meta property="og:site_name" content="lingoStudio Zürich">
+    <meta name="robots" content="index, follow">
+<style>
+/* System font fallbacks — no external CDN needed */
+@import url("data:text/css,");
+</style>
+<style>
+/* ═══ RESET + SHARED VARIABLES ════════════════════════════════ */
+:root{
+  /* Home / Index palette */
+  --g1:#4A5FD5;--g2:#7B4FA8;--g3:#C56B9E;
+  --acc:#E8A020;--acc2:#F5C842;
+  --ban1:#F5A623;--ban2:#E8415A;
+  --bg:#F0F4F8;--card:#fff;
+  --ink:#1A1A2E;--muted:#6B7280;
+  --grad:linear-gradient(135deg,var(--g1),var(--g2),var(--g3));
+  /* Game palette */
+  --white:#ffffff;--deep:#1a1060;
+  --border:#e2e8f0;--shadow:0 4px 24px rgba(74,95,213,.13);
+  --shadow-sm:0 2px 8px rgba(0,0,0,.08);
+  --ok:#22c55e;--err:#ef4444;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
+.page{display:none}
+.page.active{display:block}
+
+/* ═══ HOME CSS (from home.html) ════════════════════════════════ */
+
+:root {
+  --g1:#4A5FD5; --g2:#7B4FA8; --g3:#C56B9E;
+  --acc:#E8A020; --acc2:#F5C842;
+  --ban1:#F5A623; --ban2:#E8415A;
+  --bg:#F0F4F8; --card:#FFFFFF;
+  --ink:#1A1A2E; --muted:#6B7280;
+  --grad: linear-gradient(135deg, var(--g1), var(--g2), var(--g3));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
+
+/* ── BANNER ── */
+.banner{
+  background:linear-gradient(90deg,var(--ban1),var(--ban2));
+  padding:10px 24px;text-align:center;
+  font-size:13px;font-weight:600;color:#fff;letter-spacing:.3px;
+}
+.banner a{color:#fff;font-weight:800;text-decoration:underline}
+
+/* ── NAV ── */
+nav{
+  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+  padding:14px 60px;display:flex;align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(74,95,213,.12);
+  position:sticky;top:0;z-index:100;
+}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo-text{font-size:20px;font-weight:800;color:var(--ink)}
+.nav-logo-text span{background:var(--grad);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--g2)}
+.nav-cta{
+  background:var(--grad);color:#fff;
+  padding:10px 24px;border-radius:50px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  box-shadow:0 4px 16px rgba(123,79,168,.35);
+  transition:all .2s;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(123,79,168,.45)}
+
+/* ── HERO ── */
+.hero{
+  background:var(--grad);
+  padding:90px 60px 110px;
+  text-align:center;position:relative;overflow:hidden;
+  color:#fff;
+}
+/* big Hebrew letter bg */
+.hero::before{
+  content:'א';font-family:'David',Georgia,'Times New Roman',serif;
+  font-size:600px;font-weight:900;
+  color:rgba(255,255,255,.04);
+  position:absolute;right:-80px;top:50%;transform:translateY(-52%);
+  line-height:1;pointer-events:none;user-select:none;
+}
+.hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  padding:7px 18px;border-radius:30px;
+  font-size:12px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:#fff;
+  margin-bottom:28px;backdrop-filter:blur(8px);
+  animation:fadeUp .5s ease both;
+}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--acc2);
+  animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero h1{
+  font-size:clamp(42px,6vw,76px);font-weight:900;
+  line-height:1.05;letter-spacing:-2px;
+  margin-bottom:22px;
+  animation:fadeUp .5s .1s ease both;
+}
+.hero h1 em{font-style:normal;color:var(--acc2)}
+
+.hero-sub{
+  font-size:clamp(16px,2vw,20px);font-weight:300;
+  color:rgba(255,255,255,.82);line-height:1.7;
+  max-width:560px;margin:0 auto 40px;
+  animation:fadeUp .5s .2s ease both;
+}
+.hero-sub b{color:#fff;font-weight:600}
+
+.hero-btns{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp .5s .3s ease both;
+}
+.btn-hero-main{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--acc);color:var(--ink);
+  padding:16px 36px;border-radius:50px;
+  font-size:17px;font-weight:800;text-decoration:none;
+  box-shadow:0 6px 28px rgba(232,160,32,.45);
+  transition:all .2s;
+}
+.btn-hero-main:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(232,160,32,.55)}
+.btn-hero-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  border:2px solid rgba(255,255,255,.4);color:#fff;
+  padding:16px 30px;border-radius:50px;
+  font-size:16px;font-weight:600;text-decoration:none;
+  backdrop-filter:blur(6px);transition:all .2s;
+}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.7)}
+
+/* stats bar */
+.hero-stats{
+  display:flex;gap:0;justify-content:center;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  border-radius:20px;padding:0;margin:52px auto 0;
+  max-width:520px;backdrop-filter:blur(8px);
+  overflow:hidden;
+  animation:fadeUp .5s .4s ease both;
+}
+.hstat{flex:1;padding:20px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.15)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-size:30px;font-weight:900;color:#fff}
+.hstat-n sup{font-size:15px;color:var(--acc2)}
+.hstat-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px;font-weight:400}
+
+/* wave divider */
+.wave{display:block;width:100%;margin-bottom:-2px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTIONS ── */
+.section{padding:80px 60px}
+.section-alt{background:#fff}
+.sec-tag{
+  display:inline-block;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--g2);margin-bottom:14px;
+}
+.sec-h2{
+  font-size:clamp(28px,4vw,46px);font-weight:800;
+  line-height:1.1;letter-spacing:-1px;
+  margin-bottom:16px;max-width:600px;
+}
+.sec-sub{
+  font-size:16px;color:var(--muted);line-height:1.7;
+  max-width:540px;margin-bottom:50px;font-weight:400;
+}
+
+/* ── HOW IT WORKS ── */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.how-card{
+  background:var(--bg);border-radius:22px;padding:32px 26px;
+  border:1.5px solid rgba(74,95,213,.1);
+  transition:all .2s;position:relative;overflow:hidden;
+}
+.how-card:hover{transform:translateY(-4px);border-color:var(--g2);
+  box-shadow:0 16px 48px rgba(123,79,168,.12)}
+.how-num{
+  font-size:72px;font-weight:900;color:rgba(74,95,213,.06);
+  position:absolute;top:8px;right:16px;line-height:1;
+}
+.how-icon{font-size:38px;margin-bottom:18px;display:block}
+.how-title{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--ink)}
+.how-desc{font-size:14px;color:var(--muted);line-height:1.65}
+.how-label{
+  display:inline-block;margin-top:18px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;
+  background:linear-gradient(135deg,rgba(74,95,213,.1),rgba(123,79,168,.1));
+  color:var(--g2);
+}
+
+/* ── CURRICULUM ── */
+.curr-wrap{max-width:900px}
+.group-block{margin-bottom:28px}
+.group-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:12px;padding-bottom:10px;
+  border-bottom:2px solid rgba(74,95,213,.1);
+}
+.group-title{font-size:15px;font-weight:700;color:var(--g2)}
+.group-badge{
+  font-size:11px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;padding:3px 10px;border-radius:20px;
+  background:rgba(74,95,213,.1);color:var(--g1);
+}
+.curr-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.curr-item{
+  background:#fff;border:1.5px solid rgba(74,95,213,.1);
+  border-radius:14px;padding:14px 12px;
+  display:flex;align-items:center;gap:10px;
+  transition:all .2s;
+;transition:all .15s}
+.curr-item:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(74,95,213,.15);border-color:var(--g1)!important}
+.curr-item:hover{border-color:var(--g2);transform:translateY(-2px)}
+.curr-n{font-size:18px;font-weight:900;color:var(--g2);min-width:24px}
+.curr-t{font-size:12px;font-weight:700;color:var(--ink)}
+.curr-s{font-size:11px;color:var(--muted);margin-top:1px}
+.test-item{
+  background:linear-gradient(135deg,#FFF8E7,#FEF3C7);
+  border-color:#E8A020;
+}
+.test-item .curr-n{color:var(--acc)}
+.final-item{
+  background:linear-gradient(135deg,rgba(74,95,213,.08),rgba(197,107,158,.08));
+  border-color:var(--g2);
+}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-list{display:flex;flex-direction:column;gap:24px}
+.why-item{display:flex;gap:16px}
+.why-icon{
+  width:46px;height:46px;border-radius:14px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(74,95,213,.1),rgba(123,79,168,.1));
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.why-t{font-size:15px;font-weight:700;margin-bottom:4px}
+.why-d{font-size:13px;color:var(--muted);line-height:1.6}
+.why-visual{
+  background:var(--grad);border-radius:28px;
+  padding:40px 36px;color:#fff;position:relative;overflow:hidden;
+}
+.why-visual::before{
+  content:'שָׁלוֹם';font-family:'David',Georgia,'Times New Roman',serif;
+  font-size:90px;font-weight:900;color:rgba(255,255,255,.08);
+  position:absolute;bottom:-10px;right:-10px;line-height:1;
+}
+.wv-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-bottom:20px}
+.wv-words{display:flex;flex-direction:column;gap:11px}
+.wv-word{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;
+}
+.wv-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:20px;font-weight:900;
+  direction:rtl;min-width:80px}
+.wv-bar{flex:1;height:5px;background:rgba(255,255,255,.15);border-radius:5px;overflow:hidden}
+.wv-fill{height:100%;background:var(--acc2);border-radius:5px}
+.wv-en{font-size:12px;color:rgba(255,255,255,.6);min-width:60px;text-align:right}
+
+/* ── CTA ── */
+.cta-section{
+  background:var(--grad);
+  padding:110px 48px;text-align:center;
+  color:#fff;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'500';font-size:400px;font-weight:900;
+  color:rgba(255,255,255,.04);
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;line-height:1;
+}
+.cta-h2{
+  font-size:clamp(34px,5vw,62px);font-weight:900;
+  line-height:1.1;letter-spacing:-1.5px;
+  margin-bottom:18px;position:relative;z-index:1;
+}
+.cta-h2 em{font-style:normal;color:var(--acc2)}
+.cta-sub{font-size:17px;color:rgba(255,255,255,.75);
+  max-width:420px;margin:0 auto 44px;line-height:1.65;
+  position:relative;z-index:1}
+.btn-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--acc);color:var(--ink);
+  padding:19px 48px;border-radius:50px;
+  font-size:18px;font-weight:800;text-decoration:none;
+  box-shadow:0 8px 36px rgba(232,160,32,.5);
+  transition:all .2s;position:relative;z-index:1;
+}
+.btn-cta:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(232,160,32,.6)}
+.cta-note{font-size:12px;color:rgba(255,255,255,.4);margin-top:18px;
+  position:relative;z-index:1}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:rgba(255,255,255,.6);
+  padding:40px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.foot-logo{font-size:18px;font-weight:800;color:#fff}
+.foot-links{display:flex;gap:22px}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--acc2)}
+.foot-copy{font-size:12px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:12px 20px}
+  .nav-links{display:none}
+  .hero{padding:70px 24px 90px}
+  .section{padding:60px 24px}
+  .how-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:16px;text-align:center;padding:28px 24px}
+  .foot-links{flex-wrap:wrap;justify-content:center}
+}
+
+
+/* ═══ GAME SHARED CSS ══════════════════════════════════════════ */
+.game-page{background:var(--bg);min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}
+
+/* Top bar */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:10px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;
+}
+.topbar-left{display:flex;flex-direction:column;gap:3px}
+.pill{
+  display:inline-flex;align-items:center;
+  background:var(--grad);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:1px;
+  padding:3px 12px;border-radius:20px;
+  width:fit-content;
+}
+.lesson-name{font-size:15px;font-weight:700;color:var(--deep)}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.hearts{display:flex;gap:4px;font-size:20px}
+.heart.lost{opacity:.25;filter:grayscale(1)}
+.xp-badge{
+  background:linear-gradient(135deg,var(--acc),var(--acc2));
+  color:var(--deep);font-size:13px;font-weight:800;
+  padding:4px 12px;border-radius:20px;
+}
+.home-btn{
+  background:none;border:1.5px solid var(--border);
+  color:var(--muted);font-size:18px;cursor:pointer;
+  border-radius:10px;padding:4px 8px;transition:all .2s;
+}
+.home-btn:hover{border-color:var(--g1);color:var(--g1)}
+
+/* Progress bar */
+.progress-wrap{padding:10px 20px 6px;background:#fff;border-bottom:1px solid var(--border)}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:5px}
+.progress-track{height:8px;background:#e2e8f0;border-radius:8px;overflow:hidden;position:relative}
+.progress-fill{height:100%;background:var(--grad);border-radius:8px;transition:width .4s ease}
+.milestone-row{display:flex;justify-content:space-around;margin-top:5px}
+.mdot{width:8px;height:8px;border-radius:50%;background:#e2e8f0;border:2px solid #cbd5e1;transition:all .3s}
+.mdot.reached{background:var(--ok);border-color:var(--ok)}
+.mdot.current{background:var(--g1);border-color:var(--g1);animation:mdotPulse 1.2s infinite}
+@keyframes mdotPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+
+/* Main content area */
+.game-body{max-width:520px;margin:0 auto;padding:20px 16px 80px}
+
+/* ── EX1 FLIP CARDS ─────────────────────────────── */
+.ex1-instruction{
+  background:linear-gradient(135deg,rgba(74,95,213,.07),rgba(197,107,158,.07));
+  border:1.5px solid rgba(74,95,213,.15);border-radius:14px;
+  padding:12px 16px;margin-bottom:18px;
+  text-align:center;
+}
+.ex1-instruction .inst-he{font-size:14px;font-weight:700;color:var(--g2);margin-bottom:2px;direction:rtl}
+.ex1-instruction .inst-en{font-size:12px;color:var(--muted)}
+
+.card-counter{font-size:14px;color:var(--muted);text-align:center;margin-bottom:10px;direction:ltr}
+
+.flip-scene{width:100%;height:260px;perspective:1000px;cursor:pointer;margin-bottom:16px;user-select:none}
+.flip-card{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.flip-card.flipped{transform:rotateY(180deg)}
+.flip-face{
+  position:absolute;width:100%;height:100%;border-radius:24px;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:28px 24px;box-shadow:var(--shadow);
+}
+.flip-front{background:var(--white);border:2px solid var(--border)}
+.flip-back{background:var(--grad);transform:rotateY(180deg);color:#fff;text-align:center}
+.card-tag{position:absolute;top:14px;right:16px;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:12px;text-transform:uppercase}
+.tag-noun{background:#ede9fe;color:#6d28d9}
+.tag-verb{background:#dbeafe;color:#1d4ed8}
+.tag-particle{background:#fef3c7;color:#92400e}
+.gender-badge{position:absolute;top:14px;left:16px;font-size:18px}
+.card-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:clamp(38px,10vw,62px);font-weight:900;color:var(--deep);text-align:center;line-height:1.1;margin-bottom:8px}
+.card-translit{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:4px}
+.tap-hint{position:absolute;bottom:14px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.card-en{font-size:clamp(20px,5vw,30px);font-weight:800;margin-bottom:14px;line-height:1.2}
+.card-example{font-family:'David',Georgia,'Times New Roman',serif;font-size:19px;font-weight:700;opacity:.95;line-height:1.4;text-align:center;padding:0 8px}
+.card-example-en{font-size:12px;opacity:.8;margin-top:6px;font-style:italic}
+
+/* Pair indicator */
+.pair-indicator{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:10px;font-size:12px;color:var(--muted)}
+.pair-dot{width:10px;height:10px;border-radius:50%;opacity:.3;transition:all .3s}
+.pair-dot.male.active{background:#3b82f6;opacity:1}
+.pair-dot.female.active{background:#ec4899;opacity:1}
+
+/* Grammar tip */
+.grammar-tip{
+  background:linear-gradient(135deg,rgba(74,95,213,.08),rgba(123,79,168,.08));
+  border:1.5px solid rgba(74,95,213,.2);border-radius:14px;
+  padding:14px 16px;margin-bottom:14px;
+  font-size:13px;line-height:1.6;color:var(--deep);
+  display:none;
+}
+.grammar-tip.show{display:block}
+.tip-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:16px;font-weight:900;color:var(--g2)}
+
+/* Nav buttons */
+.card-nav{display:flex;gap:10px;margin-top:4px}
+.btn-card-nav{
+  flex:1;padding:13px;border-radius:14px;border:none;cursor:pointer;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:15px;font-weight:700;
+  transition:all .15s;
+}
+.btn-prev{background:#f1f5f9;color:var(--muted)}
+.btn-prev:hover:not(:disabled){background:#e2e8f0}
+.btn-prev:disabled{opacity:.3}
+.btn-next{background:var(--grad);color:#fff;box-shadow:0 4px 16px rgba(74,95,213,.3)}
+.btn-next:hover{filter:brightness(1.08)}
+
+/* Finish screen */
+.finish-screen{display:none;text-align:center;padding:40px 20px}
+.finish-screen.show{display:block}
+.finish-icon{font-size:60px;margin-bottom:16px}
+.finish-title{font-size:24px;font-weight:800;color:var(--deep);margin-bottom:8px}
+.finish-sub{font-size:14px;color:var(--muted);margin-bottom:30px}
+.btn-continue-big{
+  display:inline-block;padding:15px 36px;border-radius:50px;
+  background:var(--grad);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  font-size:16px;font-weight:800;border:none;cursor:pointer;
+  box-shadow:0 6px 24px rgba(74,95,213,.3);transition:all .2s;
+}
+.btn-continue-big:hover{filter:brightness(1.08);transform:translateY(-2px)}
+
+/* ── EX2 + EX3 QUIZ ─────────────────────────────── */
+.ex-instruction{
+  background:linear-gradient(135deg,rgba(74,95,213,.07),rgba(197,107,158,.07));
+  border:1.5px solid rgba(74,95,213,.15);border-radius:14px;
+  padding:12px 16px;margin-bottom:18px;
+}
+.ex-instruction .inst-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:4px}
+.ex-instruction .inst-he{font-size:13px;font-weight:700;color:var(--g2);direction:rtl;flex:1}
+.ex-instruction .inst-en{font-size:12px;color:var(--muted)}
+
+.q-card{
+  background:#fff;border-radius:20px;padding:22px 18px;
+  box-shadow:var(--shadow-sm);border:2px solid var(--border);
+  margin-bottom:14px;transition:border-color .25s;
+}
+.q-card.correct{border-color:var(--ok);background:#f0fdf4}
+.q-card.wrong{border-color:var(--err);background:#fff5f5}
+
+/* EX2 question display */
+.q-hebrew{font-family:'David',Georgia,'Times New Roman',serif;font-size:clamp(32px,8vw,52px);font-weight:900;color:var(--deep);text-align:center;direction:rtl;margin-bottom:6px}
+.q-translit{font-size:13px;color:var(--muted);text-align:center;font-style:italic;margin-bottom:16px}
+
+/* EX3 question display */
+.q-type-badge{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;
+  padding:3px 12px;border-radius:20px;margin-bottom:12px;
+  background:rgba(74,95,213,.1);color:var(--g1);
+}
+.q-en{font-size:15px;line-height:1.6;margin-bottom:12px;color:var(--deep)}
+.q-en-b{font-size:14px;line-height:1.7;margin-bottom:14px;color:var(--deep);font-weight:600}
+.tested-word{color:#E8A020;font-weight:800;font-style:normal;background:none;text-decoration:none}
+.q-blank{
+  font-family:'David',Georgia,'Times New Roman',serif;font-size:21px;font-weight:700;
+  direction:rtl;text-align:center;margin-bottom:16px;color:var(--deep);
+  background:#f8fafc;border-radius:10px;padding:10px 16px;
+}
+.blank-slot{color:var(--g1);font-style:italic}
+
+/* Options */
+.opts-2col{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.opts-1col{display:flex;flex-direction:column;gap:9px}
+.opt-btn{
+  padding:12px 14px;border-radius:13px;
+  border:2px solid var(--border);background:#fff;
+  font-family:'David',Georgia,'Times New Roman',serif;font-size:17px;font-weight:700;
+  color:var(--deep);cursor:pointer;transition:all .15s;
+  text-align:center;direction:rtl;
+}
+.opts-1col .opt-btn{font-size:16px;text-align:right;padding:12px 16px}
+.opt-btn:hover:not(:disabled){border-color:var(--g1);background:rgba(74,95,213,.04)}
+.opt-btn:disabled{cursor:default}
+.opt-btn.sel-correct{border-color:var(--ok)!important;background:#f0fdf4!important;color:#166534}
+.opt-btn.sel-wrong{border-color:var(--err)!important;background:#fff5f5!important;color:#991b1b}
+.opt-btn.show-answer{border-color:var(--ok);background:#dcfce7;color:#166534}
+.opt-key{color:var(--g1);font-weight:800}
+
+/* Feedback banner */
+.feedback-banner{
+  border-radius:14px;padding:14px 16px;margin-bottom:12px;display:none;
+}
+.feedback-banner.show{display:block}
+.fb-ok{background:#f0fdf4;border:1.5px solid var(--ok)}
+.fb-err{background:#fff5f5;border:1.5px solid var(--err)}
+.fb-row1{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-bottom:4px}
+.fb-sub{font-size:13px;color:#374151;line-height:1.5}
+.fb-example{font-family:'David',Georgia,'Times New Roman',serif;font-size:15px;direction:rtl;color:var(--deep);margin-top:6px;font-weight:600}
+.fb-rule{font-size:13px;color:#374151;line-height:1.6;margin-top:4px}
+.rule-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:15px;font-weight:900;color:var(--g2)}
+
+/* Continue button */
+.continue-btn{
+  width:100%;padding:14px;border:none;border-radius:14px;
+  background:var(--grad);color:#fff;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:700;
+  cursor:pointer;display:none;margin-bottom:8px;transition:all .15s;
+}
+.continue-btn.show{display:block}
+.continue-btn:hover{filter:brightness(1.08)}
+
+/* Success / Fail screens */
+.result-screen{display:none;padding:30px 16px;text-align:center}
+.result-screen.show{display:block}
+.result-icon{font-size:64px;margin-bottom:14px}
+.result-title{font-size:22px;font-weight:800;margin-bottom:8px;color:var(--deep)}
+.result-sub{font-size:13px;color:var(--muted);margin-bottom:22px}
+.result-stats{display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.rstat{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:12px 18px;text-align:center}
+.rstat-n{font-size:24px;font-weight:900;color:var(--g1)}
+.rstat-l{font-size:11px;color:var(--muted);margin-top:2px}
+.result-btns{display:flex;flex-direction:column;gap:10px;max-width:300px;margin:0 auto}
+.btn-go-next{
+  padding:14px;background:var(--grad);color:#fff;border:none;border-radius:50px;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:800;cursor:pointer;
+  box-shadow:0 4px 20px rgba(74,95,213,.3);transition:all .15s;
+}
+.btn-go-next:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-retry{
+  padding:12px;background:#f8fafc;color:var(--muted);border:1.5px solid var(--border);border-radius:50px;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;
+}
+.btn-retry:hover{background:var(--border)}
+
+/* ── INDEX PAGE ──────────────────────────────────── */
+.ix-nav{
+  background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+  padding:14px 60px;display:flex;align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(74,95,213,.12);
+}
+.ix-logo{display:flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none}
+.ix-logo-text{font-size:20px;font-weight:800;color:var(--ink)}
+.ix-logo-text span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ix-stats{display:flex;gap:10px}
+.ix-pill{display:flex;align-items:center;gap:5px;background:#fff;border:1.5px solid rgba(74,95,213,.15);border-radius:20px;padding:5px 14px;font-size:13px;font-weight:700}
+.ix-pill.xp{color:#E8A020}.ix-pill.streak{color:#f97316}
+
+.ix-wrap{max-width:520px;margin:0 auto;padding:28px 20px 80px}
+
+.ix-hero{background:var(--grad);border-radius:22px;padding:28px 24px;margin-bottom:28px;color:#fff;position:relative;overflow:hidden}
+.ix-hero::after{content:"א";font-family:"Frank Ruhl Libre",serif;font-size:160px;font-weight:900;color:rgba(255,255,255,.07);position:absolute;right:10px;bottom:-20px;line-height:1;pointer-events:none}
+.ix-hero-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:6px}
+.ix-hero-title{font-size:20px;font-weight:800;margin-bottom:4px}
+.ix-hero-sub{font-size:13px;color:rgba(255,255,255,.75);margin-bottom:18px}
+.ix-bar-wrap{background:rgba(255,255,255,.2);border-radius:8px;height:8px;overflow:hidden;margin-bottom:8px}
+.ix-bar-fill{height:100%;border-radius:8px;background:#fff;transition:width .6s ease}
+.ix-bar-labels{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.65);margin-bottom:18px}
+.btn-ix-continue{display:block;width:100%;background:#fff;border:none;color:var(--g2);font-family:"Outfit",sans-serif;font-size:16px;font-weight:800;padding:14px;border-radius:12px;cursor:pointer;transition:opacity .2s}
+.btn-ix-continue:hover{opacity:.9}
+
+.ix-section-head{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin:0 0 14px}
+
+.lcard{
+  display:flex;align-items:center;gap:14px;
+  background:#fff;border:1.5px solid rgba(74,95,213,.1);
+  border-radius:16px;padding:14px 16px;margin-bottom:10px;
+  cursor:pointer;transition:border-color .2s,transform .15s;
+}
+.lcard:hover{border-color:var(--g1);transform:translateX(-2px)}
+.lcard.completed{border-color:rgba(34,197,94,.3);background:#f0fdf4}
+.lcard.active{border-color:rgba(74,95,213,.5);background:rgba(74,95,213,.03)}
+.lcard.capstone{background:linear-gradient(135deg,rgba(74,95,213,.06),rgba(197,107,158,.04));border-color:rgba(232,160,32,.4)}
+.lcard.locked{opacity:.4;cursor:not-allowed}
+.lnum{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;font-family:"Frank Ruhl Libre",serif}
+.lnum.done{background:rgba(34,197,94,.12);color:#16a34a}
+.lnum.now{background:var(--grad);color:#fff}
+.lnum.lock{background:#f3f4f6;color:#9ca3af}
+.linfo{flex:1;min-width:0}
+.lname{font-size:17px;font-weight:700;font-family:"Frank Ruhl Libre",serif;direction:rtl}
+.lsub{font-size:11px;color:var(--muted);margin-top:2px}
+.ex-dots{display:flex;gap:4px}
+.ex-dot{width:8px;height:8px;border-radius:50%;background:#e5e7eb;border:1px solid #d1d5db;transition:background .3s}
+.ex-dot.done{background:#22c55e;border-color:#22c55e}
+.ex-dot.now{background:var(--g1);border-color:var(--g1)}
+.ix-footer{text-align:center;padding:24px 0;font-size:12px;color:var(--muted);border-top:1px solid rgba(74,95,213,.1);margin-top:8px}
+
+/* ── TEACHER PANEL ───────────────────────────────── */
+.teacher-page{min-height:100vh;background:#f8fafc;font-family:"Outfit",sans-serif}
+.teacher-header{
+  background:linear-gradient(135deg,#1a1060,#4A5FD5);color:#fff;
+  padding:20px 30px;display:flex;align-items:center;justify-content:space-between;
+}
+.teacher-header h1{font-size:18px;font-weight:800}
+.teacher-header .back-btn{background:rgba(255,255,255,.15);border:none;color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;cursor:pointer;font-weight:600}
+.teacher-body{max-width:600px;margin:0 auto;padding:28px 20px}
+.teacher-info{background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;padding:16px;margin-bottom:24px;font-size:13px;color:#6B7280}
+.teacher-info strong{color:var(--ink)}
+.teacher-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lesson-toggle{
+  background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;
+  padding:14px;display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;transition:all .2s;
+}
+.lesson-toggle:hover{border-color:var(--g1)}
+.lesson-toggle.open{border-color:var(--ok);background:#f0fdf4}
+.lesson-toggle.locked-t{border-color:#e2e8f0;opacity:.8}
+.lt-info{display:flex;align-items:center;gap:10px}
+.lt-num{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;background:var(--grad);color:#fff;flex-shrink:0}
+.lt-num.locked-t{background:#e2e8f0;color:#9ca3af}
+.lt-name{font-size:13px;font-weight:700;color:var(--deep);direction:rtl}
+.lt-sub{font-size:10px;color:var(--muted)}
+.lt-toggle{font-size:20px}
+.teacher-actions{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.t-btn{padding:10px 18px;border-radius:20px;border:1.5px solid var(--border);background:#fff;color:var(--ink);font-family:"Outfit",sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s}
+.t-btn:hover{border-color:var(--g1);color:var(--g1)}
+.t-btn.danger{border-color:#ef4444;color:#ef4444}
+.t-btn.danger:hover{background:#fff5f5}
+
+/* Login screen */
+.teacher-login{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d1117,#1a1060)}
+.login-card{background:#fff;border-radius:22px;padding:36px 32px;width:min(360px,90vw);text-align:center}
+.login-icon{font-size:48px;margin-bottom:12px}
+.login-title{font-size:20px;font-weight:800;color:var(--deep);margin-bottom:6px}
+.login-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+.login-input{
+  width:100%;padding:12px 16px;border-radius:12px;
+  border:2px solid var(--border);font-family:"Outfit",sans-serif;font-size:15px;
+  color:var(--ink);margin-bottom:12px;outline:none;transition:border-color .2s;
+  direction:ltr;text-align:center;letter-spacing:4px;
+}
+.login-input:focus{border-color:var(--g1)}
+.login-btn{
+  width:100%;padding:13px;background:var(--grad);color:#fff;border:none;
+  border-radius:12px;font-family:"Outfit",sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:filter .2s;
+}
+.login-btn:hover{filter:brightness(1.08)}
+.login-error{color:var(--err);font-size:12px;margin-top:8px;display:none}
+.login-error.show{display:block}
+
+/* ── CONFETTI + POPUPS ───────────────────────────── */
+.confetti-wrap{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;overflow:hidden}
+.cp{position:fixed;top:-14px;animation:confettiFall linear forwards}
+@keyframes confettiFall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:.2}}
+.xp-popup{position:fixed;z-index:1000;pointer-events:none;font-size:20px;font-weight:900;color:var(--acc2);text-shadow:0 2px 8px rgba(0,0,0,.4);display:none}
+@keyframes floatUp{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-60px);opacity:0}}
+.combo-badge{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.6);background:linear-gradient(135deg,#f97316,#ef4444);color:#fff;padding:16px 32px;border-radius:40px;font-size:22px;font-weight:900;z-index:999;pointer-events:none;transition:all .3s;opacity:0}
+.combo-badge.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+@media(max-width:600px){
+  .ix-nav{padding:12px 16px}
+  .teacher-grid{grid-template-columns:1fr}
+}
+.q-sentence{font-size:22px;font-weight:700;direction:rtl;text-align:right;margin:12px 0 20px;padding:0 8px}
+.q-pre,.q-post{color:var(--ink)}
+
+/* ── UNIT HEADERS (index page) ───────────────────────── */
+.ix-unit-head{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;
+  margin:20px 0 8px;padding-bottom:6px;
+  border-bottom:1.5px solid rgba(74,95,213,.1);
+}
+.ix-unit-head:first-of-type{margin-top:4px}
+.ix-unit-range{
+  font-size:10px;font-weight:700;color:var(--g1);
+  background:rgba(74,95,213,.08);padding:2px 9px;border-radius:10px;
+  text-transform:none;letter-spacing:0;
+}
+/* ── DOT LEGEND ──────────────────────────────────────── */
+.dot-legend{
+  font-size:11px;color:var(--muted);
+  margin-bottom:14px;text-align:center;
+  padding:5px 8px;background:rgba(74,95,213,.04);
+  border-radius:10px;border:1px solid rgba(74,95,213,.08);
+}
+</style>
+
+</head>
+<body>
+<div class="confetti-wrap" id="confettiWrap"></div>
+<div class="xp-popup" id="xpPopup"></div>
+<div id="page-test" class="page game-page active">
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="pill">מבחן יחידה 5 · Unit 5 Test 🎉</div>
+      <div class="lesson-name">שיעורים 21–26 · Grand Finale</div>
+    </div>
+    <div class="topbar-right">
+      <div class="hearts">
+        <span class="heart" id="t-h1">❤️</span>
+        <span class="heart" id="t-h2">❤️</span>
+        <span class="heart" id="t-h3">❤️</span>
+      </div>
+      <div class="xp-badge">⭐ <span id="t-xp">0</span></div>
+      <a class="home-btn" href="https://lingostudio.ch/lernen/curriculum/" target="_blank" style="text-decoration:none;font-size:13px;padding:4px 10px;">📚 ←</a>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span id="t-prog-label">0 / 20 שאלות</span>
+      <span id="t-prog-pct">0%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="t-bar"></div></div>
+    <div class="milestone-row" id="t-milestones"></div>
+  </div>
+  <div class="game-body"><div id="test-area"></div></div>
+</div>
+<script>
+const BASE_URL = "https://lingostudio.ch/lernen/";
+const NEXT_URL = "https://lingostudio.ch/lernen/";
+const SYNC_URL = "https://script.google.com/macros/s/AKfycbxCgViYiQl0oaF9hQKTRms9pc6llub8Ynl1D6FcD6ryc0BrQlTunHDe3YsHWvT0vYem7g/exec";
+const ALL_QUESTIONS = [
+  {
+    "en": "Complete: מָחָר אֲנִי ___ לָאוּלְפָּן. (Tomorrow I will go to ulpan — M speaker)",
+    "options": [
+      "הָלַכְתִּי",
+      "הוֹלֵךְ",
+      "אֵלֵךְ",
+      "יֵלֵךְ"
+    ],
+    "correct": "אֵלֵךְ",
+    "rule": "<strong>אֵלֵךְ</strong> = I will go (future, first person M)<br>הָלַכְתִּי = I went (past) / הוֹלֵךְ = I go (present)<br>Future: אֵלֵךְ (I) / יֵלֵךְ (he) / תֵּלֵךְ (she/you m)"
+  },
+  {
+    "en": "הִיא תִּכְתֹּב מִכְתָּב מָחָר. What tense and who?",
+    "options": [
+      "She wrote a letter yesterday",
+      "She writes a letter now",
+      "She will write a letter tomorrow",
+      "He will write a letter"
+    ],
+    "correct": "She will write a letter tomorrow",
+    "rule": "<strong>תִּכְתֹּב</strong> = she will write (future F singular)<br>יִכְתֹּב = he will write / אֶכְתֹּב = I will write<br>Future prefix: אֶ- (I) / יִ- (he) / תִּ- (she/you m)"
+  },
+  {
+    "en": "Which future form matches הֵם (they m)?",
+    "options": [
+      "יִכְתֹּב",
+      "תִּכְתֹּב",
+      "יִכְתְּבוּ",
+      "אֶכְתֹּב"
+    ],
+    "correct": "יִכְתְּבוּ",
+    "rule": "<strong>יִכְתְּבוּ</strong> = they (m/mixed) will write<br>Future plural adds וּ: יִכְתְּב<strong>וּ</strong><br>הֵן (f pl) = תִּכְתֹּבְנָה — different form!"
+  },
+  {
+    "en": "At the post office: אֲנִי רוֹצֶה לִשְׁלֹחַ חֲבִילָה לְחוּ\"ל. What does לְחוּ\"ל mean?",
+    "options": [
+      "To a kibbutz",
+      "Abroad / To a foreign country",
+      "To the city center",
+      "To the post office"
+    ],
+    "correct": "Abroad / To a foreign country",
+    "rule": "<strong>חוּ\"ל</strong> (חוּץ לָאָרֶץ) = abroad / overseas<br>Abbreviated as חוּ\"ל in everyday use<br>לִשְׁלֹחַ = to send / חֲבִילָה = package"
+  },
+  {
+    "en": "What is a טֹפֶס in a bureaucratic context?",
+    "options": [
+      "A stamp",
+      "A queue / line",
+      "A form / document to fill out",
+      "A package"
+    ],
+    "correct": "A form / document to fill out",
+    "rule": "<strong>טֹפֶס</strong> = form (to fill out)<br>תּוֹר = queue/turn / בּוּל = stamp / גְּלוּיָה = postcard<br>You often need to fill out a טֹפֶס at Israeli offices!"
+  },
+  {
+    "en": "הַשִּׂמְלָה הַחֲדָשָׁה יָפָה מְאֹד. Why is it חֲדָשָׁה and not חָדָשׁ?",
+    "options": [
+      "Because the dress is new",
+      "Because שִׂמְלָה is feminine — adjective must agree",
+      "Because the speaker is female",
+      "Random choice"
+    ],
+    "correct": "Because שִׂמְלָה is feminine — adjective must agree",
+    "rule": "<strong>שִׂמְלָה</strong> = dress — FEMININE noun<br>F adjective: חֲדָשָׁ<strong>ה</strong> / M adjective: חָדָשׁ<br>Adjectives always agree with the noun in gender AND number!"
+  },
+  {
+    "en": "What is the plural of מִכְנָסַיִם (trousers)?",
+    "options": [
+      "מִכְנָסִים",
+      "מִכְנָסוֹת",
+      "מִכְנָסַיִם is already plural",
+      "מִכְנָס"
+    ],
+    "correct": "מִכְנָסַיִם is already plural",
+    "rule": "<strong>מִכְנָסַיִם</strong> is dual/plural by nature — like shoes or scissors<br>Similar: מִשְׁקָפַיִם (glasses) / כְּפָפוֹת (gloves)<br>Always plural — you cannot say one מִכְנָס!"
+  },
+  {
+    "en": "Complete: מָחָר הוּא ___ לַבַּנְק. (He will come to the bank)",
+    "options": [
+      "בָּא",
+      "בָּאָה",
+      "יָבוֹא",
+      "אָבוֹא"
+    ],
+    "correct": "יָבוֹא",
+    "rule": "<strong>יָבוֹא</strong> = he will come — irregular future of לָבוֹא<br>בָּא = comes (present M) / בָּאָה = comes (present F)<br>Future: אָבוֹא (I) / יָבוֹא (he) / תָּבוֹא (she)"
+  },
+  {
+    "en": "Dr. Penina says: אֲנִי לֹא אֵלֵךְ לַמְּסִיבָּה. What is she NOT doing?",
+    "options": [
+      "She will not come to the clinic",
+      "She will not go to the party",
+      "She did not go to the party",
+      "She is not going now"
+    ],
+    "correct": "She will not go to the party",
+    "rule": "<strong>לֹא אֵלֵךְ</strong> = I will not go (future negation)<br>מְּסִיבָּה = party<br>Future negative: לֹא + future verb — simple!"
+  },
+  {
+    "en": "You see a sign: אָסוּר לְעַשֵּׁן. What does it mean?",
+    "options": [
+      "Please smoke here",
+      "Smoking is permitted",
+      "Smoking is forbidden / No smoking",
+      "Smoke alarm"
+    ],
+    "correct": "Smoking is forbidden / No smoking",
+    "rule": "<strong>אָסוּר</strong> = forbidden / not allowed<br><strong>מֻתָּר</strong> = permitted / allowed<br>לְעַשֵּׁן = to smoke<br>אָסוּר/מֻתָּר are essential signs vocabulary!"
+  },
+  {
+    "en": "A sign says: שִׁמְרוּ עַל הַנִּיקָיוֹן! What is being requested?",
+    "options": [
+      "Keep quiet!",
+      "Keep the area clean!",
+      "Keep to the right!",
+      "Caution — wet floor!"
+    ],
+    "correct": "Keep the area clean!",
+    "rule": "<strong>שִׁמְרוּ</strong> = keep/guard (plural imperative of לִשְׁמֹר)<br><strong>נִיקָיוֹן</strong> = cleanliness<br>שִׁמְרוּ עַל = take care of / preserve"
+  },
+  {
+    "en": "Which sentence uses all THREE tenses correctly about Dan?",
+    "options": [
+      "דָּן הָלַךְ, הוֹלֵךְ, וְיֵלֵךְ לָאוּלְפָּן",
+      "דָּן הָלַךְ, לוֹמֵד, וְאֵלֵךְ לָאוּלְפָּן",
+      "דָּן הֵלַכְתִּי, הוֹלֵךְ, וְיֵלֵךְ לָאוּלְפָּן",
+      "דָּן הָלַךְ, הוֹלֵךְ, וְיִכְתֹּב לָאוּלְפָּן"
+    ],
+    "correct": "דָּן הָלַךְ, הוֹלֵךְ, וְיֵלֵךְ לָאוּלְפָּן",
+    "rule": "Past: <strong>הָלַךְ</strong> / Present: <strong>הוֹלֵךְ</strong> / Future: <strong>יֵלֵךְ</strong><br>All 3rd person M singular — consistent with דָּן<br>This irregular verb changes completely in each tense!"
+  },
+  {
+    "en": "Translate: We will speak Hebrew from tomorrow.",
+    "options": [
+      "אֲנַחְנוּ מְדַבְּרִים עִבְרִית",
+      "אֲנַחְנוּ נְדַבֵּר עִבְרִית מִמָּחָר",
+      "אֲנַחְנוּ דִּיבַּרְנוּ עִבְרִית",
+      "אֲנַחְנוּ מְדַבֵּר עִבְרִית מָחָר"
+    ],
+    "correct": "אֲנַחְנוּ נְדַבֵּר עִבְרִית מִמָּחָר",
+    "rule": "<strong>נְדַבֵּר</strong> = we will speak (future 1st person plural)<br>נ- prefix = first person plural future<br>מִמָּחָר = from tomorrow<br>אֲנַחְנוּ מְדַבְּרִים = we speak (present)"
+  },
+  {
+    "en": "אֵין בְּעָיָה! — In which situations would you say this?",
+    "options": [
+      "When you have a serious problem",
+      "When reassuring someone — No problem! / It is fine!",
+      "When asking for help",
+      "When you do not understand"
+    ],
+    "correct": "When reassuring someone — No problem! / It is fine!",
+    "rule": "<strong>אֵין בְּעָיָה</strong> = no problem / it is fine (lit. there is no problem)<br>Very common in Israeli conversation<br>בְּעָיָה = problem / אֵין = there is no"
+  },
+  {
+    "en": "מַה נִּשְׁמָע? — What is this phrase?",
+    "options": [
+      "What do you hear?",
+      "How are things? / What is up? (informal greeting)",
+      "What is your name?",
+      "What do you want?"
+    ],
+    "correct": "How are things? / What is up? (informal greeting)",
+    "rule": "<strong>מַה נִּשְׁמָע?</strong> = What is up? / How are things? (lit. what is heard?)<br>Informal — used among friends and peers<br>Response: הַכֹּל בְּסֵדֶר = Everything is fine!"
+  },
+  {
+    "en": "Choose the ONLY grammatically correct sentence:",
+    "options": [
+      "הֵן יִכְתְּבוּ מִכְתָּב מָחָר",
+      "הוּא תִּכְתֹּב מִכְתָּב מָחָר",
+      "אֲנִי יִכְתֹּב מִכְתָּב מָחָר",
+      "הֵם תִּכְתֹּב מִכְתָּב מָחָר"
+    ],
+    "correct": "הֵן יִכְתְּבוּ מִכְתָּב מָחָר",
+    "rule": "הֵן יִכְתְּבוּ ✅ — they (f) will write — but wait! הֵן takes תִּכְתֹּבְנָה in formal Hebrew<br>However יִכְתְּבוּ is used colloquially for both הֵם and הֵן<br>הוּא תִּכְתֹּב ❌ (תִּ = she/you) / אֲנִי יִכְתֹּב ❌ (needs אֶכְתֹּב)"
+  },
+  {
+    "en": "Read the full story and answer:<br>דָּן נוֹלַד בְּגֶרְמַנְיָה. הוּא עָלָה לְיִשְׂרָאֵל לִפְנֵי עֶשֶׂר שָׁנִים. עַכְשָׁיו הוּא גָּר בְּתֵל אָבִיב וְעוֹבֵד בְּחֶבְרָה גְּדוֹלָה. מָחָר הוּא יִסַּע לִירוּשָׁלַיִם לִפְגֹּשׁ חֲבֵרִים.<br>How many tenses appear?",
+    "options": [
+      "Only past tense",
+      "Past and present only",
+      "Past, present, and future",
+      "Only future tense"
+    ],
+    "correct": "Past, present, and future",
+    "rule": "Past: נוֹלַד, עָלָה / Present: גָּר, עוֹבֵד / Future: יִסַּע<br>All THREE tenses in one paragraph!<br>Time markers: לִפְנֵי עֶשֶׂר שָׁנִים (past), עַכְשָׁיו (present), מָחָר (future)"
+  },
+  {
+    "en": "Which word CANNOT follow the verb נוֹתֵן?",
+    "options": [
+      "לִי (to me)",
+      "לָהּ (to her)",
+      "לָנוּ (to us)",
+      "מִמֶּנִּי (from me)"
+    ],
+    "correct": "מִמֶּנִּי (from me)",
+    "rule": "<strong>נוֹתֵן לְ</strong> = gives TO — always uses לְ (to/for)<br>מִמֶּנִּי = from me — uses מִן (from), not לְ<br>לִי, לָהּ, לָנוּ are all לְ+pronoun forms ✅"
+  },
+  {
+    "en": "500 מִלִּים! You have completed the course. Which sentence best describes what you can do?",
+    "options": [
+      "אֲנִי מְדַבֵּר רַק אַנְגְּלִית",
+      "אֲנִי יוֹדֵעַ לִקְרֹא, לִכְתֹּב, וּלְדַבֵּר בְּעִבְרִית בָּסִיסִית",
+      "אֲנִי לֹא מֵבִין כְּלוּם בְּעִבְרִית",
+      "אֲנִי לוֹמֵד רַק שָׁלוֹשׁ מִלִּים"
+    ],
+    "correct": "אֲנִי יוֹדֵעַ לִקְרֹא, לִכְתֹּב, וּלְדַבֵּר בְּעִבְרִית בָּסִיסִית",
+    "rule": "🎉 מַזָּל טוֹב! You finished 500 words!<br><strong>לִקְרֹא</strong> = to read / <strong>לִכְתֹּב</strong> = to write / <strong>לְדַבֵּר</strong> = to speak<br>יוֹדֵעַ לְ + infinitive = knows how to..."
+  }
+];
+let T = {qs:[], idx:0, hearts:3, xp:0, correct:0, answered:false};
+function getState(){ try{ return JSON.parse(localStorage.getItem('ulpan_state')||'{}'); }catch(e){ return {}; } }
+function saveState(s){
+  try{ localStorage.setItem('ulpan_state', JSON.stringify(s)); }catch(e){}
+  if(SYNC_URL && s.name){
+    const p={id:s.name.toLowerCase().replace(/\s+/g,'_'),name:s.name,done:s.done||[],xp:s.xp||0};
+    fetch(SYNC_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)}).catch(()=>{});
+  }
+}
+function markDone(id,xp){
+  const s=getState(); const done=s.done||[];
+  if(!done.includes(id)){ done.push(id); s.done=done; s.xp=(s.xp||0)+xp; saveState(s); }
+}
+function navTo(url){
+  const a=document.createElement('a'); a.href=url; a.target='_blank'; a.rel='noopener';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+function shuffle(a){
+  const b=[...a];
+  for(let i=b.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [b[i],b[j]]=[b[j],b[i]]; }
+  return b;
+}
+function launchConfetti(){
+  const w=document.getElementById('confettiWrap'); w.innerHTML='';
+  const c=['#4A5FD5','#E8A020','#22c55e','#ef4444','#a855f7','#06b6d4'];
+  for(let i=0;i<90;i++){
+    const el=document.createElement('div'); el.className='cp';
+    el.style.cssText='left:'+Math.random()*100+'vw;background:'+c[i%c.length]+';animation-duration:'+(1.5+Math.random()*2)+'s;animation-delay:'+Math.random()*.6+'s;width:'+(6+Math.random()*8)+'px;height:'+(6+Math.random()*8)+'px;border-radius:'+(Math.random()>.5?'50%':'2px')+';';
+    w.appendChild(el);
+  }
+  setTimeout(()=>w.innerHTML='',4500);
+}
+function showXPPop(txt,el){
+  const p=document.getElementById('xpPopup');
+  const r=el.getBoundingClientRect();
+  p.style.left=(r.left+r.width/2-30)+'px'; p.style.top=(r.top+window.scrollY-20)+'px';
+  p.textContent=txt; p.style.display='block'; p.style.animation='none';
+  setTimeout(()=>p.style.animation='floatUp 1s ease forwards',10);
+  setTimeout(()=>p.style.display='none',1100);
+}
+function updateHearts(n){ ['h1','h2','h3'].forEach((id,i)=>{ const el=document.getElementById('t-'+id); if(el) el.classList.toggle('lost',i>=n); }); }
+function updateProgress(){
+  const pct=Math.round((T.idx/T.qs.length)*100);
+  document.getElementById('t-bar').style.width=pct+'%';
+  document.getElementById('t-prog-label').textContent=T.idx+' / '+T.qs.length+' שאלות · questions';
+  document.getElementById('t-prog-pct').textContent=pct+'%';
+  const wrap=document.getElementById('t-milestones');
+  if(wrap){ wrap.innerHTML=''; [.25,.5,.75,1].forEach(m=>{ const d=document.createElement('div'); const p=T.idx/T.qs.length; d.className='mdot'+(p>m?' reached':p>=m-.01?' current':''); wrap.appendChild(d); }); }
+}
+function startTest(){
+  T={qs:shuffle(ALL_QUESTIONS), idx:0, hearts:3, xp:0, correct:0, answered:false};
+  updateHearts(3); updateProgress(); renderQ();
+}
+function renderQ(){
+  const area=document.getElementById('test-area');
+  if(T.idx>=T.qs.length){ testSuccess(); return; }
+  T.answered=false;
+  const q=T.qs[T.idx];
+  const opts=shuffle([...q.options]);
+  const optsHtml=opts.map(o=>'<button class="opt-btn" data-val="'+o.replace(/"/g,'&quot;')+'">'+o+'</button>').join('');
+  area.innerHTML='<div class="ex-instruction"><div class="inst-row"><div class="inst-he">בחר את התשובה הנכונה</div></div><div class="inst-en">📝 Read carefully — <strong>Final test! 80%+ to earn your certificate.</strong> 3 lives ❤️</div></div><div class="q-card" id="t-qcard"><div class="q-en" style="font-size:16px;line-height:1.7;margin-bottom:16px">'+q.en+'</div><div class="opts-1col" id="t-opts">'+optsHtml+'</div></div><div class="feedback-banner" id="t-fb"></div><button class="continue-btn" id="t-cont">המשך · Continue →</button>';
+  document.querySelectorAll('#t-opts .opt-btn').forEach(btn=>{ btn.addEventListener('click',()=>checkQ(btn,q)); });
+  document.getElementById('t-cont').addEventListener('click',()=>nextQ());
+}
+function checkQ(btn,q){
+  if(T.answered) return;
+  T.answered=true;
+  const chosen=btn.dataset.val;
+  const ok=(chosen===q.correct);
+  document.querySelectorAll('#t-opts .opt-btn').forEach(b=>{ b.disabled=true; if(b.dataset.val===q.correct) b.classList.add('show-answer'); });
+  if(ok){
+    T.correct++; T.xp+=10;
+    document.getElementById('t-xp').textContent=T.xp;
+    btn.classList.add('sel-correct');
+    document.getElementById('t-qcard').classList.add('correct');
+    showXPPop('+10⭐',btn);
+    const fb=document.getElementById('t-fb');
+    fb.className='feedback-banner show fb-ok';
+    fb.innerHTML='<div class="fb-row1">✅ כֵּן! נָכוֹן! · Correct!</div><div class="fb-rule">'+q.rule+'</div>';
+  } else {
+    T.hearts--;
+    btn.classList.add('sel-wrong');
+    document.getElementById('t-qcard').classList.add('wrong');
+    updateHearts(T.hearts);
+    const fb=document.getElementById('t-fb');
+    fb.className='feedback-banner show fb-err';
+    fb.innerHTML='<div class="fb-row1">❌ לֹא נָכוֹן · Incorrect</div><div class="fb-rule">'+q.rule+'</div>';
+    if(T.hearts<=0){ setTimeout(testFail,1200); return; }
+  }
+  updateProgress();
+  document.getElementById('t-cont').classList.add('show');
+}
+function nextQ(){ T.idx++; updateProgress(); renderQ(); }
+function testSuccess(){
+  const acc=Math.round(T.correct/T.qs.length*100);
+  document.getElementById('t-bar').style.width='100%';
+  if(acc<80){
+    document.getElementById('test-area').innerHTML='<div class="result-screen show"><div class="result-icon">📖</div><div class="result-title">Almost! · עוד קצת!</div><div class="result-sub">You scored <strong>'+acc+'%</strong> — the Grand Final requires <strong>80%</strong>.<br>Review lessons 21–26 and try again!</div><div class="result-stats"><div class="rstat"><div class="rstat-n">'+T.correct+'/'+T.qs.length+'</div><div class="rstat-l">Correct</div></div><div class="rstat"><div class="rstat-n">'+acc+'%</div><div class="rstat-l">Score</div></div><div class="rstat"><div class="rstat-n">80%</div><div class="rstat-l">Needed ✓</div></div></div><div class="result-btns"><button class="btn-go-next" onclick="startTest()">נסה שוב · Try again 🔄</button></div></div>';
+    return;
+  }
+  launchConfetti(); launchConfetti();
+  markDone('test5', T.xp+100);
+  document.getElementById('test-area').innerHTML='<div class="result-screen show"><div class="result-icon">🏆</div><div class="result-title" style="font-size:26px">🎉 מַזָּל טוֹב! Congratulations! 🎉</div><div class="result-sub" style="font-size:15px">סִיַּמְתָּ אֶת הַקּוּרְס! · You completed the entire 500-word course!<br>'+acc+'% — '+T.correct+'/'+T.qs.length+' correct</div><div class="result-stats"><div class="rstat"><div class="rstat-n">500⭐</div><div class="rstat-l">Words learned</div></div><div class="rstat"><div class="rstat-n">'+acc+'%</div><div class="rstat-l">Final score</div></div><div class="rstat"><div class="rstat-n">'+T.xp+'⭐</div><div class="rstat-l">XP earned</div></div></div><div class="result-btns"><button class="btn-go-next" style="background:linear-gradient(135deg,#E8A020,#F5C842);color:#1A1A2E" onclick="navTo(BASE_URL)">🏠 חזור לדף הבית · Back to Home</button><a href="https://www.lingostudio.ch" target="_blank" rel="noopener noreferrer" class="btn-retry" style="text-decoration:none;display:block;margin-top:10px;">🎓 Weiter mit einem echten Lehrer? →</a></div></div>';
+}
+function testFail(){
+  document.getElementById('test-area').innerHTML='<div class="result-screen show"><div class="result-icon">💔</div><div class="result-title">נגמרו הלבבות · No more hearts!</div><div class="result-sub">כִּמְעַט! · So close! Review and try again!</div><div class="result-btns"><button class="btn-go-next" onclick="startTest()">נסה שוב · Try again 🔄</button></div></div>';
+}
+startTest();
+</script>
+
+<footer style="background:#0f172a;color:rgba(255,255,255,0.7);padding:30px 24px;text-align:center;font-family:-apple-system,sans-serif;font-size:13px;margin-top:0;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:8px;">🦉 lingoStudio</div>
+    <div style="margin-bottom:14px;color:rgba(255,255,255,0.6);">Hebräisch lernen in Zürich — online oder vor Ort</div>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
+      <a href="https://lingostudio.ch/lernen/" style="color:#fbbf24;text-decoration:none;font-weight:700;">🔤 500 Wörter — Gratis</a>
+      <a href="https://lingostudio.ch/hebrew-course-zurich.html" style="color:rgba(255,255,255,0.8);text-decoration:none;">Courses</a>
+      <a href="https://lingostudio.ch/kontakt.html" style="color:rgba(255,255,255,0.8);text-decoration:none;">Kontakt</a>
+      <a href="https://lingostudio.ch" style="color:rgba(255,255,255,0.8);text-decoration:none;">lingostudio.ch</a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:12px;color:rgba(255,255,255,0.4);font-size:11px;">
+      © 2026 lingoStudio ·
+      <a href="https://lingostudio.ch/datenschutz.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">Datenschutz</a> ·
+      <a href="https://lingostudio.ch/agb.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">AGB</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
