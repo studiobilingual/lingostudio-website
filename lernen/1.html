@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hebräisch Lektion 1 | lingoStudio Zürich</title>
+    <meta name="description" content="Lektion 1: Hebräisch kostenlos lernen. Vokabeln mit Vokalzeichen (Nikud), interaktive Übungen, Grammatiktipps.">
+    <link rel="canonical" href="https://lingostudio.ch/lernen/1/">
+    <meta property="og:title" content="Hebräisch Lektion 1 | lingoStudio Zürich">
+    <meta property="og:description" content="Lektion 1: Hebräisch kostenlos lernen. Vokabeln mit Vokalzeichen (Nikud), interaktive Übungen, Grammatiktipps.">
+    <meta property="og:url" content="https://lingostudio.ch/lernen/1/">
+    <meta property="og:site_name" content="lingoStudio Zürich">
+    <meta name="robots" content="index, follow">
+<style>
+@import url("data:text/css,");
+</style>
+<style>
+:root{
+  --g1:#4A5FD5;--g2:#7B4FA8;--g3:#C56B9E;
+  --acc:#E8A020;--acc2:#F5C842;
+  --ban1:#F5A623;--ban2:#E8415A;
+  --bg:#F0F4F8;--card:#fff;
+  --ink:#1A1A2E;--muted:#6B7280;
+  --grad:linear-gradient(135deg,var(--g1),var(--g2),var(--g3));
+  --white:#ffffff;--deep:#1a1060;
+  --border:#e2e8f0;--shadow:0 4px 24px rgba(74,95,213,.13);
+  --shadow-sm:0 2px 8px rgba(0,0,0,.08);
+  --ok:#22c55e;--err:#ef4444;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
+.page{display:none}
+.page.active{display:block}
+.game-page{background:var(--bg);min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.topbar-left{display:flex;flex-direction:column;gap:3px}
+.pill{display:inline-flex;align-items:center;background:var(--grad);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 12px;border-radius:20px;width:fit-content}
+.lesson-name{font-size:15px;font-weight:700;color:var(--deep)}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.hearts{display:flex;gap:4px;font-size:20px}
+.heart.lost{opacity:.25;filter:grayscale(1)}
+.xp-badge{background:linear-gradient(135deg,var(--acc),var(--acc2));color:var(--deep);font-size:13px;font-weight:800;padding:4px 12px;border-radius:20px}
+.home-btn{background:none;border:1.5px solid var(--border);color:var(--muted);font-size:18px;cursor:pointer;border-radius:10px;padding:4px 8px;transition:all .2s;text-decoration:none}
+.home-btn:hover{border-color:var(--g1);color:var(--g1)}
+.progress-wrap{padding:10px 20px 6px;background:#fff;border-bottom:1px solid var(--border)}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:5px}
+.progress-track{height:8px;background:#e2e8f0;border-radius:8px;overflow:hidden;position:relative}
+.progress-fill{height:100%;background:var(--grad);border-radius:8px;transition:width .4s ease}
+.milestone-row{display:flex;justify-content:space-around;margin-top:5px}
+.mdot{width:8px;height:8px;border-radius:50%;background:#e2e8f0;border:2px solid #cbd5e1;transition:all .3s}
+.mdot.reached{background:var(--ok);border-color:var(--ok)}
+.mdot.current{background:var(--g1);border-color:var(--g1);animation:mdotPulse 1.2s infinite}
+@keyframes mdotPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+.game-body{max-width:520px;margin:0 auto;padding:20px 16px 80px}
+.ex1-instruction{background:linear-gradient(135deg,rgba(74,95,213,.07),rgba(197,107,158,.07));border:1.5px solid rgba(74,95,213,.15);border-radius:14px;padding:12px 16px;margin-bottom:18px;text-align:center}
+.ex1-instruction .inst-he{font-size:14px;font-weight:700;color:var(--g2);margin-bottom:2px;direction:rtl}
+.ex1-instruction .inst-en{font-size:12px;color:var(--muted)}
+.card-counter{font-size:14px;color:var(--muted);text-align:center;margin-bottom:10px;direction:ltr}
+.flip-scene{width:100%;height:260px;perspective:1000px;cursor:pointer;margin-bottom:16px;user-select:none}
+.flip-card{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.flip-card.flipped{transform:rotateY(180deg)}
+.flip-face{position:absolute;width:100%;height:100%;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 24px;box-shadow:var(--shadow)}
+.flip-front{background:var(--white);border:2px solid var(--border)}
+.flip-back{background:var(--grad);transform:rotateY(180deg);color:#fff;text-align:center}
+.card-tag{position:absolute;top:14px;right:16px;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:12px;text-transform:uppercase}
+.tag-noun{background:#ede9fe;color:#6d28d9}
+.tag-verb{background:#dbeafe;color:#1d4ed8}
+.tag-particle{background:#fef3c7;color:#92400e}
+.gender-badge{position:absolute;top:14px;left:16px;font-size:18px}
+.card-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:clamp(38px,10vw,62px);font-weight:900;color:var(--deep);text-align:center;line-height:1.1;margin-bottom:8px}
+.card-translit{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:4px}
+.tap-hint{position:absolute;bottom:14px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.card-en{font-size:clamp(20px,5vw,30px);font-weight:800;margin-bottom:14px;line-height:1.2}
+.card-example{font-family:'David',Georgia,'Times New Roman',serif;font-size:19px;font-weight:700;opacity:.95;line-height:1.4;text-align:center;padding:0 8px}
+.card-example-en{font-size:12px;opacity:.8;margin-top:6px;font-style:italic}
+.pair-indicator{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:10px;font-size:12px;color:var(--muted)}
+.pair-dot{width:10px;height:10px;border-radius:50%;opacity:.3;transition:all .3s}
+.pair-dot.male.active{background:#3b82f6;opacity:1}
+.pair-dot.female.active{background:#ec4899;opacity:1}
+.grammar-tip{background:linear-gradient(135deg,rgba(74,95,213,.08),rgba(123,79,168,.08));border:1.5px solid rgba(74,95,213,.2);border-radius:14px;padding:14px 16px;margin-bottom:14px;font-size:13px;line-height:1.6;color:var(--deep);display:none}
+.grammar-tip.show{display:block}
+.tip-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:16px;font-weight:900;color:var(--g2)}
+.card-nav{display:flex;gap:10px;margin-top:4px}
+.btn-card-nav{flex:1;padding:13px;border-radius:14px;border:none;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:15px;font-weight:700;transition:all .15s}
+.btn-prev{background:#f1f5f9;color:var(--muted)}
+.btn-prev:hover:not(:disabled){background:#e2e8f0}
+.btn-prev:disabled{opacity:.3}
+.btn-next{background:var(--grad);color:#fff;box-shadow:0 4px 16px rgba(74,95,213,.3)}
+.btn-next:hover{filter:brightness(1.08)}
+.finish-screen{display:none;text-align:center;padding:40px 20px}
+.finish-screen.show{display:block}
+.btn-continue-big{display:inline-block;padding:15px 36px;border-radius:50px;background:var(--grad);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:800;border:none;cursor:pointer;box-shadow:0 6px 24px rgba(74,95,213,.3);transition:all .2s}
+.btn-continue-big:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.ex-instruction{background:linear-gradient(135deg,rgba(74,95,213,.07),rgba(197,107,158,.07));border:1.5px solid rgba(74,95,213,.15);border-radius:14px;padding:12px 16px;margin-bottom:18px}
+.ex-instruction .inst-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:4px}
+.ex-instruction .inst-he{font-size:13px;font-weight:700;color:var(--g2);direction:rtl;flex:1}
+.ex-instruction .inst-en{font-size:12px;color:var(--muted)}
+.q-card{background:#fff;border-radius:20px;padding:22px 18px;box-shadow:var(--shadow-sm);border:2px solid var(--border);margin-bottom:14px;transition:border-color .25s}
+.q-card.correct{border-color:var(--ok);background:#f0fdf4}
+.q-card.wrong{border-color:var(--err);background:#fff5f5}
+.q-hebrew{font-family:'David',Georgia,'Times New Roman',serif;font-size:clamp(32px,8vw,52px);font-weight:900;color:var(--deep);text-align:center;direction:rtl;margin-bottom:6px}
+.q-translit{font-size:13px;color:var(--muted);text-align:center;font-style:italic;margin-bottom:16px}
+.q-type-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;padding:3px 12px;border-radius:20px;margin-bottom:12px;background:rgba(74,95,213,.1);color:var(--g1)}
+.q-en{font-size:15px;line-height:1.6;margin-bottom:12px;color:var(--deep)}
+.q-en-b{font-size:14px;line-height:1.7;margin-bottom:14px;color:var(--deep);font-weight:600}
+.tested-word{color:#E8A020;font-weight:800;font-style:normal;background:none;text-decoration:none}
+.q-blank{font-family:'David',Georgia,'Times New Roman',serif;font-size:21px;font-weight:700;direction:rtl;text-align:center;margin-bottom:16px;color:var(--deep);background:#f8fafc;border-radius:10px;padding:10px 16px}
+.blank-slot{color:var(--g1);font-style:italic}
+.opts-2col{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.opts-1col{display:flex;flex-direction:column;gap:9px}
+.opt-btn{padding:12px 14px;border-radius:13px;border:2px solid var(--border);background:#fff;font-family:'David',Georgia,'Times New Roman',serif;font-size:17px;font-weight:700;color:var(--deep);cursor:pointer;transition:all .15s;text-align:center;direction:rtl}
+.opts-1col .opt-btn{font-size:16px;text-align:right;padding:12px 16px}
+.opt-btn:hover:not(:disabled){border-color:var(--g1);background:rgba(74,95,213,.04)}
+.opt-btn:disabled{cursor:default}
+.opt-btn.sel-correct{border-color:var(--ok)!important;background:#f0fdf4!important;color:#166534}
+.opt-btn.sel-wrong{border-color:var(--err)!important;background:#fff5f5!important;color:#991b1b}
+.opt-btn.show-answer{border-color:var(--ok);background:#dcfce7;color:#166534}
+.feedback-banner{border-radius:14px;padding:14px 16px;margin-bottom:12px;display:none}
+.feedback-banner.show{display:block}
+.fb-ok{background:#f0fdf4;border:1.5px solid var(--ok)}
+.fb-err{background:#fff5f5;border:1.5px solid var(--err)}
+.fb-row1{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-bottom:4px}
+.fb-sub{font-size:13px;color:#374151;line-height:1.5}
+.fb-example{font-family:'David',Georgia,'Times New Roman',serif;font-size:15px;direction:rtl;color:var(--deep);margin-top:6px;font-weight:600}
+.fb-rule{font-size:13px;color:#374151;line-height:1.6;margin-top:4px}
+.rule-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:15px;font-weight:900;color:var(--g2)}
+.continue-btn{width:100%;padding:14px;border:none;border-radius:14px;background:var(--grad);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:700;cursor:pointer;display:none;margin-bottom:8px;transition:all .15s}
+.continue-btn.show{display:block}
+.continue-btn:hover{filter:brightness(1.08)}
+.result-screen{display:none;padding:30px 16px;text-align:center}
+.result-screen.show{display:block}
+.result-icon{font-size:64px;margin-bottom:14px}
+.result-title{font-size:22px;font-weight:800;margin-bottom:8px;color:var(--deep)}
+.result-sub{font-size:13px;color:var(--muted);margin-bottom:22px}
+.result-stats{display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.rstat{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:12px 18px;text-align:center}
+.rstat-n{font-size:24px;font-weight:900;color:var(--g1)}
+.rstat-l{font-size:11px;color:var(--muted);margin-top:2px}
+.result-btns{display:flex;flex-direction:column;gap:10px;max-width:300px;margin:0 auto}
+.btn-go-next{padding:14px;background:var(--grad);color:#fff;border:none;border-radius:50px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 20px rgba(74,95,213,.3);transition:all .15s}
+.btn-go-next:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-retry{padding:12px;background:#f8fafc;color:var(--muted);border:1.5px solid var(--border);border-radius:50px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s}
+.btn-retry:hover{background:var(--border)}
+.confetti-wrap{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;overflow:hidden}
+.cp{position:fixed;top:-14px;animation:confettiFall linear forwards}
+@keyframes confettiFall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:.2}}
+.xp-popup{position:fixed;z-index:1000;pointer-events:none;font-size:20px;font-weight:900;color:var(--acc2);text-shadow:0 2px 8px rgba(0,0,0,.4);display:none}
+@keyframes floatUp{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-60px);opacity:0}}
+.q-sentence{font-size:22px;font-weight:700;direction:rtl;text-align:right;margin:12px 0 20px;padding:0 8px}
+.q-pre,.q-post{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="confetti-wrap" id="confettiWrap"></div>
+<div class="xp-popup" id="xpPopup"></div>
+
+<div id="page-ex1" class="page game-page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="pill" id="ex1-pill">שיעור —</div>
+      <div class="lesson-name" id="ex1-name">—</div>
+    </div>
+    <div class="topbar-right">
+      <a class="home-btn" href="https://lingostudio.ch/lernen/curriculum/" target="_blank" style="text-decoration:none;font-size:13px;padding:4px 10px;">📚 ←</a>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span id="ex1-prog-label">1 / 0 כרטיסים</span>
+      <span id="ex1-prog-pct">0%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="ex1-bar"></div></div>
+  </div>
+  <div class="game-body"><div id="ex1-area"></div></div>
+</div>
+
+<div id="page-ex2" class="page game-page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="pill" id="ex2-pill">שיעור —</div>
+      <div class="lesson-name" id="ex2-name">—</div>
+    </div>
+    <div class="topbar-right">
+      <div class="hearts">
+        <span class="heart" id="ex2-h1">❤️</span>
+        <span class="heart" id="ex2-h2">❤️</span>
+        <span class="heart" id="ex2-h3">❤️</span>
+      </div>
+      <div class="xp-badge">⭐ <span id="ex2-xp">0</span></div>
+      <a class="home-btn" href="https://lingostudio.ch/lernen/curriculum/" target="_blank" style="text-decoration:none;font-size:13px;padding:4px 10px;">📚 ←</a>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span id="ex2-prog-label">0 / 10 שאלות</span>
+      <span id="ex2-prog-pct">0%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="ex2-bar"></div></div>
+    <div class="milestone-row" id="ex2-milestones"></div>
+  </div>
+  <div class="game-body"><div id="ex2-area"></div></div>
+</div>
+
+<div id="page-ex3" class="page game-page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="pill" id="ex3-pill">שיעור —</div>
+      <div class="lesson-name" id="ex3-name">—</div>
+    </div>
+    <div class="topbar-right">
+      <div class="hearts">
+        <span class="heart" id="ex3-h1">❤️</span>
+        <span class="heart" id="ex3-h2">❤️</span>
+        <span class="heart" id="ex3-h3">❤️</span>
+      </div>
+      <div class="xp-badge">⭐ <span id="ex3-xp">0</span></div>
+      <a class="home-btn" href="https://lingostudio.ch/lernen/curriculum/" target="_blank" style="text-decoration:none;font-size:13px;padding:4px 10px;">📚 ←</a>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span id="ex3-prog-label">0 / 9 שאלות</span>
+      <span id="ex3-prog-pct">0%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="ex3-bar"></div></div>
+    <div class="milestone-row" id="ex3-milestones"></div>
+  </div>
+  <div class="game-body"><div id="ex3-area"></div></div>
+</div>
+
+<script>
+const LESSON_N = 1;
+const LESSON_DATA = {
+"shiur1_ex1":{
+    id:"shiur1_ex1",next:"shiur1_ex2",
+    name:"\u05e9\u05b8\u05c1\u05dc\u05d5\u05b9\u05dd",pill:"\u05e9\u05d9\u05e2\u05d5\u05e8 1 \u00b7 \u05ea\u05e8\u05d2\u05d9\u05dc 1",
+    cards:[
+  {he:'שָׁלוֹם',translit:'sha-LOM',en:'Hello / Peace',example:'שָׁלוֹם! אֲנִי דָּן.',exampleEn:'Hello! I am Dan.',pos:'expression',gender:null,tip:'שָׁלוֹם = hello AND goodbye AND peace!\nUse it always — morning, evening, on the phone\nResponse: שָׁלוֹם שָׁלוֹם!',isReview:false},
+  {he:'אֲנִי',translit:'a-NI',en:'I',example:'אֲנִי גָּר בְּתֵל אָבִיב.',exampleEn:'I live in Tel Aviv.',pos:'pronoun',gender:null,tip:'אֲנִי = I (same for M and F!)\nNo verb "to be" needed in Hebrew!\nאֲנִי דָּן = I am Dan (no "am"!)',isReview:false},
+  {he:'אַתָּה',translit:'a-TA',en:'You (m)',example:'אַתָּה יִשְׂרְאֵלִי?',exampleEn:'Are you (m) Israeli?',pos:'pronoun',gender:'M',tip:'M: אַתָּה / F: אַתְּ\nTwo different words for "you"!\nNo verb "to be" in present tense:\nאַתָּה יִשְׂרְאֵלִי? = You Israeli? (= Are you Israeli?)',isReview:false},
+  {he:'אַתְּ',translit:'at',en:'You (f)',example:'אַתְּ יִשְׂרְאֵלִית?',exampleEn:'Are you (f) Israeli?',pos:'pronoun',gender:'F',tip:'F: אַתְּ (ends with שווא — silent)\nPronounced just "at" not "ateh"\nPair: אַתָּה (M) / אַתְּ (F)',isReview:false},
+  {he:'הוּא',translit:'hu',en:'He',example:'הוּא סטוּדֶנְט.',exampleEn:'He is a student.',pos:'pronoun',gender:'M',tip:null,isReview:false},
+  {he:'הִיא',translit:'hi',en:'She',example:'הִיא מוֹרָה.',exampleEn:'She is a teacher.',pos:'pronoun',gender:'F',tip:null,isReview:false},
+  {he:'אֲנַחְנוּ',translit:'a-NAKH-nu',en:'We',example:'אֲנַחְנוּ עוֹלִים חֲדָשִׁים.',exampleEn:'We are new immigrants.',pos:'pronoun',gender:null,tip:'אֲנַחְנוּ = we\nSame for M and F groups!\nHebrew has no "it" — use הוּא/הִיא based on noun gender',isReview:false},
+  {he:'מִי',translit:'mi',en:'Who?',example:'מִי אַתָּה?',exampleEn:'Who are you (m)?',pos:'pronoun',gender:null,tip:'מִי = who?\nמִי אַתָּה? = Who are you (m)?\nמִי אַתְּ? = Who are you (f)?\nמִי הוּא? = Who is he?',isReview:false},
+  {he:'שֵׁם',translit:'shem',en:'Name',example:'מַה שִּׁמְךָ? שְׁמִי דָּן.',exampleEn:'What is your name? My name is Dan.',pos:'noun',gender:'M',tip:'שֵׁם = name (M)\nשְׁמִי = my name\nשִׁמְךָ = your (m) name\nמַה שִּׁמְךָ? = What is your name?',isReview:false},
+  {he:'כֵּן / לֹא',translit:'ken / lo',en:'Yes / No',example:'אַתָּה מֵגֶרְמַנְיָה? כֵּן!',exampleEn:'Are you from Germany? Yes!',pos:'particle',gender:null,tip:'כֵּן = yes / לֹא = no\nSimple but essential!\nלֹא also means "not" in sentences:\nאֲנִי לֹא יִשְׂרְאֵלִי = I am not Israeli',isReview:false},
+  {he:'גַּם',translit:'gam',en:'Also / Too',example:'אֲנִי גַּם עוֹלֶה חָדָשׁ.',exampleEn:'I am also a new immigrant.',pos:'adv',gender:null,tip:'גַּם = also/too\nUsually placed before the word it modifies:\nגַּם אֲנִי = me too\nגַּם הוּא = he too',isReview:false},
+  {he:'מֵאֵיפֹה',translit:'me-e-FO',en:'From where?',example:'מֵאֵיפֹה אַתָּה?',exampleEn:'Where are you (m) from?',pos:'adv',gender:null,tip:'מֵאֵיפֹה = from where?\nמֵ = from + אֵיפֹה = where\nAnswer: אֲנִי מִגֶּרְמַנְיָה = I am from Germany',isReview:false},
+  {he:'עַכְשָׁיו',translit:'akh-SHAV',en:'Now',example:'עַכְשָׁיו אֲנִי בְּיִשְׂרָאֵל!',exampleEn:'Now I am in Israel!',pos:'adv',gender:null,tip:null,isReview:false},
+  {he:'נָעִים מְאֹד',translit:'na-IM me-OD',en:'Nice to meet you',example:'שְׁמִי דָּן. נָעִים מְאֹד!',exampleEn:'My name is Dan. Nice to meet you!',pos:'expression',gender:null,tip:'נָעִים מְאֹד = nice to meet you (lit. very pleasant)\nUse after introduction\nResponse: נָעִים מְאֹד גַּם לִי = nice to meet you too',isReview:false},
+  {he:'מִשְׁפָּחָה',translit:'mish-pa-KHA',en:'Family',example:'הַמִּשְׁפָּחָה שֶׁלִּי בְּגֶרְמַנְיָה.',exampleEn:'My family is in Germany.',pos:'noun',gender:'F',tip:'מִשְׁפָּחָה = family (F)\nהַמִּשְׁפָּחָה שֶׁלִּי = my family\nAlso: שֵׁם מִשְׁפָּחָה = last name (family name)',isReview:false}
+]},
+"shiur1_ex2":{
+    id:"shiur1_ex2",next:"shiur1_ex3",
+    name:"\u05d6\u05b0\u05db\u05d5\u05b9\u05e8 \u2014 \u05d1\u05d7\u05d9\u05e8\u05d4 \u05de\u05e8\u05d5\u05d1\u05d4",pill:"\u05e9\u05d9\u05e2\u05d5\u05e8 1 \u00b7 \u05ea\u05e8\u05d2\u05d9\u05dc 2",
+    xp:50,total_q:10,
+    questions:[
+  {he:'אֲנִי',translit:'a-NI',correct:'I',options:['I','You (m)','He','We'],example:'אֲנִי דָּן.',hint:'Same for M and F! No "am" needed'},
+  {he:'אַתָּה',translit:'a-TA',correct:'You (m)',options:['You (m)','You (f)','He','I'],example:'אַתָּה יִשְׂרְאֵלִי?',hint:'M form / F: אַתְּ'},
+  {he:'אַתְּ',translit:'at',correct:'You (f)',options:['You (f)','You (m)','She','I'],example:'אַתְּ יִשְׂרְאֵלִית?',hint:'F form / ends with silent shva'},
+  {he:'הוּא / הִיא',translit:'hu / hi',correct:'He / She',options:['He / She','I / You','We / They','You (m) / You (f)'],example:'הוּא מוֹרֶה. הִיא מוֹרָה.',hint:'Third person: הוּא=he / הִיא=she'},
+  {he:'אֲנַחְנוּ',translit:'a-NAKH-nu',correct:'We',options:['We','They','You (pl)','I'],example:'אֲנַחְנוּ עוֹלִים.',hint:'Same for M and F groups'},
+  {he:'מִי',translit:'mi',correct:'Who?',options:['Who?','What?','Where?','When?'],example:'מִי אַתָּה?',hint:'Question word for person'},
+  {he:'שָׁלוֹם',translit:'sha-LOM',correct:'Hello / Peace',options:['Hello / Peace','Goodbye only','Good morning','Thank you'],example:'שָׁלוֹם לְכֻלָּם!',hint:'Used for hello AND goodbye AND peace!'},
+  {he:'כֵּן',translit:'ken',correct:'Yes',options:['Yes','No','Maybe','Also'],example:'אַתָּה מֵגֶרְמַנְיָה? כֵּן!',hint:'Opposite: לֹא = no'},
+  {he:'נָעִים מְאֹד',translit:'na-IM me-OD',correct:'Nice to meet you',options:['Nice to meet you','Good morning','Thank you','Goodbye'],example:'נָעִים מְאֹד!',hint:'Lit. "very pleasant" — said after introductions'},
+  {he:'מֵאֵיפֹה',translit:'me-e-FO',correct:'From where?',options:['From where?','Where?','To where?','When?'],example:'מֵאֵיפֹה אַתָּה?',hint:'מֵ = from + אֵיפֹה = where'}
+]},
+"shiur1_ex3":{
+    id:"shiur1_ex3",next:"next_lesson",
+    name:"",pill:"\u05e9\u05d9\u05e2\u05d5\u05e8 1 \u00b7 \u05ea\u05e8\u05d2\u05d9\u05dc 3",
+    xp:50,total_q:9,
+    questions:[
+  {en:'<em>I</em> am Dan.',pre:'',post:'דָּן.',options:['אַתָּה','הוּא','אֲנִי'],correct:2,hint:'First person = <strong>אֲנִי</strong>',feedback:{rule:'<strong>אֲנִי</strong> דָּן = I am Dan.<br>No verb \'to be\' needed in Hebrew present tense!<br>אֲנִי = I (M and F same form)',sentence:'אֲנִי דָּן.'}},
+  {en:'Are <em>you (m)</em> Israeli?',pre:'',post:'יִשְׂרְאֵלִי?',options:['אַתְּ','הוּא','אַתָּה'],correct:2,hint:'Addressing a male = <strong>אַתָּה</strong> (M)',feedback:{rule:'<strong>אַתָּה</strong> יִשְׂרְאֵלִי? = Are you (m) Israeli?<br>M: אַתָּה / F: אַתְּ — two different words!<br>Hebrew has gender even in \'you\'',sentence:'אַתָּה יִשְׂרְאֵלִי?'}},
+  {en:'Are <em>you (f)</em> Israeli?',pre:'',post:'יִשְׂרְאֵלִית?',options:['אַתָּה','הִיא','אַתְּ'],correct:2,hint:'Addressing a female = <strong>אַתְּ</strong> (F)',feedback:{rule:'<strong>אַתְּ</strong> יִשְׂרְאֵלִית? = Are you (f) Israeli?<br>F: אַתְּ / M: אַתָּה<br>Note: the adjective also changes: יִשְׂרְאֵלִי(M) / יִשְׂרְאֵלִית(F)',sentence:'אַתְּ יִשְׂרְאֵלִית?'}},
+  {en:'<em>He</em> is a student.',pre:'',post:'סטוּדֶנְט.',options:['הִיא','אַתָּה','הוּא'],correct:2,hint:'Third person male = <strong>הוּא</strong>',feedback:{rule:'<strong>הוּא</strong> סטוּדֶנְט = He is a student.<br>הוּא = he / הִיא = she<br>Again — no \'is\' needed!',sentence:'הוּא סטוּדֶנְט.'}},
+  {en:'<em>She</em> is a teacher.',pre:'',post:'מוֹרָה.',options:['הוּא','אַתְּ','הִיא'],correct:2,hint:'Third person female = <strong>הִיא</strong>',feedback:{rule:'<strong>הִיא</strong> מוֹרָה = She is a teacher.<br>הִיא = she / הוּא = he<br>מוֹרָה = teacher (F) / מוֹרֶה = teacher (M)',sentence:'הִיא מוֹרָה.'}},
+  {en:'<em>We</em> are new immigrants.',pre:'',post:'עוֹלִים חֲדָשִׁים.',options:['אֲנִי','הֵם','אֲנַחְנוּ'],correct:2,hint:'First person plural = <strong>אֲנַחְנוּ</strong>',feedback:{rule:'<strong>אֲנַחְנוּ</strong> עוֹלִים = We are immigrants.<br>אֲנַחְנוּ = we (same for M and F groups!)',sentence:'אֲנַחְנוּ עוֹלִים חֲדָשִׁים.'}},
+  {en:'<em>Who</em> are you (m)?',pre:'',post:'אַתָּה?',options:['מַה','אֵיפֹה','מִי'],correct:2,hint:'Question about a person = <strong>מִי</strong>',feedback:{rule:'<strong>מִי</strong> אַתָּה? = Who are you?<br>מִי = who (person) / מַה = what (thing)<br>מִי אַתָּה? / מַה זֶה? — know the difference!',sentence:'מִי אַתָּה?'}},
+  {en:'Where are <em>you (m)</em> from?',pre:'מֵאֵיפֹה',post:'?',options:['הוּא','אַתְּ','אַתָּה'],correct:2,hint:'Addressing a male = <strong>אַתָּה</strong>',feedback:{rule:'מֵאֵיפֹה <strong>אַתָּה</strong>? = Where are you (m) from?<br>מֵאֵיפֹה = from where (מֵ=from + אֵיפֹה=where)',sentence:'מֵאֵיפֹה אַתָּה?'}},
+  {en:'I am <em>also</em> a new immigrant.',pre:'אֲנִי',post:'עוֹלֶה חָדָשׁ.',options:['לֹא','כֵּן','גַּם'],correct:2,hint:'also/too = <strong>גַּם</strong>',feedback:{rule:'אֲנִי <strong>גַּם</strong> עוֹלֶה חָדָשׁ = I am also a new immigrant.<br>גַּם = also / too<br>גַּם אֲנִי! = Me too!',sentence:'אֲנִי גַּם עוֹלֶה חָדָשׁ.'}}
+]}
+};
+
+const SYNC_URL='https://script.google.com/macros/s/AKfycbxCgViYiQl0oaF9hQKTRms9pc6llub8Ynl1D6FcD6ryc0BrQlTunHDe3YsHWvT0vYem7g/exec';
+let currentPage=null;
+function getState(){try{return JSON.parse(localStorage.getItem('ulpan_state')||'{}');}catch(e){return {};}}
+function saveState(s){try{localStorage.setItem('ulpan_state',JSON.stringify(s));}catch(e){}if(SYNC_URL&&s.name){const p={id:s.name.toLowerCase().replace(/\s+/g,'_'),name:s.name,done:s.done||[],xp:s.xp||0,lastPage:s.lastPage||''};fetch(SYNC_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)}).catch(()=>{});}}
+function markDone(id,xp){const s=getState();const done=s.done||[];if(!done.includes(id)){done.push(id);s.done=done;s.xp=(s.xp||0)+xp;saveState(s);}}
+function navTo(url){const a=document.createElement('a');a.href=url;a.target='_top';a.rel='noopener';document.body.appendChild(a);a.click();document.body.removeChild(a);}
+function goto(id){
+  if(!id)return;
+  if(id==='index'||id==='home'){navTo('https://lingostudio.ch/lernen/');return;}
+  if(id==='next_lesson'){navTo('https://lingostudio.ch/lernen/2/');return;}
+  if(id.includes('.html')){navTo('https://lingostudio.ch/lernen/2/');return;}
+  showPage(id);
+}
+function showPage(id){
+  if(!id||!LESSON_DATA[id])id='shiur1_ex1';currentPage=id;const data=LESSON_DATA[id];
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  if(id.endsWith('_ex1')){document.getElementById('page-ex1').classList.add('active');window.scrollTo(0,0);initEx1(data);}
+  else if(id.endsWith('_ex2')){document.getElementById('page-ex2').classList.add('active');window.scrollTo(0,0);initEx2(data);}
+  else if(id.endsWith('_ex3')){document.getElementById('page-ex3').classList.add('active');window.scrollTo(0,0);initEx3(data);}
+}
+function route(){showPage('shiur1_ex1');}
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function launchConfetti(){const w=document.getElementById('confettiWrap');w.innerHTML='';const colors=['#4A5FD5','#E8A020','#22c55e','#ef4444','#a855f7','#06b6d4'];for(let i=0;i<90;i++){const el=document.createElement('div');el.className='cp';el.style.cssText='left:'+Math.random()*100+'vw;background:'+colors[i%colors.length]+';animation-duration:'+(1.5+Math.random()*2)+'s;animation-delay:'+Math.random()*.6+'s;width:'+(6+Math.random()*8)+'px;height:'+(6+Math.random()*8)+'px;border-radius:'+(Math.random()>.5?'50%':'2px')+';';w.appendChild(el);}setTimeout(()=>w.innerHTML='',4500);}
+function showXPPop(txt,el){const p=document.getElementById('xpPopup');const r=el.getBoundingClientRect();p.style.left=(r.left+r.width/2-30)+'px';p.style.top=(r.top+window.scrollY-20)+'px';p.textContent=txt;p.style.display='block';p.style.animation='none';setTimeout(()=>p.style.animation='floatUp 1s ease forwards',10);setTimeout(()=>p.style.display='none',1100);}
+
+let E1={data:null,idx:0,flipped:false};
+function initEx1(data){E1={data,idx:0,flipped:false};const _ln1=(data.id.match(/shiur(\d+)/)||['','?'])[1];document.getElementById('ex1-pill').textContent='שיעור '+_ln1+' · Lesson '+_ln1;document.getElementById('ex1-name').textContent=(data.name?data.name+' · ':'')+'Exercise 1 of 3: Flip Cards 🔁';renderEx1();}
+function renderEx1(){const area=document.getElementById('ex1-area');const{data,idx}=E1;const cards=data.cards;const pct=Math.round(((idx+1)/cards.length)*100);document.getElementById('ex1-bar').style.width=pct+'%';document.getElementById('ex1-prog-label').textContent=(idx+1)+' / '+cards.length+' כרטיסים · cards';document.getElementById('ex1-prog-pct').textContent=pct+'%';const c=cards[idx];const isLast=idx===cards.length-1;const tagClass=c.isReview?'tag-particle':c.pos==='verb'?'tag-verb':c.pos==='noun'?'tag-noun':'tag-particle';const tagText=c.isReview?'🔄 חזרה · Review':c.pos==='verb'?'🔵 פועל · Verb':c.pos==='noun'?'⬤ שם עצם · Noun':'🟡 מילית · Particle';const genderText=c.gender==='M'?'♂':c.gender==='F'?'♀':'';let tipHtml='';if(c.tip){tipHtml='<div class="grammar-tip" id="gramTip"><strong>💡 Grammar · דקדוק</strong><br>'+c.tip.split('\n').join('<br>')+'</div>';}let pairHtml='';if(c.pos==='verb'){pairHtml='<div class="pair-indicator"><div class="pair-dot male '+(c.gender==='M'?'active':'')+'"></div><span style="font-size:11px">'+(c.gender==='M'?'♂ זָכָר · Masculine':'♀ נְקֵבָה · Feminine')+'</span><div class="pair-dot female '+(c.gender==='F'?'active':'')+'"></div></div>';}area.innerHTML='<div class="ex1-instruction"><div class="inst-he">לחץ על הכרטיס כדי לגלות את התרגום</div><div class="inst-en">👆 Tap each card to reveal the translation, then click <strong>Next</strong>. Be honest — learning works best when you are!</div></div><div class="card-counter" dir="ltr">'+(idx+1)+' / '+cards.length+'</div>'+pairHtml+'<div class="flip-scene" id="flipScene" tabindex="0" role="button" aria-label="Flip card"><div class="flip-card" id="flipCard"><div class="flip-face flip-front"><div class="card-tag '+tagClass+'">'+tagText+'</div><div class="gender-badge">'+genderText+'</div><div class="card-he">'+c.he+'</div><div class="card-translit">'+c.translit+'</div><div class="tap-hint">👆 הפוך · Flip</div></div><div class="flip-face flip-back"><div class="card-he" style="font-size:clamp(22px,5vw,30px);font-weight:800;margin-bottom:10px">'+c.en+'</div><div class="card-example">'+c.example+'</div><div class="card-example-en">'+(c.exampleEn||'')+'</div></div></div></div>'+tipHtml+'<div class="card-nav"><button class="btn-card-nav btn-prev" id="btnPrev" '+(idx===0?'disabled':'')+' onclick="ex1Prev()">→ הקודם</button><button class="btn-card-nav btn-next" onclick="ex1Next()">'+(isLast?'סיים ✓ Finish':'הבא ← Next')+'</button></div>';const scene=document.getElementById('flipScene');const card=document.getElementById('flipCard');scene.addEventListener('click',()=>ex1Flip(card,c));scene.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();ex1Flip(card,c);}});}
+function ex1Flip(card,c){E1.flipped=!E1.flipped;card.classList.toggle('flipped',E1.flipped);if(E1.flipped&&c.tip){const tip=document.getElementById('gramTip');if(tip)tip.style.display='block';}}
+function ex1Next(){if(E1.idx>=E1.data.cards.length-1){ex1Finish();return;}E1.idx++;E1.flipped=false;renderEx1();}
+function ex1Prev(){if(E1.idx<=0)return;E1.idx--;E1.flipped=false;renderEx1();}
+function ex1Finish(){document.getElementById('ex1-bar').style.width='100%';document.getElementById('ex1-area').innerHTML='<div class="finish-screen show" style="padding:40px 20px;text-align:center"><div style="font-size:64px;margin-bottom:16px">🎉</div><div style="font-size:22px;font-weight:800;color:var(--deep);margin-bottom:8px">כל הכבוד! · Well done!</div><div style="font-size:14px;color:var(--muted);margin-bottom:12px">עברת על '+E1.data.cards.length+' כרטיסים<br>You reviewed all '+E1.data.cards.length+' cards</div><div style="font-size:13px;color:var(--muted);margin-bottom:28px">עכשיו עבור לחלק הבא: בוחן בחירה מרובה<br>Now move to the multiple-choice quiz</div><button class="btn-continue-big" onclick="goto(\''+E1.data.next+'\')">המשך לתרגיל 2 · Next: Quiz →</button></div>';markDone(E1.data.id,20);}
+document.addEventListener('keydown',e=>{if(currentPage&&currentPage.includes('ex1')){if(e.key==='ArrowRight'||e.key==='ArrowLeft')ex1Next();if(e.key===' '||e.key==='Enter'&&e.target.tagName!=='BUTTON'){const card=document.getElementById('flipCard');const s=E1.data;if(card&&s)ex1Flip(card,s.cards[E1.idx]);}}});
+
+let E2={data:null,qs:[],idx:0,hearts:3,xp:0,combo:0,maxCombo:0,correct:0,answered:false};
+const XP_C=10,XP_COMBO=5;
+function initEx2(data){E2={data,qs:shuffle(data.questions).slice(0,data.total_q||10),idx:0,hearts:3,xp:0,combo:0,maxCombo:0,correct:0,answered:false};const _ln2=(data.id.match(/shiur(\d+)/)||['','?'])[1];document.getElementById('ex2-pill').textContent='שיעור '+_ln2+' · Lesson '+_ln2;document.getElementById('ex2-name').textContent='Exercise 2 of 3: Vocabulary Quiz 🃏';document.getElementById('ex2-xp').textContent='0';updateHearts(2,3);updateProgress(2,0,E2.qs.length);renderEx2Q();}
+function renderEx2Q(){const area=document.getElementById('ex2-area');if(E2.idx>=E2.qs.length){ex2Success();return;}E2.answered=false;const q=E2.qs[E2.idx];area.innerHTML='<div class="ex-instruction"><div class="inst-row"><div class="inst-he">ראה את המילה בעברית — בחר את התרגום הנכון</div></div><div class="inst-en">👀 Look at the Hebrew word — choose the correct English translation. You have 3 lives ❤️. <strong>You need 70%+ to pass and unlock the next exercise.</strong></div></div><div class="q-card" id="ex2-qcard"><div class="q-hebrew">'+q.he+'</div><div class="q-translit">'+q.translit+'</div><div class="opts-2col" id="ex2-opts"></div></div><div class="feedback-banner" id="ex2-fb"></div><button class="continue-btn" id="ex2-cont">המשך · Continue →</button>';const grid=document.getElementById('ex2-opts');shuffle(q.options).forEach(opt=>{const btn=document.createElement('button');btn.className='opt-btn';btn.textContent=opt;btn.addEventListener('click',()=>ex2Check(btn,opt,q));grid.appendChild(btn);});document.getElementById('ex2-cont').addEventListener('click',()=>ex2Next());}
+function ex2Check(btn,chosen,q){if(E2.answered)return;E2.answered=true;const ok=chosen===q.correct;document.querySelectorAll('#ex2-opts .opt-btn').forEach(b=>{b.disabled=true;if(b.textContent===q.correct)b.classList.add('show-answer');});if(ok){E2.correct++;E2.combo++;if(E2.combo>E2.maxCombo)E2.maxCombo=E2.combo;const earned=XP_C+(E2.combo>=3?XP_COMBO:0);E2.xp+=earned;btn.classList.add('sel-correct');document.getElementById('ex2-qcard').classList.add('correct');ex2Feedback(true,q.hint,q.example);showXPPop('+'+earned+'⭐',btn);}else{E2.combo=0;E2.hearts--;btn.classList.add('sel-wrong');document.getElementById('ex2-qcard').classList.add('wrong');ex2Feedback(false,q.hint,q.example);updateHearts(2,E2.hearts);if(E2.hearts<=0){setTimeout(ex2Fail,1300);return;}}document.getElementById('ex2-xp').textContent=E2.xp;document.getElementById('ex2-cont').classList.add('show');updateProgress(2,E2.idx+1,E2.qs.length);}
+function ex2Feedback(ok,hint,example){const fb=document.getElementById('ex2-fb');fb.className='feedback-banner show '+(ok?'fb-ok':'fb-err');fb.innerHTML='<div class="fb-row1">'+(ok?'✅':'❌')+' '+(ok?'כֵּן! נָכוֹן! · Correct!':'לֹא נָכוֹן · Not quite')+'</div>'+(hint?'<div class="fb-sub">'+hint+'</div>':'')+(example?'<div class="fb-example">'+example+'</div>':'');}
+function ex2Next(){E2.idx++;renderEx2Q();updateProgress(2,E2.idx,E2.qs.length);}
+function ex2Success(){const bonus=E2.correct===E2.qs.length?20:0;if(bonus)E2.xp+=bonus;const acc=Math.round(E2.correct/E2.qs.length*100);if(acc<70){document.getElementById('ex2-area').innerHTML='<div class="result-screen show"><div class="result-icon">📚</div><div class="result-title">Almost! · עוד קצת!</div><div class="result-sub">You scored <strong>'+acc+'%</strong> — you need <strong>70%</strong> to continue.<br>Review the flip cards and try again!</div><div class="result-stats"><div class="rstat"><div class="rstat-n">'+acc+'%</div><div class="rstat-l">Your score</div></div><div class="rstat"><div class="rstat-n">70%</div><div class="rstat-l">Needed ✓</div></div><div class="rstat"><div class="rstat-n">'+E2.correct+'/'+E2.qs.length+'</div><div class="rstat-l">Correct</div></div></div><div class="result-btns"><button class="btn-go-next" onclick="initEx2(E2.data)">Try again 🔄 · נסה שוב</button><button class="btn-retry" onclick="goto(\''+E2.data.id.replace('_ex2','_ex1')+'\')">← Review Flip Cards first</button></div></div>';document.getElementById('ex2-bar').style.width=acc+'%';return;}document.getElementById('ex2-area').innerHTML='<div class="result-screen show"><div class="result-icon">🏆</div><div class="result-title">כל הכבוד! · Well done!</div><div class="result-sub">סיימת את הבוחן · Quiz complete — '+acc+'% ✓</div><div class="result-stats"><div class="rstat"><div class="rstat-n">'+E2.xp+'⭐</div><div class="rstat-l">XP earned</div></div><div class="rstat"><div class="rstat-n">'+acc+'%</div><div class="rstat-l">Accuracy · דיוק</div></div><div class="rstat"><div class="rstat-n">'+E2.maxCombo+'🔥</div><div class="rstat-l">Best combo</div></div></div><div class="result-btns"><button class="btn-go-next" onclick="goto(\''+E2.data.next+'\')">המשך לתרגיל 3 · Next: Grammar →</button><button class="btn-retry" onclick="initEx2(E2.data)">נסה שוב · Try again</button></div></div>';document.getElementById('ex2-bar').style.width='100%';launchConfetti();markDone(E2.data.id,(E2.data.xp||50)+E2.xp);}
+function ex2Fail(){document.getElementById('ex2-area').innerHTML='<div class="result-screen show"><div class="result-icon">💔</div><div class="result-title">נגמרו הלבבות · No more hearts!</div><div class="result-sub">לא נורא — נסה שוב! · Don\'t worry — try again!</div><div class="result-btns"><button class="btn-go-next" onclick="initEx2(E2.data)">נסה שוב · Try again 🔄</button><button class="btn-retry" onclick="goto(\''+E2.data.id.replace('_ex2','_ex1')+'\')">חזור לכרטיסים · Back to cards</button></div></div>';}
+
+let E3={data:null,qs:[],idx:0,hearts:3,xp:0,combo:0,maxCombo:0,correct:0,answered:false};
+function initEx3(data){E3={data,qs:shuffle(data.questions),idx:0,hearts:3,xp:0,combo:0,maxCombo:0,correct:0,answered:false};const _ln3=(data.id.match(/shiur(\d+)/)||['','?'])[1];document.getElementById('ex3-pill').textContent='שיעור '+_ln3+' · Lesson '+_ln3;document.getElementById('ex3-name').textContent='Exercise 3 of 3: Sentence Completion ✍️';document.getElementById('ex3-xp').textContent='0';updateHearts(3,3);updateProgress(3,0,E3.qs.length);renderEx3Q();}
+function renderEx3Q(){const area=document.getElementById('ex3-area');if(E3.idx>=E3.qs.length){ex3Success();return;}E3.answered=false;const q=E3.qs[E3.idx];const usePrePost=q.pre!==undefined;const isTypeA=!usePrePost&&q.type==='A';let sentenceHtml='';if(usePrePost){const preText=q.pre?'<span class="q-pre">'+q.pre+'</span> ':'';const postText=q.post?' <span class="q-post">'+q.post+'</span>':'';sentenceHtml='<div class="q-sentence" dir="rtl">'+preText+'<span class="blank-slot">_______</span>'+postText+'</div>';}else if(isTypeA){sentenceHtml='<div class="q-sentence" dir="rtl">'+q.blank.replace('_______','<span class="blank-slot">_______</span>')+'</div>';}const opts=shuffle([...q.options]);const isTypeB=opts.length>0&&typeof opts[0]==='object'&&opts[0]!==null;const optsHtml=isTypeB?'<div class="opts-1col" id="ex3-opts">'+opts.map(o=>'<button class="opt-btn" dir="rtl" data-val="'+o.text.replace(/"/g,'&quot;')+'">'+o.text+'</button>').join('')+'</div>':'<div class="opts-2col" id="ex3-opts">'+opts.map(o=>'<button class="opt-btn" data-val="'+o.replace(/"/g,'&quot;')+'">'+o+'</button>').join('')+'</div>';area.innerHTML='<div class="ex-instruction"><div class="inst-row"><div class="inst-he">בחר את הצורה הנכונה להשלמת המשפט</div></div><div class="inst-en">📖 Read the English hint — choose the correct missing Hebrew word. 3 lives ❤️ · <strong>70%+ to pass.</strong></div></div><div class="q-card" id="ex3-qcard"><div class="q-en">'+(q.en||'')+'</div>'+sentenceHtml+optsHtml+'</div><div class="feedback-banner" id="ex3-fb"></div><button class="continue-btn" id="ex3-cont">המשך · Continue →</button>';document.querySelectorAll('#ex3-opts .opt-btn').forEach(btn=>{btn.addEventListener('click',()=>ex3Check(btn,q));});document.getElementById('ex3-cont').addEventListener('click',()=>ex3Next());}
+function ex3Check(btn,q){if(E3.answered)return;E3.answered=true;const chosen=btn.dataset.val;let correctStr;if(q.pre!==undefined){correctStr=q.options[q.correct];}else{correctStr=q.correct;}const ok=chosen===correctStr;document.querySelectorAll('#ex3-opts .opt-btn').forEach(b=>{b.disabled=true;if(b.dataset.val===correctStr)b.classList.add('show-answer');});if(ok){E3.correct++;E3.combo++;if(E3.combo>E3.maxCombo)E3.maxCombo=E3.combo;const earned=XP_C+(E3.combo>=3?XP_COMBO:0);E3.xp+=earned;document.getElementById('ex3-xp').textContent=E3.xp;btn.classList.add('sel-correct');document.getElementById('ex3-qcard').classList.add('correct');const ruleText=q.rule||(q.feedback&&q.feedback.rule)||'';ex3Feedback(true,ruleText);showXPPop('+'+earned+'⭐',btn);}else{E3.combo=0;E3.hearts--;btn.classList.add('sel-wrong');document.getElementById('ex3-qcard').classList.add('wrong');const ruleText=q.rule||(q.feedback&&q.feedback.rule)||'';ex3Feedback(false,ruleText);updateHearts(3,E3.hearts);if(E3.hearts<=0){setTimeout(ex3Fail,900);return;}}const cont=document.getElementById('ex3-cont');if(cont)cont.classList.add('show');}
+function ex3Feedback(ok,rule){const fb=document.getElementById('ex3-fb');fb.className='feedback-banner show '+(ok?'fb-ok':'fb-err');fb.innerHTML='<div class="fb-row1">'+(ok?'✅':'❌')+' '+(ok?'כֵּן! נָכוֹן! · Correct!':'לֹא נָכוֹן · Not quite')+'</div>'+(rule?'<div class="fb-rule">'+rule+'</div>':'');}
+function ex3Next(){E3.idx++;renderEx3Q();updateProgress(3,E3.idx,E3.qs.length);}
+function ex3Success(){const bonus=E3.correct===E3.qs.length?20:0;if(bonus)E3.xp+=bonus;const acc=Math.round(E3.correct/E3.qs.length*100);const nextLesson=parseInt(E3.data.id.match(/shiur(\d+)/)[1])+1;const isLast=nextLesson>26;if(acc<70){document.getElementById('ex3-area').innerHTML='<div class="result-screen show"><div class="result-icon">📖</div><div class="result-title">Almost! · עוד קצת!</div><div class="result-sub">You scored <strong>'+acc+'%</strong> — you need <strong>70%</strong> to complete the lesson.<br>Review the vocab quiz and try again!</div><div class="result-stats"><div class="rstat"><div class="rstat-n">'+acc+'%</div><div class="rstat-l">Your score</div></div><div class="rstat"><div class="rstat-n">70%</div><div class="rstat-l">Needed ✓</div></div><div class="rstat"><div class="rstat-n">'+E3.correct+'/'+E3.qs.length+'</div><div class="rstat-l">Correct</div></div></div><div class="result-btns"><button class="btn-go-next" onclick="initEx3(E3.data)">Try again 🔄 · נסה שוב</button><button class="btn-retry" onclick="goto(\''+E3.data.id.replace('_ex3','_ex2')+'\')">← Review Vocab Quiz first</button></div></div>';document.getElementById('ex3-bar').style.width=acc+'%';return;}document.getElementById('ex3-area').innerHTML='<div class="result-screen show"><div class="result-icon">🌟</div><div class="result-title">שיעור הושלם! · Lesson Complete!</div><div class="result-sub">סיימת את כל 3 התרגילים · All 3 exercises done — '+acc+'% ✓</div><div class="result-stats"><div class="rstat"><div class="rstat-n">'+E3.xp+'⭐</div><div class="rstat-l">XP</div></div><div class="rstat"><div class="rstat-n">'+acc+'%</div><div class="rstat-l">Accuracy</div></div><div class="rstat"><div class="rstat-n">'+E3.maxCombo+'🔥</div><div class="rstat-l">Combo</div></div></div><div class="result-btns">'+(isLast?'':'<button class="btn-go-next" onclick="goto(\''+E3.data.next+'\')">המשך לשיעור '+nextLesson+' · Next Lesson →</button>')+'</div></div>';document.getElementById('ex3-bar').style.width='100%';launchConfetti();markDone(E3.data.id,(E3.data.xp||50)+E3.xp);}
+function ex3Fail(){document.getElementById('ex3-area').innerHTML='<div class="result-screen show"><div class="result-icon">💔</div><div class="result-title">נגמרו הלבבות · No more hearts!</div><div class="result-sub">נסה שוב — את יכול! · Try again — you can do it!</div><div class="result-btns"><button class="btn-go-next" onclick="initEx3(E3.data)">נסה שוב · Try again 🔄</button></div></div>';}
+
+function updateHearts(ex,n){['h1','h2','h3'].forEach((id,i)=>{const el=document.getElementById('ex'+ex+'-'+id);if(el)el.classList.toggle('lost',i>=n);});}
+function updateProgress(ex,idx,total){const pct=Math.round((idx/total)*100);const bar=document.getElementById('ex'+ex+'-bar');const lbl=document.getElementById('ex'+ex+'-prog-label');const pctEl=document.getElementById('ex'+ex+'-prog-pct');if(bar)bar.style.width=pct+'%';if(lbl)lbl.textContent=idx+' / '+total+' שאלות · questions';if(pctEl)pctEl.textContent=pct+'%';const wrap=document.getElementById('ex'+ex+'-milestones');if(wrap){wrap.innerHTML='';[.25,.5,.75,1].forEach(m=>{const d=document.createElement('div');const p=idx/total;d.className='mdot'+(p>m?' reached':p>=m-.01?' current':'');wrap.appendChild(d);});}}
+
+(function(){route();})();
+</script>
+
+<footer style="background:#0f172a;color:rgba(255,255,255,0.7);padding:30px 24px;text-align:center;font-family:-apple-system,sans-serif;font-size:13px;margin-top:0;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:8px;">🦉 lingoStudio</div>
+    <div style="margin-bottom:14px;color:rgba(255,255,255,0.6);">Hebräisch lernen in Zürich — online oder vor Ort</div>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
+      <a href="https://lingostudio.ch/lernen/" style="color:#fbbf24;text-decoration:none;font-weight:700;">🔤 500 Wörter — Gratis</a>
+      <a href="https://lingostudio.ch/hebrew-course-zurich.html" style="color:rgba(255,255,255,0.8);text-decoration:none;">Courses</a>
+      <a href="https://lingostudio.ch/kontakt.html" style="color:rgba(255,255,255,0.8);text-decoration:none;">Kontakt</a>
+      <a href="https://lingostudio.ch" style="color:rgba(255,255,255,0.8);text-decoration:none;">lingostudio.ch</a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:12px;color:rgba(255,255,255,0.4);font-size:11px;">
+      © 2026 lingoStudio ·
+      <a href="https://lingostudio.ch/datenschutz.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">Datenschutz</a> ·
+      <a href="https://lingostudio.ch/agb.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">AGB</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
