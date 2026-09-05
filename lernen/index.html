@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hebräisch kostenlos lernen — 500 Wörter | lingoStudio Zürich</title>
+    <meta name="description" content="Lerne Hebräisch kostenlos mit lingoStudio Zürich. 26 Lektionen, 500 Wörter, interaktive Übungen — Anfänger bis B2.">
+    <link rel="canonical" href="https://lingostudio.ch/lernen/">
+    <meta property="og:title" content="Hebräisch kostenlos lernen — 500 Wörter | lingoStudio Zürich">
+    <meta property="og:description" content="Lerne Hebräisch kostenlos mit lingoStudio Zürich. 26 Lektionen, 500 Wörter, interaktive Übungen — Anfänger bis B2.">
+    <meta property="og:url" content="https://lingostudio.ch/lernen/">
+    <meta property="og:site_name" content="lingoStudio Zürich">
+    <meta name="robots" content="index, follow">
+<style>
+:root{
+  --g1:#4A5FD5;--g2:#7B4FA8;--g3:#C56B9E;
+  --acc:#E8A020;--acc2:#F5C842;
+  --ban1:#F5A623;--ban2:#E8415A;
+  --bg:#F0F4F8;--card:#FFFFFF;
+  --ink:#1A1A2E;--muted:#6B7280;
+  --grad:linear-gradient(135deg,var(--g1),var(--g2),var(--g3));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
+
+/* ── BANNER ── */
+.banner{
+  background:linear-gradient(90deg,var(--ban1),var(--ban2));
+  padding:10px 24px;text-align:center;
+  font-size:13px;font-weight:600;color:#fff;letter-spacing:.3px;
+}
+.banner a{color:#fff;font-weight:800;text-decoration:underline}
+
+/* ── NAV ── */
+nav{
+  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+  padding:14px 60px;display:flex;align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(74,95,213,.12);
+  position:sticky;top:0;z-index:100;
+}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo-text{font-size:20px;font-weight:800;color:var(--ink)}
+.nav-logo-text span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--g2)}
+.nav-cta{
+  background:var(--grad);color:#fff;
+  padding:10px 24px;border-radius:50px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  box-shadow:0 4px 16px rgba(123,79,168,.35);
+  transition:all .2s;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(123,79,168,.45)}
+
+/* ── HERO ── */
+.hero{
+  background:var(--grad);
+  padding:60px 60px 70px;
+  text-align:center;position:relative;overflow:hidden;
+  color:#fff;
+}
+.hero::before{
+  content:'א';font-family:'David',Georgia,'Times New Roman',serif;
+  font-size:600px;font-weight:900;
+  color:rgba(255,255,255,.04);
+  position:absolute;right:-80px;top:50%;transform:translateY(-52%);
+  line-height:1;pointer-events:none;user-select:none;
+}
+.hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  padding:7px 18px;border-radius:30px;
+  font-size:12px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:#fff;
+  margin-bottom:28px;backdrop-filter:blur(8px);
+  animation:fadeUp .5s ease both;
+}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--acc2);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{
+  font-size:clamp(42px,6vw,76px);font-weight:900;
+  line-height:1.05;letter-spacing:-2px;
+  margin-bottom:22px;animation:fadeUp .5s .1s ease both;
+}
+.hero h1 em{font-style:normal;color:var(--acc2)}
+.hero-sub{
+  font-size:clamp(16px,2vw,20px);font-weight:300;
+  color:rgba(255,255,255,.82);line-height:1.7;
+  max-width:560px;margin:0 auto 40px;animation:fadeUp .5s .2s ease both;
+}
+.hero-sub b{color:#fff;font-weight:600}
+.hero-btns{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp .5s .3s ease both;
+}
+.btn-hero-main{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--acc);color:var(--ink);
+  padding:16px 36px;border-radius:50px;
+  font-size:17px;font-weight:800;text-decoration:none;
+  box-shadow:0 6px 28px rgba(232,160,32,.45);transition:all .2s;
+}
+.btn-hero-main:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(232,160,32,.55)}
+.btn-hero-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  border:2px solid rgba(255,255,255,.4);color:#fff;
+  padding:16px 30px;border-radius:50px;
+  font-size:16px;font-weight:600;text-decoration:none;
+  backdrop-filter:blur(6px);transition:all .2s;
+}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.7)}
+.hero-stats{
+  display:flex;gap:0;justify-content:center;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  border-radius:20px;padding:0;margin:52px auto 0;
+  max-width:520px;backdrop-filter:blur(8px);overflow:hidden;
+  animation:fadeUp .5s .4s ease both;
+}
+.hstat{flex:1;padding:20px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.15)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-size:30px;font-weight:900;color:#fff}
+.hstat-n sup{font-size:15px;color:var(--acc2)}
+.hstat-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px;font-weight:400}
+.wave{display:block;width:100%;margin-bottom:-2px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTIONS ── */
+.section{padding:48px 60px}
+.section-alt{background:#fff}
+.sec-tag{
+  display:inline-block;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--g2);margin-bottom:14px;
+}
+.sec-h2{
+  font-size:clamp(28px,4vw,46px);font-weight:800;
+  line-height:1.1;letter-spacing:-1px;
+  margin-bottom:16px;max-width:600px;
+}
+.sec-sub{
+  font-size:16px;color:var(--muted);line-height:1.7;
+  max-width:540px;margin-bottom:50px;font-weight:400;
+}
+
+/* ── HOW IT WORKS ── */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.how-card{
+  background:var(--bg);border-radius:22px;padding:32px 26px;
+  border:1.5px solid rgba(74,95,213,.1);
+  transition:all .2s;position:relative;overflow:hidden;
+}
+.how-card:hover{transform:translateY(-4px);border-color:var(--g2);box-shadow:0 16px 48px rgba(123,79,168,.12)}
+.how-num{font-size:72px;font-weight:900;color:rgba(74,95,213,.06);position:absolute;top:8px;right:16px;line-height:1}
+.how-icon{font-size:38px;margin-bottom:18px;display:block}
+.how-title{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--ink)}
+.how-desc{font-size:14px;color:var(--muted);line-height:1.65}
+.how-label{
+  display:inline-block;margin-top:18px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;
+  background:linear-gradient(135deg,rgba(74,95,213,.1),rgba(123,79,168,.1));
+  color:var(--g2);
+}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-list{display:flex;flex-direction:column;gap:24px}
+.why-item{display:flex;gap:16px}
+.why-icon{
+  width:46px;height:46px;border-radius:14px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(74,95,213,.1),rgba(123,79,168,.1));
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.why-t{font-size:15px;font-weight:700;margin-bottom:4px}
+.why-d{font-size:13px;color:var(--muted);line-height:1.6}
+.why-visual{
+  background:var(--grad);border-radius:28px;
+  padding:40px 36px;color:#fff;position:relative;overflow:hidden;
+}
+.why-visual::before{
+  content:'שָׁלוֹם';font-family:'David',Georgia,'Times New Roman',serif;
+  font-size:90px;font-weight:900;color:rgba(255,255,255,.08);
+  position:absolute;bottom:-10px;right:-10px;line-height:1;
+}
+.wv-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px}
+.wv-words{display:flex;flex-direction:column;gap:11px}
+.wv-word{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px}
+.wv-he{font-family:'David',Georgia,'Times New Roman',serif;font-size:20px;font-weight:900;direction:rtl;min-width:80px}
+.wv-bar{flex:1;height:5px;background:rgba(255,255,255,.15);border-radius:5px;overflow:hidden}
+.wv-fill{height:100%;background:var(--acc2);border-radius:5px}
+.wv-en{font-size:12px;color:rgba(255,255,255,.6);min-width:60px;text-align:right}
+
+/* ── CTA ── */
+.cta-section{
+  background:var(--grad);
+  padding:110px 48px;text-align:center;
+  color:#fff;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'500';font-size:400px;font-weight:900;
+  color:rgba(255,255,255,.04);
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;line-height:1;
+}
+.cta-h2{
+  font-size:clamp(34px,5vw,62px);font-weight:900;
+  line-height:1.1;letter-spacing:-1.5px;
+  margin-bottom:18px;position:relative;z-index:1;
+}
+.cta-h2 em{font-style:normal;color:var(--acc2)}
+.cta-sub{font-size:17px;color:rgba(255,255,255,.75);max-width:420px;margin:0 auto 44px;line-height:1.65;position:relative;z-index:1}
+.btn-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--acc);color:var(--ink);
+  padding:19px 48px;border-radius:50px;
+  font-size:18px;font-weight:800;text-decoration:none;
+  box-shadow:0 8px 36px rgba(232,160,32,.5);transition:all .2s;position:relative;z-index:1;
+}
+.btn-cta:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(232,160,32,.6)}
+.cta-note{font-size:12px;color:rgba(255,255,255,.4);margin-top:18px;position:relative;z-index:1}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:rgba(255,255,255,.6);padding:40px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.foot-logo{font-size:18px;font-weight:800;color:#fff}
+.foot-links{display:flex;gap:22px}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--acc2)}
+.foot-copy{font-size:12px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:12px 20px}
+  .nav-links{display:none}
+  .hero{padding:50px 24px 60px}
+  .section{padding:36px 24px}
+  .how-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:16px;text-align:center;padding:28px 24px}
+  .foot-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ BANNER ═══ -->
+<div class="banner">
+  🎓 קורס עברית מקוון · Learn Hebrew Online — <a href="https://lingostudio.ch" target="_blank">lingostudio.ch</a>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <span class="nav-logo">
+    <span style="font-size:24px">🦉</span>
+    <div class="nav-logo-text">lingo<span>Studio</span></div>
+  </span>
+  <div class="nav-links">
+    <a href="#how" onclick="event.preventDefault();document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</a>
+    <a href="#why" onclick="event.preventDefault();document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why us</a>
+    <a href="https://lingostudio.ch" target="_blank">lingostudio.ch</a>
+  </div>
+  <a class="nav-cta" href="https://lingostudio.ch/lernen/curriculum/" style="text-decoration:none">Start Learning →</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      FREE COURSE · 26 LESSONS · 500 WORDS
+    </div>
+    <h1>Learn Hebrew<br>in <em>500 Words</em></h1>
+    <p class="hero-sub">
+      A structured, story-driven course by <b>lingoStudio</b> —
+      master 500 core words and you can read, speak and understand real Hebrew.
+    </p>
+    <div class="hero-btns">
+      <a class="btn-hero-main" href="https://lingostudio.ch/lernen/curriculum/">🦉 &nbsp;Start for free &nbsp;→</a>
+      <a class="btn-hero-ghost" href="#how" onclick="event.preventDefault();document.getElementById('how').scrollIntoView({behavior:'smooth'})" style="text-decoration:none">See how it works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n">500<sup>+</sup></div><div class="hstat-l">Core words</div></div>
+      <div class="hstat"><div class="hstat-n">26</div><div class="hstat-l">Lessons</div></div>
+      <div class="hstat"><div class="hstat-n">5</div><div class="hstat-l">Tests</div></div>
+      <div class="hstat"><div class="hstat-n">3</div><div class="hstat-l">Exercise types</div></div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F0F4F8"/>
+</svg>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="section" id="how">
+  <div class="sec-tag">How it works</div>
+  <h2 class="sec-h2">Three exercises per lesson.</h2>
+  <p class="sec-sub">Every lesson follows the same proven rhythm — vocabulary, grammar patterns, then real sentences from the story.</p>
+  <div class="how-grid">
+    <div class="how-card">
+      <span class="how-num">1</span>
+      <span class="how-icon">🃏</span>
+      <div class="how-title">Vocabulary Quiz</div>
+      <p class="how-desc">10 flashcard questions. See a Hebrew word with full vowel marks, choose the right meaning. 3 hearts. Score 80%+ to pass.</p>
+      <span class="how-label">אוצר מילים</span>
+    </div>
+    <div class="how-card">
+      <span class="how-num">2</span>
+      <span class="how-icon">🔁</span>
+      <div class="how-title">Flip Cards</div>
+      <p class="how-desc">Tap to flip, then honestly: did you know it? Cards you miss come back until every word is mastered. No hearts — self-assessment.</p>
+      <span class="how-label">כרטיסיות</span>
+    </div>
+    <div class="how-card">
+      <span class="how-num">3</span>
+      <span class="how-icon">✍️</span>
+      <div class="how-title">Sentence Completion</div>
+      <p class="how-desc">Read a sentence from the lesson story. Find the missing word. 4 choices. Sentences come straight from the real lesson text.</p>
+      <span class="how-label">השלמת משפט</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY LINGOSTUDIO ═══ -->
+<section class="section section-alt" id="why">
+  <div class="why-grid">
+    <div>
+      <div class="sec-tag">Why LingoStudio</div>
+      <h2 class="sec-h2">Designed for real beginners.</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-icon">🎯</div>
+          <div>
+            <div class="why-t">Full vowel marks — ניקוד</div>
+            <div class="why-d">Every Hebrew word shown with complete vowel notation. No guessing. No prior knowledge required.</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">📖</div>
+          <div>
+            <div class="why-t">Story-driven learning</div>
+            <div class="why-d">Follow the Gidoni family and Abraham the immigrant through real Israeli daily life.</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🏆</div>
+          <div>
+            <div class="why-t">XP, streaks & milestone badges</div>
+            <div class="why-d">Progress feels rewarding from lesson one. Unlock badges at every unit milestone.</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">👨‍🏫</div>
+          <div>
+            <div class="why-t">Controlled lessons pacing</div>
+            <div class="why-d">You can open units as the class progresses.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="wv-label">Sample — Lesson 1 vocabulary</div>
+      <div class="wv-words">
+        <div class="wv-word"><span class="wv-he">שָׁלוֹם</span><div class="wv-bar"><div class="wv-fill" style="width:95%"></div></div><span class="wv-en">Hello</span></div>
+        <div class="wv-word"><span class="wv-he">אֲנִי</span><div class="wv-bar"><div class="wv-fill" style="width:90%"></div></div><span class="wv-en">I</span></div>
+        <div class="wv-word"><span class="wv-he">מֵאֵיפֹה</span><div class="wv-bar"><div class="wv-fill" style="width:78%"></div></div><span class="wv-en">From where?</span></div>
+        <div class="wv-word"><span class="wv-he">גַּם</span><div class="wv-bar"><div class="wv-fill" style="width:88%"></div></div><span class="wv-en">Also</span></div>
+        <div class="wv-word"><span class="wv-he">כֵּן / לֹא</span><div class="wv-bar"><div class="wv-fill" style="width:98%"></div></div><span class="wv-en">Yes / No</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+  <h2 class="cta-h2">Ready to start your<br><em>Hebrew journey</em>?</h2>
+  <p class="cta-sub">26 lessons. 500 words. From zero to reading real Hebrew sentences. Completely free.</p>
+  <a class="btn-cta" href="https://lingostudio.ch/lernen/curriculum/">🦉 &nbsp;View all lessons &nbsp;→</a>
+  <div class="cta-note">No account needed · Free forever · Start any lesson</div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="background:#0f172a;color:rgba(255,255,255,0.7);padding:30px 24px;text-align:center;font-family:-apple-system,sans-serif;font-size:13px;margin-top:0;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:8px;">🦉 lingoStudio</div>
+    <div style="margin-bottom:14px;color:rgba(255,255,255,0.6);">Hebräisch lernen in Zürich — online oder vor Ort</div>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
+      <a href="https://lingostudio.ch/lernen/" style="color:#fbbf24;text-decoration:none;font-weight:700;">🔤 500 Wörter — Gratis</a>
+      <a href="https://lingostudio.ch/hebrew-course-zurich.html" style="color:rgba(255,255,255,0.8);text-decoration:none;">Courses</a>
+      <a href="https://lingostudio.ch/kontakt.html" style="color:rgba(255,255,255,0.8);text-decoration:none;">Kontakt</a>
+      <a href="https://lingostudio.ch" style="color:rgba(255,255,255,0.8);text-decoration:none;">lingostudio.ch</a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:12px;color:rgba(255,255,255,0.4);font-size:11px;">
+      © 2026 lingoStudio ·
+      <a href="https://lingostudio.ch/datenschutz.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">Datenschutz</a> ·
+      <a href="https://lingostudio.ch/agb.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">AGB</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
