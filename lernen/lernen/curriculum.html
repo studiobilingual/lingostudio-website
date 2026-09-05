@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kursübersicht — 500 Hebräische Wörter | lingoStudio Zürich</title>
+    <meta name="description" content="Alle 26 Lektionen auf einen Blick. Kostenloser Hebräischkurs mit Vokabelquiz, Grammatik und Satzergänzung.">
+    <link rel="canonical" href="https://lingostudio.ch/lernen/curriculum/">
+    <meta property="og:title" content="Kursübersicht — 500 Hebräische Wörter | lingoStudio Zürich">
+    <meta property="og:description" content="Alle 26 Lektionen auf einen Blick. Kostenloser Hebräischkurs mit Vokabelquiz, Grammatik und Satzergänzung.">
+    <meta property="og:url" content="https://lingostudio.ch/lernen/curriculum/">
+    <meta property="og:site_name" content="lingoStudio Zürich">
+    <meta name="robots" content="index, follow">
+<style>
+:root{
+  --g1:#4A5FD5;--g2:#7B4FA8;--g3:#C56B9E;
+  --acc:#E8A020;--acc2:#F5C842;
+  --bg:#F0F4F8;--card:#FFFFFF;
+  --ink:#1A1A2E;--muted:#6B7280;
+  --grad:linear-gradient(135deg,var(--g1),var(--g2),var(--g3));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
+
+/* ── NAV ── */
+.cur-nav{
+  background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+  padding:14px 60px;display:flex;align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(74,95,213,.12);
+  position:sticky;top:0;z-index:100;
+}
+.cur-nav-left{display:flex;align-items:center;gap:14px}
+.back-home{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:600;color:var(--g2);
+  text-decoration:none;padding:7px 16px;border-radius:20px;
+  border:1.5px solid rgba(74,95,213,.2);
+  transition:all .2s;
+}
+.back-home:hover{background:rgba(74,95,213,.06);border-color:var(--g1)}
+.cur-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.cur-logo-text{font-size:20px;font-weight:800;color:var(--ink)}
+.cur-logo-text span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cur-nav-right{display:flex;align-items:center;gap:10px}
+.teacher-btn{
+  font-size:13px;color:var(--muted);padding:8px 14px;
+  border:1.5px solid #e2e8f0;border-radius:20px;font-weight:600;
+  text-decoration:none;transition:all .2s;
+}
+.teacher-btn:hover{border-color:var(--g1);color:var(--g1)}
+
+/* ── HERO BANNER ── */
+.cur-hero{
+  background:var(--grad);
+  padding:40px 60px;text-align:center;color:#fff;
+  position:relative;overflow:hidden;
+}
+.cur-hero::before{
+  content:'📚';font-size:200px;
+  color:rgba(255,255,255,.06);
+  position:absolute;right:40px;top:50%;transform:translateY(-50%);
+  line-height:1;pointer-events:none;
+}
+.cur-hero h1{
+  font-size:clamp(28px,4vw,42px);font-weight:900;
+  line-height:1.1;letter-spacing:-1px;
+  margin-bottom:10px;position:relative;z-index:1;
+}
+.cur-hero h1 em{font-style:normal;color:var(--acc2)}
+.cur-hero-sub{
+  font-size:15px;color:rgba(255,255,255,.75);
+  max-width:460px;margin:0 auto;line-height:1.6;
+  position:relative;z-index:1;
+}
+
+/* ── CURRICULUM ── */
+.section{padding:48px 60px}
+.sec-tag{
+  display:inline-block;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--g2);margin-bottom:14px;
+}
+.sec-h2{
+  font-size:clamp(28px,4vw,46px);font-weight:800;
+  line-height:1.1;letter-spacing:-1px;
+  margin-bottom:16px;max-width:600px;
+}
+.sec-sub{
+  font-size:16px;color:var(--muted);line-height:1.7;
+  max-width:540px;margin-bottom:50px;font-weight:400;
+}
+.curr-wrap{max-width:900px}
+.group-block{margin-bottom:28px}
+.group-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:12px;padding-bottom:10px;
+  border-bottom:2px solid rgba(74,95,213,.1);
+}
+.group-title{font-size:15px;font-weight:700;color:var(--g2)}
+.group-badge{
+  font-size:11px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;padding:3px 10px;border-radius:20px;
+  background:rgba(74,95,213,.1);color:var(--g1);
+}
+.curr-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.curr-item{
+  background:#fff;border:1.5px solid rgba(74,95,213,.1);
+  border-radius:14px;padding:14px 12px;
+  display:flex;align-items:center;gap:10px;
+  transition:all .15s;text-decoration:none;color:inherit;
+}
+.curr-item:hover{border-color:var(--g2);transform:translateY(-2px);box-shadow:0 4px 16px rgba(74,95,213,.15)}
+.curr-n{font-size:18px;font-weight:900;color:var(--g2);min-width:24px}
+.curr-t{font-size:12px;font-weight:700;color:var(--ink)}
+.curr-s{font-size:11px;color:var(--muted);margin-top:1px}
+.test-item{background:linear-gradient(135deg,#FFF8E7,#FEF3C7);border-color:#E8A020}
+.test-item .curr-n{color:var(--acc)}
+.final-item{background:linear-gradient(135deg,rgba(74,95,213,.08),rgba(197,107,158,.08));border-color:var(--g2)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:rgba(255,255,255,.6);padding:40px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.foot-logo{font-size:18px;font-weight:800;color:#fff}
+.foot-links{display:flex;gap:22px}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--acc2)}
+.foot-copy{font-size:12px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .cur-nav{padding:12px 16px;flex-wrap:wrap;gap:8px}
+  .cur-hero{padding:30px 24px}
+  .section{padding:36px 24px}
+  footer{flex-direction:column;gap:16px;text-align:center;padding:28px 24px}
+  .foot-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<div class="cur-nav">
+  <div class="cur-nav-left">
+    <a class="back-home" href="https://lingostudio.ch/lernen/curriculum/">← Home</a>
+    <span class="cur-logo">
+      <span style="font-size:22px">🦉</span>
+      <div class="cur-logo-text">lingo<span>Studio</span></div>
+    </span>
+  </div>
+  <div class="cur-nav-right">
+    <span class="teacher-btn">👨‍🏫 מורה</span>
+  </div>
+</div>
+
+<!-- ═══ HERO BANNER ═══ -->
+<div class="cur-hero">
+  <h1>26 lessons. 5 units.<br>One complete <em>journey</em>.</h1>
+  <p class="cur-hero-sub">Each unit ends with a review test. Complete all 26 lessons and the grand finale to earn your certificate.</p>
+</div>
+
+<!-- ═══ CURRICULUM ═══ -->
+<section class="section" id="curriculum">
+  <div class="curr-wrap">
+
+    <!-- UNIT 1 -->
+    <div class="group-block">
+      <div class="group-header">
+        <span class="group-title">📚 Unit 1 — Basics</span>
+        <span class="group-badge">Lessons 1–5</span>
+      </div>
+      <div class="curr-row">
+        <a class="curr-item" href="https://lingostudio.ch/lernen/1/" target="_blank"><span class="curr-n">1</span><div><div class="curr-t">שָׁלוֹם</div><div class="curr-s">Greetings</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/2/" target="_blank"><span class="curr-n">2</span><div><div class="curr-t">שִׂיחָה בָּרְחוֹב</div><div class="curr-s">Street conversation</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/3/" target="_blank"><span class="curr-n">3</span><div><div class="curr-t">יוֹסֵף וְחַנָּה</div><div class="curr-s">What is this?</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/4/" target="_blank"><span class="curr-n">4</span><div><div class="curr-t">הַמּוֹרֶה וְהַתַּלְמִיד</div><div class="curr-s">Verbs M/F</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/5/" target="_blank"><span class="curr-n">5</span><div><div class="curr-t">רַק עִבְרִית</div><div class="curr-s">Plural M/F</div></div></a>
+        <a class="curr-item test-item" href="https://lingostudio.ch/lernen/test-1/" target="_blank"><span class="curr-n">📝</span><div><div class="curr-t">Test 1</div><div class="curr-s">Unit review</div></div></a>
+      </div>
+    </div>
+
+    <!-- UNIT 2 -->
+    <div class="group-block">
+      <div class="group-header">
+        <span class="group-title">📚 Unit 2 — Daily Life</span>
+        <span class="group-badge">Lessons 6–10</span>
+      </div>
+      <div class="curr-row">
+        <a class="curr-item" href="https://lingostudio.ch/lernen/6/" target="_blank"><span class="curr-n">6</span><div><div class="curr-t">אִשָּׁה עוֹבֶדֶת</div><div class="curr-s">Work & professions</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/7/" target="_blank"><span class="curr-n">7</span><div><div class="curr-t">בַּמִּשְׂרָד</div><div class="curr-s">Time & days</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/8/" target="_blank"><span class="curr-n">8</span><div><div class="curr-t">הַמִּשְׁפָּחָה</div><div class="curr-s">Family</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/9/" target="_blank"><span class="curr-n">9</span><div><div class="curr-t">אֲרוּחַת בֹּקֶר</div><div class="curr-s">Food vocabulary</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/10/" target="_blank"><span class="curr-n">10</span><div><div class="curr-t">בְּבֵית קָפֶה</div><div class="curr-s">Café & ordering</div></div></a>
+        <a class="curr-item test-item" href="https://lingostudio.ch/lernen/test-2/" target="_blank"><span class="curr-n">📝</span><div><div class="curr-t">Test 2</div><div class="curr-s">Unit review</div></div></a>
+      </div>
+    </div>
+
+    <!-- UNIT 3 -->
+    <div class="group-block">
+      <div class="group-header">
+        <span class="group-title">📚 Unit 3 — Going Deeper</span>
+        <span class="group-badge">Lessons 11–15</span>
+      </div>
+      <div class="curr-row">
+        <a class="curr-item" href="https://lingostudio.ch/lernen/11/" target="_blank"><span class="curr-n">11</span><div><div class="curr-t">מָה צָרִיךְ לִקְנוֹת?</div><div class="curr-s">Shopping</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/12/" target="_blank"><span class="curr-n">12</span><div><div class="curr-t">בַּמִּסְעָדָה</div><div class="curr-s">Restaurant</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/13/" target="_blank"><span class="curr-n">13</span><div><div class="curr-t">בַּתַּחֲנָה הַמֶּרְכָּזִית</div><div class="curr-s">Bus station</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/14/" target="_blank"><span class="curr-n">14</span><div><div class="curr-t">מָקוֹם טוֹב לְאִשְׁתִּי</div><div class="curr-s">Reading text</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/15/" target="_blank"><span class="curr-n">15</span><div><div class="curr-t">הַטִּיּוּל לְתֵּל חַי</div><div class="curr-s">Past tense intro</div></div></a>
+        <a class="curr-item test-item" href="https://lingostudio.ch/lernen/test-3/" target="_blank"><span class="curr-n">📝</span><div><div class="curr-t">Test 3</div><div class="curr-s">Unit review</div></div></a>
+      </div>
+    </div>
+
+    <!-- UNIT 4 -->
+    <div class="group-block">
+      <div class="group-header">
+        <span class="group-title">📚 Unit 4 — Past & Present</span>
+        <span class="group-badge">Lessons 16–20</span>
+      </div>
+      <div class="curr-row">
+        <a class="curr-item" href="https://lingostudio.ch/lernen/16/" target="_blank"><span class="curr-n">16</span><div><div class="curr-t">הַבִּיקּוּר</div><div class="curr-s">Past tense drill</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/17/" target="_blank"><span class="curr-n">17</span><div><div class="curr-t">הַיָּמִים הָרִאשׁוֹנִים</div><div class="curr-s">Immigrant stories</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/18/" target="_blank"><span class="curr-n">18</span><div><div class="curr-t">צַבְרִים</div><div class="curr-s">Israeli culture</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/19/" target="_blank"><span class="curr-n">19</span><div><div class="curr-t">בַּמּוֹשָׁב</div><div class="curr-s">Hitpa'el verbs</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/20/" target="_blank"><span class="curr-n">20</span><div><div class="curr-t">בַּמַּכֹּלֶת</div><div class="curr-s">Grocery store</div></div></a>
+        <a class="curr-item test-item" href="https://lingostudio.ch/lernen/test-4/" target="_blank"><span class="curr-n">📝</span><div><div class="curr-t">Test 4</div><div class="curr-s">Unit review</div></div></a>
+      </div>
+    </div>
+
+    <!-- UNIT 5 -->
+    <div class="group-block">
+      <div class="group-header">
+        <span class="group-title">📚 Unit 5 — Future & Finale</span>
+        <span class="group-badge">Lessons 21–26</span>
+      </div>
+      <div class="curr-row">
+        <a class="curr-item" href="https://lingostudio.ch/lernen/21/" target="_blank"><span class="curr-n">21</span><div><div class="curr-t">הַמִּכְתָּב</div><div class="curr-s">Future tense</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/22/" target="_blank"><span class="curr-n">22</span><div><div class="curr-t">בַּדֹּאַר</div><div class="curr-s">Post office</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/23/" target="_blank"><span class="curr-n">23</span><div><div class="curr-t">הַשִּׂמְלָה</div><div class="curr-s">Clothes shop</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/24/" target="_blank"><span class="curr-n">24</span><div><div class="curr-t">ד"ר פְּנִינָה</div><div class="curr-s">Birthday party</div></div></a>
+        <a class="curr-item" href="https://lingostudio.ch/lernen/25/" target="_blank"><span class="curr-n">25</span><div><div class="curr-t">לְמַד עִבְרִית</div><div class="curr-s">Signs & imperative</div></div></a>
+        <a class="curr-item final-item" href="https://lingostudio.ch/lernen/26/" target="_blank"><span class="curr-n">26</span><div><div class="curr-t">סִיכּוּם 🎉</div><div class="curr-s">Grand finale</div></div></a>
+        <a class="curr-item test-item" href="https://lingostudio.ch/lernen/test-5/" target="_blank"><span class="curr-n">📝</span><div><div class="curr-t">Test 5</div><div class="curr-s">Unit review</div></div></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="background:#0f172a;color:rgba(255,255,255,0.7);padding:30px 24px;text-align:center;font-family:-apple-system,sans-serif;font-size:13px;margin-top:0;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:8px;">🦉 lingoStudio</div>
+    <div style="margin-bottom:14px;color:rgba(255,255,255,0.6);">Hebräisch lernen in Zürich — online oder vor Ort</div>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
+      <a href="https://lingostudio.ch/lernen/" style="color:#fbbf24;text-decoration:none;font-weight:700;">🔤 500 Wörter — Gratis</a>
+      <a href="https://lingostudio.ch/hebrew-course-zurich.html" style="color:rgba(255,255,255,0.8);text-decoration:none;">Courses</a>
+      <a href="https://lingostudio.ch/kontakt.html" style="color:rgba(255,255,255,0.8);text-decoration:none;">Kontakt</a>
+      <a href="https://lingostudio.ch" style="color:rgba(255,255,255,0.8);text-decoration:none;">lingostudio.ch</a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:12px;color:rgba(255,255,255,0.4);font-size:11px;">
+      © 2026 lingoStudio ·
+      <a href="https://lingostudio.ch/datenschutz.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">Datenschutz</a> ·
+      <a href="https://lingostudio.ch/agb.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">AGB</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
