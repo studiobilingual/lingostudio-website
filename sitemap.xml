@@ -2,69 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>https://lingostudio.ch/</loc>
-  <lastmod>2026-09-05</lastmod>
+  <lastmod>2026-09-06</lastmod>
   <changefreq>monthly</changefreq>
   <priority>1.0</priority>
 </url>
 <url>
   <loc>https://lingostudio.ch/hebraeisch-kurs-zuerich</loc>
-  <lastmod>2026-09-05</lastmod>
+  <lastmod>2026-09-06</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
 </url>
 <url>
   <loc>https://lingostudio.ch/hebraeisch-lehrer-zuerich</loc>
-  <lastmod>2026-09-05</lastmod>
+  <lastmod>2026-09-06</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
 </url>
 <url>
+  <loc>https://lingostudio.ch/hebraeisch-anfaenger.html</loc>
+  <lastmod>2026-09-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://lingostudio.ch/hebraeisch-gruppenkurs-zuerich.html</loc>
+  <lastmod>2026-09-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://lingostudio.ch/hebraeisch-privatunterricht-zuerich.html</loc>
+  <lastmod>2026-09-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://lingostudio.ch/hebrew-for-beginners.html</loc>
+  <lastmod>2026-09-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://lingostudio.ch/hebrew-course-zurich.html</loc>
+  <lastmod>2026-09-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://lingostudio.ch/about.html</loc>
+  <lastmod>2026-09-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
   <loc>https://lingostudio.ch/faq</loc>
-  <lastmod>2026-09-05</lastmod>
+  <lastmod>2026-09-06</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://lingostudio.ch/bewertungen</loc>
-  <lastmod>2026-09-05</lastmod>
+  <lastmod>2026-09-06</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
   <loc>https://lingostudio.ch/probelektion</loc>
-  <lastmod>2026-09-05</lastmod>
+  <lastmod>2026-09-06</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://lingostudio.ch/kontakt</loc>
-  <lastmod>2026-09-05</lastmod>
+  <lastmod>2026-09-06</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
+  <loc>https://lingostudio.ch/contact.html</loc>
+  <lastmod>2026-09-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
   <loc>https://lingostudio.ch/aktualisierungen</loc>
-  <lastmod>2026-09-05</lastmod>
+  <lastmod>2026-09-06</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://lingostudio.ch/datenschutz</loc>
-  <lastmod>2026-09-05</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
-<url>
-  <loc>https://lingostudio.ch/agb</loc>
-  <lastmod>2026-09-05</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
-<url>
-  <loc>https://lingostudio.ch/impressum</loc>
-  <lastmod>2026-09-05</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
 </url>
 <url>
   <loc>https://lingostudio.ch/newspaper/</loc>
@@ -84,20 +108,22 @@
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
-    <url>
-    <loc>https://lingostudio.ch/hebrew-course-zurich.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-    <url>
-    <loc>https://lingostudio.ch/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 <url>
-  <loc>https://lingostudio.ch/about.html</loc>
+  <loc>https://lingostudio.ch/impressum</loc>
+  <lastmod>2026-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
+<url>
+  <loc>https://lingostudio.ch/datenschutz</loc>
   <lastmod>2026-09-05</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
+<url>
+  <loc>https://lingostudio.ch/agb</loc>
+  <lastmod>2026-09-05</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
 </url>
 </urlset>
