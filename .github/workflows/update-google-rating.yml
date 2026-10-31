@@ -1,0 +1,62 @@
+# Aktualisiert alle 6 Stunden die Google-Bewertung (Durchschnitt + Anzahl) auf der Website.
+# Ort im Repository: .github/workflows/update-google-rating.yml
+name: Update Google rating
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'   # alle 6 Stunden
+  workflow_dispatch:          # Button "Run workflow" zum manuellen Starten
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: update-google-rating
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Bewertung von Google holen, HTML aktualisieren und speichern
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_PLACE_ID: ${{ secrets.GOOGLE_PLACE_ID }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          BRANCH="${GITHUB_REF_NAME}"
+
+          # Bis zu 3 Versuche: immer zuerst die neueste Version holen, dann die Zahlen
+          # darauf anwenden. So werden gleichzeitige eigene Änderungen nie überschrieben.
+          for attempt in 1 2 3; do
+            git fetch origin "$BRANCH"
+            git reset --hard "origin/$BRANCH"
+            node .github/scripts/update-google-rating.mjs
+            git add -A
+            if git diff --cached --quiet; then
+              echo "Keine Änderung der Bewertung."
+              exit 0
+            fi
+            git commit -m "Google-Bewertung aktualisiert"
+            if git push origin "HEAD:$BRANCH"; then
+              echo "Gespeichert."
+              # Sicherheitshalber GitHub Pages neu veröffentlichen lassen
+              gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds" >/dev/null \
+                && echo "GitHub Pages: Veröffentlichung angestossen." \
+                || echo "Hinweis: Pages-Build nicht angestossen (wird normalerweise automatisch gestartet)."
+              exit 0
+            fi
+            echo "Push fehlgeschlagen (gleichzeitige Änderung?) – neuer Versuch $attempt/3"
+            sleep 5
+          done
+          echo "Konnte nicht speichern."
+          exit 1
