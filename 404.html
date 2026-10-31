@@ -233,13 +233,28 @@ margin: 0 10px;
 }
 
 </style>
+<style>
+    /* === Mobiles Menü (☰) === */
+    .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.6rem; line-height: 1; padding: 4px 8px; cursor: pointer; }
+    @media (max-width: 768px) {
+        .navbar .nav-container { position: relative; }
+        .navbar .mobile-menu-btn { display: block; }
+        .navbar .nav-links.active {
+            display: flex; position: absolute; top: calc(100% + 15px); left: -20px; right: -20px;
+            flex-direction: column; align-items: center; gap: 15px; padding: 20px;
+            background: var(--gradient, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15); z-index: 1000;
+        }
+    }
+</style>
 </head>
 <body>
     <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="nav-logo">lingoStudio</a>
-            <div class="nav-links">
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menü öffnen" aria-controls="navLinks">☰</button>
+            <div class="nav-links" id="navLinks">
                 <a href="/">Startseite</a>
                 <a href="/hebraeisch-lehrer-zuerich">Über uns</a>
                 <a href="/hebraeisch-kurs-zuerich">Kurse</a>
@@ -297,5 +312,11 @@ margin: 0 10px;
 </div>
 </div>
 </footer>
+<script>
+    // Mobiles Menü (☰) öffnen/schliessen
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+</script>
 </body>
 </html>

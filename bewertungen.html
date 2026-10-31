@@ -17,8 +17,31 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://lingostudio.ch/bewertungen">
-    <meta name="description" content="Bewertungen: Hebräisch lernen in Zürich bei lingoStudio – online oder vor Ort. Kostenlose Probelektion! Lesen Sie, was Schüler sagen.">
-    <title>Bewertungen | lingoStudio - Hebräisch lernen in Zürich</title>
+    <meta name="description" content="Bewertungen zum Hebräischkurs Zürich bei lingoStudio – 3 Gehminuten vom Bahnhof Stadelhofen oder online. Kostenlose Probelektion! Lesen Sie, was Schüler sagen.">
+    <title>Bewertungen | lingoStudio – Hebräischkurs Zürich</title>
+    <!-- Sterne in den Google-Suchergebnissen (Werte werden automatisch aktualisiert) -->
+    <script type="application/ld+json" id="ratingSchema">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Hebräischkurs Zürich – Gruppenkurse & Privatunterricht",
+      "description": "Hebräischkurse in Zürich, 3 Gehminuten vom Bahnhof Stadelhofen oder online: Gruppenkurse ab CHF 25, Privatunterricht und Semi-Privat für Anfänger und Fortgeschrittene. Kostenlose Probelektion.",
+      "inLanguage": "he",
+      "url": "https://lingostudio.ch/bewertungen",
+      "provider": {
+        "@type": "Organization",
+        "name": "lingoStudio",
+        "sameAs": "https://lingostudio.ch"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 5.0,
+        "ratingCount": 21,
+        "bestRating": 5,
+        "worstRating": 1
+      }
+    }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
@@ -746,6 +769,10 @@
             }
         }
 
+        @media (max-width: 400px) {
+            .hero h1 { font-size: 1.8rem; overflow-wrap: break-word; }
+        }
+
         /* Empty State */
         .empty-state {
             text-align: center;
@@ -868,6 +895,8 @@ margin-bottom: 25px;
 }
 .footer-links {
 margin-bottom: 25px;
+flex-wrap: wrap;
+row-gap: 10px;
 }
 .footer-links a {
 color: rgba(255,255,255,0.85);
@@ -1142,7 +1171,7 @@ margin: 0 10px;
                 <span>Von Schülern bewertet</span>
             </div>
             <h1>Kundenbewertungen</h1>
-            <p>Hebräisch lernen in Zürich – online oder vor Ort. <br>Das sagen Schüler über lingoStudio!</p>
+            <p>Hebräischkurs in Zürich – 3 Gehminuten vom Bahnhof Stadelhofen oder online. <br>Das sagen Schüler über lingoStudio!</p>
         </div>
     </header>
 
@@ -1153,13 +1182,13 @@ margin: 0 10px;
                 <span class="verified-icon">✓</span>
                 <span>Verifizierte Bewertungen</span>
             </div>
-            <div class="stats-number" id="avgRating">-</div>
+            <div class="stats-number g-rating" id="avgRating">5.0</div>
             <div class="stats-stars" id="avgStars">☆☆☆☆☆</div>
-            <div class="stats-label">Basierend auf <strong id="totalCount">0</strong> Bewertungen</div>
+            <div class="stats-label">Basierend auf <strong class="g-count" id="totalCount">21</strong> Google-Bewertungen</div>
             <div class="google-link">
                 <a href="https://share.google/C7Xi4rgBEo2JRJrhL" target="_blank" rel="noopener noreferrer">
                     <span class="g-icon">⭐</span>
-                    <span>4.9 (18) &ndash; Alle Bewertungen auf Google ansehen →</span>
+                    <span><span class="g-rating" id="gRating">5.0</span> (<span class="g-count" id="gCount">21</span>) &ndash; Alle Bewertungen auf Google ansehen →</span>
                 </a>
             </div>
         </div>
@@ -1292,7 +1321,7 @@ margin: 0 10px;
 </div>
 </div>
 <div class="footer-contact">
-📍 Falkenstrasse 28A, 2. OG, 8008 Zürich<br>
+📍 Falkenstrasse 28A, 2. OG, 8008 Zürich – nur 3 Gehminuten vom Bahnhof Stadelhofen<br>
 📧 studiobilingual@gmail.com · 📞 +41 77 526 26 29
 </div>
 <div class="footer-bottom">
@@ -1344,51 +1373,6 @@ margin: 0 10px;
         }, 400);
     }
 
-    // Fallback demo data (wird verwendet wenn keine Google Sheets Verbindung)
-    const demoReviews = [
-        {
-            name: "Sarah K.",
-            course: "Privater Unterricht",
-            rating: 5,
-            text: "Der Privatunterricht bei lingoStudio ist hervorragend! Die Lehrerinnen passen sich perfekt an mein Lerntempo an. Nach nur drei Monaten kann ich bereits einfache Gespräche auf Hebräisch führen.",
-            date: "2024-12-15"
-        },
-        {
-            name: "Michael K.",
-            course: "Gruppenkurs Anfänger",
-            rating: 5,
-            text: "Der Gruppenkurs macht richtig Spass! Die kleine Gruppengrösse ermöglicht intensive Übungen, und die Atmosphäre ist sehr freundlich. Ich freue mich auf jede Stunde.",
-            date: "2024-11-28"
-        },
-        {
-            name: "Anna M.",
-            course: "Gruppenkurs Fortgeschrittene",
-            rating: 5,
-            text: "Als Fortgeschrittene war es schwer, einen passenden Kurs zu finden. Bei lingoStudio wurde ich endlich gefordert! Wir lesen echte Texte und diskutieren aktuelle Themen.",
-            date: "2024-11-10"
-        },
-        {
-            name: "Thomas B.",
-            course: "Online-Kurs",
-            rating: 5,
-            text: "Der Online-Unterricht funktioniert ausgezeichnet. Flexible Terminplanung, tolle digitale Materialien. Perfekt für meinen vollen Terminkalender!",
-            date: "2024-10-22"
-        },
-        {
-            name: "Lisa W.",
-            course: "Privater Unterricht",
-            rating: 4,
-            text: "Sehr professioneller Unterricht mit viel Geduld. Die Materialien sind gut strukturiert. Ich fühle mich gut vorbereitet für meine Israel-Reise.",
-            date: "2024-10-05"
-        },
-        {
-            name: "David R.",
-            course: "Gruppenkurs Anfänger",
-            rating: 5,
-            text: "Von Null auf Hebräisch! Ich konnte kein einziges Wort und jetzt kann ich mich vorstellen und einfache Unterhaltungen führen. Das Team ist fantastisch!",
-            date: "2024-09-18"
-        }
-    ];
 
     let reviews = [];
 
@@ -1452,26 +1436,36 @@ margin: 0 10px;
         `).join('');
     }
 
-    // Fixed summary stats matching the real Google Maps profile
-    // (lingoStudio - Hebrew Lessons Zurich: 4.9 ★ based on 18 reviews)
+    // ============================================
+    // GOOGLE-BEWERTUNGEN
+    // ============================================
+    // Die Zahlen (Durchschnitt + Anzahl) stehen direkt im HTML (Klassen g-rating / g-count)
+    // und werden alle 6 Stunden automatisch per GitHub Actions aktualisiert.
+
+    // Google liefert keine Verteilung pro Stern. Darum: nur die Bewertungen mit
+    // WENIGER als 5 Sternen hier eintragen – die 5-Sterne-Zahl wird automatisch berechnet.
+    const NON_FIVE_STAR = { 4: 1, 3: 0, 2: 0, 1: 0 };
+
     const GOOGLE_STATS = {
-        average: 4.9,
-        total: 18,
-        breakdown: { 5: 17, 4: 1, 3: 0, 2: 0, 1: 0 }
+        average: parseFloat(document.getElementById('avgRating').textContent) || 5,
+        total: parseInt(document.getElementById('totalCount').textContent, 10) || 0
     };
 
-    // Update statistics — the top summary card always reflects the real
-    // Google rating/count, independent of how many reviews are loaded below.
+    function buildBreakdown(total) {
+        const others = NON_FIVE_STAR[4] + NON_FIVE_STAR[3] + NON_FIVE_STAR[2] + NON_FIVE_STAR[1];
+        return { 5: Math.max(total - others, 0), ...NON_FIVE_STAR };
+    }
+
+    // Sterne und Balken aus den Zahlen im HTML aufbauen
     function updateStats() {
-        document.getElementById('totalCount').textContent = GOOGLE_STATS.total;
-        document.getElementById('avgRating').textContent = GOOGLE_STATS.average.toFixed(1);
         document.getElementById('avgStars').innerHTML = generateStars(Math.round(GOOGLE_STATS.average));
 
-        // Render bars based on the real Google breakdown
+        // Render bars based on the Google breakdown
+        const breakdown = buildBreakdown(GOOGLE_STATS.total);
         let barsHTML = '';
         for (let i = 5; i >= 1; i--) {
-            const count = GOOGLE_STATS.breakdown[i] || 0;
-            const pct = (count / GOOGLE_STATS.total) * 100;
+            const count = breakdown[i] || 0;
+            const pct = GOOGLE_STATS.total ? (count / GOOGLE_STATS.total) * 100 : 0;
             barsHTML += `
                 <div class="bar-row">
                     <span class="bar-label">${i} <span class="star-icon">★</span></span>
@@ -1490,7 +1484,7 @@ margin: 0 10px;
         if (GOOGLE_SCRIPT_URL === 'DEINE_GOOGLE_SCRIPT_URL_HIER') {
             // Demo mode
             console.log('Demo-Modus: Keine Google Sheets URL konfiguriert');
-            reviews = demoReviews;
+            reviews = [];
             renderReviews();
             updateStats();
             return;
@@ -1503,11 +1497,11 @@ margin: 0 10px;
             if (data.success && data.reviews) {
                 reviews = data.reviews;
             } else {
-                reviews = demoReviews;
+                reviews = [];
             }
         } catch (error) {
             console.error('Fehler beim Laden:', error);
-            reviews = demoReviews;
+            reviews = [];
         }
 
         renderReviews();
@@ -1603,10 +1597,15 @@ margin: 0 10px;
     });
 
     // Initialize
+    updateStats();
     fetchReviews();
     </script>
 
 <script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+
     // === PROMO BANNER SYSTEM ===
     const PROMO_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3TOtNH06cdQNE8TG_u_dahy3wNC79w0BCTO8U6ReieVJxrsyQRLVQAXKCM32nq4V30Q/exec";
     
@@ -1638,3 +1637,4 @@ margin: 0 10px;
 </script>
 </body>
 </html>
+
